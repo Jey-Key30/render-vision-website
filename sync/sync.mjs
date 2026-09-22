@@ -18,25 +18,38 @@ const argv = process.argv.slice(2);
 const flag = n => argv.includes("--" + n);
 const opt = (n, d) => { const i = argv.indexOf("--" + n); return i > -1 ? argv[i + 1] : d; };
 
-const UA = "Mozilla/5.0 (portfolio-sync; +https://github.com) AppleWebKit/537.36 Chrome/124 Safari/537.36";
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36";
+const BROWSER_HEADERS = {
+  "User-Agent": UA,
+  "Accept-Language": "en-US,en;q=0.9,ru;q=0.8",
+  "Referer": "https://www.artstation.com/",
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "same-origin"
+};
 const log = (...a) => console.log("·", ...a);
 const warn = (...a) => console.warn("!", ...a);
 
 async function json(url, tries = 3) {
+  let last;
   for (let i = 1; i <= tries; i++) {
     try {
-      const r = await fetch(url, { headers: { "User-Agent": UA, Accept: "application/json" } });
+      const r = await fetch(url, { headers: { ...BROWSER_HEADERS, Accept: "application/json, text/plain, */*" } });
       if (r.status === 429) { await sleep(4000 * i); continue; }
+      if (r.status === 403) { const e = new Error("403 " + url); e.blocked = true; throw e; }
       if (!r.ok) throw new Error(r.status + " " + url);
       return await r.json();
     } catch (e) {
-      if (i === tries) throw e;
+      last = e;
+      if (e.blocked || i === tries) throw e;
       await sleep(1200 * i);
     }
   }
+  throw last;
 }
 async function text(url) {
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
+  const r = await fetch(url, { headers: { ...BROWSER_HEADERS, Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" } });
+  if (r.status === 403) { const e = new Error("403 " + url); e.blocked = true; throw e; }
   if (!r.ok) throw new Error(r.status + " " + url);
   return r.text();
 }
@@ -261,25 +274,78 @@ const user = cfg.artstation;
 if (!user) { console.error("sync/config.json: set \"artstation\" to your ArtStation username"); process.exit(1); }
 
 log("artstation user:", user);
-const list = await artstationList(user);
-if (!list.length) { console.error("no ArtStation projects returned — check the username"); process.exit(1); }
+let list = [];
+let artstationBlocked = false;
+try {
+  list = await artstationList(user);
+} catch (e) {
+  if (e.blocked) {
+    artstationBlocked = true;
+    warn("ArtStation returned 403 — Cloudflare blocked this IP.");
+    warn("Datacenter IPs (GitHub Actions, most VPS) are refused; a home connection usually works.");
+    warn("Falling back to Sketchfab + YouTube only. Existing portfolio.json data is preserved.");
+  } else {
+    warn("ArtStation failed:", e.message);
+  }
+}
+if (!list.length && !artstationBlocked) warn("no ArtStation projects returned — check the username");
 
 const [sfRows, ytRows] = await Promise.all([
   sketchfabModels(cfg.sketchfab),
   youtubeChannelId().then(youtubeUploads)
 ]);
 
+/* ---------------- previous run, kept as the base ---------------- */
+
+const prev = existsSync(outPath) ? JSON.parse(await readFile(outPath, "utf8")) : { projects: [] };
+const prevById = new Map((prev.projects || []).map(p => [p.id, p]));
+
 const projects = [];
 for (const row of list) {
   try {
     const d = await artstationDetail(row.hash_id);
-    projects.push(mapProject(d, row, sfRows, ytRows));
+    const mapped = mapProject(d, row, sfRows, ytRows);
+    /* keep anything a previous run or hand-edit filled in that ArtStation left empty */
+    const old = prevById.get(mapped.id);
+    if (old) for (const k of ["tris", "role", "software", "sketchfabUrl"]) {
+      if ((!mapped[k] || mapped[k] === "\u2014") && old[k]) mapped[k] = old[k];
+    }
+    projects.push(mapped);
     log("ok", row.title);
   } catch (e) {
     warn("skip", row.title, e.message);
   }
   await sleep(400);
 }
+
+/* ArtStation unreachable: keep the projects we already have, refresh their
+   Sketchfab / YouTube attachments so the run is still worth something */
+if (!projects.length && (prev.projects || []).length) {
+  for (const p of prev.projects) {
+    const c = { ...p, media: (p.media || []).slice() };
+    if (!c.media.some(b => b.t === "sketchfab")) {
+      const m = bestMatch(c.title, sfRows, "name");
+      if (m) c.media.unshift({ t: "sketchfab", modelId: m.modelId, label: "DRAG TO ORBIT", ratio: "16/9" });
+    }
+    if (!c.media.some(b => b.t === "youtube")) {
+      const v = bestMatch(c.title, ytRows, "title");
+      if (v) c.media.push({ t: "youtube", videoId: v.videoId, label: "BREAKDOWN · YOUTUBE" });
+    }
+    const sfHit = c.media.find(b => b.t === "sketchfab");
+    const sfMeta = sfHit && sfRows.find(r => r.modelId === sfHit.modelId);
+    if (sfMeta?.faceCount && (!c.tris || c.tris === "\u2014")) c.tris = Intl.NumberFormat("en-US").format(sfMeta.faceCount);
+    if (sfMeta?.thumb) {
+      const img = c.media.find(b => b.t === "image");
+      if (img && !img.src) img.src = sfMeta.thumb;
+      else if (!img) c.media.push({ t: "image", src: sfMeta.thumb, label: "RENDER", ratio: "4/3" });
+    }
+    c.kindKey = kindFor(c.media);
+    projects.push({ ...c, ...(overrides[c.id] || {}) });
+  }
+  log(`kept ${projects.length} existing projects, enriched from Sketchfab/YouTube`);
+}
+
+if (!projects.length) { console.error("nothing to write — no ArtStation data and no existing portfolio.json"); process.exit(1); }
 
 /* unique ids */
 const used = new Map();
@@ -294,12 +360,18 @@ if (flag("thumbs")) await downloadThumbs(projects);
 const reelId = cfg.reel?.videoId || ytRows[0]?.videoId || null;
 const out = {
   source: {
-    platform: "artstation",
+    platform: artstationBlocked ? "sketchfab+youtube" : "artstation",
     profile: `https://www.artstation.com/${user}`,
+    sketchfab: cfg.sketchfab ? `https://sketchfab.com/${cfg.sketchfab}` : undefined,
+    youtube: prev.source?.youtube || (cfg.youtubeHandle ? `https://www.youtube.com/${cfg.youtubeHandle}` : undefined),
     syncedAt: new Date().toISOString(),
+    status: artstationBlocked ? "partial" : "ok",
+    note: artstationBlocked
+      ? "ArtStation refused this IP (403 via Cloudflare). Run the sync from a home connection to pull ArtStation data."
+      : undefined,
     counts: { projects: projects.length, sketchfab: sfRows.length, youtube: ytRows.length }
   },
-  reel: { videoId: reelId, duration: cfg.reel?.duration || "", title: cfg.reel?.title || "Showreel" },
+  reel: prev.reel && prev.reel.src ? prev.reel : { videoId: reelId, duration: cfg.reel?.duration || "", title: cfg.reel?.title || "Showreel" },
   projects
 };
 
