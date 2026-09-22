@@ -182,18 +182,25 @@ async function youtubeUploads(channelId) {
   } catch (e) { warn("youtube failed:", e.message); return []; }
 }
 
-/* fuzzy title match, so a Sketchfab/YouTube item attaches to the right project */
+/* fuzzy title match, so a Sketchfab/YouTube item attaches to the right project.
+   Requires two shared significant words (one is too weak: "Robot Chappie" and
+   "Robot Scout" would both grab the same video), and never reuses an item. */
+const claimed = new Set();
 function bestMatch(title, rows, key) {
   const norm = s => (s || "").toLowerCase().replace(/[^a-z0-9\u0400-\u04FF ]/g, " ").split(/\s+/).filter(w => w.length > 2);
   const a = norm(title);
   if (!a.length) return null;
   let best = null, score = 0;
   for (const r of rows) {
+    const stamp = r.modelId || r.videoId;
+    if (stamp && claimed.has(stamp)) continue;
     const b = norm(r[key] || r.name || r.title);
     const shared = a.filter(w => b.includes(w)).length;
+    if (shared < 2) continue;
     const s = shared / Math.max(1, Math.min(a.length, b.length));
     if (s > score) { score = s; best = r; }
   }
+  if (best) claimed.add(best.modelId || best.videoId);
   return score >= 0.5 ? best : null;
 }
 
