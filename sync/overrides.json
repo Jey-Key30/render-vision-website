@@ -1,0 +1,13 @@
+{
+  "_comment": "Правки по ключу id проекта (slug из названия на ArtStation). Любое поле здесь перекрывает данные с площадок и не теряется при следующем прогоне. Смотри готовые id в site/data/portfolio.json после первого запуска.",
+  "_example": {
+    "role": "Modeling · Texturing · Lookdev",
+    "tris": "48,200",
+    "software": "Blender · ZBrush · Substance Painter",
+    "summary": "Свой текст описания, если текст с ArtStation не подходит.",
+    "media": [
+      { "t": "sketchfab", "modelId": "0000000000000000", "label": "3D VIEWER · SKETCHFAB" },
+      { "t": "youtube", "videoId": "zlpcVfuYmKM", "label": "BREAKDOWN · YOUTUBE" }
+    ]
+  }
+}

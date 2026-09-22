@@ -1,0 +1,305 @@
+{
+  "source": {
+    "platform": "sketchfab",
+    "profile": "https://www.artstation.com/j-k30",
+    "sketchfab": "https://sketchfab.com/J-K3.0",
+    "youtube": "https://www.youtube.com/@Jey-Key_3.0",
+    "syncedAt": "2026-09-02T21:35:49.048Z",
+    "status": "partial",
+    "note": "Sketchfab models are real. Year, role, software and tris fill in on the first ArtStation sync run (node sync/sync.mjs)."
+  },
+  "reel": {
+    "title": "SHOWREEL 2025",
+    "provider": "file",
+    "src": "assets/showreel.mp4",
+    "poster": "",
+    "videoId": "zlpcVfuYmKM",
+    "duration": "01:48",
+    "channel": "https://www.youtube.com/watch?v=zlpcVfuYmKM"
+  },
+  "projects": [
+    {
+      "id": "spartan-helmet-metro-2033",
+      "title": "Spartan helmet Metro 2033",
+      "topic": "HARD-SURFACE / GAME-READY",
+      "tags": [
+        "HARD-SURFACE",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "SPARTAN HELMET METRO 2033",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/spartan-helmet-metro-2033-2f092d24d83c45e5998b772cbcba6d9a",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "2f092d24d83c45e5998b772cbcba6d9a"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "robot-chappie",
+      "title": "Robot Chappie",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "ROBOT CHAPPIE",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "cbfa9eb1398946eba433681f56d52eae"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "police-car-in-the-rain",
+      "title": "Police car in the rain",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "POLICE CAR IN THE RAIN",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-rain-0daeb7e89cc940cba44503b7dd04384a",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "0daeb7e89cc940cba44503b7dd04384a"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "space-suit-j-30",
+      "title": "Space suit J-3.0",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "SPACE SUIT J-3.0",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "2ebdb94250694ad9b99bb39b96a78ef5"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "compressor-patriot-wo-6-180",
+      "title": "Compressor Patriot WO 6-180",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "COMPRESSOR PATRIOT WO 6-180",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/compressor-patriot-wo-6-180-616731ef642240f09b914de7be2ba70c",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "616731ef642240f09b914de7be2ba70c"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "police-car-in-the-dust",
+      "title": "Police car in the dust",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "POLICE CAR IN THE DUST",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-dust-903d841b27d24f2a8762920522d04675",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "903d841b27d24f2a8762920522d04675"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "robot-scout",
+      "title": "Robot Scout",
+      "topic": "HARD-SURFACE / GAME-READY",
+      "tags": [
+        "HARD-SURFACE",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "ROBOT SCOUT",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/robot-scout-a51179ee802b4ffd89e90974911ebf91",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "a51179ee802b4ffd89e90974911ebf91"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "sci-fi-gun",
+      "title": "Sci-Fi gun",
+      "topic": "HARD-SURFACE / GAME-READY",
+      "tags": [
+        "HARD-SURFACE",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "SCI-FI GUN",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "8f3451b12f734bc0b712fc0f13777562"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "modular-ancient-stone-archway",
+      "title": "Modular Ancient Stone Archway — PBR Game Ready",
+      "topic": "ENVIRONMENT / GAME-READY",
+      "tags": [
+        "ENVIRONMENT",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "—",
+      "slot": "MODULAR ANCIENT STONE ARCHWAY — PBR GAME READY",
+      "artstationUrl": "https://www.artstation.com/j-k30",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "052a392328b0451db4eaa257aeea969c"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": ""
+        }
+      ]
+    }
+  ]
+}
