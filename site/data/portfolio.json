@@ -1,12 +1,17 @@
 {
   "source": {
-    "platform": "sketchfab",
+    "platform": "sketchfab+youtube",
     "profile": "https://www.artstation.com/j-k30",
     "sketchfab": "https://sketchfab.com/J-K3.0",
     "youtube": "https://www.youtube.com/@Jey-Key_3.0",
-    "syncedAt": "2026-09-02T21:35:49.048Z",
+    "syncedAt": "2026-09-22T11:41:17.544Z",
     "status": "partial",
-    "note": "Sketchfab models are real. Year, role, software and tris fill in on the first ArtStation sync run (node sync/sync.mjs)."
+    "note": "ArtStation refused this IP (403 via Cloudflare). Run the sync from a home connection to pull ArtStation data.",
+    "counts": {
+      "projects": 9,
+      "sketchfab": 9,
+      "youtube": 15
+    }
   },
   "reel": {
     "title": "SHOWREEL 2025",
@@ -30,7 +35,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "10,884",
       "slot": "SPARTAN HELMET METRO 2033",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/spartan-helmet-metro-2033-2f092d24d83c45e5998b772cbcba6d9a",
@@ -46,7 +51,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/spartan-helmet-metro-2033.jpeg"
         }
       ]
     },
@@ -61,7 +66,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "101,801",
       "slot": "ROBOT CHAPPIE",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
@@ -77,7 +82,12 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/robot-chappie.jpeg"
+        },
+        {
+          "t": "youtube",
+          "videoId": "P6_9MFnhcfQ",
+          "label": "BREAKDOWN · YOUTUBE"
         }
       ]
     },
@@ -92,7 +102,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "8,264",
       "slot": "POLICE CAR IN THE RAIN",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-rain-0daeb7e89cc940cba44503b7dd04384a",
@@ -108,7 +118,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/police-car-in-the-rain.jpeg"
         }
       ]
     },
@@ -123,7 +133,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "23,756",
       "slot": "SPACE SUIT J-3.0",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
@@ -139,7 +149,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/space-suit-j-30.jpeg"
         }
       ]
     },
@@ -154,7 +164,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "11,758",
       "slot": "COMPRESSOR PATRIOT WO 6-180",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/compressor-patriot-wo-6-180-616731ef642240f09b914de7be2ba70c",
@@ -170,7 +180,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/compressor-patriot-wo-6-180.jpeg"
         }
       ]
     },
@@ -185,7 +195,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "8,264",
       "slot": "POLICE CAR IN THE DUST",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-dust-903d841b27d24f2a8762920522d04675",
@@ -201,7 +211,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/police-car-in-the-dust.jpeg"
         }
       ]
     },
@@ -217,7 +227,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "96,494",
       "slot": "ROBOT SCOUT",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-scout-a51179ee802b4ffd89e90974911ebf91",
@@ -233,7 +243,12 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/robot-scout.jpeg"
+        },
+        {
+          "t": "youtube",
+          "videoId": "P6_9MFnhcfQ",
+          "label": "BREAKDOWN · YOUTUBE"
         }
       ]
     },
@@ -249,7 +264,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "16,206",
       "slot": "SCI-FI GUN",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
@@ -265,7 +280,12 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/sci-fi-gun.jpeg"
+        },
+        {
+          "t": "youtube",
+          "videoId": "iXjIIYl0QUU",
+          "label": "BREAKDOWN · YOUTUBE"
         }
       ]
     },
@@ -281,7 +301,7 @@
       "year": "",
       "role": "3D Artist",
       "software": "Blender · 3ds Max · Substance",
-      "tris": "—",
+      "tris": "3,350",
       "slot": "MODULAR ANCIENT STONE ARCHWAY — PBR GAME READY",
       "artstationUrl": "https://www.artstation.com/j-k30",
       "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
@@ -297,7 +317,7 @@
           "t": "image",
           "label": "RENDER",
           "ratio": "4/3",
-          "src": ""
+          "src": "assets/thumbs/modular-ancient-stone-archway.jpeg"
         }
       ]
     }
