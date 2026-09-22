@@ -1,0 +1,18 @@
+{
+  "artstation": "j-k30",
+  "sketchfab": "J-K3.0",
+  "youtubeChannelId": "UCS-_v8rsZdQtfjCwDrsc_Cw",
+  "youtubeHandle": "@Jey-Key_3.0",
+  "output": "site/data/portfolio.json",
+  "limit": 40,
+  "reel": {
+    "videoId": "zlpcVfuYmKM",
+    "duration": "01:48",
+    "title": "Showreel 2025"
+  },
+  "defaults": {
+    "role": "3D Artist",
+    "software": "Blender · Substance Painter · Marmoset",
+    "tris": "—"
+  }
+}

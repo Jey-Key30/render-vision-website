@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render Vision — Kirill, CG Generalist</title>
+<meta name="description" content="Portfolio of Kirill, CG generalist and technical artist. Hard-surface, environments, VFX and game-ready 3D.">
+<meta property="og:title" content="Render Vision — Kirill, CG Generalist">
+<meta property="og:description" content="Hard-surface, environments, VFX and game-ready 3D.">
+<meta property="og:image" content="assets/hero-robot.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#B22B2B; --bg:#0a0a0a; --ink:#f2f0ee; --dim:#a8a4a0; --mute:#8a8a8a; --faint:#57534f;
+  --line:#1a1a1a; --edge:#232120; --chip:#2a2726;
+  --pad:clamp(16px,4vw,40px);
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block}
+a{color:var(--red);text-decoration:none;transition:color .18s ease}
+a:hover{color:var(--ink)}
+button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
+
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px var(--pad);background:rgba(10,10,10,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:clamp(10px,2.4vw,12px);letter-spacing:.14em}
+header nav{display:flex;gap:clamp(12px,3vw,28px)}
+header nav button{color:var(--mute);padding:8px 0;transition:color .18s ease}
+header nav button:hover,header nav button.on{color:var(--ink)}
+.brand{cursor:pointer;white-space:nowrap}
+.brand:hover{color:var(--red)}
+.as-link{white-space:nowrap}
+@media(max-width:640px){.as-link{display:none}}
+
+section{scroll-margin-top:58px}
+
+/* hero */
+#top{position:relative;padding:clamp(32px,7vw,56px) var(--pad) clamp(40px,8vw,64px);display:flex;align-items:center;justify-content:center}
+.corner{position:absolute;width:40px;height:40px;border:0 solid #3a3634}
+.c1{top:24px;left:var(--pad);border-top-width:1px;border-left-width:1px}
+.c2{top:24px;right:var(--pad);border-top-width:1px;border-right-width:1px}
+.c3{bottom:24px;left:var(--pad);border-bottom-width:1px;border-left-width:1px}
+.c4{bottom:24px;right:var(--pad);border-bottom-width:1px;border-right-width:1px}
+.stage{position:relative;width:min(420px,34vw);aspect-ratio:1}
+.square{position:relative;z-index:1;width:100%;height:100%;background:var(--red);overflow:hidden}
+.disc{position:absolute;left:6%;top:6%;width:88%;height:88%;border-radius:50%;overflow:hidden;
+  background:radial-gradient(circle at 50% 45%,#2c100c 0%,#1a0605 68%,#140302 100%)}
+.disc img{position:absolute;left:-6%;top:-4%;width:112%;height:108%;object-fit:cover;object-position:60% 18%}
+.ring{position:absolute;left:4%;top:4%;width:92%;height:92%;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
+.side{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:max-content;display:flex;flex-direction:column;gap:14px}
+.side.l{right:calc(100% - 64px);align-items:flex-start}
+.side.r{left:calc(100% - 64px);align-items:flex-end;text-align:right;max-width:34vw}
+.word{font-size:clamp(44px,5.6vw,82px);font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
+.dots{display:flex;gap:14px}
+.dots i{width:4px;height:4px;border-radius:50%;background:#6f6b68}
+.dots i.hot{background:var(--red)}
+.lede{max-width:min(300px,28vw);padding-right:84px;font-size:14px;line-height:1.6;color:#c8c4c0;text-wrap:pretty}
+.roles{padding-left:84px;font-family:var(--mono);font-size:13px;line-height:1.9;color:#c8c4c0}
+.tg{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px}
+.tg::before{content:"";width:14px;height:11px;background:var(--red);clip-path:polygon(0 0,100% 50%,0 100%,25% 50%)}
+.side.r .tg{margin-left:84px}
+.hero-mobile{display:none;width:100%;flex-direction:column;gap:22px;align-items:center;text-align:center}
+.hero-mobile .square{width:min(340px,82vw);aspect-ratio:1;height:auto}
+@media(max-width:860px){.stage{display:none}.hero-mobile{display:flex}}
+
+/* reel */
+#reel{position:relative;min-height:clamp(360px,60vw,560px);padding:clamp(40px,8vw,64px) var(--pad);
+  background:linear-gradient(105deg,#2a0d05 0%,#120806 42%,var(--bg) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.reel-type{color:#fff;font-size:clamp(48px,7vw,104px);font-weight:800;font-style:italic;line-height:.88;text-align:center;letter-spacing:-.02em;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+.reel-box{position:relative;width:100%;max-width:1180px}
+.reel-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.42) 0%,rgba(10,10,10,.58) 55%,rgba(10,10,10,.82) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-decoration:none;z-index:2;transition:background .3s ease}
+.reel-veil:hover{background:linear-gradient(180deg,rgba(10,10,10,.28) 0%,rgba(10,10,10,.44) 55%,rgba(10,10,10,.72) 100%)}
+.reel-cta{font-family:var(--mono);font-size:clamp(13px,1.5vw,16px);letter-spacing:.2em;color:#fff;text-align:center;padding:14px 26px;border:1px solid rgba(255,255,255,.55);background:rgba(10,10,10,.35);transition:border-color .25s ease,background .25s ease}
+.reel-veil:hover .reel-cta{border-color:var(--red);background:var(--red)}
+.reel-note{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.62)}
+.frame{position:relative;aspect-ratio:16/9;background:#0f0d0c;border:1px solid rgba(178,43,43,.45);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
+.hatch{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 2px,transparent 2px 14px)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px}
+.play{width:82px;height:82px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .25s ease}
+.frame:hover .play{transform:scale(1.07)}
+.tag{position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#d8d4d0}
+.stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+
+/* work */
+.head{padding:clamp(56px,10vw,88px) var(--pad) 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.h1{font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:.04em;line-height:1}
+.sub{max-width:520px;font-size:15px;line-height:1.55;color:var(--dim);text-wrap:pretty}
+.meta{display:flex;flex-direction:column;gap:8px;text-align:right;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:#6f6b68}
+.filters{padding:0 var(--pad) 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:24px;font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.chip{padding:8px 14px;border:1px solid var(--chip);color:var(--mute);transition:background .18s,color .18s,border-color .18s}
+.chip:hover{color:var(--ink)}
+.chip.on{background:var(--red);border-color:var(--red);color:var(--ink)}
+.gridwrap{padding:36px var(--pad) clamp(56px,10vw,88px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:12px;cursor:pointer;text-align:left;transition:transform .3s cubic-bezier(.22,.68,.24,1)}
+.card:hover{transform:translateY(-4px)}
+.thumb{position:relative;aspect-ratio:4/3;background:#141312;border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color .2s}
+.card:hover .thumb{border-color:var(--red)}
+.thumb .hatch,.thumb img{transition:transform .5s cubic-bezier(.22,.68,.24,1)}
+.card:hover .hatch,.card:hover .thumb img{transform:scale(1.04)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#6f6b68}
+.badge{position:absolute;top:12px;left:12px;z-index:2;padding:4px 8px;background:var(--red);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
+.cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cap span:first-child{font-size:15px}
+.year{font-family:var(--mono);font-size:11px;color:#6f6b68}
+.role{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.empty{padding:clamp(56px,12vw,96px) var(--pad);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+
+/* about */
+#about{border-top:1px solid var(--line)}
+.about-top{padding:clamp(56px,10vw,88px) var(--pad) 56px;display:grid;grid-template-columns:minmax(280px,480px) 1fr;gap:72px;align-items:start}
+.portrait{position:relative;aspect-ratio:4/5;background:#141312;border:1px solid var(--edge);overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(.25) contrast(1.05)}
+.bio{display:flex;flex-direction:column;gap:30px}
+.bio h2{margin:0;font-size:clamp(36px,4.6vw,68px);font-weight:700;line-height:1}
+.bio p{margin:0;max-width:640px;font-size:19px;line-height:1.6;color:var(--dim);text-wrap:pretty}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--faint)}
+.list{font-size:16px;line-height:1.9;color:#d8d4d0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:36px 32px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.stats div:last-child{border-right:none}
+.stats b{font-size:48px;font-weight:700;color:var(--red)}
+.stats span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--mute)}
+.exp{padding:clamp(40px,8vw,64px) var(--pad) clamp(56px,10vw,88px);display:flex;flex-direction:column;gap:24px}
+.exp-row{display:grid;grid-template-columns:160px 1fr minmax(200px,260px);gap:32px;padding:22px 0;border-top:1px solid #1a1918;align-items:baseline}
+.exp-row i{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--red)}
+.exp-row b{font-size:24px;font-weight:500}
+.exp-row span{font-family:var(--mono);font-size:12px;color:var(--mute);line-height:1.8}
+
+/* contact */
+#contact{padding:clamp(56px,10vw,88px) var(--pad) clamp(56px,10vw,96px);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr minmax(360px,600px);gap:80px;align-items:start}
+#contact h2{margin:0;font-size:clamp(40px,5.6vw,76px);font-weight:700;line-height:1}
+.reach{display:flex;flex-direction:column;gap:16px}
+.reach div{display:flex;align-items:center;gap:14px}
+.reach i{width:26px;height:20px;background:var(--red)}
+.reach a{font-size:21px}
+.socials{display:flex;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.socials a{padding:9px 14px;border:1px solid var(--chip);color:var(--mute)}
+.socials a:hover{color:var(--ink);border-color:var(--ink)}
+form{display:flex;flex-direction:column;gap:24px;padding:40px;background:#111010;border:1px solid var(--edge)}
+.field{display:flex;flex-direction:column;gap:10px}
+input,textarea{width:100%;background:transparent;color:var(--ink);font-family:Archivo,sans-serif;font-size:17px;border:none;outline:none}
+input{padding:14px 0;border-bottom:1px solid var(--chip)}
+textarea{padding:14px;min-height:120px;border:1px solid var(--chip);resize:vertical;line-height:1.5}
+input:focus,textarea:focus{border-color:var(--red)}
+.send{align-self:flex-start;padding:16px 40px;background:#1a1918;color:var(--faint);font-family:var(--mono);font-size:12px;letter-spacing:.14em;cursor:not-allowed;transition:background .2s,color .2s}
+.send.ready{background:var(--red);color:var(--ink);cursor:pointer}
+.sent{display:flex;flex-direction:column;gap:14px;padding:40px 0}
+.sent b{font-size:26px;font-weight:500;line-height:1.25}
+
+footer{display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,56px);flex-wrap:wrap;
+  padding:clamp(36px,7vw,56px) var(--pad) clamp(48px,9vw,72px);border-top:1px solid var(--line)}
+footer .reach a{font-size:19px}
+.copy{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--faint)}
+
+/* project page */
+#project{display:none}
+.crumbs{padding:16px var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
+.p-head{padding:clamp(36px,7vw,56px) var(--pad) 32px;display:grid;grid-template-columns:1fr minmax(240px,320px);gap:64px;align-items:end}
+.p-title{font-size:clamp(36px,5.5vw,76px);font-weight:700;line-height:1}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--red)}
+.p-meta{display:flex;flex-direction:column;gap:14px;font-family:var(--mono);font-size:12px;line-height:1.9;color:var(--mute)}
+.p-meta hr{width:100%;height:1px;background:var(--edge);border:none;margin:0}
+.p-meta u{text-decoration:none;color:var(--faint)}
+.media{padding:24px var(--pad) clamp(48px,9vw,72px);display:flex;flex-direction:column;gap:20px}
+.block{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#141312;border:1px solid var(--edge)}
+.block.loaded{border-color:var(--red)}
+.knob{width:68px;height:68px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:22px}
+.knob.sf{border-radius:0;background:transparent;border:1px solid var(--red);color:var(--red)}
+.next{padding:clamp(36px,7vw,56px) var(--pad) clamp(56px,10vw,88px);border-top:1px solid var(--line);display:flex;flex-direction:column;gap:28px}
+.next h3{margin:0;font-size:30px;font-weight:600;letter-spacing:.06em}
+.next .gridwrap{padding:0;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+
+@media(max-width:860px){
+  .about-top{grid-template-columns:1fr;gap:36px}
+  #contact{grid-template-columns:1fr;gap:40px}
+  .p-head{grid-template-columns:1fr;gap:32px}
+  .exp-row{grid-template-columns:1fr;gap:8px}
+  form{padding:24px}
+}
+
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes rise-mid{from{opacity:0;transform:translateY(calc(-50% + 22px))}to{opacity:1;transform:translateY(-50%)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.in{animation:rise .62s cubic-bezier(.22,.68,.24,1) both}
+.side{animation:rise-mid .62s cubic-bezier(.22,.68,.24,1) both}
+.side.l{animation-delay:.14s}.side.r{animation-delay:.24s}
+main{animation:fade .34s ease both}
+.armed .reveal{opacity:0;transform:translateY(26px)}
+.armed .reveal.seen{opacity:1;transform:none}
+.reveal{transition:opacity .66s cubic-bezier(.22,.68,.24,1),transform .66s cubic-bezier(.22,.68,.24,1)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .in,.side,main{animation:none}
+  .armed .reveal{opacity:1;transform:none;transition:none}
+  .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand" data-go="top">RENDER VISION</span>
+  <nav>
+    <button data-go="work">WORK</button>
+    <button data-go="reel">REEL</button>
+    <button data-go="about">ABOUT</button>
+    <button data-go="contact">CONTACT</button>
+  </nav>
+  <a class="as-link" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
+</header>
+
+<main id="home">
+  <section id="top">
+    <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+
+    <div class="stage">
+      <div class="side l">
+        <div class="dots"><i></i><i></i><i class="hot"></i><i></i><i class="hot"></i><i></i><i></i></div>
+        <div class="word">RENDER</div>
+        <p class="lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
+      </div>
+      <div class="square">
+        <div class="disc"><img src="assets/hero-robot.png" alt="Render Vision hero render"></div>
+        <div class="ring"></div>
+      </div>
+      <div class="side r">
+        <div class="dots"><i></i><i class="hot"></i><i></i><i></i><i class="hot"></i><i></i></div>
+        <div class="word">VISION</div>
+        <div class="roles">Middle CG Generalist |<br>3D Artist |<br>Technical Artist |</div>
+        <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a>
+      </div>
+    </div>
+
+    <div class="hero-mobile in">
+      <div class="dots"><i></i><i class="hot"></i><i></i><i class="hot"></i><i></i></div>
+      <div class="word" style="font-size:clamp(38px,13vw,62px)">RENDER<br>VISION</div>
+      <div class="square">
+        <div class="disc"><img src="assets/hero-robot.png" alt="Render Vision hero render"></div>
+        <div class="ring"></div>
+      </div>
+      <p class="lede" style="max-width:420px;padding:0;font-size:15px">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
+      <div class="roles" style="padding:0">Middle CG Generalist | 3D Artist |<br>Technical Artist |</div>
+      <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a>
+    </div>
+  </section>
+
+  <section id="reel">
+    <div class="reel-box" id="reelBox"></div>
+  </section>
+
+  <section id="work">
+    <div class="head">
+      <div class="reveal" style="display:flex;flex-direction:column;gap:16px">
+        <div class="h1">PORTFOLIO</div>
+        <p class="sub">Every project is pulled from ArtStation and enriched with video, YouTube reels and Sketchfab viewers where they exist.</p>
+      </div>
+      <div class="meta"><span id="syncLabel">SYNCING FROM ARTSTATION…</span><span id="shownLabel"></span></div>
+    </div>
+    <div class="filters">
+      <div class="row" id="topicRow"></div>
+      <div class="row" id="mediaRow"></div>
+    </div>
+    <div class="gridwrap" id="grid"></div>
+  </section>
+
+  <section id="about">
+    <div class="about-top">
+      <div class="portrait reveal"><img src="assets/portrait.jpg" alt="Kirill, CG generalist"></div>
+      <div class="bio reveal">
+        <h2>Kirill —<br>CG Generalist</h2>
+        <p>5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
+        <div class="cols">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="label">WHAT I DO</div>
+            <div class="list">Hard-surface &amp; environment modelling<br>Procedural systems in Geometry Nodes<br>Lookdev, lighting, rendering<br>VFX and simulation<br>Game-ready assets and optimisation</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="label">TOOLS</div>
+            <div class="list">Blender · Geometry Nodes<br>Substance 3D Painter / Designer<br>Unreal Engine 5<br>Houdini<br>DaVinci Resolve · Fusion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>5+</b><span>YEARS IN CG</span></div>
+      <div><b id="statTotal">—</b><span>PUBLISHED PROJECTS</span></div>
+      <div><b>FULL</b><span>PIPELINE COVERAGE</span></div>
+      <div><b>EN</b><span>WORKING LANGUAGE</span></div>
+    </div>
+    <div class="exp">
+      <div class="label">EXPERIENCE</div>
+      <div class="exp-row reveal"><i>[PERIOD]</i><b>[ROLE / STUDIO]</b><span>[WHAT YOU DID THERE — ONE LINE]</span></div>
+      <div class="exp-row reveal"><i>[PERIOD]</i><b>[ROLE / STUDIO]</b><span>[WHAT YOU DID THERE — ONE LINE]</span></div>
+      <div class="exp-row reveal"><i>[PERIOD]</i><b>[ROLE / STUDIO]</b><span>[WHAT YOU DID THERE — ONE LINE]</span></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:32px">
+      <h2>Let's build<br>something</h2>
+      <p class="sub" style="max-width:460px;font-size:17px;line-height:1.6">Freelance projects, contract work and full-time roles. Send a brief or just a reference board — I reply within a day.</p>
+      <div class="reach">
+        <div><i></i><a href="mailto:freelancejeykey@gmail.com">freelancejeykey@gmail.com</a></div>
+        <div><i></i><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a></div>
+      </div>
+      <div class="socials">
+        <a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
+        <a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener">SKETCHFAB ↗</a>
+        <a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener">YOUTUBE ↗</a>
+      </div>
+    </div>
+    <form id="brief" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+      <div class="field"><span class="label">NAME</span><input name="name" placeholder="Your name" required></div>
+      <div class="field"><span class="label">EMAIL OR TELEGRAM</span><input name="contact" placeholder="you@studio.com" required></div>
+      <div class="field"><span class="label">PROJECT TYPE</span><div class="row" style="padding:0" id="typeRow"></div><input type="hidden" name="type" id="typeValue" value="HARD-SURFACE"></div>
+      <div class="field"><span class="label">BRIEF</span><textarea name="brief" placeholder="Scope, deadline, references"></textarea></div>
+      <button class="send" type="submit">SEND BRIEF</button>
+    </form>
+  </section>
+</main>
+
+<main id="project"></main>
+
+<footer>
+  <div class="reach"><div><i></i><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a></div></div>
+  <div class="reach"><div><i></i><a href="mailto:freelancejeykey@gmail.com">freelancejeykey@gmail.com</a></div></div>
+  <span class="copy">© 2026 RENDER VISION</span>
+</footer>
+
+<script>
+const TOPICS = ["ALL","HARD-SURFACE","ENVIRONMENT","VFX / SIM","GAME-READY"];
+const MEDIA = ["IMAGE","VIDEO","YOUTUBE","SKETCHFAB"];
+const TYPES = ["HARD-SURFACE","ENVIRONMENT","VFX / SIM","GAME-READY","FULL PIPELINE"];
+const $ = s => document.querySelector(s);
+const el = (t, cls, html) => { const n = document.createElement(t); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
+
+let DATA = { projects: [], reel: { videoId: "" } };
+let topic = "ALL", media = [], loaded = {};
+
+/* ---------- reveal ---------- */
+document.body.classList.add("armed");
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: .06 });
+function scan() {
+  document.querySelectorAll(".reveal:not(.seen)").forEach(n => {
+    const r = n.getBoundingClientRect();
+    if (r.top < innerHeight * .92 && r.bottom > -200) n.classList.add("seen"); else io.observe(n);
+  });
+}
+setInterval(scan, 300);
+setTimeout(() => document.querySelectorAll(".reveal").forEach(n => n.classList.add("seen")), 4000);
+
+/* ---------- nav ---------- */
+const SECTIONS = [["reel","reel"],["work","work"],["about","about"],["contact","contact"]];
+function paintNav() {
+  if ($("#project").style.display === "block") return;
+  let cur = "";
+  SECTIONS.forEach(([name, id]) => {
+    const n = document.getElementById(id); if (!n) return;
+    const r = n.getBoundingClientRect();
+    if (r.top <= 98 && r.bottom > 98) cur = name;
+  });
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.go === cur));
+}
+addEventListener("scroll", paintNav, { passive: true });
+setInterval(paintNav, 300);
+
+document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => {
+  const id = b.dataset.go;
+  showHome();
+  requestAnimationFrame(() => {
+    const n = document.getElementById(id);
+    if (n) scrollTo({ top: Math.max(0, n.getBoundingClientRect().top + pageYOffset - 58), behavior: "smooth" });
+  });
+}));
+
+/* ---------- routing ---------- */
+function showHome() {
+  $("#home").style.display = "";
+  $("#project").style.display = "none";
+  if (location.hash.startsWith("#/project/")) history.pushState(null, "", location.pathname);
+}
+function openProject(id) {
+  const p = DATA.projects.find(x => x.id === id);
+  if (!p) return;
+  history.pushState(null, "", "#/project/" + id);
+  renderProject(p);
+  $("#home").style.display = "none";
+  $("#project").style.display = "block";
+  scrollTo(0, 0);
+  scan();
+}
+addEventListener("popstate", route);
+function route() {
+  const m = location.hash.match(/^#\/project\/(.+)$/);
+  if (m && DATA.projects.length) openProject(m[1]); else showHome();
+}
+
+/* ---------- media ---------- */
+function frame(m, key, ratio) {
+  const isImg = m.t === "image", isSf = m.t === "sketchfab";
+  const box = el("div", "block" + (loaded[key] ? " loaded" : ""));
+  box.style.aspectRatio = ratio || m.ratio || "16/9";
+  if (!isImg) box.style.background = isSf ? "#111010" : "#0f0d0c";
+  box.appendChild(el("div", isSf ? "grid" : "hatch"));
+  box.appendChild(el("div", "badge", isImg ? "IMAGE" : m.t.toUpperCase()));
+  if (isImg) {
+    if (m.src) { const i = new Image(); i.src = m.src; i.alt = m.label || ""; i.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover"; box.appendChild(i); }
+    else box.appendChild(el("div", "slot", m.label || ""));
+    return box;
+  }
+  const src = m.t === "youtube" && m.videoId ? "https://www.youtube.com/embed/" + m.videoId + "?autoplay=1&rel=0"
+    : isSf && m.modelId ? "https://sketchfab.com/models/" + m.modelId + "/embed?autospin=0.2&ui_theme=dark" : "";
+  if (loaded[key] && src) {
+    const f = el("iframe");
+    f.src = src; f.title = m.label || ""; f.allow = "autoplay; fullscreen; xr-spatial-tracking; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
+    box.appendChild(f);
+    return box;
+  }
+  const stack = el("div", "stack");
+  stack.appendChild(el("div", "knob" + (isSf ? " sf" : ""), isSf ? "◈" : "▶"));
+  stack.appendChild(el("div", "tag", m.label || ""));
+  box.appendChild(stack);
+  box.style.cursor = "pointer";
+  box.addEventListener("click", () => { loaded[key] = true; box.replaceWith(frame(m, key, ratio)); });
+  return box;
+}
+
+function renderReel() {
+  const box = $("#reelBox");
+  box.innerHTML = "";
+  const reel = DATA.reel || {};
+  const id = reel.videoId || "";
+  const local = reel.src || "";
+  const channel = reel.channel || (DATA.source && DATA.source.youtube) || "https://www.youtube.com/@Jey-Key_3.0";
+  const f = el("div", "frame");
+  f.style.cursor = "default";
+  f.appendChild(el("div", "hatch"));
+
+  /* local file wins: no YouTube consent gate, no third-party scripts */
+  if (local) {
+    const v = el("video");
+    v.src = local;
+    if (reel.poster) v.poster = reel.poster;
+    v.muted = true; v.defaultMuted = true; v.autoplay = true; v.loop = true;
+    v.playsInline = true; v.setAttribute("playsinline", ""); v.setAttribute("muted", "");
+    v.preload = "auto";
+    Object.assign(v.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", zIndex: "1" });
+    f.appendChild(v);
+    const kick = () => v.play().catch(() => {});
+    kick(); v.addEventListener("canplay", kick, { once: true });
+  } else if (id) {
+    /* poster underneath: if the embed is blocked or autoplay refused, the frame is never empty */
+    const poster = el("img");
+    poster.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
+    poster.alt = "";
+    poster.onerror = () => { poster.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; poster.onerror = null; };
+    Object.assign(poster.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", zIndex: "0" });
+    f.appendChild(poster);
+
+    const host = el("div");
+    Object.assign(host.style, { position: "absolute", inset: "0", zIndex: "1" });
+    f.appendChild(host);
+
+    /* IFrame Player API — playVideo() on ready is far more reliable than autoplay=1 alone,
+       especially when the page itself is inside an iframe */
+    const mount = () => new YT.Player(host, {
+      videoId: id,
+      host: "https://www.youtube.com",
+      playerVars: { autoplay: 1, mute: 1, controls: 0, loop: 1, playlist: id, playsinline: 1, rel: 0, modestbranding: 1, disablekb: 1, fs: 0 },
+      events: {
+        onReady: e => { e.target.mute(); e.target.playVideo(); },
+        onStateChange: e => { if (e.data === YT.PlayerState.ENDED) e.target.playVideo(); }
+      }
+    });
+    if (window.YT && window.YT.Player) mount();
+    else {
+      window.__reelQueue = (window.__reelQueue || []).concat(mount);
+      window.onYouTubeIframeAPIReady = () => (window.__reelQueue || []).forEach(fn => fn());
+      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
+        const s = document.createElement("script");
+        s.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(s);
+      }
+    }
+  }
+
+  const veil = el("a", "reel-veil");
+  veil.href = channel; veil.target = "_blank"; veil.rel = "noopener";
+  veil.appendChild(el("div", "reel-type", "SHOWREEL<br>2025"));
+  veil.appendChild(el("div", "reel-cta", "WATCH FULL SHOWREEL ON YOUTUBE ↗"));
+  veil.appendChild(el("div", "reel-note", [reel.title || "SHOWREEL", "YOUTUBE", reel.duration || ""].filter(Boolean).join(" · ").toUpperCase()));
+  if (!id && !local) veil.querySelector(".reel-note").textContent = "NO REEL VIDEO IN portfolio.json";
+  f.appendChild(veil);
+  box.appendChild(f);
+}
+
+/* ---------- cards ---------- */
+function card(p) {
+  const b = el("button", "card reveal");
+  const t = el("div", "thumb");
+  const first = (p.media || []).find(m => m.t === "image" && m.src);
+  if (first) { const i = new Image(); i.src = first.src; i.alt = p.title; t.appendChild(i); }
+  else { t.appendChild(el("div", "hatch")); t.appendChild(el("div", "slot", p.slot || "")); }
+  t.appendChild(el("div", "badge", p.kindKey || "IMAGE"));
+  b.appendChild(t);
+  b.appendChild(el("div", "cap", "<span>" + p.title + "</span><span class='year'>" + (p.year || "") + "</span>"));
+  b.appendChild(el("div", "role", p.role || ""));
+  b.addEventListener("click", () => openProject(p.id));
+  return b;
+}
+
+function renderGrid() {
+  const list = DATA.projects.filter(p => {
+    const bucket = (p.tags && p.tags.length ? p.tags.join(" ") : p.topic) || "";
+    return (topic === "ALL" || bucket.indexOf(topic) > -1) && (!media.length || media.indexOf(p.kindKey) > -1);
+  });
+  const g = $("#grid");
+  g.innerHTML = "";
+  if (!list.length) {
+    g.style.display = "block";
+    const e = el("div", "empty");
+    e.innerHTML = "<div style='width:64px;height:64px;border:1px solid var(--chip);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:22px'>∅</div>" +
+      "<div style='font-size:28px;font-weight:600'>No projects match these filters</div>" +
+      "<div style='max-width:420px;font-size:15px;line-height:1.6;color:var(--mute)'>Try a single filter, or browse the full archive on ArtStation.</div>";
+    const btns = el("div", "socials");
+    const clear = el("a", "", "CLEAR FILTERS");
+    clear.href = "javascript:void 0"; clear.style.cssText = "background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px";
+    clear.addEventListener("click", () => { topic = "ALL"; media = []; renderFilters(); renderGrid(); });
+    const as = el("a", "", "OPEN ARTSTATION ↗"); as.href = (DATA.source && DATA.source.profile) || "https://www.artstation.com/j-k30"; as.target = "_blank"; as.style.padding = "12px 20px";
+    btns.append(clear, as); e.appendChild(btns); g.appendChild(e);
+  } else {
+    g.style.display = "grid";
+    list.forEach(p => g.appendChild(card(p)));
+  }
+  $("#shownLabel").textContent = list.length + " OF " + DATA.projects.length + " SHOWN";
+  scan();
+}
+
+function renderFilters() {
+  const t = $("#topicRow"), m = $("#mediaRow");
+  t.innerHTML = ""; m.innerHTML = "";
+  TOPICS.forEach(x => {
+    const b = el("button", "chip" + (topic === x ? " on" : ""), x);
+    b.addEventListener("click", () => { topic = x; renderFilters(); renderGrid(); });
+    t.appendChild(b);
+  });
+  MEDIA.forEach(x => {
+    const b = el("button", "chip" + (media.indexOf(x) > -1 ? " on" : ""), x);
+    b.addEventListener("click", () => { media = media.indexOf(x) > -1 ? media.filter(y => y !== x) : media.concat([x]); renderFilters(); renderGrid(); });
+    m.appendChild(b);
+  });
+}
+
+/* ---------- project page ---------- */
+function renderProject(p) {
+  const root = $("#project");
+  root.innerHTML = "";
+  const crumbs = el("div", "crumbs");
+  const back = el("a", "", "← BACK TO WORK"); back.href = "javascript:void 0";
+  back.addEventListener("click", () => { showHome(); const n = $("#work"); scrollTo({ top: n.getBoundingClientRect().top + pageYOffset - 58 }); });
+  const asl = el("a", "", "VIEW ON ARTSTATION ↗"); asl.href = p.artstationUrl || (DATA.source && DATA.source.profile) || "https://www.artstation.com/j-k30"; asl.target = "_blank";
+  crumbs.append(back, asl); root.appendChild(crumbs);
+
+  const head = el("div", "p-head");
+  const left = el("div", "", "<div class='eyebrow'>" + p.topic + "</div><div class='p-title'>" + p.title + "</div>" +
+    "<p class='sub' style='max-width:640px;font-size:17px'>" + p.summary + "</p>");
+  left.style.cssText = "display:flex;flex-direction:column;gap:18px";
+  const metaRows = [["YEAR", p.year], ["ROLE", p.role], ["SOFTWARE", p.software], ["TRIS", p.tris]]
+    .filter(([, v]) => v && String(v).trim() && String(v).trim() !== "\u2014")
+    .map(([k, v]) => "<div><u>" + k + "</u><br>" + v + "</div>").join("");
+  const meta = el("div", "p-meta", "<hr>" + metaRows);
+  head.append(left, meta); root.appendChild(head);
+
+  const media = el("div", "media");
+  (p.media || []).forEach((m, i) => media.appendChild(frame(m, p.id + "-" + i)));
+  root.appendChild(media);
+
+  const next = el("div", "next");
+  next.appendChild(el("h3", "", "NEXT PROJECTS"));
+  const g = el("div", "gridwrap");
+  const idx = DATA.projects.indexOf(p);
+  [1, 2, 3].forEach(o => g.appendChild(card(DATA.projects[(idx + o) % DATA.projects.length])));
+  next.appendChild(g); root.appendChild(next);
+}
+
+/* ---------- brief form ---------- */
+(function form() {
+  const row = $("#typeRow");
+  TYPES.forEach(t => {
+    const b = el("button", "chip" + (t === "HARD-SURFACE" ? " on" : ""), t);
+    b.type = "button";
+    b.addEventListener("click", () => {
+      row.querySelectorAll(".chip").forEach(c => c.classList.remove("on"));
+      b.classList.add("on"); $("#typeValue").value = t;
+    });
+    row.appendChild(b);
+  });
+  const f = $("#brief"), send = f.querySelector(".send");
+  const check = () => send.classList.toggle("ready", f.name.value.trim() && f.contact.value.trim());
+  f.addEventListener("input", check); check();
+  f.addEventListener("submit", e => {
+    if (f.action.indexOf("REPLACE_WITH") > -1) {
+      e.preventDefault();
+      f.innerHTML = "<div class='sent'><div class='label' style='color:var(--red)'>BRIEF SENT</div><b>Thanks — I'll reply within a day.</b>" +
+        "<div class='label'>Demo mode: connect a form endpoint to receive briefs by email.</div></div>";
+    }
+  });
+})();
+
+/* ---------- boot ---------- */
+renderFilters();
+renderReel();
+fetch("data/portfolio.json")
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(d => {
+    DATA = d;
+    $("#syncLabel").textContent = d.source && d.source.syncedAt
+      ? "LAST SYNC " + new Date(d.source.syncedAt).toISOString().slice(0, 10).replace(/-/g, ".")
+      : "SYNCED FROM ARTSTATION";
+    $("#statTotal").textContent = d.projects.length;
+    renderReel(); renderGrid(); route();
+  })
+  .catch(() => {
+    const s = $("#syncLabel");
+    s.textContent = "SYNC FAILED · NO DATA"; s.style.color = "var(--red)";
+    renderGrid();
+  });
+scan();
+</script>
+</body>
+</html>
