@@ -30,7 +30,7 @@ at your registrar.
 
 1. `data/portfolio.json` — replace the placeholder projects with the real ones, fill
    `src` for images, `videoId` for YouTube blocks and `modelId` for Sketchfab.
-   See `artstation-sync.md` for the contract and the auto-sync plan.
+   See `PROJECT.md` → "Формат portfolio.json" for the field contract.
 2. Experience rows in `index.html` still read `[PERIOD] / [ROLE / STUDIO]`.
 3. The brief form is in demo mode. Set `action` on `<form id="brief">` to a real endpoint
    (Formspree, Getform, your own handler) and it starts sending.

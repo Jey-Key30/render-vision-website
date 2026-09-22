@@ -1,17 +1,8 @@
 {
   "source": {
-    "platform": "sketchfab+youtube",
+    "platform": "local",
     "profile": "https://www.artstation.com/j-k30",
-    "sketchfab": "https://sketchfab.com/J-K3.0",
-    "youtube": "https://www.youtube.com/@Jey-Key_3.0",
-    "syncedAt": "2026-09-22T13:08:10.206Z",
-    "status": "partial",
-    "note": "ArtStation refused this IP (403 via Cloudflare). Run the sync from a home connection to pull ArtStation data.",
-    "counts": {
-      "projects": 20,
-      "sketchfab": 9,
-      "youtube": 15
-    }
+    "note": "Content is maintained by hand in site/data/portfolio.json — see artstation_j-k30_metadata.json and ArtStation_j-k30_artworks/ for the source material this was built from."
   },
   "reel": {
     "title": "SHOWREEL 2025",
@@ -24,22 +15,727 @@
   },
   "projects": [
     {
-      "id": "spartan-helmet-metro-2033",
-      "title": "Spartan helmet Metro 2033",
+      "id": "the-forgotten-shrine-environment-prop-study",
+      "title": "The Forgotten Shrine — Environment & Prop Study",
+      "year": "2026",
+      "role": "3D Artist",
+      "software": "Blender · Substance 3D Painter · Marmoset Toolbag · Nano Banana",
+      "tris": "—",
+      "topic": "ENVIRONMENT",
+      "tags": [
+        "ENVIRONMENT"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "THE FORGOTTEN SHRINE — ENVIRONMENT & PROP STUDY",
+      "artstationUrl": "https://www.artstation.com/artwork/DLZY9G",
+      "summary": "A deep dive into creating atmospheric ruins with a focus on modularity and environmental storytelling. This piece represents my current workflow as a CG specialist, combining technical precision with artistic mood. Key Features of the Scene: - Lighting: A mix of natural \"god rays\" and local warm light sources to…",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/06.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 07",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/07.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 08",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/08.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 09",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/09.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 10",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/10.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 11",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/11.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 12",
+          "ratio": "4/3",
+          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/12.jpg"
+        }
+      ]
+    },
+    {
+      "id": "loudspeeker",
+      "title": "Loudspeeker",
+      "year": "2026",
+      "role": "3D Artist",
+      "software": "Blender",
+      "tris": "—",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "LOUDSPEEKER",
+      "artstationUrl": "https://www.artstation.com/artwork/bg11mg",
+      "summary": "",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/loudspeeker/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/loudspeeker/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/loudspeeker/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/loudspeeker/04.jpg"
+        }
+      ]
+    },
+    {
+      "id": "usmu-campus",
+      "title": "USMU Campus",
+      "year": "2026",
+      "role": "3D Artist",
+      "software": "Blender · Nano Banana",
+      "tris": "—",
+      "topic": "ENVIRONMENT",
+      "tags": [
+        "ENVIRONMENT"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "USMU CAMPUS",
+      "artstationUrl": "https://www.artstation.com/artwork/vbGGEa",
+      "summary": "",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/usmu-campus/06.jpg"
+        }
+      ]
+    },
+    {
+      "id": "forsa",
+      "title": "FORSA",
+      "year": "2026",
+      "role": "3D Artist",
+      "software": "Blender",
+      "tris": "—",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "FORSA",
+      "artstationUrl": "https://www.artstation.com/artwork/x3EEAm",
+      "summary": "",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/forsa/01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sci-fi-russian-railway-station",
+      "title": "Sci-Fi Russian Railway Station",
+      "year": "2026",
+      "role": "VFX Artist",
+      "software": "Blender · Nano Banana · After Effects",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "SCI-FI RUSSIAN RAILWAY STATION",
+      "artstationUrl": "https://www.artstation.com/artwork/98qdvq",
+      "summary": "A simple VFX for a personal portfolio",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-russian-railway-station/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-russian-railway-station/02.jpg"
+        }
+      ]
+    },
+    {
+      "id": "lightcycle-metro",
+      "title": "Lightcycle Metro",
+      "year": "2026",
+      "role": "VFX Artist",
+      "software": "Blender · After Effects · Figma",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "LIGHTCYCLE METRO",
+      "artstationUrl": "https://www.artstation.com/artwork/1N0qy8",
+      "summary": "This project is a technical exploration of seamless VFX integration within a real-world architectural environment. The scene features a high-fidelity 3D Lightcycle from the Tron universe, integrated into the vaulted, marble-textured environment of a metro station. Key Technical Highlights: - Matchmoving & Tracking:…",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/lightcycle-metro/01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "tron-lightcycle",
+      "title": "Tron Lightcycle",
+      "year": "2026",
+      "role": "VFX Artist",
+      "software": "Blender · Nano Banana · After Effects",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "TRON LIGHTCYCLE",
+      "artstationUrl": "https://www.artstation.com/artwork/a0lwqX",
+      "summary": "I was inspired to create this work after watching the movie Tron: Ares. The database was created using a 3D model and improved using Nano Banana. This work is part of my training to practice creating fast VFX videos. I think it turned out well. What do you think?",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/tron-lightcycle/06.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vfx-for-pr-agency-swipe",
+      "title": "VFX for PR agency SWIPE",
+      "year": "2025",
+      "role": "VFX Artist",
+      "software": "Blender · DaVinci Resolve",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "VFX FOR PR AGENCY SWIPE",
+      "artstationUrl": "https://www.artstation.com/artwork/3EWQkE",
+      "summary": "Our latest case — an ad that takes over Times Square! We developed several different animation options and ultimately decided to create a banner drop simulation using Blender. We think the result is harmonious and impactful. What do you think? Prod. by Visual-Uni Studio Link: https://visual-uni.art/",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/vfx-for-pr-agency-swipe/01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "death-of-a-pirate",
+      "title": "Death of a pirate",
+      "year": "2025",
+      "role": "3D Artist",
+      "software": "Blender · Sketchfab",
+      "tris": "—",
+      "topic": "ENVIRONMENT",
+      "tags": [
+        "ENVIRONMENT"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "DEATH OF A PIRATE",
+      "artstationUrl": "https://www.artstation.com/artwork/3Egk2D",
+      "summary": "- What sort of a man trades a man's life for a ship? - Pirate.",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/death-of-a-pirate/01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ummc-tennis-championship",
+      "title": "UMMC Tennis Championship",
+      "year": "2025",
+      "role": "VFX Artist",
+      "software": "Blender",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "IMAGE",
+      "slot": "UMMC TENNIS CHAMPIONSHIP",
+      "artstationUrl": "https://www.artstation.com/artwork/K35keW",
+      "summary": "UMMC Tennis Championship Vol.1 Forecasters warn: precipitation in the form of ping-pong balls is possible! Video for UMMC Tennis Championship Prod. by moskvin.pro VFX by J-K",
+      "media": [
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/ummc-tennis-championship/01.jpg"
+        }
+      ]
+    },
+    {
+      "id": "robot-chappie",
+      "title": "Robot Chappie",
+      "year": "2024",
+      "role": "3D Artist",
+      "software": "Blender · Photoshop · Substance 3D Painter · Marmoset Toolbag",
+      "tris": "101,801",
       "topic": "HARD-SURFACE / GAME-READY",
       "tags": [
         "HARD-SURFACE",
         "GAME-READY"
       ],
       "kindKey": "SKETCHFAB",
-      "year": "",
+      "slot": "ROBOT CHAPPIE",
+      "artstationUrl": "https://www.artstation.com/artwork/qJ901N",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
+      "summary": "Hi, I want to show you my new Chappy robot model and the movie of the same name. I have always been attracted to futurism, and therefore, after watching this film, I was inspired to create this model. During the creation process, I had to face many difficulties, since I had never created such complex models before.…",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "cbfa9eb1398946eba433681f56d52eae"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": "assets/thumbs/robot-chappie.jpeg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/06.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 07",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/07.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 08",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/08.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 09",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/09.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 10",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/10.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 11",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/11.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 12",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/12.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 13",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/13.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 14",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/14.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 15",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/15.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 16",
+          "ratio": "4/3",
+          "src": "assets/gallery/robot-chappie/16.jpg"
+        }
+      ]
+    },
+    {
+      "id": "space-suit-j-30",
+      "title": "Sci-Fi Space Suit J-3.0",
+      "year": "2024",
       "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
+      "software": "Blender · Substance 3D Painter · Marmoset Toolbag · Unity",
+      "tris": "23,756",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "slot": "SCI-FI SPACE SUIT J-3.0",
+      "artstationUrl": "https://www.artstation.com/artwork/oJ022q",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
+      "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized. I started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the…",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "2ebdb94250694ad9b99bb39b96a78ef5"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": "assets/thumbs/space-suit-j-30.jpeg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/06.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 07",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/07.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 08",
+          "ratio": "4/3",
+          "src": "assets/gallery/space-suit-j-30/08.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sci-fi-gun",
+      "title": "Sci-Fi Gun",
+      "year": "2024",
+      "role": "3D Artist",
+      "software": "Blender · Inventor · Photoshop · Marmoset Toolbag · Substance 3D Painter",
+      "tris": "16,206",
+      "topic": "HARD-SURFACE",
+      "tags": [
+        "HARD-SURFACE"
+      ],
+      "kindKey": "SKETCHFAB",
+      "slot": "SCI-FI GUN",
+      "artstationUrl": "https://www.artstation.com/artwork/qJQGoD",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
+      "summary": "Hi! This time I want to share this kind of work. This is a model of a futuristic automaton. This is a very old model that I made in Autodesc Inventor program. It was on my disk without textures for a long time, I thought it was possible to reanimate it, but some time ago I realized that I have the skills to revive…",
+      "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "8f3451b12f734bc0b712fc0f13777562"
+        },
+        {
+          "t": "image",
+          "label": "RENDER",
+          "ratio": "4/3",
+          "src": "assets/thumbs/sci-fi-gun.jpeg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 01",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/01.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 02",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/02.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 03",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/03.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 04",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/04.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 05",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/05.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 06",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/06.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 07",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/07.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 08",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/08.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 09",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/09.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 10",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/10.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 11",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/11.jpg"
+        },
+        {
+          "t": "image",
+          "label": "RENDER 12",
+          "ratio": "4/3",
+          "src": "assets/gallery/sci-fi-gun/12.jpg"
+        },
+        {
+          "t": "youtube",
+          "videoId": "iXjIIYl0QUU",
+          "label": "BREAKDOWN · YOUTUBE"
+        }
+      ]
+    },
+    {
+      "id": "spartan-helmet-metro-2033",
+      "title": "Spartan Helmet Metro 2033",
+      "year": "2023",
+      "role": "3D Artist",
+      "software": "Blender · Marmoset Toolbag · Substance 3D Painter · Photoshop",
       "tris": "10,884",
+      "topic": "HARD-SURFACE / GAME-READY",
+      "tags": [
+        "HARD-SURFACE",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
       "slot": "SPARTAN HELMET METRO 2033",
-      "artstationUrl": "https://www.artstation.com/j-k30",
+      "artstationUrl": "https://www.artstation.com/artwork/ao66Kq",
       "sketchfabUrl": "https://sketchfab.com/3d-models/spartan-helmet-metro-2033-2f092d24d83c45e5998b772cbcba6d9a",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "summary": "3D helmet model from the Metro 2033 game. I hope you enjoy my work and you will appreciate it)",
       "media": [
         {
           "t": "sketchfab",
@@ -200,321 +896,22 @@
       ]
     },
     {
-      "id": "robot-chappie",
-      "title": "Robot Chappie",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "101,801",
-      "slot": "ROBOT CHAPPIE",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "cbfa9eb1398946eba433681f56d52eae"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/robot-chappie.jpeg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/06.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 07",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/07.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 08",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/08.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 09",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/09.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 10",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/10.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 11",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/11.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 12",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/12.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 13",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/13.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 14",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/14.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 15",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/15.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 16",
-          "ratio": "4/3",
-          "src": "assets/gallery/robot-chappie/16.jpg"
-        }
-      ]
-    },
-    {
-      "id": "police-car-in-the-rain",
-      "title": "Police car in the rain",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "8,264",
-      "slot": "POLICE CAR IN THE RAIN",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-rain-0daeb7e89cc940cba44503b7dd04384a",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "0daeb7e89cc940cba44503b7dd04384a"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/police-car-in-the-rain.jpeg"
-        }
-      ]
-    },
-    {
-      "id": "space-suit-j-30",
-      "title": "Space suit J-3.0",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "23,756",
-      "slot": "SPACE SUIT J-3.0",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "2ebdb94250694ad9b99bb39b96a78ef5"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/space-suit-j-30.jpeg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/06.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 07",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/07.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 08",
-          "ratio": "4/3",
-          "src": "assets/gallery/space-suit-j-30/08.jpg"
-        }
-      ]
-    },
-    {
-      "id": "compressor-patriot-wo-6-180",
-      "title": "Compressor Patriot WO 6-180",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "11,758",
-      "slot": "COMPRESSOR PATRIOT WO 6-180",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/compressor-patriot-wo-6-180-616731ef642240f09b914de7be2ba70c",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "616731ef642240f09b914de7be2ba70c"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/compressor-patriot-wo-6-180.jpeg"
-        }
-      ]
-    },
-    {
-      "id": "police-car-in-the-dust",
-      "title": "Police car in the dust",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "8,264",
-      "slot": "POLICE CAR IN THE DUST",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/police-car-in-the-dust-903d841b27d24f2a8762920522d04675",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "903d841b27d24f2a8762920522d04675"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/police-car-in-the-dust.jpeg"
-        }
-      ]
-    },
-    {
       "id": "robot-scout",
-      "title": "Robot Scout",
+      "title": "Robot scout",
+      "year": "2023",
+      "role": "3D Artist",
+      "software": "Blender · Substance 3D Painter · Photoshop",
+      "tris": "96,494",
       "topic": "HARD-SURFACE / GAME-READY",
       "tags": [
         "HARD-SURFACE",
         "GAME-READY"
       ],
       "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "96,494",
       "slot": "ROBOT SCOUT",
-      "artstationUrl": "https://www.artstation.com/j-k30",
+      "artstationUrl": "https://www.artstation.com/artwork/1xlJyo",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-scout-a51179ee802b4ffd89e90974911ebf91",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
+      "summary": "Just a 3D model of a robot.",
       "media": [
         {
           "t": "sketchfab",
@@ -527,11 +924,6 @@
           "label": "RENDER",
           "ratio": "4/3",
           "src": "assets/thumbs/robot-scout.jpeg"
-        },
-        {
-          "t": "youtube",
-          "videoId": "P6_9MFnhcfQ",
-          "label": "BREAKDOWN · YOUTUBE"
         },
         {
           "t": "image",
@@ -592,210 +984,42 @@
           "label": "RENDER 10",
           "ratio": "4/3",
           "src": "assets/gallery/robot-scout/10.jpg"
-        }
-      ]
-    },
-    {
-      "id": "sci-fi-gun",
-      "title": "Sci-Fi gun",
-      "topic": "HARD-SURFACE / GAME-READY",
-      "tags": [
-        "HARD-SURFACE",
-        "GAME-READY"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "16,206",
-      "slot": "SCI-FI GUN",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "8f3451b12f734bc0b712fc0f13777562"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/sci-fi-gun.jpeg"
         },
         {
           "t": "youtube",
-          "videoId": "iXjIIYl0QUU",
+          "videoId": "P6_9MFnhcfQ",
           "label": "BREAKDOWN · YOUTUBE"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/06.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 07",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/07.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 08",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/08.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 09",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/09.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 10",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/10.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 11",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/11.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 12",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-gun/12.jpg"
-        }
-      ]
-    },
-    {
-      "id": "modular-ancient-stone-archway",
-      "title": "Modular Ancient Stone Archway — PBR Game Ready",
-      "topic": "ENVIRONMENT / GAME-READY",
-      "tags": [
-        "ENVIRONMENT",
-        "GAME-READY"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "3,350",
-      "slot": "MODULAR ANCIENT STONE ARCHWAY — PBR GAME READY",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "052a392328b0451db4eaa257aeea969c"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/modular-ancient-stone-archway.jpeg"
-        }
-      ]
-    },
-    {
-      "id": "death-of-a-pirate",
-      "title": "Death of a Pirate",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "",
-      "tags": [],
-      "kindKey": "IMAGE",
-      "slot": "DEATH OF A PIRATE",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/death-of-a-pirate/01.jpg"
-        }
-      ]
-    },
-    {
-      "id": "forsa",
-      "title": "FORSA",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "",
-      "tags": [],
-      "kindKey": "IMAGE",
-      "slot": "FORSA",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/forsa/01.jpg"
         }
       ]
     },
     {
       "id": "futuristic-police-car",
       "title": "Futuristic Police Car",
-      "year": "",
+      "year": "2023",
       "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
+      "software": "Blender · Substance 3D Painter · Photoshop · Marmoset Toolbag",
+      "tris": "8,264",
       "topic": "HARD-SURFACE",
       "tags": [
         "HARD-SURFACE"
       ],
-      "kindKey": "IMAGE",
+      "kindKey": "SKETCHFAB",
       "slot": "FUTURISTIC POLICE CAR",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
+      "artstationUrl": "https://www.artstation.com/artwork/zPnv6Z",
+      "summary": "3D visualization of a police car. The idea is not mine, I took references from Pinterest. There are two types of textures: dusty and rainy.",
       "media": [
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT · RAIN",
+          "ratio": "16/9",
+          "modelId": "0daeb7e89cc940cba44503b7dd04384a"
+        },
+        {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT · DUST",
+          "ratio": "16/9",
+          "modelId": "903d841b27d24f2a8762920522d04675"
+        },
         {
           "t": "image",
           "label": "RENDER 01",
@@ -889,344 +1113,65 @@
       ]
     },
     {
-      "id": "lightcycle-metro",
-      "title": "Lightcycle Metro",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
+      "id": "compressor-patriot-wo-6-180",
+      "title": "Compressor Patriot WO 6-180",
       "topic": "HARD-SURFACE",
       "tags": [
         "HARD-SURFACE"
       ],
-      "kindKey": "IMAGE",
-      "slot": "LIGHTCYCLE METRO",
+      "kindKey": "SKETCHFAB",
+      "year": "",
+      "role": "3D Artist",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "11,758",
+      "slot": "COMPRESSOR PATRIOT WO 6-180",
       "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/compressor-patriot-wo-6-180-616731ef642240f09b914de7be2ba70c",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
       "media": [
         {
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "616731ef642240f09b914de7be2ba70c"
+        },
+        {
           "t": "image",
-          "label": "RENDER 01",
+          "label": "RENDER",
           "ratio": "4/3",
-          "src": "assets/gallery/lightcycle-metro/01.jpg"
+          "src": "assets/thumbs/compressor-patriot-wo-6-180.jpeg"
         }
       ]
     },
     {
-      "id": "loudspeeker",
-      "title": "Loudspeeker",
+      "id": "modular-ancient-stone-archway",
+      "title": "Modular Ancient Stone Archway — PBR Game Ready",
+      "topic": "ENVIRONMENT / GAME-READY",
+      "tags": [
+        "ENVIRONMENT",
+        "GAME-READY"
+      ],
+      "kindKey": "SKETCHFAB",
       "year": "",
       "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "LOUDSPEEKER",
+      "software": "Blender · 3ds Max · Substance",
+      "tris": "3,350",
+      "slot": "MODULAR ANCIENT STONE ARCHWAY — PBR GAME READY",
       "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
+      "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
+      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
       "media": [
         {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/loudspeeker/01.jpg"
+          "t": "sketchfab",
+          "label": "DRAG TO ORBIT",
+          "ratio": "16/9",
+          "modelId": "052a392328b0451db4eaa257aeea969c"
         },
         {
           "t": "image",
-          "label": "RENDER 02",
+          "label": "RENDER",
           "ratio": "4/3",
-          "src": "assets/gallery/loudspeeker/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/loudspeeker/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/loudspeeker/04.jpg"
-        }
-      ]
-    },
-    {
-      "id": "sci-fi-russian-railway-station",
-      "title": "Sci-Fi Russian Railway Station",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "ENVIRONMENT",
-      "tags": [
-        "ENVIRONMENT"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "SCI-FI RUSSIAN RAILWAY STATION",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-russian-railway-station/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/sci-fi-russian-railway-station/02.jpg"
-        }
-      ]
-    },
-    {
-      "id": "the-forgotten-shrine-environment-prop-study",
-      "title": "The Forgotten Shrine — Environment & Prop Study",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "ENVIRONMENT",
-      "tags": [
-        "ENVIRONMENT"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "THE FORGOTTEN SHRINE — ENVIRONMENT & PROP STUDY",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/06.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 07",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/07.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 08",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/08.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 09",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/09.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 10",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/10.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 11",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/11.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 12",
-          "ratio": "4/3",
-          "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/12.jpg"
-        }
-      ]
-    },
-    {
-      "id": "tron-lightcycle",
-      "title": "Tron Lightcycle",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "TRON LIGHTCYCLE",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/tron-lightcycle/06.jpg"
-        }
-      ]
-    },
-    {
-      "id": "ummc-tennis-championship",
-      "title": "UMMC Tennis Championship",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "ENVIRONMENT",
-      "tags": [
-        "ENVIRONMENT"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "UMMC TENNIS CHAMPIONSHIP",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/ummc-tennis-championship/01.jpg"
-        }
-      ]
-    },
-    {
-      "id": "usmu-campus",
-      "title": "USMU Campus",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "ENVIRONMENT",
-      "tags": [
-        "ENVIRONMENT"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "USMU CAMPUS",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/01.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 02",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/02.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 03",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/03.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 04",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/04.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 05",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/05.jpg"
-        },
-        {
-          "t": "image",
-          "label": "RENDER 06",
-          "ratio": "4/3",
-          "src": "assets/gallery/usmu-campus/06.jpg"
-        }
-      ]
-    },
-    {
-      "id": "vfx-for-pr-agency-swipe",
-      "title": "VFX for PR Agency SWIPE",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · Substance Painter · Marmoset",
-      "tris": "—",
-      "topic": "VFX / SIM",
-      "tags": [
-        "VFX / SIM"
-      ],
-      "kindKey": "IMAGE",
-      "slot": "VFX FOR PR AGENCY SWIPE",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "summary": "Imported gallery — write-up to add.",
-      "media": [
-        {
-          "t": "image",
-          "label": "RENDER 01",
-          "ratio": "4/3",
-          "src": "assets/gallery/vfx-for-pr-agency-swipe/01.jpg"
+          "src": "assets/thumbs/modular-ancient-stone-archway.jpeg"
         }
       ]
     }

@@ -6,18 +6,12 @@
 ## Структура
 
     site/index.html              весь сайт: разметка, CSS и JS в одном файле
-    site/data/portfolio.json     единственный источник контента
+    site/data/portfolio.json     единственный источник контента, правится вручную
     site/assets/showreel.mp4     шоурил, играет локально (не с YouTube)
-    site/assets/thumbs/          превью работ, скачиваются синком
-    sync/sync.mjs                скрипт синхронизации, Node 18+, без npm-зависимостей
-    sync/config.json             аккаунты и настройки
-    sync/overrides.json          ручные правки, перекрывают данные с площадок
-    artstation-sync.md           как устроена синхронизация
-    НАСТРОЙКА-СИНХРОНИЗАЦИИ.md   инструкция по GitHub Actions для владельца
+    site/assets/thumbs/          превью старых Sketchfab-only работ
+    site/assets/gallery/<id>/    галереи рендеров по каждому проекту
 
 Репозиторий: `Jey-Key30/render-vision-website`, ветка `main`.
-GitHub Actions прогоняет синк ежесуточно в 05:00 UTC
-(`.github/workflows/sync-portfolio.yml`).
 
 ## Как работает контент
 
@@ -25,46 +19,47 @@ GitHub Actions прогоняет синк ежесуточно в 05:00 UTC
 и рендерит из него сетку работ, страницы проектов и шоурил. Если fetch не удался,
 страница показывает `SYNC FAILED · NO DATA` и остаётся рабочей.
 
-`sync/sync.mjs` собирает этот JSON из трёх источников:
+Раньше контент собирался автоматическим скриптом (`sync/sync.mjs`) из ArtStation,
+Sketchfab и YouTube через GitHub Actions. От этого отказались: ArtStation стоит
+за Cloudflare и отдаёт 403 на IP дата-центров (GitHub Actions, большинство VPS),
+так что автосинк с ArtStation никогда не отрабатывал в облаке. Скрипт и workflow
+удалены. Пока работы храним и правим локально, прямо в `portfolio.json`.
 
-- **ArtStation** — основной. Публичные эндпоинты `users/{user}/projects.json`
-  и `projects/{hash_id}.json`. Оттуда названия, описания, теги, софт, годы, превью.
-  Из кода вставленных внутрь работ эмбедов вытаскиваются `videoId` YouTube
-  и `modelId` Sketchfab.
-- **Sketchfab** — публичный API v3 по username, без ключа. Модели, `faceCount`, превью.
-- **YouTube** — RSS-фид канала, без ключа. Видео-разборы и шоурил.
+Источники, из которых собран текущий контент (не часть репозитория, лежат рядом
+на диске у владельца):
 
-Привязка моделей и видео к проектам — по нечёткому совпадению названий
-(`bestMatch()`): нужно минимум два общих значимых слова, один элемент не может
-достаться двум проектам.
+- `ArtStation_j-k30_artworks/` — папки с рендерами по каждой работе,
+  сжатые копии лежат в `site/assets/gallery/<id>/`.
+- `artstation_j-k30_metadata.json` — выгрузка метаданных с ArtStation
+  (название, год, софт, теги, описание) для тех же работ.
 
-## Ключевое ограничение — 403 от ArtStation
+## Формат portfolio.json
 
-ArtStation стоит за Cloudflare, который отклоняет запросы с IP дата-центров.
-GitHub Actions и большинство VPS получают 403. **С домашнего соединения запросы
-проходят.**
+Верхний уровень: `source` (справочная информация), `reel` (шоурил),
+`projects` (массив работ). Каждый проект:
 
-Скрипт на 403 не падает: сохраняет проекты из предыдущего прогона, обновляет
-Sketchfab и YouTube, ставит в JSON `source.status: "partial"` и `source.note`
-с объяснением. Поэтому в данных сейчас превью со Sketchfab, а не финальные
-рендеры с ArtStation, и поля `year` пустые.
+    id            slug, используется в URL (#/project/<id>) и как ключ галереи
+    title, year, role, software, tris, summary   текстовые поля
+    topic, tags   категории для фильтра (ALL / HARD-SURFACE / ENVIRONMENT / VFX / SIM / GAME-READY)
+    kindKey       бейдж и фильтр по типу медиа (IMAGE / VIDEO / YOUTUBE / SKETCHFAB)
+    slot          подпись-заглушка, пока нет превью (обычно title.toUpperCase())
+    artstationUrl, sketchfabUrl   ссылки на площадки (не обязательны)
+    media[]       блоки на странице проекта, каждый — один из:
+                    { t:"image", src, label, ratio }
+                    { t:"sketchfab", modelId, label, ratio }
+                    { t:"youtube", videoId, label }
 
-## Команды
-
-    node sync/sync.mjs              обычный прогон
-    node sync/sync.mjs --dry        вывести результат, ничего не писать
-    node sync/sync.mjs --thumbs     плюс скачать превью в site/assets/thumbs
-    node sync/sync.mjs --limit 12   ограничить число проектов
+Пустая строка/`"—"` в текстовом поле — значит, данных пока нет, это нормально.
 
 ## Правила работы с проектом
 
 - Никаких зависимостей, сборщиков и фреймворков. Vanilla JS, один HTML-файл.
 - Стили — внутри `site/index.html`, отдельных CSS-файлов нет.
-- Контент правится только через `portfolio.json` или `sync/overrides.json`,
-  никогда хардкодом в разметке.
-- Ручные правки владельца живут в `sync/overrides.json` по ключу `id` проекта.
-  Синк их не затирает. Всё, чего нет на площадках — точный полигонаж, роль
-  в проекте, своя формулировка описания — пишется туда.
+- Контент правится только через `site/data/portfolio.json`, никогда
+  хардкодом в разметке.
+- Новые работы: положить сжатые рендеры в `site/assets/gallery/<id>/`
+  (см. пример импорта — сжатие через ffmpeg, макс. сторона 1600px) и вручную
+  дописать объект проекта в `portfolio.json`.
 - Шоурил играет локально из `site/assets/showreel.mp4`: автоплей, muted, loop,
   поверх затемнение и ссылка на YouTube. Возврат к YouTube-эмбеду нежелателен —
   он требует прохождения проверки «вы не бот».
