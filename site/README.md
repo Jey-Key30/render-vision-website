@@ -1,43 +1,79 @@
-# Deploy
+# Site
 
-`site/` is the whole website — plain HTML, CSS and JS, no build step.
+`site/` is the whole website — plain HTML, CSS and JS, no build step, no dependencies.
 
     site/
-      index.html
-      assets/hero-robot.png
-      assets/portrait.jpg
-      data/portfolio.json
+      index.html                 markup, styles, scripts, UI strings (EN/RU)
+      data/portfolio.json        all content: projects, reel, experience
+      assets/showreel.mp4        local showreel (autoplay, muted, loop) + showreel-poster.jpg
+      assets/thumbs/             grid thumbnails
+      assets/gallery/<id>/       project renders, max side 1600px
+      assets/gallery/<id>/sm/    the same renders at 480px height (gallery strip on phones / 1x screens)
+      assets/favicon.svg, apple-touch-icon.png, og.jpg (1200×630 link preview)
+    tools/seo.mjs                generates SEO pages at deploy time (see below)
+    .github/workflows/deploy.yml publishes to GitHub Pages on every push to main
+
+Content is edited by hand in `data/portfolio.json`. There is no automatic sync
+(ArtStation blocks data-centre IPs), see `PROJECT.md`.
 
 ## Local check
 
-Open it through a local server (the JSON fetch will not work from `file://`):
+The JSON fetch does not work from `file://`, use a local server:
 
     cd site
     python3 -m http.server 8000     # → http://localhost:8000
 
-## Publish
+Locally the site uses hash routes (`#/project/<id>`, `#/privacy`).
 
-**Vercel** — push `site/` to the repo, import the repo, set Output Directory to `site`,
-Framework Preset to "Other". Custom domain in Project → Settings → Domains.
+## Publishing (GitHub Pages, free)
 
-**GitHub Pages** — put the contents of `site/` on the `gh-pages` branch (or set Pages
-source to `/site` on `main`). Custom domain in Settings → Pages, plus a `CNAME` record
-at your registrar.
+1. Repo → Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+   On a free account the repository must be public.
+2. Push to `main`. The "Deploy site" workflow runs `tools/seo.mjs` and publishes.
+   Progress: Actions tab. The site appears at `https://jey-key30.github.io/render-vision-website/`.
+3. Custom domain later: buy it, add it in Settings → Pages → Custom domain, and at the
+   registrar create a `CNAME` record `www → jey-key30.github.io` (or four `A` records for the
+   bare domain: 185.199.108.153, .109.153, .110.153, .111.153). Tick "Enforce HTTPS".
+   The next deploy picks up the domain automatically — canonical links, sitemap and
+   link previews switch to it without code changes.
 
-**Any hosting** — upload the contents of `site/` to the web root.
+## SEO pages (tools/seo.mjs)
 
-## Before going live
+On deploy the script copies `site/` to `_site/` and adds real pages for every URL:
+`/en/`, `/ru/`, `/<lang>/work/<id>/`, `/<lang>/privacy/`, plus `404.html`, `sitemap.xml`,
+`robots.txt`. Each page carries its own title, description, canonical, hreflang, Open Graph,
+JSON-LD and prerendered text; the page script then takes over and navigates with clean URLs.
+Run locally to inspect: `node tools/seo.mjs https://example.com/ _site`.
 
-1. `data/portfolio.json` — replace the placeholder projects with the real ones, fill
-   `src` for images, `videoId` for YouTube blocks and `modelId` for Sketchfab.
-   See `PROJECT.md` → "Формат portfolio.json" for the field contract.
-2. Experience rows in `index.html` still read `[PERIOD] / [ROLE / STUDIO]`.
-3. The brief form is in demo mode. Set `action` on `<form id="brief">` to a real endpoint
-   (Formspree, Getform, your own handler) and it starts sending.
-4. `og:image` points at the hero render — swap it for a wide 1200×630 image if you have one.
+After the first deploy, add the site to Google Search Console and Yandex Webmaster and
+submit `sitemap.xml` there (on a github.io sub-path robots.txt is not read by crawlers,
+so the sitemap has to be submitted by hand).
 
-## Relation to the prototype
+## Brief form
 
-`Render Vision Prototype.dc.html` stays the working design file. `site/index.html` is the
-deployable build of the same design; changes made in one do not travel to the other
-automatically — tell me which one to update.
+Sends through FormSubmit.co (free, no account) to `freelancejeykey@gmail.com`.
+The first submission from the **published** site sends an "Activate Form" email to that
+address (check spam). Click it once; from then on briefs arrive as normal emails.
+Submissions from a local file or a preview sandbox are rejected by FormSubmit.
+The form requires ticking the personal-data consent box; the policy lives at `/<lang>/privacy/`
+(text in `I18N` → `pp.body`).
+
+## Languages
+
+EN / RU switch in the header. On the published site the language is part of the URL
+(`/en/…`, `/ru/…`); locally it is stored in `localStorage` (`rv-lang`), `?lang=ru` forces it.
+UI strings live in `I18N` in `index.html`. Project text: `summary_ru` next to `summary`;
+experience entries use `{ "en": …, "ru": … }` objects.
+
+## Adding a project
+
+1. Renders → `site/assets/gallery/<id>/01.jpg…` (max side 1600px).
+2. Strip copies at 480px height:
+
+       for f in site/assets/gallery/<id>/*.jpg; do
+         mkdir -p "$(dirname "$f")/sm"
+         ffmpeg -y -i "$f" -vf "scale=-2:480" -q:v 4 "$(dirname "$f")/sm/$(basename "$f")"
+       done
+
+3. Thumbnail → `site/assets/thumbs/<id>.jpg` (see `PROJECT.md`).
+4. Project object in `portfolio.json`; each image `{ "t": "image", "src": …, "sm": … }`.
