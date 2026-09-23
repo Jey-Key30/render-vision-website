@@ -51,7 +51,8 @@ so the sitemap has to be submitted by hand).
 
 ## Brief form
 
-Sends through FormSubmit.co (free, no account) to `freelancejeykey@gmail.com`.
+Sends through FormSubmit.co (free, no account) to `freelancejeykey@gmail.com`. The form posts to the
+random alias `formsubmit.co/ajax/8454ad22614da842f6a7f4a38544bf36`, so the address is not in the page code.
 The first submission from the **published** site sends an "Activate Form" email to that
 address (check spam). Click it once; from then on briefs arrive as normal emails.
 Submissions from a local file or a preview sandbox are rejected by FormSubmit.

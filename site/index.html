@@ -44,23 +44,23 @@ button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:p
 .skip:focus{top:10px}
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;
+header{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;   /* equal side columns keep the menu on the page centre */
   padding:14px var(--pad);background:rgba(10,10,10,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
   font-family:var(--mono);font-size:clamp(10px,2.4vw,12px);letter-spacing:.14em}
-header nav{display:flex;gap:clamp(12px,3vw,28px)}
+header nav{display:flex;gap:clamp(12px,3vw,28px);transition:transform .3s ease}
 header nav a{color:var(--mute);padding:8px 0;transition:color .18s ease}
 header nav a:hover,header nav a.on{color:var(--ink)}
-.brand{cursor:pointer;white-space:nowrap;letter-spacing:inherit}
+.brand{justify-self:start;cursor:pointer;white-space:nowrap;letter-spacing:inherit}
 .brand:hover{color:var(--red)}
 .as-link{white-space:nowrap}
-.hr{display:flex;align-items:center;gap:clamp(12px,3vw,24px)}
+.hr{justify-self:end;display:flex;align-items:center;gap:clamp(12px,3vw,24px)}
 .lang{display:flex;border:1px solid var(--chip)}
 .lang button{padding:6px 9px;color:var(--mute);letter-spacing:.1em;transition:color .18s,background .18s}
 .lang button:hover{color:var(--ink)}
 .lang button.on{background:var(--red);color:var(--ink)}
-@media(max-width:640px){.as-link{display:none}}
+@media(max-width:860px){.as-link{display:none}}   /* the link is also in the hero and contacts; below 860px it would push the menu off centre */
 @media(max-width:600px){
-  header{flex-wrap:wrap;row-gap:0;padding-top:8px;padding-bottom:0;font-size:12px}
+  header{display:flex;justify-content:space-between;flex-wrap:wrap;row-gap:0;padding-top:8px;padding-bottom:0;font-size:12px}
   .brand{padding:10px 0}
   header nav{order:3;width:calc(100% + 16px);margin:0 -8px;justify-content:space-between;gap:0}
   header nav a{padding:13px 8px;line-height:18px}
@@ -433,7 +433,7 @@ main{animation:fade .34s ease both}
         <a href="https://t.me/j_k_3d_blog" target="_blank" rel="noopener" data-i18n="c.blog">TELEGRAM BLOG ↗</a>
       </div>
     </div>
-    <form id="brief" action="https://formsubmit.co/ajax/freelancejeykey@gmail.com" method="POST">
+    <form id="brief" action="https://formsubmit.co/ajax/8454ad22614da842f6a7f4a38544bf36" method="POST">
       <div class="field"><label class="label" for="fName" data-i18n="f.name">NAME</label><input id="fName" name="name" autocomplete="name" placeholder="Your name" data-i18n-ph="f.namePh" required></div>
       <div class="field"><label class="label" for="fContact" data-i18n="f.contact">EMAIL OR TELEGRAM</label><input id="fContact" name="contact" placeholder="you@studio.com" required></div>
       <div class="field"><span class="label" id="fTypeL" data-i18n="f.type">PROJECT TYPE</span><div class="row" style="padding:0" id="typeRow" role="group" aria-labelledby="fTypeL"></div><input type="hidden" name="type" id="typeValue" value="HARD-SURFACE"></div>
@@ -596,11 +596,18 @@ function applyLang() {
 }
 /* RENDER is wider than VISION: shift the square so the whole composition sits on the page centre */
 function centerHero() {
-  const st = document.querySelector("#top .stage");
-  if (!st || !st.offsetParent) return;
+  const st = document.querySelector("#top .stage"), nav = document.querySelector("header nav");
+  nav.style.transform = "";
+  if (!st || !st.offsetParent) return;   // no square on screen (phones, project pages): menu stays on the page centre
   st.style.left = "0px";
   const s = st.getBoundingClientRect(), l = st.querySelector(".side.l").getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
-  st.style.left = Math.round(((s.left - l.left) - (r.right - s.right)) / 2) + "px";
+  const shift = Math.round(((s.left - l.left) - (r.right - s.right)) / 2);
+  st.style.left = shift + "px";
+  /* menu sits right above the square, but never runs into the brand or the language switch */
+  const br = $(".brand"), side = shift > 0 ? $(".hr").offsetLeft - (nav.offsetLeft + nav.offsetWidth)   // offsets ignore the running transform
+    : nav.offsetLeft - (br.offsetLeft + br.offsetWidth);
+  const move = Math.sign(shift) * Math.min(Math.abs(shift), Math.max(0, side - 16));
+  if (move) nav.style.transform = "translateX(" + move + "px)";
 }
 addEventListener("resize", centerHero, { passive: true });
 if (document.fonts) document.fonts.ready.then(centerHero);
@@ -701,7 +708,7 @@ function showView(which, keep) {
     if (homeY != null) jump(homeY);
   }
   scan(); paintNav();
-  if (which !== "home") document.querySelectorAll("nav .on").forEach(b => b.classList.remove("on"));
+  if (which !== "home") { document.querySelectorAll("nav .on").forEach(b => b.classList.remove("on")); centerHero(); }
 }
 function backToWork(e) {
   if (e) e.preventDefault();
