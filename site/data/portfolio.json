@@ -20,13 +20,16 @@
       "year": "2026",
       "role": "3D Artist",
       "software": "Blender · Substance 3D Painter · Marmoset Toolbag · Nano Banana",
-      "tris": "—",
-      "topic": "ENVIRONMENT",
+      "tris": "3,350",
+      "topic": "ENVIRONMENT / GAME-READY",
       "tags": [
-        "ENVIRONMENT"
+        "ENVIRONMENT",
+        "GAME-READY"
       ],
       "kindKey": "IMAGE",
       "slot": "THE FORGOTTEN SHRINE — ENVIRONMENT & PROP STUDY",
+      "thumb": "assets/thumbs/the-forgotten-shrine-environment-prop-study.jpg",
+      "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/DLZY9G",
       "summary": "A deep dive into creating atmospheric ruins with a focus on modularity and environmental storytelling. This piece represents my current workflow as a CG specialist, combining technical precision with artistic mood. Key Features of the Scene: - Lighting: A mix of natural \"god rays\" and local warm light sources to…",
       "media": [
@@ -101,8 +104,15 @@
           "label": "RENDER 12",
           "ratio": "4/3",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/12.jpg"
+        },
+        {
+          "t": "sketchfab",
+          "modelId": "052a392328b0451db4eaa257aeea969c",
+          "label": "DRAG TO ORBIT · GAME-READY ARCH",
+          "ratio": "16/9"
         }
-      ]
+      ],
+      "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c"
     },
     {
       "id": "loudspeeker",
@@ -117,6 +127,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "LOUDSPEEKER",
+      "thumb": "assets/thumbs/loudspeeker.jpg",
+      "thumbRatio": "640/360",
       "artstationUrl": "https://www.artstation.com/artwork/bg11mg",
       "summary": "",
       "media": [
@@ -159,6 +171,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "USMU CAMPUS",
+      "thumb": "assets/thumbs/usmu-campus.jpg",
+      "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/vbGGEa",
       "summary": "",
       "media": [
@@ -213,6 +227,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "FORSA",
+      "thumb": "assets/thumbs/forsa.jpg",
+      "thumbRatio": "640/360",
       "artstationUrl": "https://www.artstation.com/artwork/x3EEAm",
       "summary": "",
       "media": [
@@ -237,6 +253,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "SCI-FI RUSSIAN RAILWAY STATION",
+      "thumb": "assets/thumbs/sci-fi-russian-railway-station.jpg",
+      "thumbRatio": "502/900",
       "artstationUrl": "https://www.artstation.com/artwork/98qdvq",
       "summary": "A simple VFX for a personal portfolio",
       "media": [
@@ -267,6 +285,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "LIGHTCYCLE METRO",
+      "thumb": "assets/thumbs/lightcycle-metro.jpg",
+      "thumbRatio": "505/900",
       "artstationUrl": "https://www.artstation.com/artwork/1N0qy8",
       "summary": "This project is a technical exploration of seamless VFX integration within a real-world architectural environment. The scene features a high-fidelity 3D Lightcycle from the Tron universe, integrated into the vaulted, marble-textured environment of a metro station. Key Technical Highlights: - Matchmoving & Tracking:…",
       "media": [
@@ -291,6 +311,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "TRON LIGHTCYCLE",
+      "thumb": "assets/thumbs/tron-lightcycle.jpg",
+      "thumbRatio": "502/900",
       "artstationUrl": "https://www.artstation.com/artwork/a0lwqX",
       "summary": "I was inspired to create this work after watching the movie Tron: Ares. The database was created using a 3D model and improved using Nano Banana. This work is part of my training to practice creating fast VFX videos. I think it turned out well. What do you think?",
       "media": [
@@ -345,6 +367,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "VFX FOR PR AGENCY SWIPE",
+      "thumb": "assets/thumbs/vfx-for-pr-agency-swipe.jpg",
+      "thumbRatio": "506/900",
       "artstationUrl": "https://www.artstation.com/artwork/3EWQkE",
       "summary": "Our latest case — an ad that takes over Times Square! We developed several different animation options and ultimately decided to create a banner drop simulation using Blender. We think the result is harmonious and impactful. What do you think? Prod. by Visual-Uni Studio Link: https://visual-uni.art/",
       "media": [
@@ -369,6 +393,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "DEATH OF A PIRATE",
+      "thumb": "assets/thumbs/death-of-a-pirate.jpg",
+      "thumbRatio": "507/900",
       "artstationUrl": "https://www.artstation.com/artwork/3Egk2D",
       "summary": "- What sort of a man trades a man's life for a ship? - Pirate.",
       "media": [
@@ -393,6 +419,8 @@
       ],
       "kindKey": "IMAGE",
       "slot": "UMMC TENNIS CHAMPIONSHIP",
+      "thumb": "assets/thumbs/ummc-tennis-championship.jpg",
+      "thumbRatio": "507/900",
       "artstationUrl": "https://www.artstation.com/artwork/K35keW",
       "summary": "UMMC Tennis Championship Vol.1 Forecasters warn: precipitation in the form of ping-pong balls is possible! Video for UMMC Tennis Championship Prod. by moskvin.pro VFX by J-K",
       "media": [
@@ -418,6 +446,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "ROBOT CHAPPIE",
+      "thumb": "assets/thumbs/robot-chappie.jpg",
+      "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/qJ901N",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
       "summary": "Hi, I want to show you my new Chappy robot model and the movie of the same name. I have always been attracted to futurism, and therefore, after watching this film, I was inspired to create this model. During the creation process, I had to face many difficulties, since I had never created such complex models before.…",
@@ -427,12 +457,6 @@
           "label": "DRAG TO ORBIT",
           "ratio": "16/9",
           "modelId": "cbfa9eb1398946eba433681f56d52eae"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/robot-chappie.jpeg"
         },
         {
           "t": "image",
@@ -545,6 +569,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "SCI-FI SPACE SUIT J-3.0",
+      "thumb": "assets/thumbs/space-suit-j-30.jpg",
+      "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/oJ022q",
       "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
       "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized. I started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the…",
@@ -554,12 +580,6 @@
           "label": "DRAG TO ORBIT",
           "ratio": "16/9",
           "modelId": "2ebdb94250694ad9b99bb39b96a78ef5"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/space-suit-j-30.jpeg"
         },
         {
           "t": "image",
@@ -624,6 +644,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "SCI-FI GUN",
+      "thumb": "assets/thumbs/sci-fi-gun.jpg",
+      "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/qJQGoD",
       "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
       "summary": "Hi! This time I want to share this kind of work. This is a model of a futuristic automaton. This is a very old model that I made in Autodesc Inventor program. It was on my disk without textures for a long time, I thought it was possible to reanimate it, but some time ago I realized that I have the skills to revive…",
@@ -633,12 +655,6 @@
           "label": "DRAG TO ORBIT",
           "ratio": "16/9",
           "modelId": "8f3451b12f734bc0b712fc0f13777562"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/sci-fi-gun.jpeg"
         },
         {
           "t": "image",
@@ -733,6 +749,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "SPARTAN HELMET METRO 2033",
+      "thumb": "assets/thumbs/spartan-helmet-metro-2033.jpg",
+      "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/ao66Kq",
       "sketchfabUrl": "https://sketchfab.com/3d-models/spartan-helmet-metro-2033-2f092d24d83c45e5998b772cbcba6d9a",
       "summary": "3D helmet model from the Metro 2033 game. I hope you enjoy my work and you will appreciate it)",
@@ -742,12 +760,6 @@
           "label": "DRAG TO ORBIT",
           "ratio": "16/9",
           "modelId": "2f092d24d83c45e5998b772cbcba6d9a"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/spartan-helmet-metro-2033.jpeg"
         },
         {
           "t": "image",
@@ -909,6 +921,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "ROBOT SCOUT",
+      "thumb": "assets/thumbs/robot-scout.jpg",
+      "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/1xlJyo",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-scout-a51179ee802b4ffd89e90974911ebf91",
       "summary": "Just a 3D model of a robot.",
@@ -918,12 +932,6 @@
           "label": "DRAG TO ORBIT",
           "ratio": "16/9",
           "modelId": "a51179ee802b4ffd89e90974911ebf91"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/robot-scout.jpeg"
         },
         {
           "t": "image",
@@ -1005,6 +1013,8 @@
       ],
       "kindKey": "SKETCHFAB",
       "slot": "FUTURISTIC POLICE CAR",
+      "thumb": "assets/thumbs/futuristic-police-car.jpg",
+      "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/zPnv6Z",
       "summary": "3D visualization of a police car. The idea is not mine, I took references from Pinterest. There are two types of textures: dusty and rainy.",
       "media": [
@@ -1109,69 +1119,6 @@
           "label": "RENDER 15",
           "ratio": "4/3",
           "src": "assets/gallery/futuristic-police-car/15.jpg"
-        }
-      ]
-    },
-    {
-      "id": "compressor-patriot-wo-6-180",
-      "title": "Compressor Patriot WO 6-180",
-      "topic": "HARD-SURFACE",
-      "tags": [
-        "HARD-SURFACE"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "11,758",
-      "slot": "COMPRESSOR PATRIOT WO 6-180",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/compressor-patriot-wo-6-180-616731ef642240f09b914de7be2ba70c",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "616731ef642240f09b914de7be2ba70c"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/compressor-patriot-wo-6-180.jpeg"
-        }
-      ]
-    },
-    {
-      "id": "modular-ancient-stone-archway",
-      "title": "Modular Ancient Stone Archway — PBR Game Ready",
-      "topic": "ENVIRONMENT / GAME-READY",
-      "tags": [
-        "ENVIRONMENT",
-        "GAME-READY"
-      ],
-      "kindKey": "SKETCHFAB",
-      "year": "",
-      "role": "3D Artist",
-      "software": "Blender · 3ds Max · Substance",
-      "tris": "3,350",
-      "slot": "MODULAR ANCIENT STONE ARCHWAY — PBR GAME READY",
-      "artstationUrl": "https://www.artstation.com/j-k30",
-      "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
-      "summary": "Published on Sketchfab — drag the viewer to orbit the model.",
-      "media": [
-        {
-          "t": "sketchfab",
-          "label": "DRAG TO ORBIT",
-          "ratio": "16/9",
-          "modelId": "052a392328b0451db4eaa257aeea969c"
-        },
-        {
-          "t": "image",
-          "label": "RENDER",
-          "ratio": "4/3",
-          "src": "assets/thumbs/modular-ancient-stone-archway.jpeg"
         }
       ]
     }

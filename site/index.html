@@ -99,13 +99,14 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .chip:hover{color:var(--ink)}
 .chip.on{background:var(--red);border-color:var(--red);color:var(--ink)}
 .gridwrap{padding:36px var(--pad) clamp(56px,10vw,88px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
+.gridwrap.masonry{grid-auto-rows:8px;gap:0 20px;align-items:start}
 .card{display:flex;flex-direction:column;gap:12px;cursor:pointer;text-align:left;transition:transform .3s cubic-bezier(.22,.68,.24,1)}
 .card:hover{transform:translateY(-4px)}
 .thumb{position:relative;aspect-ratio:4/3;background:#141312;border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color .2s}
 .card:hover .thumb{border-color:var(--red)}
 .thumb .hatch,.thumb img{transition:transform .5s cubic-bezier(.22,.68,.24,1)}
 .card:hover .hatch,.card:hover .thumb img{transform:scale(1.04)}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .slot{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#6f6b68}
 .badge{position:absolute;top:12px;left:12px;z-index:2;padding:4px 8px;background:var(--red);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
 .cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
@@ -397,6 +398,7 @@ function openProject(id) {
   renderProject(p);
   $("#home").style.display = "none";
   $("#project").style.display = "block";
+  masonry($("#project .gridwrap"));
   scrollTo(0, 0);
   scan();
 }
@@ -505,12 +507,34 @@ function renderReel() {
   box.appendChild(f);
 }
 
+/* ---------- masonry ---------- */
+const ro = window.ResizeObserver ? new ResizeObserver(es => es.forEach(e => { if (String(e.target.clientWidth) !== e.target.dataset.w) masonry(e.target); })) : null;
+function masonry(g) {
+  if (!g) return;
+  g.classList.add("masonry");
+  if (ro) ro.observe(g);
+  const w = g.clientWidth;
+  if (!w) return;                                    // контейнер ещё скрыт — пересчёт придёт из ro
+  g.dataset.w = w;
+  g.querySelectorAll(".card").forEach(c => { c.style.gridRowEnd = "span " + Math.ceil((c.getBoundingClientRect().height + 20) / 8); });
+}
+
 /* ---------- cards ---------- */
 function card(p) {
   const b = el("button", "card reveal");
   const t = el("div", "thumb");
-  const first = (p.media || []).find(m => m.t === "image" && m.src);
-  if (first) { const i = new Image(); i.src = first.src; i.alt = p.title; t.appendChild(i); }
+  const src = p.thumb || ((p.media || []).find(m => m.t === "image" && m.src) || {}).src;
+  if (src) {
+    if (p.thumbRatio) t.style.aspectRatio = p.thumbRatio;
+    const i = new Image();
+    i.src = src; i.alt = p.title; i.loading = "lazy"; i.decoding = "async";
+    i.addEventListener("load", () => {
+      if (p.thumbRatio) return;
+      t.style.aspectRatio = i.naturalWidth + "/" + i.naturalHeight;
+      if (b.parentNode) masonry(b.parentNode);
+    });
+    t.appendChild(i);
+  }
   else { t.appendChild(el("div", "hatch")); t.appendChild(el("div", "slot", p.slot || "")); }
   t.appendChild(el("div", "badge", p.kindKey || "IMAGE"));
   b.appendChild(t);
@@ -529,6 +553,7 @@ function renderGrid() {
   g.innerHTML = "";
   if (!list.length) {
     g.style.display = "block";
+    g.classList.remove("masonry");
     const e = el("div", "empty");
     e.innerHTML = "<div style='width:64px;height:64px;border:1px solid var(--chip);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:22px'>∅</div>" +
       "<div style='font-size:28px;font-weight:600'>No projects match these filters</div>" +
@@ -542,6 +567,7 @@ function renderGrid() {
   } else {
     g.style.display = "grid";
     list.forEach(p => g.appendChild(card(p)));
+    masonry(g);
   }
   $("#shownLabel").textContent = list.length + " OF " + DATA.projects.length + " SHOWN";
   scan();
@@ -592,6 +618,7 @@ function renderProject(p) {
   const idx = DATA.projects.indexOf(p);
   [1, 2, 3].forEach(o => g.appendChild(card(DATA.projects[(idx + o) % DATA.projects.length])));
   next.appendChild(g); root.appendChild(next);
+  masonry(g);
 }
 
 /* ---------- brief form ---------- */

@@ -8,7 +8,7 @@
     site/index.html              весь сайт: разметка, CSS и JS в одном файле
     site/data/portfolio.json     единственный источник контента, правится вручную
     site/assets/showreel.mp4     шоурил, играет локально (не с YouTube)
-    site/assets/thumbs/          превью старых Sketchfab-only работ
+    site/assets/thumbs/          сжатые миниатюры карточек, копии первого кадра галереи
     site/assets/gallery/<id>/    галереи рендеров по каждому проекту
 
 Репозиторий: `Jey-Key30/render-vision-website`, ветка `main`.
@@ -43,6 +43,9 @@ Sketchfab и YouTube через GitHub Actions. От этого отказали
     topic, tags   категории для фильтра (ALL / HARD-SURFACE / ENVIRONMENT / VFX / SIM / GAME-READY)
     kindKey       бейдж и фильтр по типу медиа (IMAGE / VIDEO / YOUTUBE / SKETCHFAB)
     slot          подпись-заглушка, пока нет превью (обычно title.toUpperCase())
+    thumb         сжатая миниатюра для карточки в сетке (assets/thumbs/<id>.jpg)
+    thumbRatio    пропорции миниатюры в пикселях, "640/357" — из них считается высота
+                  карточки в masonry-сетке до загрузки картинки
     artstationUrl, sketchfabUrl   ссылки на площадки (не обязательны)
     media[]       блоки на странице проекта, каждый — один из:
                     { t:"image", src, label, ratio }
@@ -60,6 +63,14 @@ Sketchfab и YouTube через GitHub Actions. От этого отказали
 - Новые работы: положить сжатые рендеры в `site/assets/gallery/<id>/`
   (см. пример импорта — сжатие через ffmpeg, макс. сторона 1600px) и вручную
   дописать объект проекта в `portfolio.json`.
+- Миниатюра карточки делается из первого кадра галереи, пропорции сохраняются,
+  кадр не обрезается:
+
+      ffmpeg -y -i site/assets/gallery/<id>/01.jpg         -vf "scale=w=640:h=900:force_original_aspect_ratio=decrease"         -q:v 4 site/assets/thumbs/<id>.jpg
+
+  Размеры получившегося файла (`ffprobe`) записать в `thumbRatio`.
+- Сетка работ — masonry: рамка карточки принимает пропорции работы, высота строк
+  пересчитывается в `masonry()` в `site/index.html`.
 - Шоурил играет локально из `site/assets/showreel.mp4`: автоплей, muted, loop,
   поверх затемнение и ссылка на YouTube. Возврат к YouTube-эмбеду нежелателен —
   он требует прохождения проверки «вы не бот».
