@@ -61,6 +61,10 @@ Sketchfab и YouTube через GitHub Actions. От этого отказали
                     { t:"sketchfab", modelId, label, ratio }
                     { t:"youtube", videoId, label } или { t:"youtube", url, label } (ссылка-заглушка)
     summary_ru    необязательный русский перевод summary
+                  в summary/summary_ru пустая строка начинает новый абзац, строки с "- " — список;
+                  первый абзац идёт в meta description
+    ratio         у картинок — реальные пропорции файла ("1600/893", ffprobe): по ним лента
+                  галереи знает ширину слайда до загрузки
 
 Пустая строка/`"—"` в текстовом поле — значит, данных пока нет, поле не показывается.
 

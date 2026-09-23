@@ -29,11 +29,13 @@
   --line:#1a1a1a; --edge:#232120; --chip:#2a2726;
   --pad:clamp(16px,4vw,40px);
   --mono:'JetBrains Mono',ui-monospace,monospace;
+  --hh:58px;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-img{display:block}picture{display:contents}
+img{display:block}picture{display:contents}picture>source{display:none}
 a{color:var(--red);text-decoration:none;transition:color .18s ease}
 a:hover{color:var(--ink)}
 button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
@@ -46,8 +48,8 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
   padding:14px var(--pad);background:rgba(10,10,10,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
   font-family:var(--mono);font-size:clamp(10px,2.4vw,12px);letter-spacing:.14em}
 header nav{display:flex;gap:clamp(12px,3vw,28px)}
-header nav button{color:var(--mute);padding:8px 0;transition:color .18s ease}
-header nav button:hover,header nav button.on{color:var(--ink)}
+header nav a{color:var(--mute);padding:8px 0;transition:color .18s ease}
+header nav a:hover,header nav a.on{color:var(--ink)}
 .brand{cursor:pointer;white-space:nowrap;letter-spacing:inherit}
 .brand:hover{color:var(--red)}
 .as-link{white-space:nowrap}
@@ -57,8 +59,15 @@ header nav button:hover,header nav button.on{color:var(--ink)}
 .lang button:hover{color:var(--ink)}
 .lang button.on{background:var(--red);color:var(--ink)}
 @media(max-width:640px){.as-link{display:none}}
+@media(max-width:600px){
+  header{flex-wrap:wrap;row-gap:0;padding-top:8px;padding-bottom:0;font-size:12px}
+  .brand{padding:10px 0}
+  header nav{order:3;width:calc(100% + 16px);margin:0 -8px;justify-content:space-between;gap:0}
+  header nav a{padding:13px 8px;line-height:18px}
+  .lang button{padding:10px 12px}
+}
 
-section{scroll-margin-top:58px}
+section{scroll-margin-top:var(--hh)}
 
 /* hero */
 #top{position:relative;padding:clamp(32px,7vw,56px) var(--pad) clamp(40px,8vw,64px);display:flex;align-items:center;justify-content:center}
@@ -67,22 +76,24 @@ section{scroll-margin-top:58px}
 .c2{top:24px;right:var(--pad);border-top-width:1px;border-right-width:1px}
 .c3{bottom:24px;left:var(--pad);border-bottom-width:1px;border-left-width:1px}
 .c4{bottom:24px;right:var(--pad);border-bottom-width:1px;border-right-width:1px}
-.stage{position:relative;width:min(420px,34vw);aspect-ratio:1}
+.stage{--wfs:clamp(44px,5.6vw,82px);position:relative;width:min(420px,34vw);aspect-ratio:1}
 .square{position:relative;z-index:1;width:100%;height:100%;background:var(--red);overflow:hidden}
 .disc{position:absolute;left:6%;top:6%;width:88%;height:88%;border-radius:50%;overflow:hidden;
   background:radial-gradient(circle at 50% 45%,#2c100c 0%,#1a0605 68%,#140302 100%)}
 .disc img{position:absolute;left:-6%;top:-4%;width:112%;height:108%;object-fit:cover;object-position:60% 18%}
 .ring{position:absolute;left:4%;top:4%;width:92%;height:92%;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
-.side{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:max-content;display:flex;flex-direction:column;gap:14px}
+.side{position:absolute;z-index:2;top:calc(50% - var(--wfs) * .47);width:max-content;display:flex;flex-direction:column;gap:14px}   /* both words share the square's midline */
+.side.l .dots{position:absolute;left:0;bottom:calc(100% + 14px)}
 .side.l{right:calc(100% - 64px);align-items:flex-start}
 .side.r{left:calc(100% - 64px);align-items:flex-end;text-align:right;max-width:34vw}
-.word{font-size:clamp(44px,5.6vw,82px);font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
+.word{font-size:var(--wfs,clamp(44px,5.6vw,82px));font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
 .dots{display:flex;gap:6px}
 .dots a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--mute);border:1px solid var(--chip);transition:color .18s,border-color .18s}
 .dots a:hover{color:var(--ink);border-color:var(--red)}
 .dots svg{width:17px;height:17px}
 .lede{max-width:min(300px,28vw);padding-right:84px;font-size:14px;line-height:1.6;color:#c8c4c0;text-wrap:pretty}
 .roles{padding-left:84px;font-family:var(--mono);font-size:13px;line-height:1.9;color:#c8c4c0}
+.roles.stack{margin:0;padding:0;list-style:none}
 .tg{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px}
 .tg .tgi{width:18px;height:18px;flex:0 0 auto;color:var(--red)}
 .side.r .tg{margin-left:84px}
@@ -100,7 +111,7 @@ section{scroll-margin-top:58px}
 .reel-cta{font-family:var(--mono);font-size:clamp(13px,1.5vw,16px);letter-spacing:.2em;color:#fff;text-align:center;padding:14px 26px;border:1px solid rgba(255,255,255,.55);background:rgba(10,10,10,.35);transition:border-color .25s ease,background .25s ease}
 .reel-veil:hover .reel-cta{border-color:var(--red);background:var(--red)}
 .reel-note{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.62)}
-.frame{position:relative;aspect-ratio:16/9;background:#0f0d0c;border:1px solid rgba(178,43,43,.45);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
+.frame{position:relative;aspect-ratio:16/9;min-width:0;background:#0f0d0c;border:1px solid rgba(178,43,43,.45);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
 .hatch{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 2px,transparent 2px 14px)}
 .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px}
 .play{width:82px;height:82px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .25s ease}
@@ -108,6 +119,14 @@ section{scroll-margin-top:58px}
 .tag{position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:#d8d4d0}
 .stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px}
 iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+@media(max-width:640px){
+  /* 16:9 is too short for the title + CTA on phones: taller frame, video stays cover-cropped */
+  .frame{aspect-ratio:auto;min-height:clamp(320px,100vw,420px)}
+  .reel-veil{padding:24px 16px;gap:14px;background:linear-gradient(180deg,rgba(10,10,10,.6) 0%,rgba(10,10,10,.72) 55%,rgba(10,10,10,.88) 100%)}
+  .reel-type{font-size:clamp(40px,13vw,60px)}
+  .reel-cta{letter-spacing:.1em;padding:12px 16px;font-size:12px;background:rgba(10,10,10,.78)}
+  .reel-note{letter-spacing:.1em;text-align:center}
+}
 
 /* work */
 .head{padding:clamp(56px,10vw,88px) var(--pad) 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
@@ -120,7 +139,7 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .chip:hover{color:var(--ink)}
 .chip.on{background:var(--red);border-color:var(--red);color:var(--ink)}
 .gridwrap{padding:36px var(--pad) clamp(56px,10vw,88px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
-.gridwrap.masonry{grid-auto-rows:8px;gap:0 20px;align-items:start}
+.gridwrap.masonry{grid-auto-rows:8px;grid-auto-flow:row dense;gap:0 20px;align-items:start}   /* dense: each card takes the highest free slot, so columns stay even */
 .card{display:flex;flex-direction:column;gap:12px;cursor:pointer;text-align:left;color:var(--ink);transition:transform .3s cubic-bezier(.22,.68,.24,1)}
 .card:hover{transform:translateY(-4px);color:var(--ink)}
 .thumb{position:relative;aspect-ratio:4/3;background:#141312;border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color .2s}
@@ -147,10 +166,11 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
 .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--faint)}
 .list{font-size:16px;line-height:1.9;color:#d8d4d0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stats div{padding:36px 32px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.stats div:first-child{padding-left:0}
 .stats div:last-child{border-right:none}
-.stats b{font-size:48px;font-weight:700;color:var(--red)}
+.stats b{font-size:clamp(30px,8vw,48px);font-weight:700;color:var(--red);white-space:nowrap}
 .stats span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--mute)}
 .exp{padding:clamp(40px,8vw,64px) var(--pad) clamp(56px,10vw,88px);display:flex;flex-direction:column;gap:24px}
 .exp+.exp{padding-top:0}
@@ -176,7 +196,7 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .reach{display:flex;flex-direction:column;gap:16px}
 .reach div{display:flex;align-items:center;gap:14px}
 .reach svg{width:24px;height:24px;flex:0 0 auto;color:var(--red)}
-.reach a{font-size:21px}
+.reach a{font-size:clamp(16px,5vw,21px);overflow-wrap:anywhere}
 .socials{display:flex;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
 .socials a{padding:9px 14px;border:1px solid var(--chip);color:var(--mute)}
 .socials a:hover{color:var(--ink);border-color:var(--ink)}
@@ -197,7 +217,7 @@ input:focus,textarea:focus{border-color:var(--red)}
 .sent{display:flex;flex-direction:column;gap:14px;padding:40px 0}
 .sent b{font-size:26px;font-weight:500;line-height:1.25}
 
-footer{display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,56px);flex-wrap:wrap;
+footer{display:flex;align-items:baseline;justify-content:center;gap:clamp(20px,5vw,56px);flex-wrap:wrap;
   padding:clamp(36px,7vw,56px) var(--pad) clamp(48px,9vw,72px);border-top:1px solid var(--line)}
 footer .reach a{font-size:19px}
 .copy{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--faint)}
@@ -205,7 +225,7 @@ footer .reach a{font-size:19px}
 /* project page */
 #project{display:none}
 .crumbs{padding:16px var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
-.p-title{font-size:clamp(40px,6vw,84px);font-weight:800;font-style:italic;line-height:.9;text-transform:uppercase;text-wrap:balance}
+.p-title{font-size:clamp(30px,8vw,84px);font-weight:800;font-style:italic;line-height:.9;text-transform:uppercase;text-wrap:balance;overflow-wrap:anywhere;hyphens:auto;padding-right:.1em}
 .hero{position:relative;height:min(82vh,760px);min-height:420px;overflow:hidden;background:#070707}
 .hero img,.hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero img{filter:brightness(.55)}
@@ -215,10 +235,11 @@ footer .reach a{font-size:19px}
 .hero-top a:hover{color:var(--red)}
 .hero-title{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(24px,4vw,40px);z-index:2;display:flex;flex-direction:column;gap:12px;pointer-events:none}
 .hero-title .eyebrow{color:var(--ink)}
-.hero .p-title{font-size:clamp(44px,8vw,112px)}
+.hero .p-title{font-size:clamp(32px,8vw,112px)}
 .info{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;padding:32px var(--pad);border-bottom:1px solid var(--line);align-items:start}
 .info.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .info .sub,.vinfo .sub{margin:0;max-width:640px;font-size:16px;line-height:1.65}
+.desc p,.desc ul{margin:0 0 .9em}.desc ul{padding-left:1.2em}.desc li{margin:.25em 0}.desc>:last-child{margin-bottom:0}
 .facts{display:flex;flex-wrap:wrap;gap:20px 36px;font-family:var(--mono);font-size:12px;line-height:1.7}
 .facts div{display:flex;flex-direction:column;max-width:220px}
 .facts u{text-decoration:none;color:var(--faint)}
@@ -261,11 +282,16 @@ footer .reach a{font-size:19px}
 .knob.sf{border-radius:0;background:transparent;border:1px solid var(--red);color:var(--red)}
 .next{padding:clamp(36px,7vw,56px) var(--pad) clamp(56px,10vw,88px);border-top:1px solid var(--line);display:flex;flex-direction:column;gap:28px}
 .next h3{margin:0;font-size:30px;font-weight:600;letter-spacing:.06em}
-.next .gridwrap{padding:0;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.next .gridwrap{padding:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
 
 @media(max-width:860px){
-  .about-top{grid-template-columns:1fr;gap:36px}
-  #contact{grid-template-columns:1fr;gap:40px}
+  .about-top{grid-template-columns:minmax(0,1fr);gap:36px}
+  #contact{grid-template-columns:minmax(0,1fr);gap:40px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats div{padding:24px 16px}
+  .stats div:nth-child(odd){padding-left:0}
+  .stats div:nth-child(2n){border-right:none}
+  .stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .info,.info.split,.vhead{grid-template-columns:1fr}
   .vplayer{height:auto;width:100%;max-width:420px}
   .exp-row{grid-template-columns:1fr;gap:12px}
@@ -273,10 +299,9 @@ footer .reach a{font-size:19px}
 }
 
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-@keyframes rise-mid{from{opacity:0;transform:translateY(calc(-50% + 22px))}to{opacity:1;transform:translateY(-50%)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .in{animation:rise .62s cubic-bezier(.22,.68,.24,1) both}
-.side{animation:rise-mid .62s cubic-bezier(.22,.68,.24,1) both}
+.side{animation:rise .62s cubic-bezier(.22,.68,.24,1) both}
 .side.l{animation-delay:.14s}.side.r{animation-delay:.24s}
 main{animation:fade .34s ease both}
 .armed .reveal{opacity:0;transform:translateY(26px)}
@@ -296,10 +321,10 @@ main{animation:fade .34s ease both}
 <header>
   <button class="brand" data-go="top">RENDER VISION</button>
   <nav>
-    <button data-go="work" data-i18n="nav.work">WORK</button>
-    <button data-go="reel" data-i18n="nav.reel">REEL</button>
-    <button data-go="about" data-i18n="nav.about">ABOUT</button>
-    <button data-go="contact" data-i18n="nav.contact">CONTACT</button>
+    <a data-go="reel" href="#reel" data-i18n="nav.reel">REEL</a>
+    <a data-go="work" href="#work" data-i18n="nav.work">WORK</a>
+    <a data-go="about" href="#about" data-i18n="nav.about">ABOUT</a>
+    <a data-go="contact" href="#contact" data-i18n="nav.contact">CONTACT</a>
   </nav>
   <div class="hr">
     <div class="lang" id="lang"><button data-lang="en" aria-label="English">EN</button><button data-lang="ru" aria-label="Русский">RU</button></div>
@@ -338,7 +363,7 @@ main{animation:fade .34s ease both}
         <div class="ring"></div>
       </div>
       <p class="lede" style="max-width:420px;padding:0;font-size:15px" data-i18n="hero.lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
-      <div class="roles" style="padding:0">Middle CG Generalist | 3D Artist |<br>Technical Artist |</div>
+      <ul class="roles stack"><li>Middle CG Generalist</li><li>3D Artist</li><li>Technical Artist</li></ul>
       <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg>@J_K_3_0</a>
     </div>
   </section>
@@ -566,7 +591,19 @@ function applyLang() {
     a.href = href({ page: "privacy" });
     a.onclick = e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openPage("privacy"); };
   });
+  document.querySelectorAll("header nav a[data-go]").forEach(a => { a.href = href({}) + "#" + a.dataset.go; });
+  centerHero();
 }
+/* RENDER is wider than VISION: shift the square so the whole composition sits on the page centre */
+function centerHero() {
+  const st = document.querySelector("#top .stage");
+  if (!st || !st.offsetParent) return;
+  st.style.left = "0px";
+  const s = st.getBoundingClientRect(), l = st.querySelector(".side.l").getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
+  st.style.left = Math.round(((s.left - l.left) - (r.right - s.right)) / 2) + "px";
+}
+addEventListener("resize", centerHero, { passive: true });
+if (document.fonts) document.fonts.ready.then(centerHero);
 function relang() {
   applyLang(); renderFilters(); renderReel(); renderAbout(); paintSync();
   if (DATA.projects.length) renderGrid();
@@ -596,25 +633,36 @@ setTimeout(() => document.querySelectorAll(".reveal").forEach(n => n.classList.a
 
 /* ---------- nav ---------- */
 const SECTIONS = [["reel","reel"],["work","work"],["about","about"],["contact","contact"]];
+/* sticky header height: two rows on phones, so every offset asks instead of assuming 58px */
+const hh = () => $("header").offsetHeight;
+const topOf = n => Math.max(0, n.getBoundingClientRect().top + scrollY - hh());
+const jump = y => scrollTo({ top: y, behavior: "instant" });
+function syncHeader() { document.documentElement.style.setProperty("--hh", hh() + "px"); }
 function paintNav() {
   if ($("#project").style.display === "block") return;
   let cur = "";
+  const line = hh() + 40;
   SECTIONS.forEach(([name, id]) => {
     const n = document.getElementById(id); if (!n) return;
     const r = n.getBoundingClientRect();
-    if (r.top <= 98 && r.bottom > 98) cur = name;
+    if (r.top <= line && r.bottom > line) cur = name;
   });
-  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.go === cur));
+  /* the last section is too short to reach the line: at the very bottom it wins */
+  if (cur && innerHeight + scrollY >= document.documentElement.scrollHeight - 2) cur = SECTIONS[SECTIONS.length - 1][0];
+  document.querySelectorAll("nav [data-go]").forEach(b => b.classList.toggle("on", b.dataset.go === cur));
 }
 addEventListener("scroll", paintNav, { passive: true });
-addEventListener("resize", paintNav, { passive: true });
+addEventListener("resize", () => { syncHeader(); paintNav(); }, { passive: true });
+syncHeader();
 
-document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => {
+document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", e => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;   // links in the menu can still open in a new tab
+  e.preventDefault();
   const id = b.dataset.go;
   showHome();
   requestAnimationFrame(() => {
     const n = document.getElementById(id);
-    if (n) scrollTo({ top: Math.max(0, n.getBoundingClientRect().top + pageYOffset - 58), behavior: "smooth" });
+    if (n) scrollTo({ top: topOf(n), behavior: "smooth" });
   });
 }));
 
@@ -639,13 +687,27 @@ function closeLightbox() {
   o.remove(); document.body.style.overflow = "";
   if (lbReturn && lbReturn.isConnected) lbReturn.focus(); lbReturn = null;
 }
+let homeY = null;   // where the visitor left the home page, restored on the way back
 function showView(which, keep) {
   closeLightbox();
+  const wasHome = $("#home").style.display !== "none";
+  if (wasHome && which !== "home") homeY = scrollY;
   $("#home").style.display = which === "home" ? "" : "none";
   $("#project").style.display = which === "home" ? "none" : "block";
-  if (which !== "home") { masonry($("#project .gridwrap")); if (!keep) scrollTo(0, 0); }
+  if (which !== "home") { masonry($("#project .gridwrap")); if (!keep) jump(0); }
+  else if (!wasHome) {
+    centerHero();
+    if ($("#grid .card")) masonry($("#grid"));   // the grid may have been rebuilt while hidden (language switch on a project page)
+    if (homeY != null) jump(homeY);
+  }
   scan(); paintNav();
-  if (which !== "home") document.querySelectorAll("nav button.on").forEach(b => b.classList.remove("on"));
+  if (which !== "home") document.querySelectorAll("nav .on").forEach(b => b.classList.remove("on"));
+}
+function backToWork(e) {
+  if (e) e.preventDefault();
+  const known = homeY != null;
+  showHome();
+  if (!known) jump(topOf($("#work")));   // landed straight on a project: go to the grid
 }
 function showHome() { const r = current(); if (r.id || r.page || r.bad) nav({}); homeView(); }
 function openProject(id) { nav({ id }); projectView(id); }
@@ -656,14 +718,15 @@ function projectView(id, keep) {
   if (!p) return notFoundView(keep);
   renderProject(p); showView("project", keep);
   const d = loc(p, "summary");
-  setMeta(p.title + " — Render Vision", filled(d) ? d.replace(/\s+/g, " ").slice(0, 160) : L("desc"), { id });
+  $("#project").querySelectorAll(".strip").forEach(s => { s.scrollLeft = 0; });   // every gallery starts at its first slide
+  setMeta(p.title + " — Render Vision", filled(d) ? d.split(/\n\s*\n/)[0].replace(/\s+/g, " ").slice(0, 160) : L("desc"), { id });
 }
 function pageView(page, keep) { renderPrivacy(); showView("page", keep); setMeta(L("pp.title"), L("desc"), { page }); }
 function notFoundView(keep) { renderNotFound(); showView("page", keep); setMeta(L("title.nf"), L("desc"), null); }
 function backBar() {
   const c = el("div", "crumbs"), back = el("a", "", L("p.back"));
   back.href = href({});
-  back.addEventListener("click", e => { e.preventDefault(); showHome(); const n = $("#work"); scrollTo({ top: n.getBoundingClientRect().top + pageYOffset - 58 }); });
+  back.addEventListener("click", backToWork);
   c.appendChild(back);
   return c;
 }
@@ -678,7 +741,7 @@ function renderNotFound() {
   const n = el("div", "nf", "<div class='code'>404</div><h1 class='h1' style='margin:0'>" + L("nf.h") + "</h1><p class='sub'>" + L("nf.p") + "</p>");
   const b = el("div", "socials"), a = el("a", "", L("nf.back"));
   a.href = href({}); a.style.cssText = "background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px";
-  a.addEventListener("click", e => { e.preventDefault(); showHome(); const w = $("#work"); scrollTo({ top: w.getBoundingClientRect().top + pageYOffset - 58 }); });
+  a.addEventListener("click", backToWork);
   b.appendChild(a); n.appendChild(b); root.appendChild(n);
 }
 addEventListener("popstate", () => route());
@@ -687,7 +750,9 @@ function route(keep) {
   const r = current();
   if (r.lang && r.lang !== LANG) { LANG = r.lang; relang(); }
   if (STATIC && location.hash.startsWith("#/")) nav(r, true);   // old hash link on the published site → clean URL
-  else if (STATIC && !r.lang && !r.bad) nav(r, true);            // bare site root → /<lang>/, so the URL matches the language shown
+  else if (STATIC && !r.lang && !r.bad) {                         // bare site root → /<lang>/, so the URL matches the language shown
+    try { history.replaceState(null, "", href(r) + location.hash); } catch (e) {}
+  }
   if (r.bad) notFoundView(keep);
   else if (r.page === "privacy") pageView(r.page, keep);
   else if (r.page) notFoundView(keep);
@@ -698,7 +763,7 @@ $("#skip").addEventListener("click", () => {
   const m = $("#home").style.display === "none" ? $("#project") : $("#work");
   if (!m.hasAttribute("tabindex")) m.setAttribute("tabindex", "-1");
   m.focus({ preventScroll: true });
-  scrollTo({ top: Math.max(0, m.getBoundingClientRect().top + pageYOffset - 58) });
+  jump(topOf(m));
 });
 
 /* ---------- media ---------- */
@@ -823,7 +888,7 @@ function masonry(g) {
   g.classList.add("masonry");
   if (ro) ro.observe(g);
   const w = g.clientWidth;
-  if (!w) return;                                    // контейнер ещё скрыт — пересчёт придёт из ro
+  if (!w) { delete g.dataset.w; return; }            // контейнер скрыт — пересчёт придёт из ro, даже если ширина потом окажется прежней
   g.dataset.w = w;
   g.querySelectorAll(".card").forEach(c => { c.style.gridRowEnd = "span " + Math.ceil((c.getBoundingClientRect().height + 20) / 8); });
 }
@@ -931,6 +996,15 @@ function paintSync() {
 
 /* ---------- project page ---------- */
 function filled(v) { return v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014"; }
+/* project text: a blank line starts a paragraph, lines starting with "- " form a list */
+function rich(s) {
+  const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return String(s).split(/\n\s*\n/).map(block => {
+    const head = [], items = [];
+    block.split("\n").forEach(l => /^\s*-\s+/.test(l) ? items.push(l.replace(/^\s*-\s+/, "")) : l.trim() && head.push(l.trim()));
+    return (head.length ? "<p>" + esc(head.join(" ")) + "</p>" : "") + (items.length ? "<ul>" + items.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>" : "");
+  }).join("");
+}
 function facts(p) {
   return [[L("p.year"), p.year], [L("p.role"), p.role], [L("p.software"), p.software], [L("p.tris"), p.tris]]
     .filter(([, v]) => filled(v)).map(([k, v]) => "<div><u>" + k + "</u>" + v + "</div>").join("");
@@ -1015,6 +1089,7 @@ function gallery(p, items, label, asProjects) {
     } else if (m.t === "image" && m.src) {
       const k = imgs.indexOf(m.src), im = el("img");
       im.src = m.sm && useSm() ? m.sm : m.src; im.alt = p.title + " — " + L("a.render") + " " + (k + 1);
+      if (m.ratio) im.style.aspectRatio = m.ratio;   // width is known before the file arrives, so the strip never reflows
       im.loading = "lazy"; im.decoding = "async"; im.tabIndex = 0;
       im.addEventListener("click", () => lightbox(imgs, k, p.title));
       im.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lightbox(imgs, k, p.title); } });
@@ -1051,12 +1126,12 @@ function renderProject(p) {
   const eyebrow = filled(p.topic) ? "<div class='eyebrow'>" + p.topic + "</div>" : "";
   const title = "<h1 class='p-title' style='margin:0'>" + p.title + "</h1>";
   const sm = loc(p, "summary");
-  const summary = filled(sm) ? "<p class='sub'>" + sm + "</p>" : "";
+  const summary = filled(sm) ? "<div class='sub desc'>" + rich(sm) + "</div>" : "";
   const fl = facts(p), fx = fl ? "<div class='facts'>" + fl + "</div>" : "";
   const crumbs = cls => {
     const c = el("div", cls);
     const back = el("a", "", L("p.back")); back.href = href({});
-    back.addEventListener("click", e => { e.preventDefault(); showHome(); const n = $("#work"); scrollTo({ top: n.getBoundingClientRect().top + pageYOffset - 58 }); });
+    back.addEventListener("click", backToWork);
     const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener";
     c.append(back, asl);
     return c;
@@ -1152,6 +1227,13 @@ fetch("data/portfolio.json")
     paintSync();
     $("#statTotal").textContent = d.projects.length;
     renderFilters(); renderReel(); renderGrid(); renderAbout(); route();
+    /* #work etc. in the address: the browser tried to scroll before the grid existed */
+    const sec = /^#(top|reel|work|about|contact)$/.test(location.hash) && document.getElementById(location.hash.slice(1));
+    if (sec && $("#home").style.display !== "none") {
+      const go = () => jump(topOf(sec));
+      requestAnimationFrame(go);
+      if (document.fonts) document.fonts.ready.then(() => requestAnimationFrame(go));
+    }
   })
   .catch(() => {
     const s = $("#syncLabel");

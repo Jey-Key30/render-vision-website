@@ -23,7 +23,13 @@ function build(html, data, siteUrl) {
   const filled = v => v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014";
   const tx = (v, l) => v && typeof v === "object" && !Array.isArray(v) ? (v[l] ?? v.en ?? "") : v;
   const summary = (p, l) => l === "ru" && filled(p.summary_ru) ? p.summary_ru : p.summary;
-  const clip = s => { s = String(s).replace(/\s+/g, " ").trim(); return s.length > 160 ? s.slice(0, 157).replace(/\s+\S*$/, "") + "…" : s; };
+  // same format as rich() in site/index.html: blank line = paragraph, "- " lines = list
+  const rich = s => String(s).split(/\n\s*\n/).map(block => {
+    const head = [], items = [];
+    block.split("\n").forEach(l => /^\s*-\s+/.test(l) ? items.push(l.replace(/^\s*-\s+/, "")) : l.trim() && head.push(l.trim()));
+    return (head.length ? `<p>${esc(head.join(" "))}</p>` : "") + (items.length ? "<ul>" + items.map(x => `<li>${esc(x)}</li>`).join("") + "</ul>" : "");
+  }).join("");
+  const clip = s => { s = String(s).split(/\n\s*\n/)[0].replace(/\s+/g, " ").trim(); return s.length > 160 ? s.slice(0, 157).replace(/\s+\S*$/, "") + "…" : s; };
   const abs = u => /^https?:/.test(u) ? u : SITE + String(u).replace(/^\.?\//, "");
   const tail = r => r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
   const url = (l, r) => SITE + l + "/" + tail(r);
@@ -65,7 +71,7 @@ function build(html, data, siteUrl) {
       (p.artstationUrl ? `<a href="${esc(p.artstationUrl)}" target="_blank" rel="noopener">${T("p.as")}</a>` : "") + `</div>` +
       `<article class="info" style="display:flex;flex-direction:column;gap:20px">` +
       (filled(p.topic) ? `<div class="eyebrow">${esc(p.topic)}</div>` : "") +
-      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<p class="sub">${esc(s)}</p>` : "") +
+      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<div class="sub desc">${rich(s)}</div>` : "") +
       (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
       (imgs.length ? `<div class="strip" style="padding-top:24px">` +
         imgs.map((m, i) => `<img src="${esc(m.sm || m.src)}" alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy">`).join("") + `</div>` : "");
@@ -102,6 +108,7 @@ function build(html, data, siteUrl) {
     h = h.replace(/(<([a-z0-9]+)\b[^>]*?\sdata-i18n="([^"]+)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (m, open, tag, key, inner, close) => open + T(key) + close);
     h = h.replace(/placeholder="[^"]*"(\s+data-i18n-ph="([^"]+)")/g, (m, rest, key) => `placeholder="${esc(T(key))}"` + rest);
     h = h.replace(/<a data-pp/g, `<a data-pp href="${lang}/privacy/"`);
+    h = h.replace(/(<a data-go="(\w+)") href="#\w+"/g, (m, a, id) => `${a} href="${lang}/#${id}"`);   // <base> would send "#work" to the site root
     h = h.replace(/(<button data-lang="(en|ru)")/g, (m, a, l) => a + ` aria-pressed="${l === lang}"` + (l === lang ? ' class="on"' : ""));
     h = h.replace(/(<span id="syncLabel">)[^<]*/, (m, a) => a + T("work.source"));
     h = h.replace(/(<b id="statTotal">)[^<]*/, (m, a) => a + projects.length);

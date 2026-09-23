@@ -32,89 +32,89 @@
       "thumb": "assets/thumbs/the-forgotten-shrine-environment-prop-study.jpg",
       "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/DLZY9G",
-      "summary": "A deep dive into creating atmospheric ruins with a focus on modularity and environmental storytelling. This piece represents my current workflow as a CG specialist, combining technical precision with artistic mood. Key Features of the Scene: - Lighting: A mix of natural \"god rays\" and local warm light sources to…",
+      "summary": "A deep dive into creating atmospheric ruins with a focus on modularity and environmental storytelling. This piece represents my current workflow as a CG specialist, combining technical precision with artistic mood.\n\nKey Features of the Scene:\n- Lighting: A mix of natural \"god rays\" and local warm light sources to create high contrast and focus.\n- Storytelling: Integrated custom murals, cobwebs, and procedural ivy to give the asset a \"lived-in\" feel.\n- Materials: Deeply weathered stone textures created using a high-to-low poly pipeline in Blender.\n\nTechnical Specs:\n- Modeled and UV-mapped in Blender.\n- Textures: 4K PBR sets.\n- Rendered to showcase real-time engine capabilities.",
       "media": [
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/01.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/02.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/03.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/04.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/05.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/06.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/07.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/08.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/09.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/10.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/10.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 11",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/11.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/11.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 12",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/the-forgotten-shrine-environment-prop-study/12.jpg",
           "sm": "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/12.jpg"
         },
@@ -126,7 +126,7 @@
         }
       ],
       "sketchfabUrl": "https://sketchfab.com/3d-models/modular-ancient-stone-archway-052a392328b0451db4eaa257aeea969c",
-      "summary_ru": "Разбор создания атмосферных руин с упором на модульность и повествование через окружение. Работа отражает мой текущий пайплайн как CG-специалиста: техническая точность в сочетании с художественным настроением."
+      "summary_ru": "Разбор создания атмосферных руин с упором на модульность и повествование через окружение. Работа отражает мой текущий пайплайн как CG-специалиста: техническая точность в сочетании с художественным настроением.\n\nКлючевые особенности сцены:\n- Свет: сочетание естественных «божественных лучей» и локальных тёплых источников для высокого контраста и акцента.\n- Повествование: собственные фрески, паутина и процедурный плющ, чтобы ассет выглядел «обжитым».\n- Материалы: сильно выветренные текстуры камня, сделанные по high-to-low poly пайплайну в Blender.\n\nТехнические характеристики:\n- Моделирование и UV-развёртка в Blender.\n- Текстуры: наборы 4K PBR.\n- Рендер показывает возможности real-time движка."
     },
     {
       "id": "loudspeeker",
@@ -150,28 +150,28 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/loudspeeker/01.jpg",
           "sm": "assets/gallery/loudspeeker/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/loudspeeker/02.jpg",
           "sm": "assets/gallery/loudspeeker/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/loudspeeker/03.jpg",
           "sm": "assets/gallery/loudspeeker/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/loudspeeker/04.jpg",
           "sm": "assets/gallery/loudspeeker/sm/04.jpg"
         }
@@ -199,42 +199,42 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1536/1536",
           "src": "assets/gallery/usmu-campus/01.jpg",
           "sm": "assets/gallery/usmu-campus/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/usmu-campus/02.jpg",
           "sm": "assets/gallery/usmu-campus/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/883",
           "src": "assets/gallery/usmu-campus/03.jpg",
           "sm": "assets/gallery/usmu-campus/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/usmu-campus/04.jpg",
           "sm": "assets/gallery/usmu-campus/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/usmu-campus/05.jpg",
           "sm": "assets/gallery/usmu-campus/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/usmu-campus/06.jpg",
           "sm": "assets/gallery/usmu-campus/sm/06.jpg"
         }
@@ -262,7 +262,7 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/forsa/01.jpg",
           "sm": "assets/gallery/forsa/sm/01.jpg"
         }
@@ -290,14 +290,14 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/sci-fi-russian-railway-station/01.jpg",
           "sm": "assets/gallery/sci-fi-russian-railway-station/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/sci-fi-russian-railway-station/02.jpg",
           "sm": "assets/gallery/sci-fi-russian-railway-station/sm/02.jpg"
         },
@@ -327,12 +327,12 @@
       "thumb": "assets/thumbs/lightcycle-metro.jpg",
       "thumbRatio": "505/900",
       "artstationUrl": "https://www.artstation.com/artwork/1N0qy8",
-      "summary": "This project is a technical exploration of seamless VFX integration within a real-world architectural environment. The scene features a high-fidelity 3D Lightcycle from the Tron universe, integrated into the vaulted, marble-textured environment of a metro station. Key Technical Highlights: - Matchmoving & Tracking:…",
+      "summary": "This project is a technical exploration of seamless VFX integration within a real-world architectural environment. The scene features a high-fidelity 3D Lightcycle from the Tron universe, integrated into the vaulted, marble-textured environment of a metro station.\n\nKey Technical Highlights:\n- Matchmoving & Tracking: Achieved a stable camera track in a environment with long perspectives and repetitive geometric patterns to ensure perfect alignment of the 3D assets.\n- Lighting & Shading: Developed custom emissive shaders for the Lightcycles to act as primary light sources within the scene. A major focus was placed on creating physically accurate reflections on the polished marble floors and walls.\n- Environmental Interaction: Utilized shadow catchers and reflection planes to ground the CG vehicle naturally into the physical space, ensuring the neon glow interacts correctly with the station's architecture.\n- Compositing: The final stages involved color grading, adding motion blur, and adjusting light bloom to match the camera's original plate, resulting in a cohesive cinematic look.\n\nSoftware used: Blender, After Effects.",
       "media": [
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "897/1600",
           "src": "assets/gallery/lightcycle-metro/01.jpg",
           "sm": "assets/gallery/lightcycle-metro/sm/01.jpg"
         },
@@ -343,7 +343,7 @@
           "label": "VFX"
         }
       ],
-      "summary_ru": "Техническое исследование бесшовной интеграции VFX в реальное архитектурное окружение. В сцене — детализированный 3D-мотоцикл из вселенной «Трона», вписанный в сводчатый мраморный интерьер станции метро."
+      "summary_ru": "Этот проект — техническое исследование бесшовной интеграции VFX в реальное архитектурное окружение. В сцене — детализированный 3D-мотоцикл из вселенной «Трона», вписанный в сводчатый мраморный интерьер станции метро.\n\nКлючевые технические моменты:\n- Матчмувинг и трекинг: стабильный трек камеры в окружении с длинными перспективами и повторяющимися геометрическими узорами, чтобы 3D-ассеты стояли точно на месте.\n- Свет и шейдинг: собственные эмиссионные шейдеры для мотоциклов, которые служат основными источниками света в сцене. Главный упор — на физически точные отражения на полированном мраморе пола и стен.\n- Взаимодействие с окружением: shadow catcher'ы и плоскости отражений, чтобы CG-техника естественно вписалась в пространство, а неоновое свечение правильно ложилось на архитектуру станции.\n- Композитинг: цветокоррекция, motion blur и настройка свечения (bloom) под исходную съёмку, чтобы получилась цельная кинематографичная картинка.\n\nСофт: Blender, After Effects."
     },
     {
       "id": "tron-lightcycle",
@@ -367,42 +367,42 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/01.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/02.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/03.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/04.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/05.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "893/1600",
           "src": "assets/gallery/tron-lightcycle/06.jpg",
           "sm": "assets/gallery/tron-lightcycle/sm/06.jpg"
         },
@@ -437,7 +437,7 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "900/1600",
           "src": "assets/gallery/vfx-for-pr-agency-swipe/01.jpg",
           "sm": "assets/gallery/vfx-for-pr-agency-swipe/sm/01.jpg"
         },
@@ -472,7 +472,7 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "457/812",
           "src": "assets/gallery/death-of-a-pirate/01.jpg",
           "sm": "assets/gallery/death-of-a-pirate/sm/01.jpg"
         },
@@ -507,7 +507,7 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "510/905",
           "src": "assets/gallery/ummc-tennis-championship/01.jpg",
           "sm": "assets/gallery/ummc-tennis-championship/sm/01.jpg"
         },
@@ -539,7 +539,7 @@
       "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/qJ901N",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
-      "summary": "Hi, I want to show you my new Chappy robot model and the movie of the same name. I have always been attracted to futurism, and therefore, after watching this film, I was inspired to create this model. During the creation process, I had to face many difficulties, since I had never created such complex models before.…",
+      "summary": "Hi, I want to show you my new Chappy robot model and the movie of the same name. I have always been attracted to futurism, and therefore, after watching this film, I was inspired to create this model. During the creation process, I had to face many difficulties, since I had never created such complex models before. The most difficult thing was to create a skeleton for the possibility of further animation of the model. During the creation, I have gained a lot of useful experience. I hope that I coped with the task and you will appreciate this work)",
       "media": [
         {
           "t": "sketchfab",
@@ -550,117 +550,117 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/01.jpg",
           "sm": "assets/gallery/robot-chappie/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/02.jpg",
           "sm": "assets/gallery/robot-chappie/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/03.jpg",
           "sm": "assets/gallery/robot-chappie/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/04.jpg",
           "sm": "assets/gallery/robot-chappie/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/05.jpg",
           "sm": "assets/gallery/robot-chappie/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/06.jpg",
           "sm": "assets/gallery/robot-chappie/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/07.jpg",
           "sm": "assets/gallery/robot-chappie/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-chappie/08.jpg",
           "sm": "assets/gallery/robot-chappie/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/09.jpg",
           "sm": "assets/gallery/robot-chappie/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/10.jpg",
           "sm": "assets/gallery/robot-chappie/sm/10.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 11",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/11.jpg",
           "sm": "assets/gallery/robot-chappie/sm/11.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 12",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/12.jpg",
           "sm": "assets/gallery/robot-chappie/sm/12.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 13",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/13.jpg",
           "sm": "assets/gallery/robot-chappie/sm/13.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 14",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/14.jpg",
           "sm": "assets/gallery/robot-chappie/sm/14.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 15",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/15.jpg",
           "sm": "assets/gallery/robot-chappie/sm/15.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 16",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/16.jpg",
           "sm": "assets/gallery/robot-chappie/sm/16.jpg"
         }
       ],
-      "summary_ru": "Хочу показать свою новую модель робота Чаппи по одноимённому фильму. Меня всегда привлекал футуризм, и после просмотра фильма я вдохновился на эту модель. В процессе пришлось столкнуться с множеством сложностей: таких сложных моделей я раньше не делал."
+      "summary_ru": "Хочу показать свою новую модель робота Чаппи по одноимённому фильму. Меня всегда привлекал футуризм, и после просмотра фильма я вдохновился на эту модель. В процессе пришлось столкнуться с множеством сложностей: таких сложных моделей я раньше не делал. Сложнее всего было сделать скелет, чтобы модель можно было анимировать дальше. Работа дала мне много полезного опыта. Надеюсь, я справился с задачей и работа вам понравится)"
     },
     {
       "id": "space-suit-j-30",
@@ -680,7 +680,7 @@
       "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/oJ022q",
       "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
-      "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized. I started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the…",
+      "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized.\n\nI started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the modeling stage, then I thought that textures would be difficult to create for it. It turned out to be a kind of bust of a space suit.\n\nBut here I took on the task of texturing this piece. I wanted to use bold colors that catch the eye. I took the idea from Mirage from Transformers and from the Elite Guard costume from Doom.\n\nI think it turned out interesting. Very much want to hear your opinion on this work).",
       "media": [
         {
           "t": "sketchfab",
@@ -691,61 +691,61 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1024/1024",
           "src": "assets/gallery/space-suit-j-30/01.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/space-suit-j-30/02.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/space-suit-j-30/03.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/space-suit-j-30/04.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/space-suit-j-30/05.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/space-suit-j-30/06.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/space-suit-j-30/07.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1343/798",
           "src": "assets/gallery/space-suit-j-30/08.jpg",
           "sm": "assets/gallery/space-suit-j-30/sm/08.jpg"
         }
       ],
-      "summary_ru": "Хочу поделиться старой работой, которую довёл до конца только недавно. Я начал эту модель около четырёх лет назад. Меня всегда притягивала футуристика, и хотелось научиться делать что-то серьёзное. После долгих поисков идея нашлась на Pinterest."
+      "summary_ru": "Хочу поделиться старой работой, которую довёл до конца только недавно.\n\nЯ начал эту модель около четырёх лет назад. Меня всегда притягивала футуристика, и хотелось научиться делать что-то серьёзное. После долгих поисков идея нашлась на Pinterest. Тогда я остановился на этапе моделирования: казалось, что текстуры для неё сделать будет слишком сложно. В итоге получился своего рода бюст скафандра.\n\nТеперь я взялся за текстурирование. Хотелось смелых цветов, которые цепляют взгляд. Идею взял у Миража из «Трансформеров» и у костюма Элитной гвардии из Doom.\n\nДумаю, получилось интересно. Очень хочу услышать ваше мнение об этой работе)"
     },
     {
       "id": "sci-fi-gun",
@@ -765,7 +765,7 @@
       "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/qJQGoD",
       "sketchfabUrl": "https://sketchfab.com/3d-models/sci-fi-gun-8f3451b12f734bc0b712fc0f13777562",
-      "summary": "Hi! This time I want to share this kind of work. This is a model of a futuristic automaton. This is a very old model that I made in Autodesc Inventor program. It was on my disk without textures for a long time, I thought it was possible to reanimate it, but some time ago I realized that I have the skills to revive…",
+      "summary": "Hi! This time I want to share this kind of work. This is a model of a futuristic automaton. This is a very old model that I made in Autodesk Inventor program. It was on my disk without textures for a long time, I thought it was possible to reanimate it, but some time ago I realized that I have the skills to revive this model and bring it to the end.\n\nSince I created it in a drawing program, the mesh of the model leaves much to be desired).\nThe work is rather weak if you compare it with my recent works, but it is at least a finished model that can be used in the future.",
       "media": [
         {
           "t": "sketchfab",
@@ -776,84 +776,84 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/1600",
           "src": "assets/gallery/sci-fi-gun/01.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/02.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/03.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/04.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/05.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/06.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/07.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/08.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/09.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/10.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/10.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 11",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/11.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/11.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 12",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/12.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/12.jpg"
         },
@@ -863,7 +863,7 @@
           "label": "BREAKDOWN · YOUTUBE"
         }
       ],
-      "summary_ru": "На этот раз хочу показать модель футуристического автомата. Это очень старая работа, сделанная в Autodesk Inventor. Она долго лежала на диске без текстур, и недавно я понял, что у меня уже хватает навыков, чтобы её оживить."
+      "summary_ru": "На этот раз хочу показать модель футуристического автомата. Это очень старая работа, сделанная в Autodesk Inventor. Она долго лежала на диске без текстур: я думал, что её можно оживить, и недавно понял, что у меня уже хватает навыков, чтобы довести её до конца.\n\nПоскольку модель делалась в чертёжной программе, сетка оставляет желать лучшего). По сравнению с моими недавними работами она слабовата, но это хотя бы законченная модель, которую можно будет использовать в дальнейшем."
     },
     {
       "id": "spartan-helmet-metro-2033",
@@ -895,168 +895,168 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/spartan-helmet-metro-2033/01.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/02.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/03.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/04.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/05.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/06.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/07.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/08.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/09.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/10.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/10.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 11",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/11.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/11.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 12",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/12.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/12.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 13",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/13.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/13.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 14",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/14.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/14.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 15",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/15.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/15.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 16",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/16.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/16.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 17",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/17.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/17.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 18",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/18.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/18.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 19",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/19.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/19.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 20",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/20.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/20.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 21",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/21.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/21.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 22",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/22.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/22.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 23",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/23.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/23.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 24",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/24.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/24.jpg"
         }
@@ -1093,70 +1093,70 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-scout/01.jpg",
           "sm": "assets/gallery/robot-scout/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/02.jpg",
           "sm": "assets/gallery/robot-scout/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/03.jpg",
           "sm": "assets/gallery/robot-scout/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/04.jpg",
           "sm": "assets/gallery/robot-scout/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/05.jpg",
           "sm": "assets/gallery/robot-scout/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-scout/06.jpg",
           "sm": "assets/gallery/robot-scout/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/07.jpg",
           "sm": "assets/gallery/robot-scout/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/robot-scout/08.jpg",
           "sm": "assets/gallery/robot-scout/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/09.jpg",
           "sm": "assets/gallery/robot-scout/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/robot-scout/10.jpg",
           "sm": "assets/gallery/robot-scout/sm/10.jpg"
         },
@@ -1202,105 +1202,105 @@
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "4/3",
+          "ratio": "1600/1600",
           "src": "assets/gallery/futuristic-police-car/01.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
-          "ratio": "4/3",
+          "ratio": "1600/1600",
           "src": "assets/gallery/futuristic-police-car/02.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
-          "ratio": "4/3",
+          "ratio": "1600/1575",
           "src": "assets/gallery/futuristic-police-car/03.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
-          "ratio": "4/3",
+          "ratio": "1600/1600",
           "src": "assets/gallery/futuristic-police-car/04.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/04.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 05",
-          "ratio": "4/3",
+          "ratio": "1600/1600",
           "src": "assets/gallery/futuristic-police-car/05.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/05.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 06",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/futuristic-police-car/06.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/06.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 07",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/futuristic-police-car/07.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/07.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 08",
-          "ratio": "4/3",
+          "ratio": "1600/893",
           "src": "assets/gallery/futuristic-police-car/08.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/08.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 09",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/09.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/09.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 10",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/10.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/10.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 11",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/11.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/11.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 12",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/12.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/12.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 13",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/13.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/13.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 14",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/14.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/14.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 15",
-          "ratio": "4/3",
+          "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/15.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/15.jpg"
         }
