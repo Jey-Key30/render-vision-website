@@ -15,10 +15,15 @@
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/hero-robot.avif" as="image" type="image/avif" fetchpriority="high">
+<style>@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/archivo-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-display:swap;src:url(assets/fonts/archivo-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jetbrains-mono-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
 :root{
   --red:#B22B2B; --bg:#0a0a0a; --ink:#f2f0ee; --dim:#a8a4a0; --mute:#8a8a8a; --faint:#807b77;
   --line:#1a1a1a; --edge:#232120; --chip:#2a2726;
@@ -28,7 +33,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-img{display:block}
+img{display:block}picture{display:contents}
 a{color:var(--red);text-decoration:none;transition:color .18s ease}
 a:hover{color:var(--ink)}
 button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
@@ -202,8 +207,8 @@ footer .reach a{font-size:19px}
 .crumbs{padding:16px var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
 .p-title{font-size:clamp(40px,6vw,84px);font-weight:800;font-style:italic;line-height:.9;text-transform:uppercase;text-wrap:balance}
 .hero{position:relative;height:min(82vh,760px);min-height:420px;overflow:hidden;background:#070707}
-.hero>img,.hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero>img{filter:brightness(.55)}
+.hero img,.hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero img{filter:brightness(.55)}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 30%,rgba(10,10,10,.9) 100%)}
 .hero-top{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;justify-content:space-between;gap:16px;padding:20px var(--pad);font-family:var(--mono);font-size:12px;letter-spacing:.14em}
 .hero-top a{color:var(--ink)}
@@ -219,12 +224,12 @@ footer .reach a{font-size:19px}
 .facts u{text-decoration:none;color:var(--faint)}
 .vhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,5vw,56px);padding:40px var(--pad);align-items:end;border-bottom:1px solid var(--line)}
 .vplayer{position:relative;height:min(80vh,760px);aspect-ratio:9/16;background:#070707;border:1px solid var(--edge);overflow:hidden}
-.vplayer>img,.vplayer>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vplayer img,.vplayer>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vinfo{display:flex;flex-direction:column;gap:24px}
 .hvideo{padding:32px var(--pad) 0}
 .hvideo .box{position:relative;aspect-ratio:16/9;background:#070707;border:1px solid var(--edge);overflow:hidden}
-.hvideo .box>img,.hvideo .box>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hvideo .box>img{opacity:.6}
+.hvideo .box img,.hvideo .box>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hvideo .box img{opacity:.6}
 .yt{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;color:var(--ink);transition:background .25s}
 .yt:hover{background:rgba(10,10,10,.3);color:var(--ink)}
 .yt:hover .play{transform:scale(1.07)}
@@ -236,7 +241,7 @@ footer .reach a{font-size:19px}
 .arrow:hover{border-color:var(--red);color:var(--red)}
 .strip{--h:clamp(240px,38vw,440px);display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 10px;scroll-padding:0 var(--pad);scrollbar-color:var(--red) #141312}
 .strip>*{flex:0 0 auto;height:var(--h);scroll-snap-align:start}
-.strip>img{width:auto;background:#141312;cursor:zoom-in}
+.strip img{width:auto;background:#141312;cursor:zoom-in}
 .strip>.vcard{color:var(--ink);height:auto;display:flex;flex-direction:column;gap:10px;text-align:left;max-width:calc(var(--h) * 9 / 16)}
 .vcard .t{position:relative;height:var(--h);aspect-ratio:9/16;overflow:hidden;background:#141312;border:1px solid var(--edge);transition:border-color .2s}
 .vcard:hover .t{border-color:var(--red)}
@@ -314,7 +319,7 @@ main{animation:fade .34s ease both}
         <p class="lede" data-i18n="hero.lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
       </div>
       <div class="square">
-        <div class="disc"><img src="assets/hero-robot.jpg" alt="Render Vision hero render"></div>
+        <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
         <div class="ring"></div>
       </div>
       <div class="side r">
@@ -329,7 +334,7 @@ main{animation:fade .34s ease both}
       <div class="dots"><a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
       <div class="word" style="font-size:clamp(38px,13vw,62px)">RENDER<br>VISION</div>
       <div class="square">
-        <div class="disc"><img src="assets/hero-robot.jpg" alt="Render Vision hero render"></div>
+        <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
         <div class="ring"></div>
       </div>
       <p class="lede" style="max-width:420px;padding:0;font-size:15px" data-i18n="hero.lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
@@ -359,7 +364,7 @@ main{animation:fade .34s ease both}
 
   <section id="about">
     <div class="about-top">
-      <div class="portrait reveal"><img src="assets/portrait.jpg" alt="Kirill, CG generalist"></div>
+      <div class="portrait reveal"><picture><source srcset="assets/portrait.avif" type="image/avif"><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" alt="Kirill, CG generalist" loading="lazy" decoding="async"></picture></div>
       <div class="bio reveal">
         <div class="label" data-i18n="about.where">MOSCOW · OPEN TO REMOTE</div>
         <h2 data-i18n="about.h">Kirill —<br>CG Generalist</h2>
@@ -429,6 +434,19 @@ const MEDIA = ["IMAGE","VIDEO","YOUTUBE","SKETCHFAB"];
 const TYPES = ["HARD-SURFACE","ENVIRONMENT","VFX / SIM","GAME-READY","FULL PIPELINE"];
 const $ = s => document.querySelector(s);
 const el = (t, cls, html) => { const n = document.createElement(t); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
+
+/* рядом с каждым .jpg лежат .avif и .webp — отдаём их браузеру через <picture> */
+function wrap(img) {
+  const src = img.getAttribute("src") || "";
+  if (!/\.jpe?g$/i.test(src)) return img;
+  const p = el("picture"), base = src.replace(/\.jpe?g$/i, "");
+  [["avif", "image/avif"], ["webp", "image/webp"]].forEach(([ext, type]) => {
+    const so = document.createElement("source");
+    so.srcset = base + "." + ext; so.type = type; p.appendChild(so);
+  });
+  p.appendChild(img);
+  return p;
+}
 
 /* ---------- i18n ---------- */
 const I18N = {
@@ -689,7 +707,7 @@ function frame(m, key, ratio) {
   box.appendChild(el("div", isSf ? "grid" : "hatch"));
   box.appendChild(el("div", "badge", isImg ? "IMAGE" : m.t.toUpperCase()));
   if (isImg) {
-    if (m.src) { const i = new Image(); i.src = m.src; i.alt = m.label || ""; i.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover"; box.appendChild(i); }
+    if (m.src) { const i = new Image(); i.src = m.src; i.alt = m.label || ""; i.loading = "lazy"; i.decoding = "async"; i.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover"; box.appendChild(wrap(i)); }
     else box.appendChild(el("div", "slot", m.label || ""));
     return box;
   }
@@ -724,17 +742,29 @@ function renderReel() {
   /* local file wins: no YouTube consent gate, no third-party scripts */
   if (local) {
     const v = el("video");
-    v.src = local;
     if (reel.poster) v.poster = reel.poster;
-    /* data saver on: poster only, the 16 MB reel is not downloaded */
+    /* data saver on: poster only, the reel is never downloaded */
     const save = !!(navigator.connection && navigator.connection.saveData);
-    v.muted = true; v.defaultMuted = true; v.autoplay = !save; v.loop = true;
+    v.muted = true; v.defaultMuted = true; v.loop = true;
     v.playsInline = true; v.setAttribute("playsinline", ""); v.setAttribute("muted", ""); v.setAttribute("aria-hidden", "true");
-    v.preload = save ? "none" : "auto";
+    v.preload = "none";
     Object.assign(v.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", zIndex: "1" });
     f.appendChild(v);
-    const kick = () => v.play().catch(() => {});
-    if (!save) { kick(); v.addEventListener("canplay", kick, { once: true }); }
+    /* the file (≈6 MB) is fetched only once the section is actually on screen,
+       so opening the page costs the poster alone */
+    const load = () => {
+      if (v.src || save) return;
+      v.src = local; v.autoplay = true; v.setAttribute("autoplay", "");
+      const kick = () => v.play().catch(() => {});
+      kick(); v.addEventListener("canplay", kick, { once: true });
+    };
+    /* never competes with the critical resources: waits for window load too */
+    const start = () => document.readyState === "complete" ? load() : addEventListener("load", load, { once: true });
+    if (save) { /* poster stays, nothing is fetched */ }
+    else if (window.IntersectionObserver) {
+      const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { rio.disconnect(); start(); } }), { rootMargin: "100px" });
+      rio.observe(f);
+    } else start();
   } else if (id) {
     /* poster underneath: if the embed is blocked or autoplay refused, the frame is never empty */
     const poster = el("img");
@@ -808,7 +838,7 @@ function card(p) {
       t.style.aspectRatio = i.naturalWidth + "/" + i.naturalHeight;
       if (b.parentNode) masonry(b.parentNode);
     });
-    t.appendChild(i);
+    t.appendChild(wrap(i));
   }
   else { t.appendChild(el("div", "hatch")); t.appendChild(el("div", "slot", p.slot || "")); }
   t.appendChild(el("div", "badge", p.kindKey || "IMAGE"));
@@ -922,7 +952,7 @@ function heroMedia(box, m, mode, title) {
     const i = el("img"); i.alt = ""; ytPoster(m.videoId, i);
     box.append(i, ytLink(m));
   } else if (m.src) {
-    const i = el("img"); i.src = m.src; i.alt = title || m.label || ""; box.appendChild(i);
+    const i = el("img"); i.src = m.src; i.alt = title || m.label || ""; i.loading = "lazy"; i.decoding = "async"; box.appendChild(wrap(i));
     if (mode === "render") { i.style.cursor = "zoom-in"; i.addEventListener("click", () => lightbox([m.src], 0, title)); }
   }
 }
@@ -930,11 +960,18 @@ function lightbox(list, i, title) {
   closeLightbox();
   lbReturn = document.activeElement;
   const o = el("div", "lb"), im = el("img"), n = el("div", "n");
+  const lbPic = el("picture"), lbSrc = [["avif", "image/avif"], ["webp", "image/webp"]].map(([ext, type]) => {
+    const so = document.createElement("source"); so.type = type; so.dataset.ext = ext; lbPic.appendChild(so); return so;
+  });
+  lbPic.appendChild(im);
   const pv = el("button", "pv", "‹"), nx = el("button", "nx", "›"), x = el("button", "x", L("p.close"));
   o.setAttribute("role", "dialog"); o.setAttribute("aria-modal", "true"); o.setAttribute("aria-label", L("a.gallery"));
   pv.setAttribute("aria-label", L("a.prev")); nx.setAttribute("aria-label", L("a.next"));
   const pad = k => String(k).padStart(2, "0");
-  const show = () => { im.src = list[i]; im.alt = (title || "") + " — " + L("a.render") + " " + (i + 1); n.textContent = pad(i + 1) + " / " + pad(list.length); };
+  const show = () => {
+    const base = list[i].replace(/\.jpe?g$/i, "");
+    lbSrc.forEach(so => { so.srcset = base + "." + so.dataset.ext; });
+    im.src = list[i]; im.alt = (title || "") + " — " + L("a.render") + " " + (i + 1); n.textContent = pad(i + 1) + " / " + pad(list.length); };
   const go = d => { i = (i + d + list.length) % list.length; show(); };
   const key = e => {
     if (!o.isConnected) return removeEventListener("keydown", key);
@@ -943,7 +980,7 @@ function lightbox(list, i, title) {
   pv.onclick = () => go(-1); nx.onclick = () => go(1); x.onclick = closeLightbox;
   o.addEventListener("click", e => { if (e.target === o) closeLightbox(); });
   if (list.length < 2) { pv.style.display = nx.style.display = n.style.display = "none"; }
-  o.append(im, pv, nx, x, n);
+  o.append(lbPic, pv, nx, x, n);
   document.body.appendChild(o); document.body.style.overflow = "hidden";
   addEventListener("keydown", key); show(); x.focus();
 }
@@ -961,7 +998,7 @@ function gallery(p, items, label, asProjects) {
       const c = el("a", "vcard"), t = el("div", "t");
       c.href = href({ id: m.id });
       const src = m.thumb || ((m.media || []).find(x => x.t === "image" && x.src) || {}).src;
-      if (src) { const im = el("img"); im.src = src; im.alt = ""; im.loading = "lazy"; t.appendChild(im); }
+      if (src) { const im = el("img"); im.src = src; im.alt = ""; im.loading = "lazy"; t.appendChild(wrap(im)); }
       c.append(t, el("div", "role", m.title));
       c.addEventListener("click", e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openProject(m.id); });
       s.appendChild(c);
@@ -971,7 +1008,7 @@ function gallery(p, items, label, asProjects) {
       im.loading = "lazy"; im.decoding = "async"; im.tabIndex = 0;
       im.addEventListener("click", () => lightbox(imgs, k, p.title));
       im.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lightbox(imgs, k, p.title); } });
-      s.appendChild(im);
+      s.appendChild(wrap(im));
     } else if (m.t === "youtube" && (m.videoId || m.url)) {
       const b = el("div", "block"); b.style.aspectRatio = "16/9";
       const im = el("img"); im.alt = ""; if (m.videoId) ytPoster(m.videoId, im);
