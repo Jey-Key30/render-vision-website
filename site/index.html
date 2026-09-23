@@ -240,7 +240,7 @@ footer .reach a{font-size:19px}
 .arrow{width:40px;height:40px;border:1px solid var(--chip);color:var(--ink);font-size:16px;transition:border-color .18s,color .18s}
 .arrow:hover{border-color:var(--red);color:var(--red)}
 .strip{--h:clamp(240px,38vw,440px);display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 10px;scroll-padding:0 var(--pad);scrollbar-color:var(--red) #141312}
-.strip>*{flex:0 0 auto;height:var(--h);scroll-snap-align:start}
+.strip>*,.strip>picture>img{flex:0 0 auto;height:var(--h);scroll-snap-align:start}
 .strip img{width:auto;background:#141312;cursor:zoom-in}
 .strip>.vcard{color:var(--ink);height:auto;display:flex;flex-direction:column;gap:10px;text-align:left;max-width:calc(var(--h) * 9 / 16)}
 .vcard .t{position:relative;height:var(--h);aspect-ratio:9/16;overflow:hidden;background:#141312;border:1px solid var(--edge);transition:border-color .2s}
@@ -484,7 +484,7 @@ const I18N = {
     "f.agree": "I agree to the processing of my personal data under the <a data-pp>privacy policy</a>.",
     "f.activate": "The form is not activated yet: an email with an “Activate Form” link has been sent to the site owner. Meanwhile, write directly: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a> or <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
     "pp.link": "PRIVACY POLICY", "pp.title": "Privacy policy — Render Vision", "pp.h": "Privacy policy",
-    "pp.body": "<p>Effective 23 September 2026.</p><h2>1. Who processes the data</h2><p>The data controller is Kirill, owner of the Render Vision portfolio website. Contact: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>.</p><h2>2. What data</h2><p>Your name, email or Telegram username and the text of your brief — only what you enter in the contact form yourself.</p><h2>3. Why</h2><p>Only to reply to your request and discuss the project. No newsletters; the data is not sold or shared with third parties for their own purposes.</p><h2>4. How</h2><p>The form is delivered by FormSubmit (formsubmit.co), which forwards the message to the owner's email. The service is located outside Russia, so submitting the form involves a cross-border transfer of data. If you prefer to avoid this, write directly by email or to <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a> on Telegram.</p><h2>5. How long</h2><p>Messages are kept in the owner's mailbox while the project is discussed and carried out, and no longer than 3 years after the last message.</p><h2>6. Your rights</h2><p>You can ask what data about you is stored, request correction or deletion, or withdraw your consent by writing to <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>. Requests are answered within 10 working days.</p><h2>7. Cookies and third-party content</h2><p>The site sets no cookies and uses no analytics. Only the chosen interface language is stored in your browser (localStorage). Fonts are loaded from Google Fonts; 3D viewers and video previews come from Sketchfab and YouTube, which follow their own privacy policies.</p>"
+    "pp.body": "<p>Effective 23 September 2026.</p><h2>1. Who processes the data</h2><p>The data controller is Kirill, owner of the Render Vision portfolio website. Contact: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>.</p><h2>2. What data</h2><p>Your name, email or Telegram username and the text of your brief — only what you enter in the contact form yourself.</p><h2>3. Why</h2><p>Only to reply to your request and discuss the project. No newsletters; the data is not sold or shared with third parties for their own purposes.</p><h2>4. How</h2><p>The form is delivered by FormSubmit (formsubmit.co), which forwards the message to the owner's email. The service is located outside Russia, so submitting the form involves a cross-border transfer of data. If you prefer to avoid this, write directly by email or to <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a> on Telegram.</p><h2>5. How long</h2><p>Messages are kept in the owner's mailbox while the project is discussed and carried out, and no longer than 3 years after the last message.</p><h2>6. Your rights</h2><p>You can ask what data about you is stored, request correction or deletion, or withdraw your consent by writing to <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>. Requests are answered within 10 working days.</p><h2>7. Cookies and third-party content</h2><p>The site sets no cookies and uses no analytics. Only the chosen interface language is stored in your browser (localStorage). Fonts, images and the showreel are served from this site itself. A Sketchfab 3D viewer loads only after you click it, and YouTube links open on youtube.com; these services follow their own privacy policies.</p>"
   },
   ru: {
     "nav.work": "РАБОТЫ", "nav.reel": "ШОУРИЛ", "nav.about": "ОБО МНЕ", "nav.contact": "КОНТАКТЫ",
@@ -520,7 +520,7 @@ const I18N = {
     "f.agree": "Я согласен(на) на обработку персональных данных в соответствии с <a data-pp>политикой конфиденциальности</a>.",
     "f.activate": "Форма ещё не активирована: владельцу сайта отправлено письмо со ссылкой «Activate Form». Пока напишите напрямую: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a> или <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
     "pp.link": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ", "pp.title": "Политика конфиденциальности — Render Vision", "pp.h": "Политика обработки персональных данных",
-    "pp.body": "<p>Действует с 23 сентября 2026 года.</p><h2>1. Кто обрабатывает данные</h2><p>Оператор — Кирилл, владелец сайта-портфолио Render Vision. Связь: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>.</p><h2>2. Какие данные</h2><p>Имя, email или ник в Telegram и текст брифа — только то, что вы сами вводите в форму на сайте.</p><h2>3. Зачем</h2><p>Только чтобы ответить на ваш запрос и обсудить проект. Рассылок нет, данные не продаются и не передаются третьим лицам для их собственных целей.</p><h2>4. Как</h2><p>Форма отправляется через сервис FormSubmit (formsubmit.co), который пересылает сообщение на почту оператора. Сервис находится за пределами России, поэтому при отправке формы данные передаются трансгранично. Если вы этого не хотите, напишите напрямую на почту или в Telegram <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.</p><h2>5. Сколько хранятся</h2><p>Сообщения хранятся в почтовом ящике оператора, пока идёт обсуждение и работа над проектом, и не дольше 3 лет после последнего сообщения.</p><h2>6. Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие — письмом на <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>. Ответ — в течение 10 рабочих дней.</p><h2>7. Cookies и сторонний контент</h2><p>Сайт не устанавливает cookies и не использует аналитику. В браузере сохраняется только выбранный язык интерфейса (localStorage). Шрифты загружаются с Google Fonts, 3D-модели и превью видео — с Sketchfab и YouTube, у которых свои правила обработки данных.</p>"
+    "pp.body": "<p>Действует с 23 сентября 2026 года.</p><h2>1. Кто обрабатывает данные</h2><p>Оператор — Кирилл, владелец сайта-портфолио Render Vision. Связь: <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>.</p><h2>2. Какие данные</h2><p>Имя, email или ник в Telegram и текст брифа — только то, что вы сами вводите в форму на сайте.</p><h2>3. Зачем</h2><p>Только чтобы ответить на ваш запрос и обсудить проект. Рассылок нет, данные не продаются и не передаются третьим лицам для их собственных целей.</p><h2>4. Как</h2><p>Форма отправляется через сервис FormSubmit (formsubmit.co), который пересылает сообщение на почту оператора. Сервис находится за пределами России, поэтому при отправке формы данные передаются трансгранично. Если вы этого не хотите, напишите напрямую на почту или в Telegram <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.</p><h2>5. Сколько хранятся</h2><p>Сообщения хранятся в почтовом ящике оператора, пока идёт обсуждение и работа над проектом, и не дольше 3 лет после последнего сообщения.</p><h2>6. Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие — письмом на <a href='mailto:freelancejeykey@gmail.com'>freelancejeykey@gmail.com</a>. Ответ — в течение 10 рабочих дней.</p><h2>7. Cookies и сторонний контент</h2><p>Сайт не устанавливает cookies и не использует аналитику. В браузере сохраняется только выбранный язык интерфейса (localStorage). Шрифты, изображения и шоурил загружаются с самого сайта. 3D-просмотрщик Sketchfab подгружается только после клика по нему, а ссылки на YouTube открываются на youtube.com; у этих сервисов свои правила обработки данных.</p>"
   }
 };
 /* ---------- url ----------
@@ -536,7 +536,9 @@ function parsePath() {
   return m ? { lang: m[1], id: m[2] ? decodeURIComponent(m[2]) : null, page: m[3] || null } : { bad: true };
 }
 const qsLang = new URLSearchParams(location.search).get("lang");
-let LANG = [STATIC && parsePath().lang, qsLang, localStorage.getItem("rv-lang")].find(l => l === "en" || l === "ru")
+let savedLang = null;
+try { savedLang = localStorage.getItem("rv-lang"); } catch (e) {}   // storage blocked (privacy mode) must not kill the page
+let LANG = [STATIC && parsePath().lang, qsLang, savedLang].find(l => l === "en" || l === "ru")
   || ((navigator.language || "").toLowerCase().startsWith("ru") ? "ru" : "en");
 const L = (k, v) => { let s = (I18N[LANG][k] ?? I18N.en[k] ?? k); if (v) for (const x in v) s = s.replace("{" + x + "}", v[x]); return s; };
 /* text fields: object {en,ru} or summary / summary_ru pairs */
@@ -590,7 +592,6 @@ function scan() {
     if (r.top < innerHeight * .92 && r.bottom > -200) n.classList.add("seen"); else io.observe(n);
   });
 }
-setInterval(scan, 300);
 setTimeout(() => document.querySelectorAll(".reveal").forEach(n => n.classList.add("seen")), 4000);
 
 /* ---------- nav ---------- */
@@ -606,7 +607,7 @@ function paintNav() {
   document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.go === cur));
 }
 addEventListener("scroll", paintNav, { passive: true });
-setInterval(paintNav, 300);
+addEventListener("resize", paintNav, { passive: true });
 
 document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => {
   const id = b.dataset.go;
@@ -643,7 +644,8 @@ function showView(which, keep) {
   $("#home").style.display = which === "home" ? "" : "none";
   $("#project").style.display = which === "home" ? "none" : "block";
   if (which !== "home") { masonry($("#project .gridwrap")); if (!keep) scrollTo(0, 0); }
-  scan();
+  scan(); paintNav();
+  if (which !== "home") document.querySelectorAll("nav button.on").forEach(b => b.classList.remove("on"));
 }
 function showHome() { const r = current(); if (r.id || r.page || r.bad) nav({}); homeView(); }
 function openProject(id) { nav({ id }); projectView(id); }
@@ -685,6 +687,7 @@ function route(keep) {
   const r = current();
   if (r.lang && r.lang !== LANG) { LANG = r.lang; relang(); }
   if (STATIC && location.hash.startsWith("#/")) nav(r, true);   // old hash link on the published site → clean URL
+  else if (STATIC && !r.lang && !r.bad) nav(r, true);            // bare site root → /<lang>/, so the URL matches the language shown
   if (r.bad) notFoundView(keep);
   else if (r.page === "privacy") pageView(r.page, keep);
   else if (r.page) notFoundView(keep);
@@ -803,7 +806,9 @@ function renderReel() {
 
   const veil = el("a", "reel-veil");
   veil.href = channel; veil.target = "_blank"; veil.rel = "noopener";
-  veil.appendChild(el("div", "reel-type", "SHOWREEL<br>2025"));
+  const rt = el("div", "reel-type");
+  (reel.title || "SHOWREEL").split(/\s+/).forEach((w, k) => { if (k) rt.appendChild(el("br")); rt.appendChild(document.createTextNode(w)); });
+  veil.appendChild(rt);
   veil.appendChild(el("div", "reel-cta", L("reel.cta")));
   veil.appendChild(el("div", "reel-note", [reel.title || "SHOWREEL", "YOUTUBE", reel.duration || ""].filter(Boolean).join(" · ").toUpperCase()));
   if (!id && !local) veil.querySelector(".reel-note").textContent = "NO REEL VIDEO IN portfolio.json";
@@ -888,6 +893,7 @@ function renderFilters() {
     t.appendChild(b);
   });
   MEDIA.forEach(x => {
+    if (DATA.projects.length && !DATA.projects.some(p => p.kindKey === x)) return;   // no works of this kind yet: no dead filter
     const b = el("button", "chip" + (media.indexOf(x) > -1 ? " on" : ""), x);
     b.setAttribute("aria-pressed", media.indexOf(x) > -1);
     b.addEventListener("click", () => { media = media.indexOf(x) > -1 ? media.filter(y => y !== x) : media.concat([x]); renderFilters(); renderGrid(); });
@@ -975,6 +981,10 @@ function lightbox(list, i, title) {
   const go = d => { i = (i + d + list.length) % list.length; show(); };
   const key = e => {
     if (!o.isConnected) return removeEventListener("keydown", key);
+    if (e.key === "Tab") {   // keep focus inside the dialog
+      const f = [pv, nx, x].filter(b => b.style.display !== "none"), at = f.indexOf(document.activeElement);
+      e.preventDefault(); f[(at + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); return;
+    }
     if (e.key === "Escape") closeLightbox(); else if (e.key === "ArrowLeft") go(-1); else if (e.key === "ArrowRight") go(1);
   };
   pv.onclick = () => go(-1); nx.onclick = () => go(1); x.onclick = closeLightbox;
@@ -1141,7 +1151,7 @@ fetch("data/portfolio.json")
     DATA = d;
     paintSync();
     $("#statTotal").textContent = d.projects.length;
-    renderReel(); renderGrid(); renderAbout(); route();
+    renderFilters(); renderReel(); renderGrid(); renderAbout(); route();
   })
   .catch(() => {
     const s = $("#syncLabel");

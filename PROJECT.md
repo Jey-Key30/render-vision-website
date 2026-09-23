@@ -49,7 +49,8 @@ Sketchfab и YouTube через GitHub Actions. От этого отказали
     id            slug, используется в URL (#/project/<id>) и как ключ галереи
     title, year, role, software, tris, summary   текстовые поля
     topic, tags   категории для фильтра (ALL / HARD-SURFACE / ENVIRONMENT / VFX / SIM / GAME-READY)
-    kindKey       бейдж и фильтр по типу медиа (IMAGE / VIDEO / YOUTUBE / SKETCHFAB)
+    kindKey       бейдж и фильтр по типу медиа (IMAGE / VIDEO / YOUTUBE / SKETCHFAB);
+                  кнопка фильтра скрыта, пока нет ни одной работы с таким kindKey
     slot          подпись-заглушка, пока нет превью (обычно title.toUpperCase())
     thumb         сжатая миниатюра для карточки в сетке (assets/thumbs/<id>.jpg)
     thumbRatio    пропорции миниатюры в пикселях, "640/357" — из них считается высота

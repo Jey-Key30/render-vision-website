@@ -14,9 +14,10 @@
 import fs from "node:fs";
 import path from "node:path";
 
-function build(html, data, siteUrl, today) {
+function build(html, data, siteUrl) {
   const SITE = siteUrl.replace(/\/?$/, "/");
   const s0 = html.indexOf("const I18N = "), s1 = html.indexOf("\n};", s0);
+  if (s0 < 0 || s1 < 0) throw new Error("seo: I18N object not found in site/index.html");
   const I18N = Function("return " + html.slice(s0 + 13, s1 + 2))();
   const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const filled = v => v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014";
@@ -28,6 +29,8 @@ function build(html, data, siteUrl, today) {
   const url = (l, r) => SITE + l + "/" + tail(r);
   const LANGS = ["en", "ru"];
   const projects = data.projects || [];
+  // ids become folder names under <lang>/work/
+  for (const p of projects) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");
   const person = {
     "@type": "Person", name: "Kirill", alternateName: "J-K3.0", jobTitle: "CG Generalist, 3D Artist", url: SITE,
     image: abs("assets/portrait.jpg"), email: "mailto:freelancejeykey@gmail.com",
@@ -145,7 +148,7 @@ function build(html, data, siteUrl, today) {
   const routes = [{}, ...projects.map(p => ({ id: p.id })), { page: "privacy" }];
   const alt = r => LANGS.map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="${esc(url(l, r))}"/>`).join("");
   out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
-    routes.flatMap(r => LANGS.map(l => `<url><loc>${esc(url(l, r))}</loc><lastmod>${today}</lastmod>${alt(r)}</url>`)).join("\n") + `\n</urlset>\n`;
+    routes.flatMap(r => LANGS.map(l => `<url><loc>${esc(url(l, r))}</loc>${alt(r)}</url>`)).join("\n") + `\n</urlset>\n`;
   out["robots.txt"] = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`;
   return out;
 }
@@ -154,11 +157,11 @@ function build(html, data, siteUrl, today) {
 const [, , siteUrl, outDir = "_site"] = process.argv;
 if (!siteUrl) { console.error("usage: node tools/seo.mjs <site-url> [out-dir]"); process.exit(1); }
 fs.rmSync(outDir, { recursive: true, force: true });
-fs.cpSync("site", outDir, { recursive: true });
+fs.cpSync("site", outDir, { recursive: true, filter: src => path.basename(src) !== "README.md" });   // notes stay out of the published site
 const files = build(
   fs.readFileSync("site/index.html", "utf8"),
   JSON.parse(fs.readFileSync("site/data/portfolio.json", "utf8")),
-  siteUrl, new Date().toISOString().slice(0, 10)
+  siteUrl
 );
 for (const [f, c] of Object.entries(files)) {
   const p = path.join(outDir, f);
