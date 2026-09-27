@@ -174,6 +174,13 @@
           "ratio": "1600/900",
           "src": "assets/gallery/loudspeeker/04.jpg",
           "sm": "assets/gallery/loudspeeker/sm/04.jpg"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/1080",
+          "src": "assets/gallery/loudspeeker/01.mp4",
+          "sm": "assets/gallery/loudspeeker/sm/01.mp4"
         }
       ]
     },
@@ -265,6 +272,13 @@
           "ratio": "1600/900",
           "src": "assets/gallery/forsa/01.jpg",
           "sm": "assets/gallery/forsa/sm/01.jpg"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/1080",
+          "src": "assets/gallery/forsa/Test_full_transitions.mp4",
+          "sm": "assets/gallery/forsa/sm/Test_full_transitions.mp4"
         }
       ]
     },
@@ -486,14 +500,14 @@
       "layout": "vertical",
       "slot": "DEATH OF A PIRATE",
       "thumb": "assets/thumbs/death-of-a-pirate.jpg",
-      "thumbRatio": "507/900",
+      "thumbRatio": "640/323",
       "artstationUrl": "https://www.artstation.com/artwork/3Egk2D",
       "summary": "- What sort of a man trades a man's life for a ship? - Pirate.",
       "media": [
         {
           "t": "image",
           "label": "RENDER 01",
-          "ratio": "457/812",
+          "ratio": "1600/808",
           "src": "assets/gallery/death-of-a-pirate/01.jpg",
           "sm": "assets/gallery/death-of-a-pirate/sm/01.jpg"
         },
@@ -502,6 +516,13 @@
           "videoId": "",
           "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
           "label": "VFX"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/800",
+          "src": "assets/gallery/death-of-a-pirate/01.mp4",
+          "sm": "assets/gallery/death-of-a-pirate/sm/01.mp4"
         }
       ],
       "summary_ru": "— Что за человек меняет жизнь человека на корабль? — Пират."
@@ -537,6 +558,13 @@
           "videoId": "",
           "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
           "label": "VFX"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1080/1920",
+          "src": "assets/gallery/ummc-tennis-championship/03.mp4",
+          "sm": "assets/gallery/ummc-tennis-championship/sm/03.mp4"
         }
       ],
       "summary_ru": "UMMC Tennis Championship Vol.1. Синоптики предупреждают: возможны осадки в виде мячиков для пинг-понга! Ролик для теннисного турнира УГМК. Prod. by moskvin.pro, VFX by J-K."

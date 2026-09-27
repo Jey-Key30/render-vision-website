@@ -2,24 +2,32 @@
   "about": "Written by tools/media.mjs. For each file: hash of the file it was built from (a source: its own hash). Do not edit by hand.",
   "files": {
     "assets/gallery/death-of-a-pirate/01.avif": {
-      "src": "4e0cbed9d124ddbf"
+      "src": "b61e6d8493f378c5"
     },
     "assets/gallery/death-of-a-pirate/01.jpg": {
-      "src": "4e0cbed9d124ddbf",
-      "w": 457,
-      "h": 812
+      "src": "b61e6d8493f378c5",
+      "w": 1600,
+      "h": 808
+    },
+    "assets/gallery/death-of-a-pirate/01.mp4": {
+      "src": "5048f55c9bbee011",
+      "w": 1920,
+      "h": 800
     },
     "assets/gallery/death-of-a-pirate/01.webp": {
-      "src": "4e0cbed9d124ddbf"
+      "src": "b61e6d8493f378c5"
     },
     "assets/gallery/death-of-a-pirate/sm/01.avif": {
-      "src": "1109ffc8594edd83"
+      "src": "1b723193505e4ac5"
     },
     "assets/gallery/death-of-a-pirate/sm/01.jpg": {
-      "src": "4e0cbed9d124ddbf"
+      "src": "b61e6d8493f378c5"
+    },
+    "assets/gallery/death-of-a-pirate/sm/01.mp4": {
+      "src": "5048f55c9bbee011"
     },
     "assets/gallery/death-of-a-pirate/sm/01.webp": {
-      "src": "1109ffc8594edd83"
+      "src": "1b723193505e4ac5"
     },
     "assets/gallery/forsa/01.avif": {
       "src": "9068ecb290de9ae6"
@@ -32,6 +40,11 @@
     "assets/gallery/forsa/01.webp": {
       "src": "9068ecb290de9ae6"
     },
+    "assets/gallery/forsa/Test_full_transitions.mp4": {
+      "src": "b18147a0bfaecde0",
+      "w": 1920,
+      "h": 1080
+    },
     "assets/gallery/forsa/sm/01.avif": {
       "src": "cf623d01100526a2"
     },
@@ -40,6 +53,9 @@
     },
     "assets/gallery/forsa/sm/01.webp": {
       "src": "cf623d01100526a2"
+    },
+    "assets/gallery/forsa/sm/Test_full_transitions.mp4": {
+      "src": "b18147a0bfaecde0"
     },
     "assets/gallery/futuristic-police-car/01.avif": {
       "src": "679fd9ee006951f6"
@@ -385,6 +401,11 @@
       "w": 1600,
       "h": 900
     },
+    "assets/gallery/loudspeeker/01.mp4": {
+      "src": "3480d6dcd966845e",
+      "w": 1920,
+      "h": 1080
+    },
     "assets/gallery/loudspeeker/01.webp": {
       "src": "f95066cee71a2af3"
     },
@@ -426,6 +447,9 @@
     },
     "assets/gallery/loudspeeker/sm/01.jpg": {
       "src": "f95066cee71a2af3"
+    },
+    "assets/gallery/loudspeeker/sm/01.mp4": {
+      "src": "3480d6dcd966845e"
     },
     "assets/gallery/loudspeeker/sm/01.webp": {
       "src": "e02ff0d11c6e3e7b"
@@ -2300,6 +2324,11 @@
     "assets/gallery/ummc-tennis-championship/01.webp": {
       "src": "23b9e7226a5d1ac8"
     },
+    "assets/gallery/ummc-tennis-championship/03.mp4": {
+      "src": "b9a2c4389db2464c",
+      "w": 1080,
+      "h": 1920
+    },
     "assets/gallery/ummc-tennis-championship/sm/01.avif": {
       "src": "2d954c240f993c60"
     },
@@ -2308,6 +2337,9 @@
     },
     "assets/gallery/ummc-tennis-championship/sm/01.webp": {
       "src": "2d954c240f993c60"
+    },
+    "assets/gallery/ummc-tennis-championship/sm/03.mp4": {
+      "src": "b9a2c4389db2464c"
     },
     "assets/gallery/usmu-campus/01.avif": {
       "src": "53d837024f00fca5"
@@ -2491,15 +2523,15 @@
       "src": "0a114ad16ebbab5d"
     },
     "assets/thumbs/death-of-a-pirate.avif": {
-      "src": "5e54ab223cf48789"
+      "src": "cfbae51acf6395aa"
     },
     "assets/thumbs/death-of-a-pirate.jpg": {
-      "src": "4e0cbed9d124ddbf",
-      "w": 507,
-      "h": 900
+      "src": "b61e6d8493f378c5",
+      "w": 640,
+      "h": 323
     },
     "assets/thumbs/death-of-a-pirate.webp": {
-      "src": "5e54ab223cf48789"
+      "src": "cfbae51acf6395aa"
     },
     "assets/thumbs/forsa.avif": {
       "src": "52fc1462c36d7f7f"
