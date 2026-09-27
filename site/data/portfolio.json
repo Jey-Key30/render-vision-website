@@ -497,7 +497,7 @@
         "ENVIRONMENT"
       ],
       "kindKey": "VIDEO",
-      "layout": "vertical",
+      "layout": "render",
       "slot": "DEATH OF A PIRATE",
       "thumb": "assets/thumbs/death-of-a-pirate.jpg",
       "thumbRatio": "640/323",
