@@ -68,6 +68,10 @@ experience entries use `{ "en": …, "ru": … }` objects.
 
 ## Adding a project
 
+Shortcut: drop renders into `site/assets/gallery/<id>/` and run `node tools/media.mjs` —
+it compresses them and builds `sm/`, the thumbnail, AVIF/WebP and the `portfolio.json`
+ratios (see `PROJECT.md`). The manual steps below are what it does.
+
 1. Renders → `site/assets/gallery/<id>/01.jpg…` (max side 1600px).
 2. Strip copies at 480px height:
 

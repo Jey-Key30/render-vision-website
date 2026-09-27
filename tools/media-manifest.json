@@ -1,0 +1,2614 @@
+{
+  "about": "Written by tools/media.mjs. For each file: hash of the file it was built from (a source: its own hash). Do not edit by hand.",
+  "files": {
+    "assets/gallery/death-of-a-pirate/01.avif": {
+      "src": "4e0cbed9d124ddbf"
+    },
+    "assets/gallery/death-of-a-pirate/01.jpg": {
+      "src": "4e0cbed9d124ddbf",
+      "w": 457,
+      "h": 812
+    },
+    "assets/gallery/death-of-a-pirate/01.webp": {
+      "src": "4e0cbed9d124ddbf"
+    },
+    "assets/gallery/death-of-a-pirate/sm/01.avif": {
+      "src": "1109ffc8594edd83"
+    },
+    "assets/gallery/death-of-a-pirate/sm/01.jpg": {
+      "src": "4e0cbed9d124ddbf"
+    },
+    "assets/gallery/death-of-a-pirate/sm/01.webp": {
+      "src": "1109ffc8594edd83"
+    },
+    "assets/gallery/forsa/01.avif": {
+      "src": "9068ecb290de9ae6"
+    },
+    "assets/gallery/forsa/01.jpg": {
+      "src": "9068ecb290de9ae6",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/forsa/01.webp": {
+      "src": "9068ecb290de9ae6"
+    },
+    "assets/gallery/forsa/sm/01.avif": {
+      "src": "cf623d01100526a2"
+    },
+    "assets/gallery/forsa/sm/01.jpg": {
+      "src": "9068ecb290de9ae6"
+    },
+    "assets/gallery/forsa/sm/01.webp": {
+      "src": "cf623d01100526a2"
+    },
+    "assets/gallery/futuristic-police-car/01.avif": {
+      "src": "679fd9ee006951f6"
+    },
+    "assets/gallery/futuristic-police-car/01.jpg": {
+      "src": "679fd9ee006951f6",
+      "w": 1600,
+      "h": 1600
+    },
+    "assets/gallery/futuristic-police-car/01.webp": {
+      "src": "679fd9ee006951f6"
+    },
+    "assets/gallery/futuristic-police-car/02.avif": {
+      "src": "3f50492bd595c994"
+    },
+    "assets/gallery/futuristic-police-car/02.jpg": {
+      "src": "3f50492bd595c994",
+      "w": 1600,
+      "h": 1600
+    },
+    "assets/gallery/futuristic-police-car/02.webp": {
+      "src": "3f50492bd595c994"
+    },
+    "assets/gallery/futuristic-police-car/03.avif": {
+      "src": "78ae7515a6994313"
+    },
+    "assets/gallery/futuristic-police-car/03.jpg": {
+      "src": "78ae7515a6994313",
+      "w": 1600,
+      "h": 1575
+    },
+    "assets/gallery/futuristic-police-car/03.webp": {
+      "src": "78ae7515a6994313"
+    },
+    "assets/gallery/futuristic-police-car/04.avif": {
+      "src": "013374a514e94f96"
+    },
+    "assets/gallery/futuristic-police-car/04.jpg": {
+      "src": "013374a514e94f96",
+      "w": 1600,
+      "h": 1600
+    },
+    "assets/gallery/futuristic-police-car/04.webp": {
+      "src": "013374a514e94f96"
+    },
+    "assets/gallery/futuristic-police-car/05.avif": {
+      "src": "5274aaa40fb7b439"
+    },
+    "assets/gallery/futuristic-police-car/05.jpg": {
+      "src": "5274aaa40fb7b439",
+      "w": 1600,
+      "h": 1600
+    },
+    "assets/gallery/futuristic-police-car/05.webp": {
+      "src": "5274aaa40fb7b439"
+    },
+    "assets/gallery/futuristic-police-car/06.avif": {
+      "src": "83449a7275f98268"
+    },
+    "assets/gallery/futuristic-police-car/06.jpg": {
+      "src": "83449a7275f98268",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/futuristic-police-car/06.webp": {
+      "src": "83449a7275f98268"
+    },
+    "assets/gallery/futuristic-police-car/07.avif": {
+      "src": "4235b476156167e0"
+    },
+    "assets/gallery/futuristic-police-car/07.jpg": {
+      "src": "4235b476156167e0",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/futuristic-police-car/07.webp": {
+      "src": "4235b476156167e0"
+    },
+    "assets/gallery/futuristic-police-car/08.avif": {
+      "src": "74e9bb541a690f60"
+    },
+    "assets/gallery/futuristic-police-car/08.jpg": {
+      "src": "74e9bb541a690f60",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/futuristic-police-car/08.webp": {
+      "src": "74e9bb541a690f60"
+    },
+    "assets/gallery/futuristic-police-car/09.avif": {
+      "src": "b45be76d6a8fcfdb"
+    },
+    "assets/gallery/futuristic-police-car/09.jpg": {
+      "src": "b45be76d6a8fcfdb",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/09.webp": {
+      "src": "b45be76d6a8fcfdb"
+    },
+    "assets/gallery/futuristic-police-car/10.avif": {
+      "src": "9379abf7d8d918e5"
+    },
+    "assets/gallery/futuristic-police-car/10.jpg": {
+      "src": "9379abf7d8d918e5",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/10.webp": {
+      "src": "9379abf7d8d918e5"
+    },
+    "assets/gallery/futuristic-police-car/11.avif": {
+      "src": "79d7fe4d56dd570c"
+    },
+    "assets/gallery/futuristic-police-car/11.jpg": {
+      "src": "79d7fe4d56dd570c",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/11.webp": {
+      "src": "79d7fe4d56dd570c"
+    },
+    "assets/gallery/futuristic-police-car/12.avif": {
+      "src": "1a8d16c646401765"
+    },
+    "assets/gallery/futuristic-police-car/12.jpg": {
+      "src": "1a8d16c646401765",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/12.webp": {
+      "src": "1a8d16c646401765"
+    },
+    "assets/gallery/futuristic-police-car/13.avif": {
+      "src": "6c18cae9174abf08"
+    },
+    "assets/gallery/futuristic-police-car/13.jpg": {
+      "src": "6c18cae9174abf08",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/13.webp": {
+      "src": "6c18cae9174abf08"
+    },
+    "assets/gallery/futuristic-police-car/14.avif": {
+      "src": "c8578560fb93a439"
+    },
+    "assets/gallery/futuristic-police-car/14.jpg": {
+      "src": "c8578560fb93a439",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/14.webp": {
+      "src": "c8578560fb93a439"
+    },
+    "assets/gallery/futuristic-police-car/15.avif": {
+      "src": "99d4536faa19f3d7"
+    },
+    "assets/gallery/futuristic-police-car/15.jpg": {
+      "src": "99d4536faa19f3d7",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/futuristic-police-car/15.webp": {
+      "src": "99d4536faa19f3d7"
+    },
+    "assets/gallery/futuristic-police-car/sm/01.avif": {
+      "src": "c7e4f43a5f62a156"
+    },
+    "assets/gallery/futuristic-police-car/sm/01.jpg": {
+      "src": "679fd9ee006951f6"
+    },
+    "assets/gallery/futuristic-police-car/sm/01.webp": {
+      "src": "c7e4f43a5f62a156"
+    },
+    "assets/gallery/futuristic-police-car/sm/02.avif": {
+      "src": "b92b30aa6fb07918"
+    },
+    "assets/gallery/futuristic-police-car/sm/02.jpg": {
+      "src": "3f50492bd595c994"
+    },
+    "assets/gallery/futuristic-police-car/sm/02.webp": {
+      "src": "b92b30aa6fb07918"
+    },
+    "assets/gallery/futuristic-police-car/sm/03.avif": {
+      "src": "d6660a17e6f61e83"
+    },
+    "assets/gallery/futuristic-police-car/sm/03.jpg": {
+      "src": "78ae7515a6994313"
+    },
+    "assets/gallery/futuristic-police-car/sm/03.webp": {
+      "src": "d6660a17e6f61e83"
+    },
+    "assets/gallery/futuristic-police-car/sm/04.avif": {
+      "src": "c74d7458dfe571f8"
+    },
+    "assets/gallery/futuristic-police-car/sm/04.jpg": {
+      "src": "013374a514e94f96"
+    },
+    "assets/gallery/futuristic-police-car/sm/04.webp": {
+      "src": "c74d7458dfe571f8"
+    },
+    "assets/gallery/futuristic-police-car/sm/05.avif": {
+      "src": "8c713290c74d8739"
+    },
+    "assets/gallery/futuristic-police-car/sm/05.jpg": {
+      "src": "5274aaa40fb7b439"
+    },
+    "assets/gallery/futuristic-police-car/sm/05.webp": {
+      "src": "8c713290c74d8739"
+    },
+    "assets/gallery/futuristic-police-car/sm/06.avif": {
+      "src": "785847823cbf1e85"
+    },
+    "assets/gallery/futuristic-police-car/sm/06.jpg": {
+      "src": "83449a7275f98268"
+    },
+    "assets/gallery/futuristic-police-car/sm/06.webp": {
+      "src": "785847823cbf1e85"
+    },
+    "assets/gallery/futuristic-police-car/sm/07.avif": {
+      "src": "8fb2a67bc7978372"
+    },
+    "assets/gallery/futuristic-police-car/sm/07.jpg": {
+      "src": "4235b476156167e0"
+    },
+    "assets/gallery/futuristic-police-car/sm/07.webp": {
+      "src": "8fb2a67bc7978372"
+    },
+    "assets/gallery/futuristic-police-car/sm/08.avif": {
+      "src": "d03e60a6bec55ddb"
+    },
+    "assets/gallery/futuristic-police-car/sm/08.jpg": {
+      "src": "74e9bb541a690f60"
+    },
+    "assets/gallery/futuristic-police-car/sm/08.webp": {
+      "src": "d03e60a6bec55ddb"
+    },
+    "assets/gallery/futuristic-police-car/sm/09.avif": {
+      "src": "6dc9563b80c16a8a"
+    },
+    "assets/gallery/futuristic-police-car/sm/09.jpg": {
+      "src": "b45be76d6a8fcfdb"
+    },
+    "assets/gallery/futuristic-police-car/sm/09.webp": {
+      "src": "6dc9563b80c16a8a"
+    },
+    "assets/gallery/futuristic-police-car/sm/10.avif": {
+      "src": "f7b68e391ba98edf"
+    },
+    "assets/gallery/futuristic-police-car/sm/10.jpg": {
+      "src": "9379abf7d8d918e5"
+    },
+    "assets/gallery/futuristic-police-car/sm/10.webp": {
+      "src": "f7b68e391ba98edf"
+    },
+    "assets/gallery/futuristic-police-car/sm/11.avif": {
+      "src": "1fd29e820199556e"
+    },
+    "assets/gallery/futuristic-police-car/sm/11.jpg": {
+      "src": "79d7fe4d56dd570c"
+    },
+    "assets/gallery/futuristic-police-car/sm/11.webp": {
+      "src": "1fd29e820199556e"
+    },
+    "assets/gallery/futuristic-police-car/sm/12.avif": {
+      "src": "4d44876a11e5752d"
+    },
+    "assets/gallery/futuristic-police-car/sm/12.jpg": {
+      "src": "1a8d16c646401765"
+    },
+    "assets/gallery/futuristic-police-car/sm/12.webp": {
+      "src": "4d44876a11e5752d"
+    },
+    "assets/gallery/futuristic-police-car/sm/13.avif": {
+      "src": "2d0b33186a726070"
+    },
+    "assets/gallery/futuristic-police-car/sm/13.jpg": {
+      "src": "6c18cae9174abf08"
+    },
+    "assets/gallery/futuristic-police-car/sm/13.webp": {
+      "src": "2d0b33186a726070"
+    },
+    "assets/gallery/futuristic-police-car/sm/14.avif": {
+      "src": "c1c8e1cdbe71889b"
+    },
+    "assets/gallery/futuristic-police-car/sm/14.jpg": {
+      "src": "c8578560fb93a439"
+    },
+    "assets/gallery/futuristic-police-car/sm/14.webp": {
+      "src": "c1c8e1cdbe71889b"
+    },
+    "assets/gallery/futuristic-police-car/sm/15.avif": {
+      "src": "654def23241a411d"
+    },
+    "assets/gallery/futuristic-police-car/sm/15.jpg": {
+      "src": "99d4536faa19f3d7"
+    },
+    "assets/gallery/futuristic-police-car/sm/15.webp": {
+      "src": "654def23241a411d"
+    },
+    "assets/gallery/lightcycle-metro/01.avif": {
+      "src": "3c1d16612f7867df"
+    },
+    "assets/gallery/lightcycle-metro/01.jpg": {
+      "src": "3c1d16612f7867df",
+      "w": 897,
+      "h": 1600
+    },
+    "assets/gallery/lightcycle-metro/01.webp": {
+      "src": "3c1d16612f7867df"
+    },
+    "assets/gallery/lightcycle-metro/sm/01.avif": {
+      "src": "9e5d2884f638b07e"
+    },
+    "assets/gallery/lightcycle-metro/sm/01.jpg": {
+      "src": "3c1d16612f7867df"
+    },
+    "assets/gallery/lightcycle-metro/sm/01.webp": {
+      "src": "9e5d2884f638b07e"
+    },
+    "assets/gallery/loudspeeker/01.avif": {
+      "src": "e48257211665cb40"
+    },
+    "assets/gallery/loudspeeker/01.jpg": {
+      "src": "e48257211665cb40",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/loudspeeker/01.webp": {
+      "src": "e48257211665cb40"
+    },
+    "assets/gallery/loudspeeker/02.avif": {
+      "src": "56bb38aeca9e62da"
+    },
+    "assets/gallery/loudspeeker/02.jpg": {
+      "src": "56bb38aeca9e62da",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/loudspeeker/02.webp": {
+      "src": "56bb38aeca9e62da"
+    },
+    "assets/gallery/loudspeeker/03.avif": {
+      "src": "0a1a6f446f2d289c"
+    },
+    "assets/gallery/loudspeeker/03.jpg": {
+      "src": "0a1a6f446f2d289c",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/loudspeeker/03.webp": {
+      "src": "0a1a6f446f2d289c"
+    },
+    "assets/gallery/loudspeeker/04.avif": {
+      "src": "fd739a70dd344b2a"
+    },
+    "assets/gallery/loudspeeker/04.jpg": {
+      "src": "fd739a70dd344b2a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/loudspeeker/04.webp": {
+      "src": "fd739a70dd344b2a"
+    },
+    "assets/gallery/loudspeeker/sm/01.avif": {
+      "src": "2e5256dd68dd5814"
+    },
+    "assets/gallery/loudspeeker/sm/01.jpg": {
+      "src": "e48257211665cb40"
+    },
+    "assets/gallery/loudspeeker/sm/01.webp": {
+      "src": "2e5256dd68dd5814"
+    },
+    "assets/gallery/loudspeeker/sm/02.avif": {
+      "src": "8b9d6a1072f34d3e"
+    },
+    "assets/gallery/loudspeeker/sm/02.jpg": {
+      "src": "56bb38aeca9e62da"
+    },
+    "assets/gallery/loudspeeker/sm/02.webp": {
+      "src": "8b9d6a1072f34d3e"
+    },
+    "assets/gallery/loudspeeker/sm/03.avif": {
+      "src": "35fa331aba1770f6"
+    },
+    "assets/gallery/loudspeeker/sm/03.jpg": {
+      "src": "0a1a6f446f2d289c"
+    },
+    "assets/gallery/loudspeeker/sm/03.webp": {
+      "src": "35fa331aba1770f6"
+    },
+    "assets/gallery/loudspeeker/sm/04.avif": {
+      "src": "dfbec3abd80c1871"
+    },
+    "assets/gallery/loudspeeker/sm/04.jpg": {
+      "src": "fd739a70dd344b2a"
+    },
+    "assets/gallery/loudspeeker/sm/04.webp": {
+      "src": "dfbec3abd80c1871"
+    },
+    "assets/gallery/robot-chappie/01.avif": {
+      "src": "b7a01cfa78995704"
+    },
+    "assets/gallery/robot-chappie/01.jpg": {
+      "src": "b7a01cfa78995704",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/01.webp": {
+      "src": "b7a01cfa78995704"
+    },
+    "assets/gallery/robot-chappie/02.avif": {
+      "src": "fbbc912f91ec9d55"
+    },
+    "assets/gallery/robot-chappie/02.jpg": {
+      "src": "fbbc912f91ec9d55",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/02.webp": {
+      "src": "fbbc912f91ec9d55"
+    },
+    "assets/gallery/robot-chappie/03.avif": {
+      "src": "8ca35895ef2b8cf5"
+    },
+    "assets/gallery/robot-chappie/03.jpg": {
+      "src": "8ca35895ef2b8cf5",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/03.webp": {
+      "src": "8ca35895ef2b8cf5"
+    },
+    "assets/gallery/robot-chappie/04.avif": {
+      "src": "6f2adb855eed90fd"
+    },
+    "assets/gallery/robot-chappie/04.jpg": {
+      "src": "6f2adb855eed90fd",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/04.webp": {
+      "src": "6f2adb855eed90fd"
+    },
+    "assets/gallery/robot-chappie/05.avif": {
+      "src": "9f85aebaf6b9416e"
+    },
+    "assets/gallery/robot-chappie/05.jpg": {
+      "src": "9f85aebaf6b9416e",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/05.webp": {
+      "src": "9f85aebaf6b9416e"
+    },
+    "assets/gallery/robot-chappie/06.avif": {
+      "src": "2d5fa50983c4cc98"
+    },
+    "assets/gallery/robot-chappie/06.jpg": {
+      "src": "2d5fa50983c4cc98",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/06.webp": {
+      "src": "2d5fa50983c4cc98"
+    },
+    "assets/gallery/robot-chappie/07.avif": {
+      "src": "a4f2e4f5f30ffc0b"
+    },
+    "assets/gallery/robot-chappie/07.jpg": {
+      "src": "a4f2e4f5f30ffc0b",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/07.webp": {
+      "src": "a4f2e4f5f30ffc0b"
+    },
+    "assets/gallery/robot-chappie/08.avif": {
+      "src": "6c54976aa44d96d7"
+    },
+    "assets/gallery/robot-chappie/08.jpg": {
+      "src": "6c54976aa44d96d7",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-chappie/08.webp": {
+      "src": "6c54976aa44d96d7"
+    },
+    "assets/gallery/robot-chappie/09.avif": {
+      "src": "a83d78f877f4692d"
+    },
+    "assets/gallery/robot-chappie/09.jpg": {
+      "src": "a83d78f877f4692d",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/09.webp": {
+      "src": "a83d78f877f4692d"
+    },
+    "assets/gallery/robot-chappie/10.avif": {
+      "src": "b462d0c7f6180710"
+    },
+    "assets/gallery/robot-chappie/10.jpg": {
+      "src": "b462d0c7f6180710",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/10.webp": {
+      "src": "b462d0c7f6180710"
+    },
+    "assets/gallery/robot-chappie/11.avif": {
+      "src": "c4cdfb750a7d9405"
+    },
+    "assets/gallery/robot-chappie/11.jpg": {
+      "src": "c4cdfb750a7d9405",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/11.webp": {
+      "src": "c4cdfb750a7d9405"
+    },
+    "assets/gallery/robot-chappie/12.avif": {
+      "src": "a128060229caeb0a"
+    },
+    "assets/gallery/robot-chappie/12.jpg": {
+      "src": "a128060229caeb0a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/12.webp": {
+      "src": "a128060229caeb0a"
+    },
+    "assets/gallery/robot-chappie/13.avif": {
+      "src": "33bd5e1218796077"
+    },
+    "assets/gallery/robot-chappie/13.jpg": {
+      "src": "33bd5e1218796077",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/13.webp": {
+      "src": "33bd5e1218796077"
+    },
+    "assets/gallery/robot-chappie/14.avif": {
+      "src": "e9c73e39f55bba98"
+    },
+    "assets/gallery/robot-chappie/14.jpg": {
+      "src": "e9c73e39f55bba98",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/14.webp": {
+      "src": "e9c73e39f55bba98"
+    },
+    "assets/gallery/robot-chappie/15.avif": {
+      "src": "6c71d8556d44e3a0"
+    },
+    "assets/gallery/robot-chappie/15.jpg": {
+      "src": "6c71d8556d44e3a0",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/15.webp": {
+      "src": "6c71d8556d44e3a0"
+    },
+    "assets/gallery/robot-chappie/16.avif": {
+      "src": "3eaaa75999fd042e"
+    },
+    "assets/gallery/robot-chappie/16.jpg": {
+      "src": "3eaaa75999fd042e",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-chappie/16.webp": {
+      "src": "3eaaa75999fd042e"
+    },
+    "assets/gallery/robot-chappie/sm/01.avif": {
+      "src": "9aae027de68285f0"
+    },
+    "assets/gallery/robot-chappie/sm/01.jpg": {
+      "src": "b7a01cfa78995704"
+    },
+    "assets/gallery/robot-chappie/sm/01.webp": {
+      "src": "9aae027de68285f0"
+    },
+    "assets/gallery/robot-chappie/sm/02.avif": {
+      "src": "bffc20f2b600fe35"
+    },
+    "assets/gallery/robot-chappie/sm/02.jpg": {
+      "src": "fbbc912f91ec9d55"
+    },
+    "assets/gallery/robot-chappie/sm/02.webp": {
+      "src": "bffc20f2b600fe35"
+    },
+    "assets/gallery/robot-chappie/sm/03.avif": {
+      "src": "72682b32f2b2e565"
+    },
+    "assets/gallery/robot-chappie/sm/03.jpg": {
+      "src": "8ca35895ef2b8cf5"
+    },
+    "assets/gallery/robot-chappie/sm/03.webp": {
+      "src": "72682b32f2b2e565"
+    },
+    "assets/gallery/robot-chappie/sm/04.avif": {
+      "src": "0bf08f868a559231"
+    },
+    "assets/gallery/robot-chappie/sm/04.jpg": {
+      "src": "6f2adb855eed90fd"
+    },
+    "assets/gallery/robot-chappie/sm/04.webp": {
+      "src": "0bf08f868a559231"
+    },
+    "assets/gallery/robot-chappie/sm/05.avif": {
+      "src": "fc8e6f71734a1bf2"
+    },
+    "assets/gallery/robot-chappie/sm/05.jpg": {
+      "src": "9f85aebaf6b9416e"
+    },
+    "assets/gallery/robot-chappie/sm/05.webp": {
+      "src": "fc8e6f71734a1bf2"
+    },
+    "assets/gallery/robot-chappie/sm/06.avif": {
+      "src": "1c919cedd4a35e25"
+    },
+    "assets/gallery/robot-chappie/sm/06.jpg": {
+      "src": "2d5fa50983c4cc98"
+    },
+    "assets/gallery/robot-chappie/sm/06.webp": {
+      "src": "1c919cedd4a35e25"
+    },
+    "assets/gallery/robot-chappie/sm/07.avif": {
+      "src": "145f4307e0da8568"
+    },
+    "assets/gallery/robot-chappie/sm/07.jpg": {
+      "src": "a4f2e4f5f30ffc0b"
+    },
+    "assets/gallery/robot-chappie/sm/07.webp": {
+      "src": "145f4307e0da8568"
+    },
+    "assets/gallery/robot-chappie/sm/08.avif": {
+      "src": "6dc338cd7859c7c4"
+    },
+    "assets/gallery/robot-chappie/sm/08.jpg": {
+      "src": "6c54976aa44d96d7"
+    },
+    "assets/gallery/robot-chappie/sm/08.webp": {
+      "src": "6dc338cd7859c7c4"
+    },
+    "assets/gallery/robot-chappie/sm/09.avif": {
+      "src": "643e44f806ea3ade"
+    },
+    "assets/gallery/robot-chappie/sm/09.jpg": {
+      "src": "a83d78f877f4692d"
+    },
+    "assets/gallery/robot-chappie/sm/09.webp": {
+      "src": "643e44f806ea3ade"
+    },
+    "assets/gallery/robot-chappie/sm/10.avif": {
+      "src": "5d843375fc5d8849"
+    },
+    "assets/gallery/robot-chappie/sm/10.jpg": {
+      "src": "b462d0c7f6180710"
+    },
+    "assets/gallery/robot-chappie/sm/10.webp": {
+      "src": "5d843375fc5d8849"
+    },
+    "assets/gallery/robot-chappie/sm/11.avif": {
+      "src": "cd2051e1c9c25935"
+    },
+    "assets/gallery/robot-chappie/sm/11.jpg": {
+      "src": "c4cdfb750a7d9405"
+    },
+    "assets/gallery/robot-chappie/sm/11.webp": {
+      "src": "cd2051e1c9c25935"
+    },
+    "assets/gallery/robot-chappie/sm/12.avif": {
+      "src": "c8f11027476346e8"
+    },
+    "assets/gallery/robot-chappie/sm/12.jpg": {
+      "src": "a128060229caeb0a"
+    },
+    "assets/gallery/robot-chappie/sm/12.webp": {
+      "src": "c8f11027476346e8"
+    },
+    "assets/gallery/robot-chappie/sm/13.avif": {
+      "src": "00c8cae44e96b515"
+    },
+    "assets/gallery/robot-chappie/sm/13.jpg": {
+      "src": "33bd5e1218796077"
+    },
+    "assets/gallery/robot-chappie/sm/13.webp": {
+      "src": "00c8cae44e96b515"
+    },
+    "assets/gallery/robot-chappie/sm/14.avif": {
+      "src": "15f3ffad17ef3950"
+    },
+    "assets/gallery/robot-chappie/sm/14.jpg": {
+      "src": "e9c73e39f55bba98"
+    },
+    "assets/gallery/robot-chappie/sm/14.webp": {
+      "src": "15f3ffad17ef3950"
+    },
+    "assets/gallery/robot-chappie/sm/15.avif": {
+      "src": "6fe5ac5831a73378"
+    },
+    "assets/gallery/robot-chappie/sm/15.jpg": {
+      "src": "6c71d8556d44e3a0"
+    },
+    "assets/gallery/robot-chappie/sm/15.webp": {
+      "src": "6fe5ac5831a73378"
+    },
+    "assets/gallery/robot-chappie/sm/16.avif": {
+      "src": "d4d1a1f4dce26477"
+    },
+    "assets/gallery/robot-chappie/sm/16.jpg": {
+      "src": "3eaaa75999fd042e"
+    },
+    "assets/gallery/robot-chappie/sm/16.webp": {
+      "src": "d4d1a1f4dce26477"
+    },
+    "assets/gallery/robot-scout/01.avif": {
+      "src": "b8e68d5baccb23e3"
+    },
+    "assets/gallery/robot-scout/01.jpg": {
+      "src": "b8e68d5baccb23e3",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-scout/01.webp": {
+      "src": "b8e68d5baccb23e3"
+    },
+    "assets/gallery/robot-scout/02.avif": {
+      "src": "848bed96e862eac7"
+    },
+    "assets/gallery/robot-scout/02.jpg": {
+      "src": "848bed96e862eac7",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/02.webp": {
+      "src": "848bed96e862eac7"
+    },
+    "assets/gallery/robot-scout/03.avif": {
+      "src": "922c850b09c75ccd"
+    },
+    "assets/gallery/robot-scout/03.jpg": {
+      "src": "922c850b09c75ccd",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/03.webp": {
+      "src": "922c850b09c75ccd"
+    },
+    "assets/gallery/robot-scout/04.avif": {
+      "src": "54d8063beb9f136d"
+    },
+    "assets/gallery/robot-scout/04.jpg": {
+      "src": "54d8063beb9f136d",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/04.webp": {
+      "src": "54d8063beb9f136d"
+    },
+    "assets/gallery/robot-scout/05.avif": {
+      "src": "453816b8180e8393"
+    },
+    "assets/gallery/robot-scout/05.jpg": {
+      "src": "453816b8180e8393",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/05.webp": {
+      "src": "453816b8180e8393"
+    },
+    "assets/gallery/robot-scout/06.avif": {
+      "src": "f597d1708cd6562c"
+    },
+    "assets/gallery/robot-scout/06.jpg": {
+      "src": "f597d1708cd6562c",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-scout/06.webp": {
+      "src": "f597d1708cd6562c"
+    },
+    "assets/gallery/robot-scout/07.avif": {
+      "src": "e017e0a286b0fb2b"
+    },
+    "assets/gallery/robot-scout/07.jpg": {
+      "src": "e017e0a286b0fb2b",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/07.webp": {
+      "src": "e017e0a286b0fb2b"
+    },
+    "assets/gallery/robot-scout/08.avif": {
+      "src": "54ff45925fd5cb44"
+    },
+    "assets/gallery/robot-scout/08.jpg": {
+      "src": "54ff45925fd5cb44",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/robot-scout/08.webp": {
+      "src": "54ff45925fd5cb44"
+    },
+    "assets/gallery/robot-scout/09.avif": {
+      "src": "34c4f1ee84557a13"
+    },
+    "assets/gallery/robot-scout/09.jpg": {
+      "src": "34c4f1ee84557a13",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/09.webp": {
+      "src": "34c4f1ee84557a13"
+    },
+    "assets/gallery/robot-scout/10.avif": {
+      "src": "b4f6b9d82fbe8d1d"
+    },
+    "assets/gallery/robot-scout/10.jpg": {
+      "src": "b4f6b9d82fbe8d1d",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/robot-scout/10.webp": {
+      "src": "b4f6b9d82fbe8d1d"
+    },
+    "assets/gallery/robot-scout/sm/01.avif": {
+      "src": "f02f3bb90f76ba5a"
+    },
+    "assets/gallery/robot-scout/sm/01.jpg": {
+      "src": "b8e68d5baccb23e3"
+    },
+    "assets/gallery/robot-scout/sm/01.webp": {
+      "src": "f02f3bb90f76ba5a"
+    },
+    "assets/gallery/robot-scout/sm/02.avif": {
+      "src": "afea7a9f498b5d44"
+    },
+    "assets/gallery/robot-scout/sm/02.jpg": {
+      "src": "848bed96e862eac7"
+    },
+    "assets/gallery/robot-scout/sm/02.webp": {
+      "src": "afea7a9f498b5d44"
+    },
+    "assets/gallery/robot-scout/sm/03.avif": {
+      "src": "57f58ab4e3d603d0"
+    },
+    "assets/gallery/robot-scout/sm/03.jpg": {
+      "src": "922c850b09c75ccd"
+    },
+    "assets/gallery/robot-scout/sm/03.webp": {
+      "src": "57f58ab4e3d603d0"
+    },
+    "assets/gallery/robot-scout/sm/04.avif": {
+      "src": "ca6cb4364ee3b0d1"
+    },
+    "assets/gallery/robot-scout/sm/04.jpg": {
+      "src": "54d8063beb9f136d"
+    },
+    "assets/gallery/robot-scout/sm/04.webp": {
+      "src": "ca6cb4364ee3b0d1"
+    },
+    "assets/gallery/robot-scout/sm/05.avif": {
+      "src": "0c5103e4eed51f7a"
+    },
+    "assets/gallery/robot-scout/sm/05.jpg": {
+      "src": "453816b8180e8393"
+    },
+    "assets/gallery/robot-scout/sm/05.webp": {
+      "src": "0c5103e4eed51f7a"
+    },
+    "assets/gallery/robot-scout/sm/06.avif": {
+      "src": "722de30e4968c658"
+    },
+    "assets/gallery/robot-scout/sm/06.jpg": {
+      "src": "f597d1708cd6562c"
+    },
+    "assets/gallery/robot-scout/sm/06.webp": {
+      "src": "722de30e4968c658"
+    },
+    "assets/gallery/robot-scout/sm/07.avif": {
+      "src": "3294cb67fea9ded8"
+    },
+    "assets/gallery/robot-scout/sm/07.jpg": {
+      "src": "e017e0a286b0fb2b"
+    },
+    "assets/gallery/robot-scout/sm/07.webp": {
+      "src": "3294cb67fea9ded8"
+    },
+    "assets/gallery/robot-scout/sm/08.avif": {
+      "src": "c47b441342deab76"
+    },
+    "assets/gallery/robot-scout/sm/08.jpg": {
+      "src": "54ff45925fd5cb44"
+    },
+    "assets/gallery/robot-scout/sm/08.webp": {
+      "src": "c47b441342deab76"
+    },
+    "assets/gallery/robot-scout/sm/09.avif": {
+      "src": "51be77293e8f7ec3"
+    },
+    "assets/gallery/robot-scout/sm/09.jpg": {
+      "src": "34c4f1ee84557a13"
+    },
+    "assets/gallery/robot-scout/sm/09.webp": {
+      "src": "51be77293e8f7ec3"
+    },
+    "assets/gallery/robot-scout/sm/10.avif": {
+      "src": "bed224a9788ce476"
+    },
+    "assets/gallery/robot-scout/sm/10.jpg": {
+      "src": "b4f6b9d82fbe8d1d"
+    },
+    "assets/gallery/robot-scout/sm/10.webp": {
+      "src": "bed224a9788ce476"
+    },
+    "assets/gallery/sci-fi-gun/01.avif": {
+      "src": "19386065ebb19413"
+    },
+    "assets/gallery/sci-fi-gun/01.jpg": {
+      "src": "19386065ebb19413",
+      "w": 1600,
+      "h": 1600
+    },
+    "assets/gallery/sci-fi-gun/01.webp": {
+      "src": "19386065ebb19413"
+    },
+    "assets/gallery/sci-fi-gun/02.avif": {
+      "src": "3262df29a775fd9a"
+    },
+    "assets/gallery/sci-fi-gun/02.jpg": {
+      "src": "3262df29a775fd9a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/02.webp": {
+      "src": "3262df29a775fd9a"
+    },
+    "assets/gallery/sci-fi-gun/03.avif": {
+      "src": "408f87573fad5a27"
+    },
+    "assets/gallery/sci-fi-gun/03.jpg": {
+      "src": "408f87573fad5a27",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/03.webp": {
+      "src": "408f87573fad5a27"
+    },
+    "assets/gallery/sci-fi-gun/04.avif": {
+      "src": "521fccb6c1f0e014"
+    },
+    "assets/gallery/sci-fi-gun/04.jpg": {
+      "src": "521fccb6c1f0e014",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/04.webp": {
+      "src": "521fccb6c1f0e014"
+    },
+    "assets/gallery/sci-fi-gun/05.avif": {
+      "src": "823004b568e00a6a"
+    },
+    "assets/gallery/sci-fi-gun/05.jpg": {
+      "src": "823004b568e00a6a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/05.webp": {
+      "src": "823004b568e00a6a"
+    },
+    "assets/gallery/sci-fi-gun/06.avif": {
+      "src": "e8943fd3893f6233"
+    },
+    "assets/gallery/sci-fi-gun/06.jpg": {
+      "src": "e8943fd3893f6233",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/06.webp": {
+      "src": "e8943fd3893f6233"
+    },
+    "assets/gallery/sci-fi-gun/07.avif": {
+      "src": "1fd4aa6908c5313e"
+    },
+    "assets/gallery/sci-fi-gun/07.jpg": {
+      "src": "1fd4aa6908c5313e",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/07.webp": {
+      "src": "1fd4aa6908c5313e"
+    },
+    "assets/gallery/sci-fi-gun/08.avif": {
+      "src": "2a5d73344b8b7e35"
+    },
+    "assets/gallery/sci-fi-gun/08.jpg": {
+      "src": "2a5d73344b8b7e35",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/08.webp": {
+      "src": "2a5d73344b8b7e35"
+    },
+    "assets/gallery/sci-fi-gun/09.avif": {
+      "src": "f6a7cc4f6afc731a"
+    },
+    "assets/gallery/sci-fi-gun/09.jpg": {
+      "src": "f6a7cc4f6afc731a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/09.webp": {
+      "src": "f6a7cc4f6afc731a"
+    },
+    "assets/gallery/sci-fi-gun/10.avif": {
+      "src": "43a2e244444329cb"
+    },
+    "assets/gallery/sci-fi-gun/10.jpg": {
+      "src": "43a2e244444329cb",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/10.webp": {
+      "src": "43a2e244444329cb"
+    },
+    "assets/gallery/sci-fi-gun/11.avif": {
+      "src": "9f4d68a7fff48615"
+    },
+    "assets/gallery/sci-fi-gun/11.jpg": {
+      "src": "9f4d68a7fff48615",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/11.webp": {
+      "src": "9f4d68a7fff48615"
+    },
+    "assets/gallery/sci-fi-gun/12.avif": {
+      "src": "d260abc51c20fbc0"
+    },
+    "assets/gallery/sci-fi-gun/12.jpg": {
+      "src": "d260abc51c20fbc0",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/sci-fi-gun/12.webp": {
+      "src": "d260abc51c20fbc0"
+    },
+    "assets/gallery/sci-fi-gun/sm/01.avif": {
+      "src": "62d6768b59d856a9"
+    },
+    "assets/gallery/sci-fi-gun/sm/01.jpg": {
+      "src": "19386065ebb19413"
+    },
+    "assets/gallery/sci-fi-gun/sm/01.webp": {
+      "src": "62d6768b59d856a9"
+    },
+    "assets/gallery/sci-fi-gun/sm/02.avif": {
+      "src": "4d463cf475754c10"
+    },
+    "assets/gallery/sci-fi-gun/sm/02.jpg": {
+      "src": "3262df29a775fd9a"
+    },
+    "assets/gallery/sci-fi-gun/sm/02.webp": {
+      "src": "4d463cf475754c10"
+    },
+    "assets/gallery/sci-fi-gun/sm/03.avif": {
+      "src": "06f36e9297f25663"
+    },
+    "assets/gallery/sci-fi-gun/sm/03.jpg": {
+      "src": "408f87573fad5a27"
+    },
+    "assets/gallery/sci-fi-gun/sm/03.webp": {
+      "src": "06f36e9297f25663"
+    },
+    "assets/gallery/sci-fi-gun/sm/04.avif": {
+      "src": "5f4ed1e74af7c60d"
+    },
+    "assets/gallery/sci-fi-gun/sm/04.jpg": {
+      "src": "521fccb6c1f0e014"
+    },
+    "assets/gallery/sci-fi-gun/sm/04.webp": {
+      "src": "5f4ed1e74af7c60d"
+    },
+    "assets/gallery/sci-fi-gun/sm/05.avif": {
+      "src": "c471edab1d74069a"
+    },
+    "assets/gallery/sci-fi-gun/sm/05.jpg": {
+      "src": "823004b568e00a6a"
+    },
+    "assets/gallery/sci-fi-gun/sm/05.webp": {
+      "src": "c471edab1d74069a"
+    },
+    "assets/gallery/sci-fi-gun/sm/06.avif": {
+      "src": "c08df9bfa6537c52"
+    },
+    "assets/gallery/sci-fi-gun/sm/06.jpg": {
+      "src": "e8943fd3893f6233"
+    },
+    "assets/gallery/sci-fi-gun/sm/06.webp": {
+      "src": "c08df9bfa6537c52"
+    },
+    "assets/gallery/sci-fi-gun/sm/07.avif": {
+      "src": "74a09611bd7c5a6b"
+    },
+    "assets/gallery/sci-fi-gun/sm/07.jpg": {
+      "src": "1fd4aa6908c5313e"
+    },
+    "assets/gallery/sci-fi-gun/sm/07.webp": {
+      "src": "74a09611bd7c5a6b"
+    },
+    "assets/gallery/sci-fi-gun/sm/08.avif": {
+      "src": "330dc27218156f07"
+    },
+    "assets/gallery/sci-fi-gun/sm/08.jpg": {
+      "src": "2a5d73344b8b7e35"
+    },
+    "assets/gallery/sci-fi-gun/sm/08.webp": {
+      "src": "330dc27218156f07"
+    },
+    "assets/gallery/sci-fi-gun/sm/09.avif": {
+      "src": "893daa783f7e79a6"
+    },
+    "assets/gallery/sci-fi-gun/sm/09.jpg": {
+      "src": "f6a7cc4f6afc731a"
+    },
+    "assets/gallery/sci-fi-gun/sm/09.webp": {
+      "src": "893daa783f7e79a6"
+    },
+    "assets/gallery/sci-fi-gun/sm/10.avif": {
+      "src": "8631b42eb0a25187"
+    },
+    "assets/gallery/sci-fi-gun/sm/10.jpg": {
+      "src": "43a2e244444329cb"
+    },
+    "assets/gallery/sci-fi-gun/sm/10.webp": {
+      "src": "8631b42eb0a25187"
+    },
+    "assets/gallery/sci-fi-gun/sm/11.avif": {
+      "src": "135e47f4276f23e6"
+    },
+    "assets/gallery/sci-fi-gun/sm/11.jpg": {
+      "src": "9f4d68a7fff48615"
+    },
+    "assets/gallery/sci-fi-gun/sm/11.webp": {
+      "src": "135e47f4276f23e6"
+    },
+    "assets/gallery/sci-fi-gun/sm/12.avif": {
+      "src": "b413fa1027e0684d"
+    },
+    "assets/gallery/sci-fi-gun/sm/12.jpg": {
+      "src": "d260abc51c20fbc0"
+    },
+    "assets/gallery/sci-fi-gun/sm/12.webp": {
+      "src": "b413fa1027e0684d"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/01.avif": {
+      "src": "b86f28c50ef76a24"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/01.jpg": {
+      "src": "b86f28c50ef76a24",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/sci-fi-russian-railway-station/01.webp": {
+      "src": "b86f28c50ef76a24"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/02.avif": {
+      "src": "95c6e5dbd4144e9b"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/02.jpg": {
+      "src": "95c6e5dbd4144e9b",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/sci-fi-russian-railway-station/02.webp": {
+      "src": "95c6e5dbd4144e9b"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/01.avif": {
+      "src": "f8e8ed0c5c929508"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/01.jpg": {
+      "src": "b86f28c50ef76a24"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/01.webp": {
+      "src": "f8e8ed0c5c929508"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/02.avif": {
+      "src": "6b3abd613e036b39"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/02.jpg": {
+      "src": "95c6e5dbd4144e9b"
+    },
+    "assets/gallery/sci-fi-russian-railway-station/sm/02.webp": {
+      "src": "6b3abd613e036b39"
+    },
+    "assets/gallery/space-suit-j-30/01.avif": {
+      "src": "489fb4f47f369641"
+    },
+    "assets/gallery/space-suit-j-30/01.jpg": {
+      "src": "489fb4f47f369641",
+      "w": 1024,
+      "h": 1024
+    },
+    "assets/gallery/space-suit-j-30/01.webp": {
+      "src": "489fb4f47f369641"
+    },
+    "assets/gallery/space-suit-j-30/02.avif": {
+      "src": "4850401eb8c2fd09"
+    },
+    "assets/gallery/space-suit-j-30/02.jpg": {
+      "src": "4850401eb8c2fd09",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/space-suit-j-30/02.webp": {
+      "src": "4850401eb8c2fd09"
+    },
+    "assets/gallery/space-suit-j-30/03.avif": {
+      "src": "11c854fcc77ae4b9"
+    },
+    "assets/gallery/space-suit-j-30/03.jpg": {
+      "src": "11c854fcc77ae4b9",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/space-suit-j-30/03.webp": {
+      "src": "11c854fcc77ae4b9"
+    },
+    "assets/gallery/space-suit-j-30/04.avif": {
+      "src": "7de504c62decfb9b"
+    },
+    "assets/gallery/space-suit-j-30/04.jpg": {
+      "src": "7de504c62decfb9b",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/space-suit-j-30/04.webp": {
+      "src": "7de504c62decfb9b"
+    },
+    "assets/gallery/space-suit-j-30/05.avif": {
+      "src": "74c70e9155d58b93"
+    },
+    "assets/gallery/space-suit-j-30/05.jpg": {
+      "src": "74c70e9155d58b93",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/space-suit-j-30/05.webp": {
+      "src": "74c70e9155d58b93"
+    },
+    "assets/gallery/space-suit-j-30/06.avif": {
+      "src": "d4104fe019055495"
+    },
+    "assets/gallery/space-suit-j-30/06.jpg": {
+      "src": "d4104fe019055495",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/space-suit-j-30/06.webp": {
+      "src": "d4104fe019055495"
+    },
+    "assets/gallery/space-suit-j-30/07.avif": {
+      "src": "8734d780024227de"
+    },
+    "assets/gallery/space-suit-j-30/07.jpg": {
+      "src": "8734d780024227de",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/space-suit-j-30/07.webp": {
+      "src": "8734d780024227de"
+    },
+    "assets/gallery/space-suit-j-30/08.avif": {
+      "src": "a7b1deaef9719402"
+    },
+    "assets/gallery/space-suit-j-30/08.jpg": {
+      "src": "a7b1deaef9719402",
+      "w": 1343,
+      "h": 798
+    },
+    "assets/gallery/space-suit-j-30/08.webp": {
+      "src": "a7b1deaef9719402"
+    },
+    "assets/gallery/space-suit-j-30/sm/01.avif": {
+      "src": "c0012bc6fad02c9f"
+    },
+    "assets/gallery/space-suit-j-30/sm/01.jpg": {
+      "src": "489fb4f47f369641"
+    },
+    "assets/gallery/space-suit-j-30/sm/01.webp": {
+      "src": "c0012bc6fad02c9f"
+    },
+    "assets/gallery/space-suit-j-30/sm/02.avif": {
+      "src": "7eed6325cebdd98c"
+    },
+    "assets/gallery/space-suit-j-30/sm/02.jpg": {
+      "src": "4850401eb8c2fd09"
+    },
+    "assets/gallery/space-suit-j-30/sm/02.webp": {
+      "src": "7eed6325cebdd98c"
+    },
+    "assets/gallery/space-suit-j-30/sm/03.avif": {
+      "src": "2da0a08e5e1a15ce"
+    },
+    "assets/gallery/space-suit-j-30/sm/03.jpg": {
+      "src": "11c854fcc77ae4b9"
+    },
+    "assets/gallery/space-suit-j-30/sm/03.webp": {
+      "src": "2da0a08e5e1a15ce"
+    },
+    "assets/gallery/space-suit-j-30/sm/04.avif": {
+      "src": "1194f2206e3d38f3"
+    },
+    "assets/gallery/space-suit-j-30/sm/04.jpg": {
+      "src": "7de504c62decfb9b"
+    },
+    "assets/gallery/space-suit-j-30/sm/04.webp": {
+      "src": "1194f2206e3d38f3"
+    },
+    "assets/gallery/space-suit-j-30/sm/05.avif": {
+      "src": "a0b83f01dc168e96"
+    },
+    "assets/gallery/space-suit-j-30/sm/05.jpg": {
+      "src": "74c70e9155d58b93"
+    },
+    "assets/gallery/space-suit-j-30/sm/05.webp": {
+      "src": "a0b83f01dc168e96"
+    },
+    "assets/gallery/space-suit-j-30/sm/06.avif": {
+      "src": "f72f3747a2a69f81"
+    },
+    "assets/gallery/space-suit-j-30/sm/06.jpg": {
+      "src": "d4104fe019055495"
+    },
+    "assets/gallery/space-suit-j-30/sm/06.webp": {
+      "src": "f72f3747a2a69f81"
+    },
+    "assets/gallery/space-suit-j-30/sm/07.avif": {
+      "src": "3ff39d23d49b2bc9"
+    },
+    "assets/gallery/space-suit-j-30/sm/07.jpg": {
+      "src": "8734d780024227de"
+    },
+    "assets/gallery/space-suit-j-30/sm/07.webp": {
+      "src": "3ff39d23d49b2bc9"
+    },
+    "assets/gallery/space-suit-j-30/sm/08.avif": {
+      "src": "63078a7e43f1dffb"
+    },
+    "assets/gallery/space-suit-j-30/sm/08.jpg": {
+      "src": "a7b1deaef9719402"
+    },
+    "assets/gallery/space-suit-j-30/sm/08.webp": {
+      "src": "63078a7e43f1dffb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/01.avif": {
+      "src": "a7793d683f6d0314"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/01.jpg": {
+      "src": "a7793d683f6d0314",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/spartan-helmet-metro-2033/01.webp": {
+      "src": "a7793d683f6d0314"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/02.avif": {
+      "src": "e7cd96385342fc23"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/02.jpg": {
+      "src": "e7cd96385342fc23",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/02.webp": {
+      "src": "e7cd96385342fc23"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/03.avif": {
+      "src": "4e6e3e98debb190f"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/03.jpg": {
+      "src": "4e6e3e98debb190f",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/03.webp": {
+      "src": "4e6e3e98debb190f"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/04.avif": {
+      "src": "88723e0149d764d1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/04.jpg": {
+      "src": "88723e0149d764d1",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/04.webp": {
+      "src": "88723e0149d764d1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/05.avif": {
+      "src": "1ae74619b8cb1ba5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/05.jpg": {
+      "src": "1ae74619b8cb1ba5",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/05.webp": {
+      "src": "1ae74619b8cb1ba5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/06.avif": {
+      "src": "52bf47d1144812b0"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/06.jpg": {
+      "src": "52bf47d1144812b0",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/06.webp": {
+      "src": "52bf47d1144812b0"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/07.avif": {
+      "src": "cc63210568b005ad"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/07.jpg": {
+      "src": "cc63210568b005ad",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/07.webp": {
+      "src": "cc63210568b005ad"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/08.avif": {
+      "src": "83b954cf9814b683"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/08.jpg": {
+      "src": "83b954cf9814b683",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/08.webp": {
+      "src": "83b954cf9814b683"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/09.avif": {
+      "src": "9f94271af7b87bda"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/09.jpg": {
+      "src": "9f94271af7b87bda",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/09.webp": {
+      "src": "9f94271af7b87bda"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/10.avif": {
+      "src": "6ccd917b9303856a"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/10.jpg": {
+      "src": "6ccd917b9303856a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/10.webp": {
+      "src": "6ccd917b9303856a"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/11.avif": {
+      "src": "d78b92d01dbe0900"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/11.jpg": {
+      "src": "d78b92d01dbe0900",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/11.webp": {
+      "src": "d78b92d01dbe0900"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/12.avif": {
+      "src": "cdce68d00f3d80f1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/12.jpg": {
+      "src": "cdce68d00f3d80f1",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/12.webp": {
+      "src": "cdce68d00f3d80f1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/13.avif": {
+      "src": "7c8e79b9f036bdaa"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/13.jpg": {
+      "src": "7c8e79b9f036bdaa",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/13.webp": {
+      "src": "7c8e79b9f036bdaa"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/14.avif": {
+      "src": "2105fa6415966dd5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/14.jpg": {
+      "src": "2105fa6415966dd5",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/14.webp": {
+      "src": "2105fa6415966dd5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/15.avif": {
+      "src": "b0ce7b11750edbfd"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/15.jpg": {
+      "src": "b0ce7b11750edbfd",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/15.webp": {
+      "src": "b0ce7b11750edbfd"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/16.avif": {
+      "src": "478b9e69cb34f8d3"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/16.jpg": {
+      "src": "478b9e69cb34f8d3",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/16.webp": {
+      "src": "478b9e69cb34f8d3"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/17.avif": {
+      "src": "ce2852a61d4f3c4d"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/17.jpg": {
+      "src": "ce2852a61d4f3c4d",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/17.webp": {
+      "src": "ce2852a61d4f3c4d"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/18.avif": {
+      "src": "463e484aab6867bb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/18.jpg": {
+      "src": "463e484aab6867bb",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/18.webp": {
+      "src": "463e484aab6867bb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/19.avif": {
+      "src": "99247ccba9879e11"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/19.jpg": {
+      "src": "99247ccba9879e11",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/19.webp": {
+      "src": "99247ccba9879e11"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/20.avif": {
+      "src": "66b731f7fee50b38"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/20.jpg": {
+      "src": "66b731f7fee50b38",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/20.webp": {
+      "src": "66b731f7fee50b38"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/21.avif": {
+      "src": "d766bf54e681f4de"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/21.jpg": {
+      "src": "d766bf54e681f4de",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/21.webp": {
+      "src": "d766bf54e681f4de"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/22.avif": {
+      "src": "ba62125b32f4e59e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/22.jpg": {
+      "src": "ba62125b32f4e59e",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/22.webp": {
+      "src": "ba62125b32f4e59e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/23.avif": {
+      "src": "6eeb5b5d32c72ab9"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/23.jpg": {
+      "src": "6eeb5b5d32c72ab9",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/23.webp": {
+      "src": "6eeb5b5d32c72ab9"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/24.avif": {
+      "src": "6807960b979e26b2"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/24.jpg": {
+      "src": "6807960b979e26b2",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/spartan-helmet-metro-2033/24.webp": {
+      "src": "6807960b979e26b2"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/01.avif": {
+      "src": "553086d0faa199fb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/01.jpg": {
+      "src": "a7793d683f6d0314"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/01.webp": {
+      "src": "553086d0faa199fb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/02.avif": {
+      "src": "34f4799185b33d17"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/02.jpg": {
+      "src": "e7cd96385342fc23"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/02.webp": {
+      "src": "34f4799185b33d17"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/03.avif": {
+      "src": "dfa6261b2af5e8cb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/03.jpg": {
+      "src": "4e6e3e98debb190f"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/03.webp": {
+      "src": "dfa6261b2af5e8cb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/04.avif": {
+      "src": "15a438300368be2e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/04.jpg": {
+      "src": "88723e0149d764d1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/04.webp": {
+      "src": "15a438300368be2e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/05.avif": {
+      "src": "b3688f9c76bea2da"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/05.jpg": {
+      "src": "1ae74619b8cb1ba5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/05.webp": {
+      "src": "b3688f9c76bea2da"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/06.avif": {
+      "src": "453321b053825050"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/06.jpg": {
+      "src": "52bf47d1144812b0"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/06.webp": {
+      "src": "453321b053825050"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/07.avif": {
+      "src": "cfae067929bd9108"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/07.jpg": {
+      "src": "cc63210568b005ad"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/07.webp": {
+      "src": "cfae067929bd9108"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/08.avif": {
+      "src": "2442d71fec123890"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/08.jpg": {
+      "src": "83b954cf9814b683"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/08.webp": {
+      "src": "2442d71fec123890"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/09.avif": {
+      "src": "d66b5b44592f0d28"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/09.jpg": {
+      "src": "9f94271af7b87bda"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/09.webp": {
+      "src": "d66b5b44592f0d28"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/10.avif": {
+      "src": "acfe2e0f8cf35209"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/10.jpg": {
+      "src": "6ccd917b9303856a"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/10.webp": {
+      "src": "acfe2e0f8cf35209"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/11.avif": {
+      "src": "0ab9175cb3bff70f"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/11.jpg": {
+      "src": "d78b92d01dbe0900"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/11.webp": {
+      "src": "0ab9175cb3bff70f"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/12.avif": {
+      "src": "23c222be0f088a97"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/12.jpg": {
+      "src": "cdce68d00f3d80f1"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/12.webp": {
+      "src": "23c222be0f088a97"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/13.avif": {
+      "src": "3d2567bfe673cb97"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/13.jpg": {
+      "src": "7c8e79b9f036bdaa"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/13.webp": {
+      "src": "3d2567bfe673cb97"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/14.avif": {
+      "src": "a1f86c056d9acced"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/14.jpg": {
+      "src": "2105fa6415966dd5"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/14.webp": {
+      "src": "a1f86c056d9acced"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/15.avif": {
+      "src": "e31b6d75e3d79910"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/15.jpg": {
+      "src": "b0ce7b11750edbfd"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/15.webp": {
+      "src": "e31b6d75e3d79910"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/16.avif": {
+      "src": "df727066297dcc8e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/16.jpg": {
+      "src": "478b9e69cb34f8d3"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/16.webp": {
+      "src": "df727066297dcc8e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/17.avif": {
+      "src": "0103f6a83626b708"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/17.jpg": {
+      "src": "ce2852a61d4f3c4d"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/17.webp": {
+      "src": "0103f6a83626b708"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/18.avif": {
+      "src": "3e8c8b055bc70ff2"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/18.jpg": {
+      "src": "463e484aab6867bb"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/18.webp": {
+      "src": "3e8c8b055bc70ff2"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/19.avif": {
+      "src": "05cdcc993084b526"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/19.jpg": {
+      "src": "99247ccba9879e11"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/19.webp": {
+      "src": "05cdcc993084b526"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/20.avif": {
+      "src": "1f1a7b5466a1e9ea"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/20.jpg": {
+      "src": "66b731f7fee50b38"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/20.webp": {
+      "src": "1f1a7b5466a1e9ea"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/21.avif": {
+      "src": "d85d5c06874e7e81"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/21.jpg": {
+      "src": "d766bf54e681f4de"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/21.webp": {
+      "src": "d85d5c06874e7e81"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/22.avif": {
+      "src": "0e22c1bab3a73a2d"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/22.jpg": {
+      "src": "ba62125b32f4e59e"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/22.webp": {
+      "src": "0e22c1bab3a73a2d"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/23.avif": {
+      "src": "bc12b745027fc23c"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/23.jpg": {
+      "src": "6eeb5b5d32c72ab9"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/23.webp": {
+      "src": "bc12b745027fc23c"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/24.avif": {
+      "src": "bd73342593bb0182"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/24.jpg": {
+      "src": "6807960b979e26b2"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/24.webp": {
+      "src": "bd73342593bb0182"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/01.avif": {
+      "src": "213bc31b9e5bc8bb"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/01.jpg": {
+      "src": "213bc31b9e5bc8bb",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/01.webp": {
+      "src": "213bc31b9e5bc8bb"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/02.avif": {
+      "src": "5be2ad25310358dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/02.jpg": {
+      "src": "5be2ad25310358dc",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/02.webp": {
+      "src": "5be2ad25310358dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/03.avif": {
+      "src": "75cfd9e3a25d31f2"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/03.jpg": {
+      "src": "75cfd9e3a25d31f2",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/03.webp": {
+      "src": "75cfd9e3a25d31f2"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/04.avif": {
+      "src": "7394d2e155d9c134"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/04.jpg": {
+      "src": "7394d2e155d9c134",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/04.webp": {
+      "src": "7394d2e155d9c134"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/05.avif": {
+      "src": "b7a308a9c9f89572"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/05.jpg": {
+      "src": "b7a308a9c9f89572",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/05.webp": {
+      "src": "b7a308a9c9f89572"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/06.avif": {
+      "src": "cc4c82d189bd6fb0"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/06.jpg": {
+      "src": "cc4c82d189bd6fb0",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/06.webp": {
+      "src": "cc4c82d189bd6fb0"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/07.avif": {
+      "src": "d325ef2c315ee26d"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/07.jpg": {
+      "src": "d325ef2c315ee26d",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/07.webp": {
+      "src": "d325ef2c315ee26d"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/08.avif": {
+      "src": "267fb6ca3f14cbac"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/08.jpg": {
+      "src": "267fb6ca3f14cbac",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/08.webp": {
+      "src": "267fb6ca3f14cbac"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/09.avif": {
+      "src": "8f6fdd690e40973e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/09.jpg": {
+      "src": "8f6fdd690e40973e",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/09.webp": {
+      "src": "8f6fdd690e40973e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/10.avif": {
+      "src": "f56192f2d07bff0e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/10.jpg": {
+      "src": "f56192f2d07bff0e",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/10.webp": {
+      "src": "f56192f2d07bff0e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/11.avif": {
+      "src": "247d29280233de1a"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/11.jpg": {
+      "src": "247d29280233de1a",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/11.webp": {
+      "src": "247d29280233de1a"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/12.avif": {
+      "src": "ea794c45e0b333dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/12.jpg": {
+      "src": "ea794c45e0b333dc",
+      "w": 1600,
+      "h": 900
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/12.webp": {
+      "src": "ea794c45e0b333dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/01.avif": {
+      "src": "67537456491a20e9"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/01.jpg": {
+      "src": "213bc31b9e5bc8bb"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/01.webp": {
+      "src": "67537456491a20e9"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/02.avif": {
+      "src": "c3b38baff75e04a2"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/02.jpg": {
+      "src": "5be2ad25310358dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/02.webp": {
+      "src": "c3b38baff75e04a2"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/03.avif": {
+      "src": "6d661b5ad33fd2fc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/03.jpg": {
+      "src": "75cfd9e3a25d31f2"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/03.webp": {
+      "src": "6d661b5ad33fd2fc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/04.avif": {
+      "src": "acb352320ff95605"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/04.jpg": {
+      "src": "7394d2e155d9c134"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/04.webp": {
+      "src": "acb352320ff95605"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/05.avif": {
+      "src": "f204ecccfb05b58c"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/05.jpg": {
+      "src": "b7a308a9c9f89572"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/05.webp": {
+      "src": "f204ecccfb05b58c"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/06.avif": {
+      "src": "eb663ce081ef2906"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/06.jpg": {
+      "src": "cc4c82d189bd6fb0"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/06.webp": {
+      "src": "eb663ce081ef2906"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/07.avif": {
+      "src": "74ba8bc2434bd463"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/07.jpg": {
+      "src": "d325ef2c315ee26d"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/07.webp": {
+      "src": "74ba8bc2434bd463"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/08.avif": {
+      "src": "56a5d8d8f6fd782e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/08.jpg": {
+      "src": "267fb6ca3f14cbac"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/08.webp": {
+      "src": "56a5d8d8f6fd782e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/09.avif": {
+      "src": "b1f9dac145f0802e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/09.jpg": {
+      "src": "8f6fdd690e40973e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/09.webp": {
+      "src": "b1f9dac145f0802e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/10.avif": {
+      "src": "cbe8561910dfe7bc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/10.jpg": {
+      "src": "f56192f2d07bff0e"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/10.webp": {
+      "src": "cbe8561910dfe7bc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/11.avif": {
+      "src": "0f48bbb1417af943"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/11.jpg": {
+      "src": "247d29280233de1a"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/11.webp": {
+      "src": "0f48bbb1417af943"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/12.avif": {
+      "src": "799bca7ca2666df5"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/12.jpg": {
+      "src": "ea794c45e0b333dc"
+    },
+    "assets/gallery/the-forgotten-shrine-environment-prop-study/sm/12.webp": {
+      "src": "799bca7ca2666df5"
+    },
+    "assets/gallery/tron-lightcycle/01.avif": {
+      "src": "2c18d81bd9610ce1"
+    },
+    "assets/gallery/tron-lightcycle/01.jpg": {
+      "src": "2c18d81bd9610ce1",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/01.webp": {
+      "src": "2c18d81bd9610ce1"
+    },
+    "assets/gallery/tron-lightcycle/02.avif": {
+      "src": "b68cf46a8c0a2be0"
+    },
+    "assets/gallery/tron-lightcycle/02.jpg": {
+      "src": "b68cf46a8c0a2be0",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/02.webp": {
+      "src": "b68cf46a8c0a2be0"
+    },
+    "assets/gallery/tron-lightcycle/03.avif": {
+      "src": "b0fc3b72e0b40fe9"
+    },
+    "assets/gallery/tron-lightcycle/03.jpg": {
+      "src": "b0fc3b72e0b40fe9",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/03.webp": {
+      "src": "b0fc3b72e0b40fe9"
+    },
+    "assets/gallery/tron-lightcycle/04.avif": {
+      "src": "9694788bd6841189"
+    },
+    "assets/gallery/tron-lightcycle/04.jpg": {
+      "src": "9694788bd6841189",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/04.webp": {
+      "src": "9694788bd6841189"
+    },
+    "assets/gallery/tron-lightcycle/05.avif": {
+      "src": "c629f1963ed33dc2"
+    },
+    "assets/gallery/tron-lightcycle/05.jpg": {
+      "src": "c629f1963ed33dc2",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/05.webp": {
+      "src": "c629f1963ed33dc2"
+    },
+    "assets/gallery/tron-lightcycle/06.avif": {
+      "src": "a01b03a5d789c73e"
+    },
+    "assets/gallery/tron-lightcycle/06.jpg": {
+      "src": "a01b03a5d789c73e",
+      "w": 893,
+      "h": 1600
+    },
+    "assets/gallery/tron-lightcycle/06.webp": {
+      "src": "a01b03a5d789c73e"
+    },
+    "assets/gallery/tron-lightcycle/sm/01.avif": {
+      "src": "62062496c2462897"
+    },
+    "assets/gallery/tron-lightcycle/sm/01.jpg": {
+      "src": "2c18d81bd9610ce1"
+    },
+    "assets/gallery/tron-lightcycle/sm/01.webp": {
+      "src": "62062496c2462897"
+    },
+    "assets/gallery/tron-lightcycle/sm/02.avif": {
+      "src": "fff91cd184165bd9"
+    },
+    "assets/gallery/tron-lightcycle/sm/02.jpg": {
+      "src": "b68cf46a8c0a2be0"
+    },
+    "assets/gallery/tron-lightcycle/sm/02.webp": {
+      "src": "fff91cd184165bd9"
+    },
+    "assets/gallery/tron-lightcycle/sm/03.avif": {
+      "src": "e0afebd2985e4313"
+    },
+    "assets/gallery/tron-lightcycle/sm/03.jpg": {
+      "src": "b0fc3b72e0b40fe9"
+    },
+    "assets/gallery/tron-lightcycle/sm/03.webp": {
+      "src": "e0afebd2985e4313"
+    },
+    "assets/gallery/tron-lightcycle/sm/04.avif": {
+      "src": "21a4d51264efd82f"
+    },
+    "assets/gallery/tron-lightcycle/sm/04.jpg": {
+      "src": "9694788bd6841189"
+    },
+    "assets/gallery/tron-lightcycle/sm/04.webp": {
+      "src": "21a4d51264efd82f"
+    },
+    "assets/gallery/tron-lightcycle/sm/05.avif": {
+      "src": "20faa25e46f75bd2"
+    },
+    "assets/gallery/tron-lightcycle/sm/05.jpg": {
+      "src": "c629f1963ed33dc2"
+    },
+    "assets/gallery/tron-lightcycle/sm/05.webp": {
+      "src": "20faa25e46f75bd2"
+    },
+    "assets/gallery/tron-lightcycle/sm/06.avif": {
+      "src": "5da4241118a7859a"
+    },
+    "assets/gallery/tron-lightcycle/sm/06.jpg": {
+      "src": "a01b03a5d789c73e"
+    },
+    "assets/gallery/tron-lightcycle/sm/06.webp": {
+      "src": "5da4241118a7859a"
+    },
+    "assets/gallery/ummc-tennis-championship/01.avif": {
+      "src": "23b9e7226a5d1ac8"
+    },
+    "assets/gallery/ummc-tennis-championship/01.jpg": {
+      "src": "23b9e7226a5d1ac8",
+      "w": 510,
+      "h": 905
+    },
+    "assets/gallery/ummc-tennis-championship/01.webp": {
+      "src": "23b9e7226a5d1ac8"
+    },
+    "assets/gallery/ummc-tennis-championship/sm/01.avif": {
+      "src": "2d954c240f993c60"
+    },
+    "assets/gallery/ummc-tennis-championship/sm/01.jpg": {
+      "src": "23b9e7226a5d1ac8"
+    },
+    "assets/gallery/ummc-tennis-championship/sm/01.webp": {
+      "src": "2d954c240f993c60"
+    },
+    "assets/gallery/usmu-campus/01.avif": {
+      "src": "53d837024f00fca5"
+    },
+    "assets/gallery/usmu-campus/01.jpg": {
+      "src": "53d837024f00fca5",
+      "w": 1536,
+      "h": 1536
+    },
+    "assets/gallery/usmu-campus/01.webp": {
+      "src": "53d837024f00fca5"
+    },
+    "assets/gallery/usmu-campus/02.avif": {
+      "src": "b4e737452647fc98"
+    },
+    "assets/gallery/usmu-campus/02.jpg": {
+      "src": "b4e737452647fc98",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/usmu-campus/02.webp": {
+      "src": "b4e737452647fc98"
+    },
+    "assets/gallery/usmu-campus/03.avif": {
+      "src": "fdd7330e63d6cfc1"
+    },
+    "assets/gallery/usmu-campus/03.jpg": {
+      "src": "fdd7330e63d6cfc1",
+      "w": 1600,
+      "h": 883
+    },
+    "assets/gallery/usmu-campus/03.webp": {
+      "src": "fdd7330e63d6cfc1"
+    },
+    "assets/gallery/usmu-campus/04.avif": {
+      "src": "40064a0bd2c5a3ed"
+    },
+    "assets/gallery/usmu-campus/04.jpg": {
+      "src": "40064a0bd2c5a3ed",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/usmu-campus/04.webp": {
+      "src": "40064a0bd2c5a3ed"
+    },
+    "assets/gallery/usmu-campus/05.avif": {
+      "src": "2ef7276abcc12810"
+    },
+    "assets/gallery/usmu-campus/05.jpg": {
+      "src": "2ef7276abcc12810",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/usmu-campus/05.webp": {
+      "src": "2ef7276abcc12810"
+    },
+    "assets/gallery/usmu-campus/06.avif": {
+      "src": "5f38a870dd4a5bdb"
+    },
+    "assets/gallery/usmu-campus/06.jpg": {
+      "src": "5f38a870dd4a5bdb",
+      "w": 1600,
+      "h": 893
+    },
+    "assets/gallery/usmu-campus/06.webp": {
+      "src": "5f38a870dd4a5bdb"
+    },
+    "assets/gallery/usmu-campus/sm/01.avif": {
+      "src": "aa5bfea2c2756517"
+    },
+    "assets/gallery/usmu-campus/sm/01.jpg": {
+      "src": "53d837024f00fca5"
+    },
+    "assets/gallery/usmu-campus/sm/01.webp": {
+      "src": "aa5bfea2c2756517"
+    },
+    "assets/gallery/usmu-campus/sm/02.avif": {
+      "src": "7d9e21ea1517d15d"
+    },
+    "assets/gallery/usmu-campus/sm/02.jpg": {
+      "src": "b4e737452647fc98"
+    },
+    "assets/gallery/usmu-campus/sm/02.webp": {
+      "src": "7d9e21ea1517d15d"
+    },
+    "assets/gallery/usmu-campus/sm/03.avif": {
+      "src": "0af22b287a0e3dd7"
+    },
+    "assets/gallery/usmu-campus/sm/03.jpg": {
+      "src": "fdd7330e63d6cfc1"
+    },
+    "assets/gallery/usmu-campus/sm/03.webp": {
+      "src": "0af22b287a0e3dd7"
+    },
+    "assets/gallery/usmu-campus/sm/04.avif": {
+      "src": "6d56505599b8bae0"
+    },
+    "assets/gallery/usmu-campus/sm/04.jpg": {
+      "src": "40064a0bd2c5a3ed"
+    },
+    "assets/gallery/usmu-campus/sm/04.webp": {
+      "src": "6d56505599b8bae0"
+    },
+    "assets/gallery/usmu-campus/sm/05.avif": {
+      "src": "96b8ebf23e91b2fc"
+    },
+    "assets/gallery/usmu-campus/sm/05.jpg": {
+      "src": "2ef7276abcc12810"
+    },
+    "assets/gallery/usmu-campus/sm/05.webp": {
+      "src": "96b8ebf23e91b2fc"
+    },
+    "assets/gallery/usmu-campus/sm/06.avif": {
+      "src": "f25a6f8b8abdb625"
+    },
+    "assets/gallery/usmu-campus/sm/06.jpg": {
+      "src": "5f38a870dd4a5bdb"
+    },
+    "assets/gallery/usmu-campus/sm/06.webp": {
+      "src": "f25a6f8b8abdb625"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/01.avif": {
+      "src": "81f81a168c5466bd"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/01.jpg": {
+      "src": "81f81a168c5466bd",
+      "w": 900,
+      "h": 1600
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/01.webp": {
+      "src": "81f81a168c5466bd"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/sm/01.avif": {
+      "src": "227e476ba32b3f6d"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/sm/01.jpg": {
+      "src": "81f81a168c5466bd"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/sm/01.webp": {
+      "src": "227e476ba32b3f6d"
+    },
+    "assets/hero-robot.avif": {
+      "src": "cb33af285848b7d8"
+    },
+    "assets/hero-robot.jpg": {
+      "src": "cb33af285848b7d8"
+    },
+    "assets/hero-robot.webp": {
+      "src": "cb33af285848b7d8"
+    },
+    "assets/og.jpg": {
+      "src": "ceb4d1ec677eebfb"
+    },
+    "assets/portrait.avif": {
+      "src": "0fadcbb67f449e86"
+    },
+    "assets/portrait.jpg": {
+      "src": "0fadcbb67f449e86"
+    },
+    "assets/portrait.webp": {
+      "src": "0fadcbb67f449e86"
+    },
+    "assets/showreel-poster.avif": {
+      "src": "806abe3cedc60764"
+    },
+    "assets/showreel-poster.jpg": {
+      "src": "806abe3cedc60764"
+    },
+    "assets/showreel-poster.webp": {
+      "src": "806abe3cedc60764"
+    },
+    "assets/showreel.mp4": {
+      "src": "0a114ad16ebbab5d"
+    },
+    "assets/thumbs/death-of-a-pirate.avif": {
+      "src": "5e54ab223cf48789"
+    },
+    "assets/thumbs/death-of-a-pirate.jpg": {
+      "src": "4e0cbed9d124ddbf",
+      "w": 507,
+      "h": 900
+    },
+    "assets/thumbs/death-of-a-pirate.webp": {
+      "src": "5e54ab223cf48789"
+    },
+    "assets/thumbs/forsa.avif": {
+      "src": "52fc1462c36d7f7f"
+    },
+    "assets/thumbs/forsa.jpg": {
+      "src": "9068ecb290de9ae6",
+      "w": 640,
+      "h": 360
+    },
+    "assets/thumbs/forsa.webp": {
+      "src": "52fc1462c36d7f7f"
+    },
+    "assets/thumbs/futuristic-police-car.avif": {
+      "src": "dd33aa43ff113778"
+    },
+    "assets/thumbs/futuristic-police-car.jpg": {
+      "src": "679fd9ee006951f6",
+      "w": 640,
+      "h": 640
+    },
+    "assets/thumbs/futuristic-police-car.webp": {
+      "src": "dd33aa43ff113778"
+    },
+    "assets/thumbs/lightcycle-metro.avif": {
+      "src": "1ce1b3c29ef0beb3"
+    },
+    "assets/thumbs/lightcycle-metro.jpg": {
+      "src": "3c1d16612f7867df",
+      "w": 505,
+      "h": 900
+    },
+    "assets/thumbs/lightcycle-metro.webp": {
+      "src": "1ce1b3c29ef0beb3"
+    },
+    "assets/thumbs/loudspeeker.avif": {
+      "src": "bcfd2a0679cb970d"
+    },
+    "assets/thumbs/loudspeeker.jpg": {
+      "src": "e48257211665cb40",
+      "w": 640,
+      "h": 360
+    },
+    "assets/thumbs/loudspeeker.webp": {
+      "src": "bcfd2a0679cb970d"
+    },
+    "assets/thumbs/robot-chappie.avif": {
+      "src": "f516dded5e0874b9"
+    },
+    "assets/thumbs/robot-chappie.jpg": {
+      "src": "b7a01cfa78995704",
+      "w": 640,
+      "h": 357
+    },
+    "assets/thumbs/robot-chappie.webp": {
+      "src": "f516dded5e0874b9"
+    },
+    "assets/thumbs/robot-scout.avif": {
+      "src": "59451afb2ea26541"
+    },
+    "assets/thumbs/robot-scout.jpg": {
+      "src": "b8e68d5baccb23e3",
+      "w": 640,
+      "h": 357
+    },
+    "assets/thumbs/robot-scout.webp": {
+      "src": "59451afb2ea26541"
+    },
+    "assets/thumbs/sci-fi-gun.avif": {
+      "src": "18cca35a2ab85612"
+    },
+    "assets/thumbs/sci-fi-gun.jpg": {
+      "src": "19386065ebb19413",
+      "w": 640,
+      "h": 640
+    },
+    "assets/thumbs/sci-fi-gun.webp": {
+      "src": "18cca35a2ab85612"
+    },
+    "assets/thumbs/sci-fi-russian-railway-station.avif": {
+      "src": "d6a47b377098baeb"
+    },
+    "assets/thumbs/sci-fi-russian-railway-station.jpg": {
+      "src": "b86f28c50ef76a24",
+      "w": 502,
+      "h": 900
+    },
+    "assets/thumbs/sci-fi-russian-railway-station.webp": {
+      "src": "d6a47b377098baeb"
+    },
+    "assets/thumbs/space-suit-j-30.avif": {
+      "src": "c5cd192cdb09fbf8"
+    },
+    "assets/thumbs/space-suit-j-30.jpg": {
+      "src": "489fb4f47f369641",
+      "w": 640,
+      "h": 640
+    },
+    "assets/thumbs/space-suit-j-30.webp": {
+      "src": "c5cd192cdb09fbf8"
+    },
+    "assets/thumbs/spartan-helmet-metro-2033.avif": {
+      "src": "9fad838fc3ff257d"
+    },
+    "assets/thumbs/spartan-helmet-metro-2033.jpg": {
+      "src": "a7793d683f6d0314",
+      "w": 640,
+      "h": 357
+    },
+    "assets/thumbs/spartan-helmet-metro-2033.webp": {
+      "src": "9fad838fc3ff257d"
+    },
+    "assets/thumbs/the-forgotten-shrine-environment-prop-study.avif": {
+      "src": "db1e7659e808f549"
+    },
+    "assets/thumbs/the-forgotten-shrine-environment-prop-study.jpg": {
+      "src": "213bc31b9e5bc8bb",
+      "w": 640,
+      "h": 357
+    },
+    "assets/thumbs/the-forgotten-shrine-environment-prop-study.webp": {
+      "src": "db1e7659e808f549"
+    },
+    "assets/thumbs/tron-lightcycle.avif": {
+      "src": "7c7d87e9f81fef53"
+    },
+    "assets/thumbs/tron-lightcycle.jpg": {
+      "src": "2c18d81bd9610ce1",
+      "w": 502,
+      "h": 900
+    },
+    "assets/thumbs/tron-lightcycle.webp": {
+      "src": "7c7d87e9f81fef53"
+    },
+    "assets/thumbs/ummc-tennis-championship.avif": {
+      "src": "c04b7972bfda5f95"
+    },
+    "assets/thumbs/ummc-tennis-championship.jpg": {
+      "src": "23b9e7226a5d1ac8",
+      "w": 507,
+      "h": 900
+    },
+    "assets/thumbs/ummc-tennis-championship.webp": {
+      "src": "c04b7972bfda5f95"
+    },
+    "assets/thumbs/usmu-campus.avif": {
+      "src": "149419d269006ed0"
+    },
+    "assets/thumbs/usmu-campus.jpg": {
+      "src": "53d837024f00fca5",
+      "w": 640,
+      "h": 640
+    },
+    "assets/thumbs/usmu-campus.webp": {
+      "src": "149419d269006ed0"
+    },
+    "assets/thumbs/vfx-for-pr-agency-swipe.avif": {
+      "src": "dda4c8998dd33f75"
+    },
+    "assets/thumbs/vfx-for-pr-agency-swipe.jpg": {
+      "src": "81f81a168c5466bd",
+      "w": 506,
+      "h": 900
+    },
+    "assets/thumbs/vfx-for-pr-agency-swipe.webp": {
+      "src": "dda4c8998dd33f75"
+    }
+  }
+}

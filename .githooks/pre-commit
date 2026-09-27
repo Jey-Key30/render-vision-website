@@ -1,0 +1,6 @@
+#!/bin/sh
+# Stops a commit while site/assets has renders or video that tools/media.mjs has not compressed yet.
+# Enable once per clone:  git config core.hooksPath .githooks
+# Skip for one commit:    git commit --no-verify
+
+out=$(node tools/media.mjs --check 2>&1) || { echo "$out"; exit 1; }
