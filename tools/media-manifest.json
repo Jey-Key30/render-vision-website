@@ -49,6 +49,11 @@
       "w": 1600,
       "h": 1600
     },
+    "assets/gallery/futuristic-police-car/01.mp4": {
+      "src": "67f4ccac253affe0",
+      "w": 1920,
+      "h": 1920
+    },
     "assets/gallery/futuristic-police-car/01.webp": {
       "src": "679fd9ee006951f6"
     },
@@ -212,6 +217,9 @@
     "assets/gallery/futuristic-police-car/sm/01.jpg": {
       "src": "679fd9ee006951f6"
     },
+    "assets/gallery/futuristic-police-car/sm/01.mp4": {
+      "src": "67f4ccac253affe0"
+    },
     "assets/gallery/futuristic-police-car/sm/01.webp": {
       "src": "c7e4f43a5f62a156"
     },
@@ -352,6 +360,11 @@
     "assets/gallery/lightcycle-metro/01.webp": {
       "src": "3c1d16612f7867df"
     },
+    "assets/gallery/lightcycle-metro/Final_Composed_V2.mp4": {
+      "src": "2953e18a5e2d4374",
+      "w": 1080,
+      "h": 1920
+    },
     "assets/gallery/lightcycle-metro/sm/01.avif": {
       "src": "9e5d2884f638b07e"
     },
@@ -360,6 +373,9 @@
     },
     "assets/gallery/lightcycle-metro/sm/01.webp": {
       "src": "9e5d2884f638b07e"
+    },
+    "assets/gallery/lightcycle-metro/sm/Final_Composed_V2.mp4": {
+      "src": "2953e18a5e2d4374"
     },
     "assets/gallery/loudspeeker/01.avif": {
       "src": "f95066cee71a2af3"
@@ -761,6 +777,14 @@
     "assets/gallery/robot-chappie/sm/16.webp": {
       "src": "d4d1a1f4dce26477"
     },
+    "assets/gallery/robot-chappie/sm/tbrender_Camera.mp4": {
+      "src": "bf5136b460cba7b6"
+    },
+    "assets/gallery/robot-chappie/tbrender_Camera.mp4": {
+      "src": "bf5136b460cba7b6",
+      "w": 1920,
+      "h": 1080
+    },
     "assets/gallery/robot-scout/01.avif": {
       "src": "b8e68d5baccb23e3"
     },
@@ -793,6 +817,11 @@
     },
     "assets/gallery/robot-scout/03.webp": {
       "src": "922c850b09c75ccd"
+    },
+    "assets/gallery/robot-scout/0304.mp4": {
+      "src": "2814c2dd17faba98",
+      "w": 1080,
+      "h": 1920
     },
     "assets/gallery/robot-scout/04.avif": {
       "src": "54d8063beb9f136d"
@@ -897,6 +926,9 @@
     },
     "assets/gallery/robot-scout/sm/03.webp": {
       "src": "57f58ab4e3d603d0"
+    },
+    "assets/gallery/robot-scout/sm/0304.mp4": {
+      "src": "2814c2dd17faba98"
     },
     "assets/gallery/robot-scout/sm/04.avif": {
       "src": "ca6cb4364ee3b0d1"
@@ -1242,15 +1274,15 @@
       "src": "6b3abd613e036b39"
     },
     "assets/gallery/space-suit-j-30/01.avif": {
-      "src": "489fb4f47f369641"
+      "src": "ef796a9e09bd9357"
     },
     "assets/gallery/space-suit-j-30/01.jpg": {
-      "src": "489fb4f47f369641",
+      "src": "ef796a9e09bd9357",
       "w": 1024,
       "h": 1024
     },
     "assets/gallery/space-suit-j-30/01.webp": {
-      "src": "489fb4f47f369641"
+      "src": "ef796a9e09bd9357"
     },
     "assets/gallery/space-suit-j-30/02.avif": {
       "src": "4850401eb8c2fd09"
@@ -1330,13 +1362,13 @@
       "src": "a7b1deaef9719402"
     },
     "assets/gallery/space-suit-j-30/sm/01.avif": {
-      "src": "c0012bc6fad02c9f"
+      "src": "561079a2e9451616"
     },
     "assets/gallery/space-suit-j-30/sm/01.jpg": {
-      "src": "489fb4f47f369641"
+      "src": "ef796a9e09bd9357"
     },
     "assets/gallery/space-suit-j-30/sm/01.webp": {
-      "src": "c0012bc6fad02c9f"
+      "src": "561079a2e9451616"
     },
     "assets/gallery/space-suit-j-30/sm/02.avif": {
       "src": "7eed6325cebdd98c"
@@ -1665,6 +1697,11 @@
     "assets/gallery/spartan-helmet-metro-2033/24.webp": {
       "src": "6807960b979e26b2"
     },
+    "assets/gallery/spartan-helmet-metro-2033/360.mp4": {
+      "src": "cbc7ddf8325dc26b",
+      "w": 1920,
+      "h": 1080
+    },
     "assets/gallery/spartan-helmet-metro-2033/sm/01.avif": {
       "src": "553086d0faa199fb"
     },
@@ -1880,6 +1917,9 @@
     },
     "assets/gallery/spartan-helmet-metro-2033/sm/24.webp": {
       "src": "bd73342593bb0182"
+    },
+    "assets/gallery/spartan-helmet-metro-2033/sm/360.mp4": {
+      "src": "cbc7ddf8325dc26b"
     },
     "assets/gallery/the-forgotten-shrine-environment-prop-study/01.avif": {
       "src": "213bc31b9e5bc8bb"
@@ -2129,6 +2169,11 @@
       "w": 893,
       "h": 1600
     },
+    "assets/gallery/tron-lightcycle/01.mp4": {
+      "src": "14d7c62bb4234940",
+      "w": 1080,
+      "h": 1920
+    },
     "assets/gallery/tron-lightcycle/01.webp": {
       "src": "2c18d81bd9610ce1"
     },
@@ -2192,6 +2237,9 @@
     },
     "assets/gallery/tron-lightcycle/sm/01.jpg": {
       "src": "2c18d81bd9610ce1"
+    },
+    "assets/gallery/tron-lightcycle/sm/01.mp4": {
+      "src": "14d7c62bb4234940"
     },
     "assets/gallery/tron-lightcycle/sm/01.webp": {
       "src": "62062496c2462897"
@@ -2381,6 +2429,11 @@
     "assets/gallery/usmu-campus/sm/06.webp": {
       "src": "f25a6f8b8abdb625"
     },
+    "assets/gallery/vfx-for-pr-agency-swipe/0001-0285.mp4": {
+      "src": "b33ef62e7ecee6dd",
+      "w": 1080,
+      "h": 1920
+    },
     "assets/gallery/vfx-for-pr-agency-swipe/01.avif": {
       "src": "81f81a168c5466bd"
     },
@@ -2391,6 +2444,9 @@
     },
     "assets/gallery/vfx-for-pr-agency-swipe/01.webp": {
       "src": "81f81a168c5466bd"
+    },
+    "assets/gallery/vfx-for-pr-agency-swipe/sm/0001-0285.mp4": {
+      "src": "b33ef62e7ecee6dd"
     },
     "assets/gallery/vfx-for-pr-agency-swipe/sm/01.avif": {
       "src": "227e476ba32b3f6d"
@@ -2534,15 +2590,15 @@
       "src": "d6a47b377098baeb"
     },
     "assets/thumbs/space-suit-j-30.avif": {
-      "src": "c5cd192cdb09fbf8"
+      "src": "d8b28a11085806af"
     },
     "assets/thumbs/space-suit-j-30.jpg": {
-      "src": "489fb4f47f369641",
+      "src": "ef796a9e09bd9357",
       "w": 640,
       "h": 640
     },
     "assets/thumbs/space-suit-j-30.webp": {
-      "src": "c5cd192cdb09fbf8"
+      "src": "d8b28a11085806af"
     },
     "assets/thumbs/spartan-helmet-metro-2033.avif": {
       "src": "9fad838fc3ff257d"

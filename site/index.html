@@ -147,6 +147,8 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .thumb .hatch,.thumb img{transition:transform .5s cubic-bezier(.22,.68,.24,1)}
 .card:hover .hatch,.card:hover .thumb img{transform:scale(1.04)}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.thumb video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;background:#141312;opacity:0;transition:opacity .3s}
+.thumb video.on{opacity:1}
 .slot{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#6f6b68}
 .badge{position:absolute;top:12px;left:12px;z-index:2;padding:4px 8px;background:var(--red);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
 .cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
@@ -901,6 +903,30 @@ function masonry(g) {
 }
 
 /* ---------- cards ---------- */
+/* a work with a local video plays it over the thumbnail while the mouse is on the card;
+   the file is fetched on first hover only, touch and reduced motion keep the still */
+function hoverClip(b, t, clip) {
+  if (!clip) return;
+  let v;
+  const still = () => matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const on = () => {
+    if (still()) return;
+    if (!v) {
+      v = el("video");
+      v.muted = v.defaultMuted = v.loop = v.playsInline = true;
+      v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
+      v.preload = "auto"; v.src = clip.sm || clip.src;   // light copy: the full-size clip is for the project page
+      v.addEventListener("playing", () => v.classList.add("on"));
+      t.appendChild(v);
+    }
+    v.play().catch(() => {});
+  };
+  const off = () => { if (v) { v.pause(); v.classList.remove("on"); } };
+  b.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") on(); });
+  b.addEventListener("pointerleave", off);
+  b.addEventListener("focus", () => { try { if (b.matches(":focus-visible")) on(); } catch (e) {} });   // keyboard only: a tap would fetch the clip just to leave the page
+  b.addEventListener("blur", off);
+}
 function card(p) {
   const b = el("a", "card reveal");
   b.href = href({ id: p.id });
@@ -919,6 +945,7 @@ function card(p) {
   }
   else { t.appendChild(el("div", "hatch")); t.appendChild(el("div", "slot", p.slot || "")); }
   t.appendChild(el("div", "badge", p.kindKey || "IMAGE"));
+  hoverClip(b, t, (p.media || []).find(m => m.t === "video" && m.src));
   b.appendChild(t);
   b.appendChild(el("div", "cap", "<span>" + p.title + "</span><span class='year'>" + (p.year || "") + "</span>"));
   if (filled(p.role)) b.appendChild(el("div", "role", p.role));

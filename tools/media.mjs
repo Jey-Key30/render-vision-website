@@ -19,6 +19,8 @@
 //   hero-robot, portrait, showreel-poster  resized to their slot → .avif/.webp
 //   og.jpg                1200×630 crop, JPEG only (social networks)
 //   showreel.mp4          h264, 480 high, no audio, faststart
+//   gallery/<id>/NN.mp4   h264, max side 1920, no audio, faststart (project page) → sm/NN.mp4, max side 960,
+//                         first 8 s (played over the card on hover); a project without renders gets its thumb from it
 // A render can be dropped in as .png/.jpeg/.tif/.bmp (a video as .mov/.mkv/.webm/.avi/.m4v):
 // it is converted to the .jpg/.mp4 name next to it and the original is deleted. Transparency becomes black.
 // A render numbered without the leading zero fills that slot: 1.jpg → 01.jpg.
@@ -26,7 +28,7 @@
 // (e.g. 01.jpg deleted, render_1.jpg added): it cannot guess which new file replaces which.
 //
 // Afterwards portfolio.json is updated: `ratio` of every image, `thumb`/`thumbRatio`,
-// missing `sm`, and new renders in a project's gallery folder are appended to its media.
+// missing `sm`, and new renders and clips in a project's gallery folder are appended to its media.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -54,6 +56,8 @@ const ENC = {
   avif: () => ["-c:v", "libsvtav1", "-crf", "34", "-g", "1", "-pix_fmt", "yuv420p", ...still],
   webp: () => ["-c:v", "libwebp", "-quality", "76", "-preset", "picture", ...still],
   mp4: () => ["-map_metadata", "-1", "-vf", "scale=-2:'min(ih,480)'", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
+    "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart"],
+  clip: (max, crf, t) => ["-map_metadata", "-1", ...(t ? ["-t", String(t)] : []), "-vf", fit(max) + ":force_divisible_by=2", "-c:v", "libx264", "-preset", "slow", "-crf", String(crf),
     "-pix_fmt", "yuv420p", "-an", "-movflags", "+faststart"]
 };
 // standalone images in assets/: max side of the slot they fill on the page
@@ -122,42 +126,53 @@ const source = (out, raw, args) => stages[0].push({ out, raw, args, source: true
 const derive = (n, out, from, args) => stages[n].push({ out, from, args });
 const pictures = (n, jpg) => { derive(n, swapExt(jpg, ".avif"), jpg, ENC.avif()); derive(n, swapExt(jpg, ".webp"), jpg, ENC.webp()); };
 
-// gallery renders; a number without the leading zero is the same slot: 1.png → 01.jpg
-const galleries = {}, shown = {}, blockers = [];
+// gallery renders and clips; a number without the leading zero is the same slot: 1.png → 01.jpg, 1.mov → 01.mp4
+const galleries = {}, clips = {}, shown = {}, blockers = [];
 const gdir = abs("assets/gallery");
 for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir).sort() : []) {
   if (!fs.statSync(path.join(gdir, id)).isDirectory()) continue;
-  const slots = new Map();      // canonical stem → files of the folder that fill it
-  for (const f of fs.readdirSync(path.join(gdir, id))) {
-    if (![".jpg", ...RAW_IMG].includes(path.extname(f).toLowerCase()) || /\.tmp\.[^.]+$/.test(f)) continue;
-    const s = /^\d$/.test(stem(f)) ? "0" + stem(f) : stem(f);
-    slots.set(s, [...(slots.get(s) || []), f]);
-  }
-  galleries[id] = [];
-  for (const s of [...slots.keys()].sort()) {
-    const dir = `assets/gallery/${id}/`, jpg = `${dir}${s}.jpg`, sm = `${dir}sm/${s}.jpg`;
-    const own = slots.get(s).find(f => f.toLowerCase() === s.toLowerCase() + ".jpg");
-    const raws = slots.get(s).filter(f => f !== own);
-    const renamed = raws.filter(f => stem(f) !== s);
-    if (own && renamed.length) { blockers.push(`gallery/${id}: ${own} and ${renamed.join(", ")} are the same slot, keep one`); continue; }
-    const raw = raws.map(f => dir + f).sort((a, b) => fs.statSync(abs(b)).mtimeMs - fs.statSync(abs(a)).mtimeMs)[0] || null;
-    galleries[id].push(jpg);
-    shown[jpg] = path.basename(raw || jpg);
-    source(jpg, raw, ENC.jpg(fit(1600)));
-    derive(1, sm, jpg, ENC.jpg("scale=-2:'min(ih,480)'"));
-    pictures(1, jpg);
-    pictures(2, sm);
+  galleries[id] = []; clips[id] = [];
+  for (const [ext, rawExts] of [[".jpg", RAW_IMG], [".mp4", RAW_VID]]) {
+    const slots = new Map();      // canonical stem → files of the folder that fill it
+    for (const f of fs.readdirSync(path.join(gdir, id))) {
+      if (![ext, ...rawExts].includes(path.extname(f).toLowerCase()) || /\.tmp\.[^.]+$/.test(f)) continue;
+      const s = /^\d$/.test(stem(f)) ? "0" + stem(f) : stem(f);
+      slots.set(s, [...(slots.get(s) || []), f]);
+    }
+    for (const s of [...slots.keys()].sort()) {
+      const dir = `assets/gallery/${id}/`, out = `${dir}${s}${ext}`;
+      const own = slots.get(s).find(f => f.toLowerCase() === s.toLowerCase() + ext);
+      const raws = slots.get(s).filter(f => f !== own);
+      const renamed = raws.filter(f => stem(f) !== s);
+      if (own && renamed.length) { blockers.push(`gallery/${id}: ${own} and ${renamed.join(", ")} are the same slot, keep one`); continue; }
+      const raw = raws.map(f => dir + f).sort((a, b) => fs.statSync(abs(b)).mtimeMs - fs.statSync(abs(a)).mtimeMs)[0] || null;
+      shown[out] = path.basename(raw || out);
+      const sm = `${dir}sm/${s}${ext}`;
+      if (ext === ".mp4") { clips[id].push(out); source(out, raw, ENC.clip(1920, 23)); derive(1, sm, out, ENC.clip(960, 28, 8)); continue; }
+      galleries[id].push(out);
+      source(out, raw, ENC.jpg(fit(1600)));
+      derive(1, sm, out, ENC.jpg("scale=-2:'min(ih,480)'"));
+      pictures(1, out);
+      pictures(2, sm);
+    }
   }
 }
 
-// card thumbnails: first render of each project (or of a gallery folder not in portfolio.json yet)
+// card thumbnails: first render of each project (or of a gallery folder not in portfolio.json yet);
+// no renders at all: the first frame of its first gallery clip
 const thumbs = new Map();
+const firstOf = (id, media) => {
+  const img = media.find(m => m.t === "image" && m.src), clip = media.find(m => m.t === "video" && (m.src || "").startsWith("assets/gallery/"));
+  return img ? img.src : (galleries[id] || [])[0] || (clip ? clip.src : (clips[id] || [])[0]);
+};
 for (const p of projects) {
-  const first = (p.media || []).find(m => m.t === "image" && m.src);
-  const src = first ? first.src : galleries[p.id] && galleries[p.id][0];
+  const src = firstOf(p.id, p.media || []);
   if (src) thumbs.set(p.thumb || `assets/thumbs/${p.id}.jpg`, src);
 }
-for (const id in galleries) if (galleries[id].length && !projects.some(p => p.id === id)) thumbs.set(`assets/thumbs/${id}.jpg`, galleries[id][0]);
+for (const id in galleries) {
+  const src = !projects.some(p => p.id === id) && firstOf(id, []);
+  if (src) thumbs.set(`assets/thumbs/${id}.jpg`, src);
+}
 for (const [thumb, src] of thumbs) {
   derive(1, thumb, src, ENC.jpg(fit(640, 900)));
   pictures(2, thumb);
@@ -175,11 +190,11 @@ source("assets/showreel.mp4", rawFor("assets/showreel.mp4", RAW_VID), ENC.mp4())
 // portfolio.json must not point at renders that are gone: stop before encoding anything
 const planned = new Set(stages[0].filter(j => j.raw).map(j => j.out));
 for (const p of projects) {
-  const images = (p.media || []).filter(m => m.t === "image" && m.src);
-  const missing = images.filter(m => !exists(m.src) && !planned.has(m.src)).map(m => path.basename(m.src));
+  const local = (p.media || []).filter(m => (m.t === "image" || m.t === "video") && m.src && !/^https?:/.test(m.src));
+  const missing = local.filter(m => !exists(m.src) && !planned.has(m.src)).map(m => path.basename(m.src));
   if (!missing.length) continue;
-  const known = new Set(images.map(m => m.src));
-  const extra = (galleries[p.id] || []).filter(s => !known.has(s)).map(s => shown[s]);
+  const known = new Set(local.map(m => m.src));
+  const extra = [...(galleries[p.id] || []), ...(clips[p.id] || [])].filter(s => !known.has(s)).map(s => shown[s]);
   blockers.push(`${p.id}: portfolio.json points to missing ${missing.join(", ")}` + (extra.length
     ? `\n    the folder has ${extra.join(", ")} not in portfolio.json: if they replace the missing ones, give them the missing names`
     : `\n    put the files back or remove these entries from portfolio.json`));
@@ -196,7 +211,7 @@ const failed = [];
 const log = (tag, msg) => console.log(`  ${tag.padEnd(7)} ${msg}`);
 const record = (out, src) => {
   M[out] = { src };
-  if (/\.jpg$/.test(out) && (out.startsWith("assets/gallery/") && !out.includes("/sm/") || out.startsWith("assets/thumbs/"))) Object.assign(M[out], probe(out));
+  if (/\.(jpg|mp4)$/.test(out) && (out.startsWith("assets/gallery/") && !out.includes("/sm/") || out.startsWith("assets/thumbs/"))) Object.assign(M[out], probe(out));
 };
 
 function due(job) {
@@ -240,7 +255,7 @@ for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir) : []) {
     if (!exists(dir) || !fs.statSync(abs(dir)).isDirectory()) continue;
     for (const f of fs.readdirSync(abs(dir))) {
       const r = `${dir}/${f}`;
-      if (/\.(jpg|avif|webp)$/.test(f) && !owned.has(r)) orphans.push(r);
+      if (/\.(jpg|avif|webp|mp4)$/.test(f) && !owned.has(r)) orphans.push(r);
     }
   }
 }
@@ -274,7 +289,22 @@ for (const p of projects) {
     (p.media = p.media || []).push(m); images.push(m);
     changes.push(`${p.id}: added ${src}`);
   }
-  if (!p.thumb && images.length) { p.thumb = `assets/thumbs/${p.id}.jpg`; changes.push(`${p.id}: thumb ${p.thumb}`); }
+  // clips added to the project's gallery folder
+  const videos = (p.media || []).filter(m => m.t === "video");
+  for (const m of videos) {
+    const sm = m.src && m.src.replace(/\/([^/]+)$/, "/sm/$1");
+    if (sm && !m.sm && m.src.startsWith("assets/gallery/") && owned.has(sm)) { m.sm = sm; changes.push(`${p.id}: sm for ${m.src}`); }
+    const r = m.src && exists(m.src) && ratioOf(m.src);
+    if (r && m.ratio !== r) { changes.push(`${p.id}: ratio ${m.src} ${m.ratio || "—"} → ${r}`); m.ratio = r; }
+  }
+  const knownClips = new Set(videos.map(m => m.src));
+  for (const src of clips[p.id] || []) {
+    if (knownClips.has(src)) continue;
+    const m = { t: "video", label: `VIDEO ${String(videos.length + 1).padStart(2, "0")}`, ratio: ratioOf(src) || undefined, src, sm: src.replace(/\/([^/]+)$/, "/sm/$1") };
+    (p.media = p.media || []).push(m); videos.push(m);
+    changes.push(`${p.id}: added ${src}` + (p.kindKey === "IMAGE" ? "  (kindKey is still IMAGE — VIDEO if the clip is the point of the work)" : ""));
+  }
+  if (!p.thumb && thumbs.has(`assets/thumbs/${p.id}.jpg`)) { p.thumb = `assets/thumbs/${p.id}.jpg`; changes.push(`${p.id}: thumb ${p.thumb}`); }
   const tr = p.thumb && ratioOf(p.thumb);
   if (tr && p.thumbRatio !== tr) { changes.push(`${p.id}: thumbRatio ${p.thumbRatio || "—"} → ${tr}`); p.thumbRatio = tr; }
 }
@@ -288,11 +318,12 @@ if (changes.length && !DRY) {
 
 // gallery folders without a project: the object has to be written by hand
 for (const id in galleries) {
-  if (!galleries[id].length || projects.some(p => p.id === id)) continue;
+  if (!galleries[id].length && !clips[id].length || projects.some(p => p.id === id)) continue;
   const skeleton = {
-    id, title: "", year: "", role: "", software: "", tris: "", topic: "", tags: [], kindKey: "IMAGE", layout: "render",
+    id, title: "", year: "", role: "", software: "", tris: "", topic: "", tags: [], kindKey: clips[id].length && !galleries[id].length ? "VIDEO" : "IMAGE", layout: "render",
     slot: id.toUpperCase(), thumb: `assets/thumbs/${id}.jpg`, thumbRatio: ratioOf(`assets/thumbs/${id}.jpg`) || "", summary: "",
-    media: galleries[id].map((src, i) => ({ t: "image", label: `RENDER ${String(i + 1).padStart(2, "0")}`, ratio: ratioOf(src) || "", src, sm: src.replace(/\/([^/]+)$/, "/sm/$1") }))
+    media: [...galleries[id].map((src, i) => ({ t: "image", label: `RENDER ${String(i + 1).padStart(2, "0")}`, ratio: ratioOf(src) || "", src, sm: src.replace(/\/([^/]+)$/, "/sm/$1") })),
+      ...clips[id].map((src, i) => ({ t: "video", label: `VIDEO ${String(i + 1).padStart(2, "0")}`, ratio: ratioOf(src) || "", src, sm: src.replace(/\/([^/]+)$/, "/sm/$1") }))]
   };
   console.log(`\n  gallery/${id} has no project in portfolio.json. Fill in and add to "projects":\n`);
   console.log(JSON.stringify(skeleton, null, 2).replace(/^/gm, "    "));

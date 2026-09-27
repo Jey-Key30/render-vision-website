@@ -341,6 +341,13 @@
           "videoId": "",
           "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
           "label": "VFX"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1080/1920",
+          "src": "assets/gallery/lightcycle-metro/Final_Composed_V2.mp4",
+          "sm": "assets/gallery/lightcycle-metro/sm/Final_Composed_V2.mp4"
         }
       ],
       "summary_ru": "Этот проект — техническое исследование бесшовной интеграции VFX в реальное архитектурное окружение. В сцене — детализированный 3D-мотоцикл из вселенной «Трона», вписанный в сводчатый мраморный интерьер станции метро.\n\nКлючевые технические моменты:\n- Матчмувинг и трекинг: стабильный трек камеры в окружении с длинными перспективами и повторяющимися геометрическими узорами, чтобы 3D-ассеты стояли точно на месте.\n- Свет и шейдинг: собственные эмиссионные шейдеры для мотоциклов, которые служат основными источниками света в сцене. Главный упор — на физически точные отражения на полированном мраморе пола и стен.\n- Взаимодействие с окружением: shadow catcher'ы и плоскости отражений, чтобы CG-техника естественно вписалась в пространство, а неоновое свечение правильно ложилось на архитектуру станции.\n- Композитинг: цветокоррекция, motion blur и настройка свечения (bloom) под исходную съёмку, чтобы получилась цельная кинематографичная картинка.\n\nСофт: Blender, After Effects."
@@ -411,6 +418,13 @@
           "videoId": "",
           "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
           "label": "VFX"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1080/1920",
+          "src": "assets/gallery/tron-lightcycle/01.mp4",
+          "sm": "assets/gallery/tron-lightcycle/sm/01.mp4"
         }
       ],
       "summary_ru": "Вдохновился на эту работу после фильма «Трон: Арес». Основа сделана на 3D-модели и доработана с помощью Nano Banana. Работа — часть тренировки в создании быстрых VFX-роликов. Думаю, получилось хорошо. Что скажете?"
@@ -446,6 +460,13 @@
           "videoId": "",
           "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
           "label": "VFX"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1080/1920",
+          "src": "assets/gallery/vfx-for-pr-agency-swipe/0001-0285.mp4",
+          "sm": "assets/gallery/vfx-for-pr-agency-swipe/sm/0001-0285.mp4"
         }
       ],
       "summary_ru": "Наш свежий кейс — реклама, которая захватывает Таймс-сквер! Мы разработали несколько вариантов анимации и в итоге остановились на симуляции падающего баннера в Blender. Считаем, что результат получился гармоничным и эффектным. Что скажете? Prod. by Visual-Uni Studio. Ссылка: https://visual-uni.art/"
@@ -658,6 +679,13 @@
           "ratio": "1600/900",
           "src": "assets/gallery/robot-chappie/16.jpg",
           "sm": "assets/gallery/robot-chappie/sm/16.jpg"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/1080",
+          "src": "assets/gallery/robot-chappie/tbrender_Camera.mp4",
+          "sm": "assets/gallery/robot-chappie/sm/tbrender_Camera.mp4"
         }
       ],
       "summary_ru": "Хочу показать свою новую модель робота Чаппи по одноимённому фильму. Меня всегда привлекал футуризм, и после просмотра фильма я вдохновился на эту модель. В процессе пришлось столкнуться с множеством сложностей: таких сложных моделей я раньше не делал. Сложнее всего было сделать скелет, чтобы модель можно было анимировать дальше. Работа дала мне много полезного опыта. Надеюсь, я справился с задачей и работа вам понравится)"
@@ -1059,6 +1087,13 @@
           "ratio": "1600/900",
           "src": "assets/gallery/spartan-helmet-metro-2033/24.jpg",
           "sm": "assets/gallery/spartan-helmet-metro-2033/sm/24.jpg"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/1080",
+          "src": "assets/gallery/spartan-helmet-metro-2033/360.mp4",
+          "sm": "assets/gallery/spartan-helmet-metro-2033/sm/360.mp4"
         }
       ],
       "summary_ru": "3D-модель шлема из игры Metro 2033. Надеюсь, работа вам понравится)"
@@ -1164,6 +1199,13 @@
           "t": "youtube",
           "videoId": "P6_9MFnhcfQ",
           "label": "BREAKDOWN · YOUTUBE"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1080/1920",
+          "src": "assets/gallery/robot-scout/0304.mp4",
+          "sm": "assets/gallery/robot-scout/sm/0304.mp4"
         }
       ],
       "summary_ru": "Просто 3D-модель робота."
@@ -1303,6 +1345,13 @@
           "ratio": "1600/900",
           "src": "assets/gallery/futuristic-police-car/15.jpg",
           "sm": "assets/gallery/futuristic-police-car/sm/15.jpg"
+        },
+        {
+          "t": "video",
+          "label": "VIDEO 01",
+          "ratio": "1920/1920",
+          "src": "assets/gallery/futuristic-police-car/01.mp4",
+          "sm": "assets/gallery/futuristic-police-car/sm/01.mp4"
         }
       ],
       "summary_ru": "3D-визуализация полицейской машины. Идея не моя, референсы брал с Pinterest. Есть два варианта текстур: пыльный и дождливый."
