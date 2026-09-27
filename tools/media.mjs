@@ -20,7 +20,10 @@
 //   og.jpg                1200×630 crop, JPEG only (social networks)
 //   showreel.mp4          h264, 480 high, no audio, faststart
 // A render can be dropped in as .png/.jpeg/.tif/.bmp (a video as .mov/.mkv/.webm/.avi/.m4v):
-// it is converted to the .jpg/.mp4 name next to it and the original is deleted.
+// it is converted to the .jpg/.mp4 name next to it and the original is deleted. Transparency becomes black.
+// A render numbered without the leading zero fills that slot: 1.jpg → 01.jpg.
+// The script stops before encoding if portfolio.json points to a render that is not there
+// (e.g. 01.jpg deleted, render_1.jpg added): it cannot guess which new file replaces which.
 //
 // Afterwards portfolio.json is updated: `ratio` of every image, `thumb`/`thumbRatio`,
 // missing `sm`, and new renders in a project's gallery folder are appended to its media.
@@ -46,7 +49,8 @@ const RAW_VID = [".mov", ".mkv", ".webm", ".avi", ".m4v"];
 const fit = (w, h = w) => `scale=w='min(iw,${w})':h='min(ih,${h})':force_original_aspect_ratio=decrease`;
 const still = ["-frames:v", "1"];
 const ENC = {
-  jpg: (vf, q = 4) => ["-map_metadata", "-1", "-vf", vf, "-q:v", String(q), ...still, "-update", "1"],
+  // premultiply = transparent PNG composited over black (the site background), no halo on soft edges
+  jpg: (vf, q = 4) => ["-map_metadata", "-1", "-vf", "format=rgba,premultiply=inplace=1,format=rgb24," + vf + ",format=yuvj420p","-q:v", String(q), ...still, "-update", "1"],
   avif: () => ["-c:v", "libsvtav1", "-crf", "34", "-g", "1", "-pix_fmt", "yuv420p", ...still],
   webp: () => ["-c:v", "libwebp", "-quality", "76", "-preset", "picture", ...still],
   mp4: () => ["-map_metadata", "-1", "-vf", "scale=-2:'min(ih,480)'", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
@@ -118,17 +122,28 @@ const source = (out, raw, args) => stages[0].push({ out, raw, args, source: true
 const derive = (n, out, from, args) => stages[n].push({ out, from, args });
 const pictures = (n, jpg) => { derive(n, swapExt(jpg, ".avif"), jpg, ENC.avif()); derive(n, swapExt(jpg, ".webp"), jpg, ENC.webp()); };
 
-// gallery renders
-const galleries = {};
+// gallery renders; a number without the leading zero is the same slot: 1.png → 01.jpg
+const galleries = {}, shown = {}, blockers = [];
 const gdir = abs("assets/gallery");
 for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir).sort() : []) {
   if (!fs.statSync(path.join(gdir, id)).isDirectory()) continue;
-  const names = [...new Set(fs.readdirSync(path.join(gdir, id))
-    .filter(f => [".jpg", ...RAW_IMG].includes(path.extname(f).toLowerCase()) && !/\.tmp\.[^.]+$/.test(f)).map(stem))].sort();
-  galleries[id] = names.map(s => `assets/gallery/${id}/${s}.jpg`);
-  for (const jpg of galleries[id]) {
-    const sm = jpg.replace(/\/([^/]+)$/, "/sm/$1");
-    source(jpg, rawFor(jpg, RAW_IMG), ENC.jpg(fit(1600)));
+  const slots = new Map();      // canonical stem → files of the folder that fill it
+  for (const f of fs.readdirSync(path.join(gdir, id))) {
+    if (![".jpg", ...RAW_IMG].includes(path.extname(f).toLowerCase()) || /\.tmp\.[^.]+$/.test(f)) continue;
+    const s = /^\d$/.test(stem(f)) ? "0" + stem(f) : stem(f);
+    slots.set(s, [...(slots.get(s) || []), f]);
+  }
+  galleries[id] = [];
+  for (const s of [...slots.keys()].sort()) {
+    const dir = `assets/gallery/${id}/`, jpg = `${dir}${s}.jpg`, sm = `${dir}sm/${s}.jpg`;
+    const own = slots.get(s).find(f => f.toLowerCase() === s.toLowerCase() + ".jpg");
+    const raws = slots.get(s).filter(f => f !== own);
+    const renamed = raws.filter(f => stem(f) !== s);
+    if (own && renamed.length) { blockers.push(`gallery/${id}: ${own} and ${renamed.join(", ")} are the same slot, keep one`); continue; }
+    const raw = raws.map(f => dir + f).sort((a, b) => fs.statSync(abs(b)).mtimeMs - fs.statSync(abs(a)).mtimeMs)[0] || null;
+    galleries[id].push(jpg);
+    shown[jpg] = path.basename(raw || jpg);
+    source(jpg, raw, ENC.jpg(fit(1600)));
     derive(1, sm, jpg, ENC.jpg("scale=-2:'min(ih,480)'"));
     pictures(1, jpg);
     pictures(2, sm);
@@ -156,6 +171,23 @@ for (const [name, max] of Object.entries(ROOT_IMAGES)) {
 }
 source("assets/og.jpg", rawFor("assets/og.jpg", RAW_IMG), ENC.jpg("scale=1200:630:force_original_aspect_ratio=increase,crop=1200:630", 3));
 source("assets/showreel.mp4", rawFor("assets/showreel.mp4", RAW_VID), ENC.mp4());
+
+// portfolio.json must not point at renders that are gone: stop before encoding anything
+const planned = new Set(stages[0].filter(j => j.raw).map(j => j.out));
+for (const p of projects) {
+  const images = (p.media || []).filter(m => m.t === "image" && m.src);
+  const missing = images.filter(m => !exists(m.src) && !planned.has(m.src)).map(m => path.basename(m.src));
+  if (!missing.length) continue;
+  const known = new Set(images.map(m => m.src));
+  const extra = (galleries[p.id] || []).filter(s => !known.has(s)).map(s => shown[s]);
+  blockers.push(`${p.id}: portfolio.json points to missing ${missing.join(", ")}` + (extra.length
+    ? `\n    the folder has ${extra.join(", ")} not in portfolio.json: if they replace the missing ones, give them the missing names`
+    : `\n    put the files back or remove these entries from portfolio.json`));
+}
+if (blockers.length) {
+  console.error("media: nothing done, fix this first:\n" + blockers.map(b => "  " + b).join("\n"));
+  process.exit(1);
+}
 
 // ---------- run
 
@@ -201,7 +233,7 @@ if (ADOPT) console.log(`  adopted ${Object.keys(M).length} files as already proc
 
 // ---------- orphans: derived files whose source is gone
 
-const owned = new Set(stages.flat().map(j => j.out));
+const owned = new Set(stages.flat().flatMap(j => j.raw ? [j.out, j.raw] : [j.out]));   // a raw still here failed to convert: keep it
 const orphans = [];
 for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir) : []) {
   for (const dir of [`assets/gallery/${id}`, `assets/gallery/${id}/sm`]) {
@@ -227,7 +259,7 @@ for (const p of projects) {
   const images = (p.media || []).filter(m => m.t === "image");
   for (const m of images) {
     if (!m.src) continue;
-    if (!exists(m.src)) { changes.push(`WARNING ${p.id}: ${m.src} does not exist`); continue; }
+    if (!exists(m.src)) continue;   // only with --dry: a render that is still to be converted
     const sm = m.src.replace(/\/([^/]+)$/, "/sm/$1");
     if (!m.sm && m.src.startsWith("assets/gallery/") && owned.has(sm)) { m.sm = sm; changes.push(`${p.id}: sm for ${m.src}`); }
     const r = ratioOf(m.src);
@@ -247,7 +279,7 @@ for (const p of projects) {
   if (tr && p.thumbRatio !== tr) { changes.push(`${p.id}: thumbRatio ${p.thumbRatio || "—"} → ${tr}`); p.thumbRatio = tr; }
 }
 for (const c of changes) log("json", c);
-if (changes.some(c => !c.startsWith("WARNING")) && !DRY) {
+if (changes.length && !DRY) {
   const eol = dataRaw.includes("\r\n") ? "\r\n" : "\n";
   let out = JSON.stringify(data, null, 2).replace(/\n/g, eol);
   if (/\r?\n$/.test(dataRaw)) out += eol;
@@ -274,7 +306,7 @@ if (!DRY) fs.writeFileSync(MANIFEST, JSON.stringify({
 const built = dirty.size;
 console.log(`\nmedia: ${DRY ? "would rebuild" : "rebuilt"} ${built} file(s)${failed.length ? `, ${failed.length} failed` : ""}${built || ADOPT || changes.length ? "" : " — everything is up to date"}`);
 if (failed.length) process.exit(1);
-if (CHECK && (built || changes.some(c => !c.startsWith("WARNING")))) {
+if (CHECK && (built || changes.length)) {
   console.log("media: not processed yet — run `node tools/media.mjs`, then commit again");
   process.exit(1);
 }

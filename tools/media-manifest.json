@@ -362,84 +362,84 @@
       "src": "9e5d2884f638b07e"
     },
     "assets/gallery/loudspeeker/01.avif": {
-      "src": "e48257211665cb40"
+      "src": "f95066cee71a2af3"
     },
     "assets/gallery/loudspeeker/01.jpg": {
-      "src": "e48257211665cb40",
+      "src": "f95066cee71a2af3",
       "w": 1600,
       "h": 900
     },
     "assets/gallery/loudspeeker/01.webp": {
-      "src": "e48257211665cb40"
+      "src": "f95066cee71a2af3"
     },
     "assets/gallery/loudspeeker/02.avif": {
-      "src": "56bb38aeca9e62da"
+      "src": "f5118e28c7e063a8"
     },
     "assets/gallery/loudspeeker/02.jpg": {
-      "src": "56bb38aeca9e62da",
+      "src": "f5118e28c7e063a8",
       "w": 1600,
       "h": 900
     },
     "assets/gallery/loudspeeker/02.webp": {
-      "src": "56bb38aeca9e62da"
+      "src": "f5118e28c7e063a8"
     },
     "assets/gallery/loudspeeker/03.avif": {
-      "src": "0a1a6f446f2d289c"
+      "src": "3e23b2490e05aa3c"
     },
     "assets/gallery/loudspeeker/03.jpg": {
-      "src": "0a1a6f446f2d289c",
+      "src": "3e23b2490e05aa3c",
       "w": 1600,
       "h": 900
     },
     "assets/gallery/loudspeeker/03.webp": {
-      "src": "0a1a6f446f2d289c"
+      "src": "3e23b2490e05aa3c"
     },
     "assets/gallery/loudspeeker/04.avif": {
-      "src": "fd739a70dd344b2a"
+      "src": "00bca863a3317997"
     },
     "assets/gallery/loudspeeker/04.jpg": {
-      "src": "fd739a70dd344b2a",
+      "src": "00bca863a3317997",
       "w": 1600,
       "h": 900
     },
     "assets/gallery/loudspeeker/04.webp": {
-      "src": "fd739a70dd344b2a"
+      "src": "00bca863a3317997"
     },
     "assets/gallery/loudspeeker/sm/01.avif": {
-      "src": "2e5256dd68dd5814"
+      "src": "e02ff0d11c6e3e7b"
     },
     "assets/gallery/loudspeeker/sm/01.jpg": {
-      "src": "e48257211665cb40"
+      "src": "f95066cee71a2af3"
     },
     "assets/gallery/loudspeeker/sm/01.webp": {
-      "src": "2e5256dd68dd5814"
+      "src": "e02ff0d11c6e3e7b"
     },
     "assets/gallery/loudspeeker/sm/02.avif": {
-      "src": "8b9d6a1072f34d3e"
+      "src": "e87cd42174379cba"
     },
     "assets/gallery/loudspeeker/sm/02.jpg": {
-      "src": "56bb38aeca9e62da"
+      "src": "f5118e28c7e063a8"
     },
     "assets/gallery/loudspeeker/sm/02.webp": {
-      "src": "8b9d6a1072f34d3e"
+      "src": "e87cd42174379cba"
     },
     "assets/gallery/loudspeeker/sm/03.avif": {
-      "src": "35fa331aba1770f6"
+      "src": "396bef7a14fe2aaa"
     },
     "assets/gallery/loudspeeker/sm/03.jpg": {
-      "src": "0a1a6f446f2d289c"
+      "src": "3e23b2490e05aa3c"
     },
     "assets/gallery/loudspeeker/sm/03.webp": {
-      "src": "35fa331aba1770f6"
+      "src": "396bef7a14fe2aaa"
     },
     "assets/gallery/loudspeeker/sm/04.avif": {
-      "src": "dfbec3abd80c1871"
+      "src": "f581a1376a2b2fab"
     },
     "assets/gallery/loudspeeker/sm/04.jpg": {
-      "src": "fd739a70dd344b2a"
+      "src": "00bca863a3317997"
     },
     "assets/gallery/loudspeeker/sm/04.webp": {
-      "src": "dfbec3abd80c1871"
+      "src": "f581a1376a2b2fab"
     },
     "assets/gallery/robot-chappie/01.avif": {
       "src": "b7a01cfa78995704"
@@ -2411,7 +2411,7 @@
       "src": "cb33af285848b7d8"
     },
     "assets/og.jpg": {
-      "src": "ceb4d1ec677eebfb"
+      "src": "5038fcfec0779892"
     },
     "assets/portrait.avif": {
       "src": "0fadcbb67f449e86"
@@ -2479,15 +2479,15 @@
       "src": "1ce1b3c29ef0beb3"
     },
     "assets/thumbs/loudspeeker.avif": {
-      "src": "bcfd2a0679cb970d"
+      "src": "6887c8836908c102"
     },
     "assets/thumbs/loudspeeker.jpg": {
-      "src": "e48257211665cb40",
+      "src": "f95066cee71a2af3",
       "w": 640,
       "h": 360
     },
     "assets/thumbs/loudspeeker.webp": {
-      "src": "bcfd2a0679cb970d"
+      "src": "6887c8836908c102"
     },
     "assets/thumbs/robot-chappie.avif": {
       "src": "f516dded5e0874b9"
