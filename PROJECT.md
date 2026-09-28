@@ -13,6 +13,8 @@
     site/assets/gallery/<id>/    галереи рендеров по каждому проекту (макс. сторона 1600px)
     site/assets/gallery/<id>/sm/ те же рендеры высотой 480px для ленты галереи
     site/assets/fonts/           woff2 Archivo и JetBrains Mono, подключены локально
+    site/favicon.ico             иконка 48×48 в корне — её ищут поисковики (Яндекс); рядом
+                                 assets/favicon-120.png и favicon.svg, все из apple-touch-icon.png
     рядом с каждым .jpg лежат .avif и .webp — их отдаёт <picture>, JPEG остаётся запасным
     tools/seo.mjs                генератор SEO-страниц, запускается только при деплое
     tools/media.mjs              пережатие новых/заменённых медиа и всех производных копий
