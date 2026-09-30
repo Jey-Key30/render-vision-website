@@ -83,7 +83,9 @@ function build(html, data, siteUrl) {
     let h = html.slice(0, cut);
     const js = html.slice(cut);
     const depth = file.split("/").length - 1;
-    const base = o.base ?? "../".repeat(depth);
+    // the root page needs a <base> too: route() moves the bare root to /<lang>/ with replaceState, and without
+    // a base, lazy images and media resolved after that would point at /<lang>/assets/... (404)
+    const base = o.base ?? (depth ? "../".repeat(depth) : new URL(SITE).pathname);
     const set = (re, v) => { h = h.replace(re, (m, a) => a + v); };
 
     h = h.replace('<meta charset="utf-8">', m => m + (base ? `\n<base href="${base}">` : "") + `\n<meta name="rv-static" content="${esc(SITE)}">`);
