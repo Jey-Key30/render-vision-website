@@ -558,11 +558,16 @@ const I18N = {
    clean paths /en/work/<id>/ backed by generated files. Locally and in previews: hash routes #/project/<id>. */
 const STATIC = (document.querySelector('meta[name="rv-static"]') || {}).content || "";
 const ROOT = new URL(".", document.baseURI).pathname;
-/* Cloudflare Web Analytics: cookieless, published site only so local views are not counted; spa tracks pushState routes */
+/* Cloudflare Web Analytics: cookieless, published site only so local views are not counted; spa tracks pushState routes.
+   Injected after window load: a pending script holds back the load event, and where the beacon host is blocked
+   (connection hangs, then ERR_CONNECTION_CLOSED) the showreel, which waits for load, would wait with it */
 if (STATIC) {
-  const cf = Object.assign(document.createElement("script"), { type: "module", src: "https://static.cloudflareinsights.com/beacon.min.js" });
-  cf.dataset.cfBeacon = '{"token": "f2390241dbc540a7b78487fcebb9d163", "spa": true}';
-  document.head.appendChild(cf);
+  const beacon = () => {
+    const cf = Object.assign(document.createElement("script"), { type: "module", src: "https://static.cloudflareinsights.com/beacon.min.js" });
+    cf.dataset.cfBeacon = '{"token": "f2390241dbc540a7b78487fcebb9d163", "spa": true}';
+    document.head.appendChild(cf);
+  };
+  document.readyState === "complete" ? beacon() : addEventListener("load", beacon, { once: true });
 }
 function parsePath() {
   const p = location.pathname;
