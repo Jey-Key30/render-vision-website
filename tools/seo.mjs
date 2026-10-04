@@ -45,10 +45,18 @@ function build(html, data, siteUrl) {
     sameAs: ["https://www.artstation.com/j-k30", "https://sketchfab.com/J-K3.0", "https://www.youtube.com/@Jey-Key_3.0",
       "https://www.instagram.com/jey_key_30/", "https://t.me/J_K_3_0", "https://t.me/j_k_3d_blog"]
   };
-  const ld = o => `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", ...o }).replace(/</g, "\\u003c")}</script>`;
+  // same as wrap() in site/index.html: .avif and .webp next to every .jpg. A bare <img> here would start the JPEG
+  // download before the script swaps in its <picture>, and the browser would fetch the same image twice
+  const pic = (src, attrs) => {
+    const img = `<img src="${esc(src)}"${attrs}>`;
+    if (!/\.jpe?g$/i.test(src)) return img;
+    const b = esc(src.replace(/\.jpe?g$/i, ""));
+    return `<picture><source srcset="${b}.avif" type="image/avif"><source srcset="${b}.webp" type="image/webp">${img}</picture>`;
+  };
+  const ld = o =>`<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", ...o }).replace(/</g, "\\u003c")}</script>`;
 
   const card = (p, l) => `<a class="card" href="${l}/work/${encodeURIComponent(p.id)}/"><div class="thumb"${p.thumbRatio ? ` style="aspect-ratio:${esc(p.thumbRatio)}"` : ""}>` +
-    (p.thumb ? `<img src="${esc(p.thumb)}" alt="${esc(p.title)}" loading="lazy">` : "") + `<div class="badge">${esc(p.kindKey || "IMAGE")}</div></div>` +
+    (p.thumb ? pic(p.thumb, ` alt="${esc(p.title)}" loading="lazy" decoding="async"`) : "") + `<div class="badge">${esc(p.kindKey || "IMAGE")}</div></div>` +
     `<div class="cap"><span>${esc(p.title)}</span><span class="year">${filled(p.year) ? esc(p.year) : ""}</span></div>${filled(p.role) ? `<div class="role">${esc(p.role)}</div>` : ""}</a>`;
 
   const experience = (l, T) => [["work", "exp.work"], ["edu", "exp.edu"]].map(([kind, label]) => {
@@ -74,7 +82,7 @@ function build(html, data, siteUrl) {
       `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<div class="sub desc">${rich(s)}</div>` : "") +
       (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
       (imgs.length ? `<div class="strip" style="padding-top:24px">` +
-        imgs.map((m, i) => `<img src="${esc(m.sm || m.src)}" alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy">`).join("") + `</div>` : "");
+        imgs.map((m, i) => pic(m.sm || m.src, ` alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy" decoding="async"`)).join("") + `</div>` : "");
   };
 
   function page(file, lang, o) {
