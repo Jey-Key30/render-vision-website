@@ -129,8 +129,8 @@
       "summary_ru": "Разбор создания атмосферных руин с упором на модульность и повествование через окружение. Работа отражает мой текущий пайплайн как CG-специалиста: техническая точность в сочетании с художественным настроением.\n\nКлючевые особенности сцены:\n- Свет: сочетание естественных «божественных лучей» и локальных тёплых источников для высокого контраста и акцента.\n- Повествование: собственные фрески, паутина и процедурный плющ, чтобы ассет выглядел «обжитым».\n- Материалы: сильно выветренные текстуры камня, сделанные по high-to-low poly пайплайну в Blender.\n\nТехнические характеристики:\n- Моделирование и UV-развёртка в Blender.\n- Текстуры: наборы 4K PBR.\n- Рендер показывает возможности real-time движка."
     },
     {
-      "id": "loudspeeker",
-      "title": "Loudspeeker",
+      "id": "loudspeaker",
+      "title": "Loudspeaker",
       "year": "2026",
       "role": "3D Artist",
       "software": "Blender",
@@ -141,8 +141,8 @@
       ],
       "kindKey": "IMAGE",
       "layout": "render",
-      "slot": "LOUDSPEEKER",
-      "thumb": "assets/thumbs/loudspeeker.jpg",
+      "slot": "LOUDSPEAKER",
+      "thumb": "assets/thumbs/loudspeaker.jpg",
       "thumbRatio": "640/360",
       "artstationUrl": "https://www.artstation.com/artwork/bg11mg",
       "summary": "",
@@ -151,36 +151,36 @@
           "t": "image",
           "label": "RENDER 01",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeeker/01.jpg",
-          "sm": "assets/gallery/loudspeeker/sm/01.jpg"
+          "src": "assets/gallery/loudspeaker/01.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeeker/02.jpg",
-          "sm": "assets/gallery/loudspeeker/sm/02.jpg"
+          "src": "assets/gallery/loudspeaker/02.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/02.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeeker/03.jpg",
-          "sm": "assets/gallery/loudspeeker/sm/03.jpg"
+          "src": "assets/gallery/loudspeaker/03.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 04",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeeker/04.jpg",
-          "sm": "assets/gallery/loudspeeker/sm/04.jpg"
+          "src": "assets/gallery/loudspeaker/04.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/04.jpg"
         },
         {
           "t": "video",
           "label": "VIDEO 01",
           "ratio": "1920/1080",
-          "src": "assets/gallery/loudspeeker/01.mp4",
-          "sm": "assets/gallery/loudspeeker/sm/01.mp4"
+          "src": "assets/gallery/loudspeaker/01.mp4",
+          "sm": "assets/gallery/loudspeaker/sm/01.mp4"
         }
       ]
     },
