@@ -4,6 +4,9 @@
     "profile": "https://www.artstation.com/j-k30",
     "note": "Content is maintained by hand in site/data/portfolio.json — see artstation_j-k30_metadata.json and ArtStation_j-k30_artworks/ for the source material this was built from."
   },
+  "redirects": {
+    "loudspeeker": "loudspeaker"
+  },
   "reel": {
     "title": "SHOWREEL 2025",
     "provider": "file",

@@ -6,6 +6,7 @@
 //   index.html, en/, ru/                       home in each language
 //   <lang>/work/<id>/index.html                 one page per project
 //   <lang>/privacy/index.html                   privacy policy
+//   <lang>/work/<old-id>/index.html             redirect for each renamed project ("redirects" in portfolio.json)
 //   404.html, sitemap.xml, robots.txt
 // Each page is site/index.html with its own <title>, description, canonical, hreflang,
 // Open Graph, JSON-LD and prerendered text, so crawlers see content without running JS.
@@ -161,6 +162,19 @@ function build(html, data, siteUrl) {
     base: new URL(SITE).pathname, robots: "noindex", title: I18N.en["title.nf"], desc: I18N.en.desc,
     body: T => `<div class="nf"><div class="code">404</div><h1 class="h1" style="margin:0">${T("nf.h")}</h1><p class="sub">${T("nf.p")}</p><div class="socials"><a href="en/" style="background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px">${T("nf.back")}</a></div></div>`
   });
+
+  // renamed projects: the old address keeps working and tells crawlers where the page moved
+  for (const [from, to] of Object.entries(data.redirects || {})) {
+    if (!projects.some(p => p.id === to)) throw new Error(`seo: redirect ${from} → unknown project ${JSON.stringify(to)}`);
+    if (projects.some(p => p.id === from)) throw new Error(`seo: redirect ${from} shadows an existing project`);
+    for (const l of LANGS) {
+      const target = esc(url(l, { id: to }));
+      out[`${l}/work/${from}/index.html`] = `<!doctype html>\n<html lang="${l}"><head><meta charset="utf-8"><title>Redirecting…</title>` +
+        `<meta name="robots" content="noindex"><link rel="canonical" href="${target}"><meta http-equiv="refresh" content="0; url=${target}">` +
+        `<script>location.replace(${JSON.stringify(url(l, { id: to })).replace(/</g, "\\u003c")} + location.hash)</script></head>` +
+        `<body><a href="${target}">${target}</a></body></html>\n`;
+    }
+  }
 
   const routes = [{}, ...projects.map(p => ({ id: p.id })), { page: "privacy" }];
   const alt = r => LANGS.map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="${esc(url(l, r))}"/>`).join("");

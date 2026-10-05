@@ -787,6 +787,7 @@ function route(keep) {
   if (!DATA.projects.length) return;
   const r = current();
   if (r.lang && r.lang !== LANG) { LANG = r.lang; relang(); }
+  if (r.id && DATA.redirects && DATA.redirects[r.id]) { r.id = DATA.redirects[r.id]; nav(r, true); }   // renamed project: old link → new id
   const was = location.href;
   if (STATIC && location.hash.startsWith("#/")) nav(r, true);   // old hash link on the published site → clean URL
   else if (STATIC && !r.lang && !r.bad) {                         // bare site root → /<lang>/, so the URL matches the language shown
