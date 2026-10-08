@@ -45,7 +45,8 @@ function build(html, data, siteUrl) {
     address: { "@type": "PostalAddress", addressLocality: "Yekaterinburg", addressCountry: "RU" },
     knowsAbout: ["3D modeling", "Hard-surface modeling", "Blender", "Geometry Nodes", "VFX", "Lookdev", "Game-ready assets", "Unreal Engine", "Environment art", "Point clouds"],
     sameAs: ["https://www.artstation.com/j-k30", "https://sketchfab.com/J-K3.0", "https://www.youtube.com/@Jey-Key_3.0",
-      "https://www.instagram.com/jey_key_30/", "https://t.me/J_K_3_0", "https://t.me/j_k_3d_blog"]
+      "https://www.instagram.com/jey_key_30/", "https://t.me/J_K_3_0", "https://t.me/j_k_3d_blog",
+      "https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666"]
   };
   // same as wrap() in site/index.html: .avif and .webp next to every .jpg. A bare <img> here would start the JPEG
   // download before the script swaps in its <picture>, and the browser would fetch the same image twice

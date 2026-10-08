@@ -225,6 +225,8 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .socials{display:flex;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
 .socials a{padding:9px 14px;border:1px solid var(--chip);color:var(--mute)}
 .socials a:hover{color:var(--ink);border-color:var(--ink)}
+.cv{display:flex;flex-direction:column;gap:12px}
+.cv a.on{background:var(--red);border-color:var(--red);color:var(--ink)}   /* the CV in the page language: first in the row and highlighted, see applyLang() */
 form{display:flex;flex-direction:column;gap:24px;padding:40px;background:#111010;border:1px solid var(--edge)}
 .field{display:flex;flex-direction:column;gap:10px}
 input,textarea{width:100%;background:transparent;color:var(--ink);font-family:Archivo,sans-serif;font-size:17px;border:none;outline:none}
@@ -432,6 +434,14 @@ main{animation:fade .34s ease both}
             <div class="list" data-i18n="about.toolsList"></div>
           </div>
         </div>
+        <div class="cv">
+          <div class="label" data-i18n="cv.label">CV</div>
+          <div class="socials">
+            <a href="assets/cv/kirill-kadyrov-cv-en.pdf" download="Kirill_Kadyrov_CV_EN.pdf" data-cv="en">PDF · EN ↓</a>
+            <a href="assets/cv/kirill-kadyrov-cv-ru.pdf" download="Kadyrov_Kirill_CV_RU.pdf" data-cv="ru">PDF · RU ↓</a>
+            <a href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="stats">
@@ -457,6 +467,7 @@ main{animation:fade .34s ease both}
         <a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener">SKETCHFAB ↗</a>
         <a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener">YOUTUBE ↗</a>
         <a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+        <a href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
         <a href="https://t.me/j_k_3d_blog" target="_blank" rel="noopener" data-i18n="c.blog">TELEGRAM BLOG ↗</a>
       </div>
     </div>
@@ -516,7 +527,7 @@ const I18N = {
     "about.p3": "Technical background: an honours degree in applied informatics from UrFU. I write Python scripts to automate Blender, know C# for Unity and Houdini at a basic level. I understand engine limits, mesh optimisation and topology for animation. I treat revisions as part of solving the project’s task.",
     "about.do": "WHAT I DO",
     "about.doList": "Hard-surface &amp; industrial modelling<br>Environments from scan meshes and point clouds<br>Procedural systems in Geometry Nodes<br>Lookdev, lighting, rendering in Cycles<br>VFX: tracking and compositing<br>Assets for Unreal Engine and Unity",
-    "about.tools": "TOOLS",
+    "about.tools": "TOOLS", "cv.label": "CV",
     "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Unreal Engine · Unity<br>After Effects · DaVinci Fusion<br>Cascadeur · Marmoset Toolbag<br>Python · C#<br>Houdini, 3ds Max (basic)",
     "stat.years": "YEARS IN 3D", "stat.projects": "PUBLISHED PROJECTS", "stat.assets": "INDUSTRIAL MODELS FOR THE WEB", "stat.lang": "NATIVE · B1",
     "exp.work": "EXPERIENCE", "exp.edu": "EDUCATION",
@@ -554,7 +565,7 @@ const I18N = {
     "about.p3": "Техническая база — диплом с отличием УрФУ по прикладной информатике. Пишу на Python скрипты для автоматизации в Blender, знаю C# (Unity), базово Houdini. Понимаю ограничения движков, оптимизацию сеток и топологию под анимацию. Правки воспринимаю как часть работы над задачей проекта.",
     "about.do": "ЧЕМ ЗАНИМАЮСЬ",
     "about.doList": "Hard-surface и промышленное моделирование<br>Окружение по скан-мешам и облакам точек<br>Процедурные системы в Geometry Nodes<br>Лукдев, свет, рендер в Cycles<br>VFX: трекинг и композитинг<br>Ассеты для Unreal Engine и Unity",
-    "about.tools": "СОФТ",
+    "about.tools": "СОФТ", "cv.label": "РЕЗЮМЕ",
     "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Unreal Engine · Unity<br>After Effects · DaVinci Fusion<br>Cascadeur · Marmoset Toolbag<br>Python · C#<br>Houdini, 3ds Max (базово)",
     "stat.years": "ЛЕТ В 3D", "stat.projects": "ОПУБЛИКОВАННЫХ РАБОТ", "stat.assets": "ПРОМЫШЛЕННЫХ МОДЕЛЕЙ ДЛЯ ВЕБА", "stat.lang": "РОДНОЙ · B1",
     "exp.work": "ОПЫТ РАБОТЫ", "exp.edu": "ОБРАЗОВАНИЕ",
@@ -649,6 +660,7 @@ function applyLang() {
     a.onclick = e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openPage("privacy"); };
   });
   document.querySelectorAll("header nav a[data-go]").forEach(a => { a.href = href({}) + "#" + a.dataset.go; });
+  document.querySelectorAll("a[data-cv]").forEach(a => { a.classList.toggle("on", a.dataset.cv === LANG); a.style.order = a.dataset.cv === LANG ? -1 : 0; });
   centerHero();
 }
 /* RENDER is wider than VISION: shift the square so the whole composition sits on the page centre */
