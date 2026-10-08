@@ -154,6 +154,26 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .thumb video.on{opacity:1}
 .slot{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#6f6b68}
 .badge{position:absolute;top:12px;left:12px;z-index:2;padding:4px 8px;background:var(--red);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
+/* status: SOON — in development, no page yet; REWORK — being redone, closed off like a site under repair */
+.card.soon{cursor:default}
+.card.soon:hover{transform:none}
+.card.soon:hover .thumb{border-color:var(--edge)}
+.card.soon:hover .hatch,.card.soon:hover .thumb img{transform:none}
+.card.soon .thumb img{filter:blur(14px) grayscale(.6) brightness(.6);transform:scale(1.08)}
+.card.soon .slot,.card.soon .badge{display:none}
+.card.soon .cap,.card.soon .role{opacity:.6}
+.st{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;pointer-events:none;text-align:center}
+.st b{font-size:clamp(34px,4.4vw,52px);font-weight:800;font-style:italic;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.st i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--mute)}
+.soon .st b::after{content:"";display:inline-block;width:.16em;height:.16em;margin-left:.1em;background:var(--red);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.card.rework .thumb img{filter:grayscale(1) brightness(.42) contrast(.9);transition:transform .5s cubic-bezier(.22,.68,.24,1),filter .4s}
+.card.rework:hover .thumb img{filter:grayscale(.5) brightness(.62)}
+.rework .st{background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 12px)}
+.tape{position:absolute;left:-20%;right:-20%;top:50%;display:flex;justify-content:center;gap:1.4em;padding:7px 0;transform:translateY(-50%) rotate(-7deg);background:#0a0a0a;border-block:6px solid transparent;border-image:repeating-linear-gradient(-45deg,var(--red) 0 9px,#0a0a0a 9px 18px) 6;box-shadow:0 6px 24px rgba(0,0,0,.55);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--ink);white-space:nowrap;overflow:hidden}
+.tape span:nth-child(odd){color:var(--red)}
+.p-status{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mute)}
+.p-status b{padding:4px 8px;font-weight:400;color:var(--ink);background:repeating-linear-gradient(-45deg,var(--red) 0 7px,#7a1d1d 7px 14px)}
 .cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .cap span:first-child{font-size:15px}
 .year{font-family:var(--mono);font-size:11px;color:var(--faint)}
@@ -317,6 +337,7 @@ main{animation:fade .34s ease both}
   .in,.side,main{animation:none}
   .armed .reveal{opacity:1;transform:none;transition:none}
   .card:hover{transform:none}
+  .soon .st b::after{animation:none}
 }
 </style>
 </head>
@@ -346,7 +367,7 @@ main{animation:fade .34s ease both}
       <div class="side l">
         <div class="dots"><a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
         <div class="word">RENDER</div>
-        <p class="lede" data-i18n="hero.lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
+        <p class="lede" data-i18n="hero.lede">5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.</p>
       </div>
       <div class="square">
         <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
@@ -367,7 +388,7 @@ main{animation:fade .34s ease both}
         <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
         <div class="ring"></div>
       </div>
-      <p class="lede" style="max-width:420px;padding:0;font-size:15px" data-i18n="hero.lede">5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).</p>
+      <p class="lede" style="max-width:420px;padding:0;font-size:15px" data-i18n="hero.lede">5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.</p>
       <ul class="roles stack"><li>Middle CG Generalist</li><li>3D Artist</li><li>Technical Artist</li></ul>
       <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg>@J_K_3_0</a>
     </div>
@@ -396,10 +417,11 @@ main{animation:fade .34s ease both}
     <div class="about-top">
       <div class="portrait reveal"><picture><source srcset="assets/portrait.avif" type="image/avif"><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" alt="Kirill, CG generalist" loading="lazy" decoding="async"></picture></div>
       <div class="bio reveal">
-        <div class="label" data-i18n="about.where">MOSCOW · OPEN TO REMOTE</div>
+        <div class="label" data-i18n="about.where">YEKATERINBURG · READY TO MOVE TO MOSCOW · REMOTE</div>
         <h2 data-i18n="about.h">Kirill —<br>CG Generalist</h2>
         <p data-i18n="about.p1"></p>
         <p data-i18n="about.p2"></p>
+        <p data-i18n="about.p3"></p>
         <div class="cols">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div class="label" data-i18n="about.do">WHAT I DO</div>
@@ -413,9 +435,9 @@ main{animation:fade .34s ease both}
       </div>
     </div>
     <div class="stats">
-      <div><b>5+</b><span data-i18n="stat.years">YEARS IN CG</span></div>
+      <div><b>5+</b><span data-i18n="stat.years">YEARS IN 3D</span></div>
       <div><b id="statTotal">—</b><span data-i18n="stat.projects">PUBLISHED PROJECTS</span></div>
-      <div><b>100+</b><span data-i18n="stat.assets">INDUSTRIAL ASSETS SHIPPED</span></div>
+      <div><b>100+</b><span data-i18n="stat.assets">INDUSTRIAL MODELS FOR THE WEB</span></div>
       <div><b>RU · EN</b><span data-i18n="stat.lang">NATIVE · B1</span></div>
     </div>
     <div id="expRoot"></div>
@@ -482,20 +504,21 @@ function wrap(img) {
 const I18N = {
   en: {
     "nav.work": "WORK", "nav.reel": "REEL", "nav.about": "ABOUT", "nav.contact": "CONTACT",
-    "hero.lede": "5+ years in CG with a technical degree. Bridging the gap between art and tech. Full Pipeline specialist in Blender (Procedural Modeling &amp; VFX).",
+    "hero.lede": "5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.",
     "work.sub": "Selected work from ArtStation, with interactive Sketchfab viewers and videos where they exist.",
     "work.source": "SOURCE: ARTSTATION", "work.shown": "{n} OF {m} SHOWN", "f.all": "ALL",
     "empty.h": "No projects match these filters", "empty.p": "Try a single filter, or browse the full archive on ArtStation.",
     "empty.clear": "CLEAR FILTERS", "empty.as": "OPEN ARTSTATION ↗",
     "reel.cta": "WATCH FULL SHOWREEL ON YOUTUBE ↗",
-    "about.where": "MOSCOW · OPEN TO REMOTE", "about.h": "Kirill —<br>CG Generalist",
-    "about.p1": "Five years in computer graphics. I cover the full pipeline, from rough drafts to final render and engine integration. Blender is where I work best, and I use Geometry Nodes heavily for procedural generation.",
-    "about.p2": "I'm also studying applied informatics, so I understand the technical side of the process: algorithms, animation-ready topology, mesh optimisation and how game engines work. I've done both hard-surface (a library of 100+ complex industrial equipment assets) and fast-turnaround VFX for media projects. I take revisions calmly: the project's goal comes first.",
+    "about.where": "YEKATERINBURG · READY TO MOVE TO MOSCOW · REMOTE", "about.h": "Kirill —<br>CG Generalist",
+    "about.p1": "2 years of commercial experience, 5 years in 3D. Blender is my main tool: modelling, Geometry Nodes, Cycles, rigging and animation. I run the full cycle: modelling → UVs and textures in Substance Painter → lookdev and lighting → render and compositing in DaVinci Fusion, or assembly in Unreal Engine and Unity.",
+    "about.p2": "Right now I work on the digital twin of Moscow: tens of kilometres of road surfaces built from point clouds, in a team of 150+ people. Before that: hard-surface and product visualisation (100+ interactive industrial-equipment models for a web store), VFX for media projects (a FOOH clip featured by URA.RU) and event graphics.",
+    "about.p3": "Technical background: an honours degree in applied informatics from UrFU. I write Python scripts to automate Blender, know C# for Unity and Houdini at a basic level. I understand engine limits, mesh optimisation and topology for animation. I treat revisions as part of solving the project’s task.",
     "about.do": "WHAT I DO",
-    "about.doList": "Hard-surface &amp; industrial modelling<br>Procedural systems in Geometry Nodes<br>Lookdev, lighting, rendering<br>VFX and motion design<br>Game-ready assets for Unity",
+    "about.doList": "Hard-surface &amp; industrial modelling<br>Environments from scan meshes and point clouds<br>Procedural systems in Geometry Nodes<br>Lookdev, lighting, rendering in Cycles<br>VFX: tracking and compositing<br>Assets for Unreal Engine and Unity",
     "about.tools": "TOOLS",
-    "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Marmoset Toolbag<br>Cascadeur · rigging in Blender<br>Unity<br>After Effects · DaVinci Resolve<br>3ds Max (basic)",
-    "stat.years": "YEARS IN CG", "stat.projects": "PUBLISHED PROJECTS", "stat.assets": "INDUSTRIAL ASSETS SHIPPED", "stat.lang": "NATIVE · B1",
+    "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Unreal Engine · Unity<br>After Effects · DaVinci Fusion<br>Cascadeur · Marmoset Toolbag<br>Python · C#<br>Houdini, 3ds Max (basic)",
+    "stat.years": "YEARS IN 3D", "stat.projects": "PUBLISHED PROJECTS", "stat.assets": "INDUSTRIAL MODELS FOR THE WEB", "stat.lang": "NATIVE · B1",
     "exp.work": "EXPERIENCE", "exp.edu": "EDUCATION",
     "c.h": "Let's build<br>something",
     "c.sub": "Freelance projects, contract work and full-time roles. Send a brief or just a reference board — I reply within a day.",
@@ -507,6 +530,7 @@ const I18N = {
     "p.back": "← BACK TO WORK", "p.as": "VIEW ON ARTSTATION ↗", "p.year": "YEAR", "p.role": "ROLE", "p.software": "SOFTWARE", "p.tris": "TRIS",
     "p.gallery": "GALLERY", "p.item": "ITEM", "p.items": "ITEMS", "p.next": "NEXT PROJECTS", "p.moreV": "MORE VERTICAL VFX",
     "p.yt": "WATCH ON YOUTUBE ↗", "p.close": "CLOSE ✕",
+    "st.soon": "IN DEVELOPMENT", "st.reworkNote": "The work is being redone: renders below are the previous version.",
     "nf.h": "Project not found", "nf.p": "This link points to a project that doesn't exist or has been removed.", "nf.back": "← ALL WORK",
     "title": "Render Vision — CG Generalist", "title.nf": "Not found — Render Vision",
     "desc": "Portfolio of Kirill, CG generalist and technical artist. Hard-surface, environments, VFX and game-ready 3D.",
@@ -518,20 +542,21 @@ const I18N = {
   },
   ru: {
     "nav.work": "РАБОТЫ", "nav.reel": "ШОУРИЛ", "nav.about": "ОБО МНЕ", "nav.contact": "КОНТАКТЫ",
-    "hero.lede": "5+ лет в CG и техническое образование. Соединяю искусство и технологии. Полный пайплайн в Blender: процедурное моделирование и VFX.",
+    "hero.lede": "5 лет в 3D, из них 2 года коммерческих, и красный диплом по прикладной информатике. Полный пайплайн в Blender — от модели до рендера или движка.",
     "work.sub": "Избранные работы с ArtStation, с интерактивными моделями Sketchfab и видео там, где они есть.",
     "work.source": "ИСТОЧНИК: ARTSTATION", "work.shown": "ПОКАЗАНО {n} ИЗ {m}", "f.all": "ВСЕ",
     "empty.h": "Нет работ под эти фильтры", "empty.p": "Оставьте один фильтр или откройте полный архив на ArtStation.",
     "empty.clear": "СБРОСИТЬ ФИЛЬТРЫ", "empty.as": "ОТКРЫТЬ ARTSTATION ↗",
     "reel.cta": "СМОТРЕТЬ ШОУРИЛ ЦЕЛИКОМ НА YOUTUBE ↗",
-    "about.where": "МОСКВА · ГОТОВ К УДАЛЁНКЕ", "about.h": "Кирилл —<br>CG Generalist",
-    "about.p1": "В компьютерной графике 5 лет. Уверенно закрываю задачи полного пайплайна: от черновых драфтов до финального рендера и сборки в движке. Максимально комфортно чувствую себя в Blender, активно использую Geometry Nodes для процедурной генерации.",
-    "about.p2": "Поскольку параллельно получаю профильное ИТ-образование, хорошо понимаю техническую изнанку процессов: алгоритмизацию, правильную топологию под анимацию, оптимизацию сеток и логику работы игровых движков. Делал как hard-surface (база в 100+ ассетов сложного промышленного оборудования), так и быстрый VFX для медийных проектов. Адекватно отношусь к правкам — понимаю, что в первую очередь мы решаем задачу проекта.",
+    "about.where": "ЕКАТЕРИНБУРГ · ГОТОВ К ПЕРЕЕЗДУ В МОСКВУ · УДАЛЁНКА", "about.h": "Кирилл —<br>CG Generalist",
+    "about.p1": "2 года коммерческого опыта, 5 лет в 3D. Основной инструмент — Blender: моделинг, Geometry Nodes, Cycles, риг и анимация. Веду задачи полного цикла: моделирование → UV и текстуры в Substance Painter → лукдев и свет → рендер и композитинг в DaVinci Fusion или сборка в движке (Unreal Engine, Unity).",
+    "about.p2": "Сейчас работаю над цифровым двойником Москвы: десятки километров дорожных поверхностей по облакам точек в команде 150+ человек. До этого делал hard-surface и продуктовую визуализацию (100+ интерактивных моделей промышленного оборудования для сайта), VFX для медиапроектов (FOOH-ролик попал в URA.RU) и ивент-графику.",
+    "about.p3": "Техническая база — диплом с отличием УрФУ по прикладной информатике. Пишу на Python скрипты для автоматизации в Blender, знаю C# (Unity), базово Houdini. Понимаю ограничения движков, оптимизацию сеток и топологию под анимацию. Правки воспринимаю как часть работы над задачей проекта.",
     "about.do": "ЧЕМ ЗАНИМАЮСЬ",
-    "about.doList": "Hard-surface и промышленное моделирование<br>Процедурные системы в Geometry Nodes<br>Лукдев, свет, рендер<br>VFX и моушн-дизайн<br>Game-ready ассеты для Unity",
+    "about.doList": "Hard-surface и промышленное моделирование<br>Окружение по скан-мешам и облакам точек<br>Процедурные системы в Geometry Nodes<br>Лукдев, свет, рендер в Cycles<br>VFX: трекинг и композитинг<br>Ассеты для Unreal Engine и Unity",
     "about.tools": "СОФТ",
-    "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Marmoset Toolbag<br>Cascadeur · риг в Blender<br>Unity<br>After Effects · DaVinci Resolve<br>3ds Max (базово)",
-    "stat.years": "ЛЕТ В CG", "stat.projects": "ОПУБЛИКОВАННЫХ РАБОТ", "stat.assets": "ПРОМЫШЛЕННЫХ АССЕТОВ", "stat.lang": "РОДНОЙ · B1",
+    "about.toolsList": "Blender · Geometry Nodes · Cycles<br>Substance 3D Painter · Photoshop<br>Unreal Engine · Unity<br>After Effects · DaVinci Fusion<br>Cascadeur · Marmoset Toolbag<br>Python · C#<br>Houdini, 3ds Max (базово)",
+    "stat.years": "ЛЕТ В 3D", "stat.projects": "ОПУБЛИКОВАННЫХ РАБОТ", "stat.assets": "ПРОМЫШЛЕННЫХ МОДЕЛЕЙ ДЛЯ ВЕБА", "stat.lang": "РОДНОЙ · B1",
     "exp.work": "ОПЫТ РАБОТЫ", "exp.edu": "ОБРАЗОВАНИЕ",
     "c.h": "Обсудим<br>проект",
     "c.sub": "Фриланс, контрактная работа и работа в штате. Пришлите бриф или просто подборку референсов — отвечаю в течение дня.",
@@ -543,6 +568,7 @@ const I18N = {
     "p.back": "← К РАБОТАМ", "p.as": "ОТКРЫТЬ НА ARTSTATION ↗", "p.year": "ГОД", "p.role": "РОЛЬ", "p.software": "СОФТ", "p.tris": "ПОЛИГОНЫ",
     "p.gallery": "ГАЛЕРЕЯ", "p.item": "", "p.items": "", "p.next": "ДРУГИЕ РАБОТЫ", "p.moreV": "ЕЩЁ ВЕРТИКАЛЬНЫЕ VFX",
     "p.yt": "СМОТРЕТЬ НА YOUTUBE ↗", "p.close": "ЗАКРЫТЬ ✕",
+    "st.soon": "В РАЗРАБОТКЕ", "st.reworkNote": "Работа переделывается: ниже — прошлая версия рендеров.",
     "nf.h": "Работа не найдена", "nf.p": "Ссылка ведёт на работу, которой нет или которую убрали.", "nf.back": "← ВСЕ РАБОТЫ",
     "title": "Render Vision — CG-генералист и 3D-художник", "title.nf": "Не найдено — Render Vision",
     "desc": "Портфолио Кирилла, CG-генералиста и технического художника. Hard-surface, окружение, VFX и game-ready 3D.",
@@ -753,7 +779,7 @@ function openPage(page) { nav({ page }); pageView(page); }
 function homeView() { showView("home"); setMeta(L("title"), L("desc"), {}); }
 function projectView(id, keep) {
   const p = DATA.projects.find(x => x.id === id);
-  if (!p) return notFoundView(keep);
+  if (!p || isSoon(p)) return notFoundView(keep);
   renderProject(p); showView("project", keep);
   const d = loc(p, "summary");
   $("#project").querySelectorAll(".strip").forEach(s => { s.scrollLeft = 0; });   // every gallery starts at its first slide
@@ -959,9 +985,16 @@ function hoverClip(b, t, clip) {
   b.addEventListener("focus", () => { try { if (b.matches(":focus-visible")) on(); } catch (e) {} });   // keyboard only: a tap would fetch the clip just to leave the page
   b.addEventListener("blur", off);
 }
+/* p.status: "soon" — card only, no project page; "rework" — dimmed card under tape, the page stays open */
+const isSoon = p => p.status === "soon";
+function statusLayer(t, p) {
+  if (p.status === "soon") t.appendChild(el("div", "st", "<b>SOON</b><i>" + L("st.soon") + "</i>"));
+  if (p.status === "rework") t.appendChild(el("div", "st", "<div class='tape'>" + Array(9).fill("<span>REWORK</span>").join("") + "</div>"));
+}
 function card(p) {
-  const b = el("a", "card reveal");
-  b.href = href({ id: p.id });
+  const soon = isSoon(p);
+  const b = el(soon ? "div" : "a", "card reveal" + (p.status === "soon" || p.status === "rework" ? " " + p.status : ""));
+  if (!soon) b.href = href({ id: p.id });
   const t = el("div", "thumb");
   const src = p.thumb || ((p.media || []).find(m => m.t === "image" && m.src) || {}).src;
   if (src) {
@@ -977,10 +1010,12 @@ function card(p) {
   }
   else { t.appendChild(el("div", "hatch")); t.appendChild(el("div", "slot", p.slot || "")); }
   t.appendChild(el("div", "badge", p.kindKey || "IMAGE"));
-  hoverClip(b, t, (p.media || []).find(m => m.t === "video" && m.sm));
+  statusLayer(t, p);
+  if (!soon) hoverClip(b, t, (p.media || []).find(m => m.t === "video" && m.sm));
   b.appendChild(t);
   b.appendChild(el("div", "cap", "<span>" + p.title + "</span><span class='year'>" + (p.year || "") + "</span>"));
   if (filled(p.role)) b.appendChild(el("div", "role", p.role));
+  if (soon) return b;
   b.addEventListener("click", e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openProject(p.id); });
   return b;
 }
@@ -1193,7 +1228,7 @@ function renderProject(p) {
   const title = "<h1 class='p-title' style='margin:0'>" + p.title + "</h1>";
   const sm = loc(p, "summary");
   const summary = filled(sm) ? "<div class='sub desc'>" + rich(sm) + "</div>" : "";
-  const fl = facts(p), fx = fl ? "<div class='facts'>" + fl + "</div>" : "";
+  const fl = facts(p), fx = (p.status === "rework" ? "<div class='p-status'><b>REWORK</b>" + L("st.reworkNote") + "</div>" : "") + (fl ? "<div class='facts'>" + fl + "</div>" : "");
   const crumbs = cls => {
     const c = el("div", cls);
     const back = el("a", "", L("p.back")); back.href = href({});
@@ -1227,7 +1262,7 @@ function renderProject(p) {
 
   if (rest.length) root.appendChild(gallery(p, rest, (L("p.gallery") + " · " + rest.length + " " + L(rest.length === 1 ? "p.item" : "p.items")).trim()));
   if (mode === "vertical") {
-    const more = DATA.projects.filter(x => x !== p && x.layout === "vertical");
+    const more = DATA.projects.filter(x => x !== p && x.layout === "vertical" && !isSoon(x));
     if (more.length) root.appendChild(gallery(p, more, L("p.moreV"), true));
     return;
   }
@@ -1235,8 +1270,8 @@ function renderProject(p) {
   const next = el("div", "next");
   next.appendChild(el("h3", "", L("p.next")));
   const g = el("div", "gridwrap");
-  const idx = DATA.projects.indexOf(p);
-  [1, 2, 3].forEach(o => g.appendChild(card(DATA.projects[(idx + o) % DATA.projects.length])));
+  const open = DATA.projects.filter(x => !isSoon(x)), idx = open.indexOf(p);
+  [1, 2, 3].map(o => open[(idx + o) % open.length]).filter((x, k, a) => x !== p && a.indexOf(x) === k).forEach(x => g.appendChild(card(x)));
   next.appendChild(g); root.appendChild(next);
   masonry(g);
 }
@@ -1292,7 +1327,7 @@ fetch("data/portfolio.json")
   .then(d => {
     DATA = d;
     paintSync();
-    $("#statTotal").textContent = d.projects.length;
+    $("#statTotal").textContent = d.projects.filter(p => !isSoon(p)).length;
     renderFilters(); renderReel(); renderGrid(); renderAbout(); route();
     /* #work etc. in the address: the browser tried to scroll before the grid existed */
     const sec = /^#(top|reel|work|about|contact)$/.test(location.hash) && document.getElementById(location.hash.slice(1));

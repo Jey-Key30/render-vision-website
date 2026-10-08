@@ -35,14 +35,15 @@ function build(html, data, siteUrl) {
   const tail = r => r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
   const url = (l, r) => SITE + l + "/" + tail(r);
   const LANGS = ["en", "ru"];
-  const projects = data.projects || [];
+  const all = data.projects || [];
+  const projects = all.filter(p => p.status !== "soon");   // SOON: a card in the grid, no page of its own
   // ids become folder names under <lang>/work/
-  for (const p of projects) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");
+  for (const p of all) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");
   const person = {
     "@type": "Person", name: "Kirill", alternateName: "J-K3.0", jobTitle: "CG Generalist, 3D Artist", url: SITE,
     image: abs("assets/portrait.jpg"), email: "mailto:freelancejeykey@gmail.com",
-    address: { "@type": "PostalAddress", addressLocality: "Moscow", addressCountry: "RU" },
-    knowsAbout: ["3D modeling", "Hard-surface modeling", "Blender", "Geometry Nodes", "VFX", "Lookdev", "Game-ready assets"],
+    address: { "@type": "PostalAddress", addressLocality: "Yekaterinburg", addressCountry: "RU" },
+    knowsAbout: ["3D modeling", "Hard-surface modeling", "Blender", "Geometry Nodes", "VFX", "Lookdev", "Game-ready assets", "Unreal Engine", "Environment art", "Point clouds"],
     sameAs: ["https://www.artstation.com/j-k30", "https://sketchfab.com/J-K3.0", "https://www.youtube.com/@Jey-Key_3.0",
       "https://www.instagram.com/jey_key_30/", "https://t.me/J_K_3_0", "https://t.me/j_k_3d_blog"]
   };
@@ -56,9 +57,15 @@ function build(html, data, siteUrl) {
   };
   const ld = o =>`<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", ...o }).replace(/</g, "\\u003c")}</script>`;
 
-  const card = (p, l) => `<a class="card" href="${l}/work/${encodeURIComponent(p.id)}/"><div class="thumb"${p.thumbRatio ? ` style="aspect-ratio:${esc(p.thumbRatio)}"` : ""}>` +
-    (p.thumb ? pic(p.thumb, ` alt="${esc(p.title)}" loading="lazy" decoding="async"`) : "") + `<div class="badge">${esc(p.kindKey || "IMAGE")}</div></div>` +
-    `<div class="cap"><span>${esc(p.title)}</span><span class="year">${filled(p.year) ? esc(p.year) : ""}</span></div>${filled(p.role) ? `<div class="role">${esc(p.role)}</div>` : ""}</a>`;
+  // same markup as card() in site/index.html, status layers included
+  const card = (p, l, T) => {
+    const soon = p.status === "soon", st = p.status === "rework" ? " rework" : soon ? " soon" : "", tag = soon ? "div" : "a";
+    const layer = soon ? `<div class="st"><b>SOON</b><i>${T("st.soon")}</i></div>`
+      : p.status === "rework" ? `<div class="st"><div class="tape">${"<span>REWORK</span>".repeat(9)}</div></div>` : "";
+    return `<${tag} class="card${st}"${soon ? "" : ` href="${l}/work/${encodeURIComponent(p.id)}/"`}><div class="thumb"${p.thumbRatio ? ` style="aspect-ratio:${esc(p.thumbRatio)}"` : ""}>` +
+      (p.thumb ? pic(p.thumb, ` alt="${esc(p.title)}" loading="lazy" decoding="async"`) : "") + `<div class="badge">${esc(p.kindKey || "IMAGE")}</div>${layer}</div>` +
+      `<div class="cap"><span>${esc(p.title)}</span><span class="year">${filled(p.year) ? esc(p.year) : ""}</span></div>${filled(p.role) ? `<div class="role">${esc(p.role)}</div>` : ""}</${tag}>`;
+  };
 
   const experience = (l, T) => [["work", "exp.work"], ["edu", "exp.edu"]].map(([kind, label]) => {
     const rows = ((data.about && data.about.experience) || []).filter(r => (r.kind || "work") === kind);
@@ -76,12 +83,13 @@ function build(html, data, siteUrl) {
     const s = summary(p, l), imgs = (p.media || []).filter(m => m.t === "image" && m.src);
     const facts = [["p.year", p.year], ["p.role", p.role], ["p.software", p.software], ["p.tris", p.tris]]
       .filter(([, v]) => filled(v)).map(([k, v]) => `<div><u>${T(k)}</u>${esc(v)}</div>`).join("");
+    const rework = p.status === "rework" ? `<div class="p-status"><b>REWORK</b>${T("st.reworkNote")}</div>` : "";
     return `<div class="crumbs"><a href="${l}/">${T("p.back")}</a>` +
       (p.artstationUrl ? `<a href="${esc(p.artstationUrl)}" target="_blank" rel="noopener">${T("p.as")}</a>` : "") + `</div>` +
       `<article class="info" style="display:flex;flex-direction:column;gap:20px">` +
       (filled(p.topic) ? `<div class="eyebrow">${esc(p.topic)}</div>` : "") +
       `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<div class="sub desc">${rich(s)}</div>` : "") +
-      (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
+      rework + (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
       (imgs.length ? `<div class="strip" style="padding-top:24px">` +
         imgs.map((m, i) => pic(m.sm || m.src, ` alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy" decoding="async"`)).join("") + `</div>` : "");
   };
@@ -123,7 +131,7 @@ function build(html, data, siteUrl) {
     h = h.replace(/(<button data-lang="(en|ru)")/g, (m, a, l) => a + ` aria-pressed="${l === lang}"` + (l === lang ? ' class="on"' : ""));
     h = h.replace(/(<span id="syncLabel">)[^<]*/, (m, a) => a + T("work.source"));
     h = h.replace(/(<b id="statTotal">)[^<]*/, (m, a) => a + projects.length);
-    h = h.replace('<div class="gridwrap" id="grid"></div>', () => `<div class="gridwrap" id="grid">${projects.map(p => card(p, lang)).join("")}</div>`);
+    h = h.replace('<div class="gridwrap" id="grid"></div>', () => `<div class="gridwrap" id="grid">${all.map(p => card(p, lang, T)).join("")}</div>`);
     h = h.replace('<div id="expRoot"></div>', () => `<div id="expRoot">${experience(lang, T)}</div>`);
     if (o.body) {
       h = h.replace('<main id="home" tabindex="-1">', '<main id="home" tabindex="-1" style="display:none">');
@@ -166,7 +174,7 @@ function build(html, data, siteUrl) {
   // renamed projects: the old address keeps working and tells crawlers where the page moved
   for (const [from, to] of Object.entries(data.redirects || {})) {
     if (!projects.some(p => p.id === to)) throw new Error(`seo: redirect ${from} → unknown project ${JSON.stringify(to)}`);
-    if (projects.some(p => p.id === from)) throw new Error(`seo: redirect ${from} shadows an existing project`);
+    if (all.some(p => p.id === from)) throw new Error(`seo: redirect ${from} shadows an existing project`);
     for (const l of LANGS) {
       const target = esc(url(l, { id: to }));
       out[`${l}/work/${from}/index.html`] = `<!doctype html>\n<html lang="${l}"><head><meta charset="utf-8"><title>Redirecting…</title>` +

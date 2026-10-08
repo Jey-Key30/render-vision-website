@@ -18,6 +18,17 @@
   },
   "projects": [
     {
+      "id": "coming-soon",
+      "status": "soon",
+      "title": "New Project",
+      "year": "2026",
+      "role": "—",
+      "topic": "",
+      "tags": [],
+      "slot": "",
+      "media": []
+    },
+    {
       "id": "the-forgotten-shrine-environment-prop-study",
       "title": "The Forgotten Shrine — Environment & Prop Study",
       "year": "2026",
@@ -189,6 +200,7 @@
     },
     {
       "id": "usmu-campus",
+      "status": "rework",
       "title": "USMU Campus",
       "year": "2026",
       "role": "3D Artist",
@@ -1397,20 +1409,30 @@
           "ru": "Июнь 2026 — сейчас"
         },
         "role": {
-          "en": "3D Modelling Specialist",
-          "ru": "Специалист по 3D-моделированию"
+          "en": "3D Modelling Specialist · Environment, city digital twin",
+          "ru": "Специалист по 3D-моделированию · environment, цифровой двойник города"
         },
         "company": {
           "en": "Digital Spatial Technologies",
           "ru": "Цифровые Пространственные Технологии"
         },
         "lead": {
-          "en": "Modelling for the city information model of Moscow.",
-          "ru": "Работа над городской информационной моделью Москвы."
+          "en": "Road infrastructure for the city information model (digital twin) of Moscow, in a project team of 150+ people.",
+          "ru": "3D-модель дорожной инфраструктуры для городской информационной модели (цифрового двойника) Москвы в команде проекта 150+ человек."
         },
         "points": {
-          "en": [],
-          "ru": []
+          "en": [
+            "Model road surfaces from scan meshes built on point clouds, cross-checking against maps and street-level panoramas.",
+            "Prepare the geometry in Blender for further work in Unreal Engine.",
+            "Personal output: tens of kilometres of finished road surfaces.",
+            "Stack: Blender, Unreal Engine, scan meshes and point clouds."
+          ],
+          "ru": [
+            "Моделирую дорожные поверхности по скан-мешам на основе облаков точек, сверяюсь с картами и уличными панорамами.",
+            "Готовлю геометрию в Blender для дальнейшей работы в Unreal Engine.",
+            "Личный вклад — десятки километров готовых дорожных поверхностей.",
+            "Стек: Blender, Unreal Engine, скан-меши и облака точек."
+          ]
         }
       },
       {
@@ -1421,50 +1443,75 @@
         },
         "role": {
           "en": "CG Generalist",
-          "ru": "CG-Generalist"
+          "ru": "CG Generalist"
         },
         "company": {
-          "en": "moskvin.pro",
-          "ru": "moskvin.pro"
+          "en": "moskvin.pro · creative production",
+          "ru": "moskvin.pro · креативный продакшн"
         },
         "lead": {
-          "en": "Owned the full production cycle of 3D graphics, motion design and VFX for commercial, media and industrial projects.",
-          "ru": "Отвечал за полный цикл производства 3D-графики, моушн-дизайна и VFX для коммерческих, медийных и промышленных проектов."
+          "en": "Full-cycle 3D, motion design and VFX for commercial, media and industrial projects.",
+          "ru": "Полный цикл 3D, моушн-дизайна и VFX для коммерческих, медийных и промышленных проектов."
         },
         "points": {
           "en": [
-            "Industrial hard-surface: modelled, textured and optimised for the web a library of 100+ complex drilling-equipment models for the company website.",
-            "VFX and video: graphics and visual effects for media projects of public figures (Sergey Netievsky, Fyodor Dosumov, Umar Kremlev), from drafts to final compositing, about 7 days per VFX clip.",
-            "Event design: a package of visual materials for the International Women’s Forum.",
-            "Full-pipeline 3D: characters, props and environments; topology, UVs, physically based PBR materials and textures.",
-            "Lookdev and rendering: scene assembly, composition, camera angles and cinematic lighting; final renders of animations and stills."
+            "Industrial 3D and e-commerce: 100+ hard-surface models of drilling equipment and spare parts for the GK Terra online store (gk-terra.com). Modelled from drawings, or from photos where there were none; PBR materials and web optimisation, so every model can be rotated right on its product page. Plus product renders for the catalogue.",
+            "VFX for media projects: clips for well-known figures from show business and sport, from draft to final compositing, about 7 days per clip. Tracking in After Effects, compositing in DaVinci Fusion. A FOOH CGI clip for the Sverdlovsk Region Boxing Federation was published by the URA.RU Telegram channel.",
+            "Event design: visuals for the International Women’s Forum, with graphics integrated into video and interactive scenes.",
+            "Full-pipeline 3D: characters, props and environments. Topology, UVs, texturing in Substance Painter, lookdev, lighting and rendering in Cycles."
           ],
           "ru": [
-            "Промышленный 3D-дизайн (Hard-surface): смоделировал, затекстурировал и оптимизировал под веб-формат библиотеку из более чем 100 моделей сложного бурового оборудования для сайта компании.",
-            "VFX и видеоконтент: создавал графику и визуальные эффекты для медийных проектов публичных личностей (Сергей Нетиевский, Фёдор Досумов, Умар Кремлёв). Вёл задачи от драфтов до финального композитинга, выдерживая плотные сроки — в среднем 7 дней на VFX-ролик.",
-            "Ивент-дизайн: разработал пакет визуальных материалов для оформления Международного женского форума.",
-            "Full-pipeline 3D: создавал персонажей, пропсы и окружение. Работал над топологией, делал развёртки, настраивал физически корректные PBR-материалы и текстуры.",
-            "LookDev и рендер: собирал сцены, выстраивал композицию, ракурсы и кинематографичное освещение. Выполнял финальный рендеринг анимационных роликов и статичных изображений."
+            "Промышленный 3D и e-commerce: 100+ hard-surface моделей бурового оборудования и запчастей для интернет-магазина ГК «Терра» (gk-terra.com). Моделировал по чертежам, а если чертежей не было — по фотографиям. PBR-материалы и оптимизация под веб: на страницах товаров модели можно вращать прямо в браузере. Отдельно — предметные рендеры для каталога.",
+            "VFX для медиапроектов: ролики для известных медиаперсон из шоу-бизнеса и спорта, от драфта до финального композитинга, в среднем 7 дней на ролик. Трекинг в After Effects, композитинг в DaVinci Fusion. CGI-ролик в формате FOOH для Федерации бокса Свердловской области опубликовал Telegram-канал URA.RU.",
+            "Ивент-дизайн: визуал для Международного женского форума — интеграция графики в видео и интерактивные сцены.",
+            "3D полного цикла: персонажи, пропсы, окружение. Топология, UV, текстуры в Substance Painter, лукдев, свет, рендер в Cycles."
           ]
         }
       },
       {
         "kind": "edu",
         "period": {
-          "en": "2022 — 2026 (expected)",
-          "ru": "2022 — 2026 (ожидается)"
+          "en": "2022 — 2026",
+          "ru": "2022 — 2026"
         },
         "role": {
-          "en": "BSc, Applied Informatics",
-          "ru": "Бакалавриат: прикладная информатика"
+          "en": "BSc, Applied Informatics · first-class honours",
+          "ru": "Бакалавриат: прикладная информатика · диплом с отличием"
         },
         "company": {
-          "en": "Ural Federal University (UrFU)",
-          "ru": "Уральский федеральный университет (УрФУ)"
+          "en": "Ural Federal University (UrFU), Institute of Radio Electronics and IT",
+          "ru": "Уральский федеральный университет (УрФУ), Институт радиоэлектроники и информационных технологий"
         },
         "lead": {
-          "en": "Project work every semester: 3D game development where I own the whole visual side — character modelling, level assembly, lighting, animation and clean export to Unity.",
-          "ru": "Проектный опыт: каждый семестр на практике участвую в разработке 3D-игр. Забираю на себя весь визуал: моделирование персонажей, сборка локаций, настройка света, анимация и финальный экспорт в Unity без потерь."
+          "en": "Every semester I owned the whole visual side of team game projects in Unity.",
+          "ru": "Каждый семестр вёл весь визуал в командных игровых проектах на Unity."
+        },
+        "points": {
+          "en": [
+            "2026 — UrFU certificate for an advanced-level team project (3D visuals of a game project)."
+          ],
+          "ru": [
+            "2026 — сертификат УрФУ за командный проект повышенной сложности (3D-визуал игрового проекта)."
+          ]
+        }
+      },
+      {
+        "kind": "edu",
+        "period": {
+          "en": "2025",
+          "ru": "2025"
+        },
+        "role": {
+          "en": "Professional retraining: Game Design and Game Development (288 hours)",
+          "ru": "Профессиональная переподготовка «Геймдизайн и проектирование игр» (288 часов)"
+        },
+        "company": {
+          "en": "UrFU together with Targem Games",
+          "ru": "УрФУ совместно с Targem Games"
+        },
+        "lead": {
+          "en": "Defended with an “excellent” grade: a game project published on digital storefronts.",
+          "ru": "Защита на «отлично»: игровой проект с публикацией на цифровых площадках."
         },
         "points": {
           "en": [],
