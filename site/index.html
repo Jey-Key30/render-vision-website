@@ -647,7 +647,7 @@ function setMeta(title, desc, r) {
   const c = q('link[rel="canonical"]'); if (c) c.href = STATIC + LANG + "/" + tail;
   const ou = q('meta[property="og:url"]'); if (ou) ou.content = STATIC + LANG + "/" + tail;
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(a => {
-    a.href = a.hreflang === "x-default" ? (tail ? STATIC + "en/" + tail : STATIC) : STATIC + a.hreflang + "/" + tail;
+    a.href = STATIC + (a.hreflang === "x-default" ? "en" : a.hreflang) + "/" + tail;
   });
 }
 function applyLang() {
