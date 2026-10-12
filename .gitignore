@@ -2,3 +2,4 @@ _site/
 CLAUDE.md
 .DS_Store
 .serena/
+.audit/
