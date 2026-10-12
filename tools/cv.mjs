@@ -98,7 +98,7 @@ li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;ba
 </style></head><body>
 <div class="top">
   <div><h1>${esc(t.name)}</h1><div class="role">${esc(t.title)} <span>· ${esc(t.stack)}</span></div><div class="where">${esc(t.where)}</div></div>
-  <div class="contacts"><a href="mailto:freelancejeykey@gmail.com">freelancejeykey@gmail.com</a><br><a href="https://t.me/J_K_3_0">Telegram @J_K_3_0</a><br><a href="${SITE}${l}/">render-vision-cg.com</a></div>
+  <div class="contacts"><a href="mailto:contact@render-vision-cg.com">contact@render-vision-cg.com</a><br><a href="https://t.me/J_K_3_0">Telegram @J_K_3_0</a><br><a href="${SITE}${l}/">render-vision-cg.com</a></div>
 </div>
 <h2>${t.about}</h2>
 <p>${L("about.p1")}</p><p>${L("about.p2")}</p><p>${L("about.p3")}</p>

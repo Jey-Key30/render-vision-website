@@ -44,7 +44,7 @@ function build(html, data, siteUrl) {
   for (const p of all) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");
   const person = {
     "@type": "Person", name: "Kirill", alternateName: "J-K3.0", jobTitle: "CG Generalist, 3D Artist", url: SITE,
-    image: abs("assets/portrait.jpg"), email: "mailto:freelancejeykey@gmail.com",
+    image: abs("assets/portrait.jpg"), email: "mailto:contact@render-vision-cg.com",
     address: { "@type": "PostalAddress", addressLocality: "Yekaterinburg", addressCountry: "RU" },
     knowsAbout: ["3D modeling", "Hard-surface modeling", "Blender", "Geometry Nodes", "VFX", "Lookdev", "Game-ready assets", "Unreal Engine", "Environment art", "Point clouds"],
     sameAs: ["https://www.artstation.com/j-k30", "https://sketchfab.com/J-K3.0", "https://www.youtube.com/@Jey-Key_3.0",
