@@ -16,17 +16,6 @@
   },
   "projects": [
     {
-      "id": "coming-soon",
-      "status": "soon",
-      "title": "New Project",
-      "year": "2026",
-      "role": "—",
-      "topic": "",
-      "tags": [],
-      "slot": "",
-      "media": []
-    },
-    {
       "id": "the-forgotten-shrine-environment-prop-study",
       "title": "The Forgotten Shrine — Environment & Prop Study",
       "year": "2026",
@@ -1401,6 +1390,17 @@
         }
       ],
       "summary_ru": "3D-визуализация полицейской машины. Идея не моя, референсы брал с Pinterest. Есть два варианта текстур: пыльный и дождливый."
+    },
+    {
+      "id": "coming-soon",
+      "status": "soon",
+      "title": "New Project",
+      "year": "2026",
+      "role": "—",
+      "topic": "",
+      "tags": [],
+      "slot": "",
+      "media": []
     }
   ],
   "about": {
