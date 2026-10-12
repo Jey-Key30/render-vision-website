@@ -172,6 +172,7 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .rework .st{background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 12px)}
 .tape{position:absolute;left:-20%;right:-20%;top:50%;display:flex;justify-content:center;gap:1.4em;padding:7px 0;transform:translateY(-50%) rotate(-7deg);background:#0a0a0a;border-block:6px solid transparent;border-image:repeating-linear-gradient(-45deg,var(--red) 0 9px,#0a0a0a 9px 18px) 6;box-shadow:0 6px 24px rgba(0,0,0,.55);font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--ink);white-space:nowrap;overflow:hidden}
 .tape span:nth-child(odd){color:var(--red)}
+.tape span::before{content:"REWORK"} /* word drawn by CSS: page text keeps a single REWORK, not nine */
 .p-status{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mute)}
 .p-status b{padding:4px 8px;font-weight:400;color:var(--ink);background:repeating-linear-gradient(-45deg,var(--red) 0 7px,#7a1d1d 7px 14px)}
 .cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
@@ -1001,7 +1002,7 @@ function hoverClip(b, t, clip) {
 const isSoon = p => p.status === "soon";
 function statusLayer(t, p) {
   if (p.status === "soon") t.appendChild(el("div", "st", "<b>SOON</b><i>" + L("st.soon") + "</i>"));
-  if (p.status === "rework") t.appendChild(el("div", "st", "<div class='tape'>" + Array(9).fill("<span>REWORK</span>").join("") + "</div>"));
+  if (p.status === "rework") t.appendChild(el("div", "st", "<span class='vh'>REWORK</span><div class='tape' aria-hidden='true'>" + "<span></span>".repeat(9) + "</div>"));
 }
 function card(p) {
   const soon = isSoon(p);

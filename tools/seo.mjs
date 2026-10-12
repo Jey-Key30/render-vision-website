@@ -65,7 +65,7 @@ function build(html, data, siteUrl) {
   const card = (p, l, T) => {
     const soon = p.status === "soon", st = p.status === "rework" ? " rework" : soon ? " soon" : "", tag = soon ? "div" : "a";
     const layer = soon ? `<div class="st"><b>SOON</b><i>${T("st.soon")}</i></div>`
-      : p.status === "rework" ? `<div class="st"><div class="tape">${"<span>REWORK</span>".repeat(9)}</div></div>` : "";
+      : p.status === "rework" ? `<div class="st"><span class="vh">REWORK</span><div class="tape" aria-hidden="true">${"<span></span>".repeat(9)}</div></div>` : "";
     return `<${tag} class="card${st}"${soon ? "" : ` href="${l}/work/${encodeURIComponent(p.id)}/"`}><div class="thumb"${p.thumbRatio ? ` style="aspect-ratio:${esc(p.thumbRatio)}"` : ""}>` +
       (p.thumb ? pic(p.thumb, ` alt="${esc(p.title)}" loading="lazy" decoding="async"`) : "") + `<div class="badge">${esc(p.kindKey || "IMAGE")}</div>${layer}</div>` +
       `<div class="cap"><span>${esc(p.title)}</span><span class="year">${filled(p.year) ? esc(p.year) : ""}</span></div>${filled(p.role) ? `<div class="role">${esc(p.role)}</div>` : ""}</${tag}>`;
