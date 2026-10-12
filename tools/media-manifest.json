@@ -17,6 +17,11 @@
     "assets/gallery/death-of-a-pirate/01.webp": {
       "src": "b61e6d8493f378c5"
     },
+    "assets/gallery/death-of-a-pirate/poster/01.jpg": {
+      "src": "5048f55c9bbee011",
+      "w": 1280,
+      "h": 533
+    },
     "assets/gallery/death-of-a-pirate/sm/01.avif": {
       "src": "1b723193505e4ac5"
     },
@@ -44,6 +49,11 @@
       "src": "b18147a0bfaecde0",
       "w": 1920,
       "h": 1080
+    },
+    "assets/gallery/forsa/poster/Test_full_transitions.jpg": {
+      "src": "b18147a0bfaecde0",
+      "w": 1280,
+      "h": 720
     },
     "assets/gallery/forsa/sm/01.avif": {
       "src": "cf623d01100526a2"
@@ -227,6 +237,11 @@
     "assets/gallery/futuristic-police-car/15.webp": {
       "src": "99d4536faa19f3d7"
     },
+    "assets/gallery/futuristic-police-car/poster/01.jpg": {
+      "src": "67f4ccac253affe0",
+      "w": 1280,
+      "h": 1280
+    },
     "assets/gallery/futuristic-police-car/sm/01.avif": {
       "src": "c7e4f43a5f62a156"
     },
@@ -381,6 +396,11 @@
       "w": 1080,
       "h": 1920
     },
+    "assets/gallery/lightcycle-metro/poster/Final_Composed_V2.jpg": {
+      "src": "2953e18a5e2d4374",
+      "w": 720,
+      "h": 1280
+    },
     "assets/gallery/lightcycle-metro/sm/01.avif": {
       "src": "9e5d2884f638b07e"
     },
@@ -441,6 +461,11 @@
     },
     "assets/gallery/loudspeaker/04.webp": {
       "src": "00bca863a3317997"
+    },
+    "assets/gallery/loudspeaker/poster/01.jpg": {
+      "src": "3480d6dcd966845e",
+      "w": 1280,
+      "h": 720
     },
     "assets/gallery/loudspeaker/sm/01.avif": {
       "src": "e02ff0d11c6e3e7b"
@@ -656,6 +681,11 @@
     },
     "assets/gallery/robot-chappie/16.webp": {
       "src": "3eaaa75999fd042e"
+    },
+    "assets/gallery/robot-chappie/poster/tbrender_Camera.jpg": {
+      "src": "bf5136b460cba7b6",
+      "w": 1280,
+      "h": 720
     },
     "assets/gallery/robot-chappie/sm/01.avif": {
       "src": "9aae027de68285f0"
@@ -923,6 +953,11 @@
     },
     "assets/gallery/robot-scout/10.webp": {
       "src": "b4f6b9d82fbe8d1d"
+    },
+    "assets/gallery/robot-scout/poster/0304.jpg": {
+      "src": "2814c2dd17faba98",
+      "w": 720,
+      "h": 1280
     },
     "assets/gallery/robot-scout/sm/01.avif": {
       "src": "f02f3bb90f76ba5a"
@@ -1726,6 +1761,11 @@
       "w": 1920,
       "h": 1080
     },
+    "assets/gallery/spartan-helmet-metro-2033/poster/360.jpg": {
+      "src": "cbc7ddf8325dc26b",
+      "w": 1280,
+      "h": 720
+    },
     "assets/gallery/spartan-helmet-metro-2033/sm/01.avif": {
       "src": "553086d0faa199fb"
     },
@@ -2256,6 +2296,11 @@
     "assets/gallery/tron-lightcycle/06.webp": {
       "src": "a01b03a5d789c73e"
     },
+    "assets/gallery/tron-lightcycle/poster/01.jpg": {
+      "src": "14d7c62bb4234940",
+      "w": 720,
+      "h": 1280
+    },
     "assets/gallery/tron-lightcycle/sm/01.avif": {
       "src": "62062496c2462897"
     },
@@ -2328,6 +2373,11 @@
       "src": "b9a2c4389db2464c",
       "w": 1080,
       "h": 1920
+    },
+    "assets/gallery/ummc-tennis-championship/poster/03.jpg": {
+      "src": "b9a2c4389db2464c",
+      "w": 720,
+      "h": 1280
     },
     "assets/gallery/ummc-tennis-championship/sm/01.avif": {
       "src": "2d954c240f993c60"
@@ -2477,6 +2527,11 @@
     "assets/gallery/vfx-for-pr-agency-swipe/01.webp": {
       "src": "81f81a168c5466bd"
     },
+    "assets/gallery/vfx-for-pr-agency-swipe/poster/0001-0285.jpg": {
+      "src": "b33ef62e7ecee6dd",
+      "w": 720,
+      "h": 1280
+    },
     "assets/gallery/vfx-for-pr-agency-swipe/sm/0001-0285.mp4": {
       "src": "b33ef62e7ecee6dd"
     },
@@ -2567,15 +2622,15 @@
       "src": "1ce1b3c29ef0beb3"
     },
     "assets/thumbs/loudspeaker.avif": {
-      "src": "6887c8836908c102"
+      "src": "b2def36ea9ce40ba"
     },
     "assets/thumbs/loudspeaker.jpg": {
-      "src": "f95066cee71a2af3",
+      "src": "3e23b2490e05aa3c",
       "w": 640,
       "h": 360
     },
     "assets/thumbs/loudspeaker.webp": {
-      "src": "6887c8836908c102"
+      "src": "b2def36ea9ce40ba"
     },
     "assets/thumbs/robot-chappie.avif": {
       "src": "f516dded5e0874b9"

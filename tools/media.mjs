@@ -21,6 +21,8 @@
 //   showreel.mp4          h264, 480 high, no audio, faststart
 //   gallery/<id>/NN.mp4   h264, max side 1920, no audio, faststart (project page) → sm/NN.mp4, max side 960,
 //                         first 8 s (played over the card on hover); a project without renders gets its thumb from it
+//                         → poster/NN.jpg, first frame, max side 1280: shown while the clip loads (and on iOS until play).
+//                         JPEG only, like og.jpg: <video poster> takes a single URL, no <picture> to pick AVIF/WebP from
 // A render can be dropped in as .png/.jpeg/.tif/.bmp (a video as .mov/.mkv/.webm/.avi/.m4v):
 // it is converted to the .jpg/.mp4 name next to it and the original is deleted. Transparency becomes black.
 // A render numbered without the leading zero fills that slot: 1.jpg → 01.jpg.
@@ -80,6 +82,21 @@ const probe = r => {
   const [w, h] = String(o.stdout).trim().split(",").map(Number);
   return w && h ? { w, h } : {};
 };
+// where a clip's poster frame is: many clips fade in from black, so not the first frame but the first one
+// that is 40% of the way from black to the brightest frame of the first 10 s (a clip that opens on a picture: 0)
+const litFrom = r => {
+  const o = spawnSync("ffmpeg", ["-hide_banner", "-v", "error", "-t", "10", "-i", abs(r), "-an", "-vf",
+    "scale=160:-2,signalstats,metadata=print:key=lavfi.signalstats.YAVG:file=-", "-f", "null", "-"], { encoding: "utf8", maxBuffer: 1 << 26 });
+  const frames = [];
+  let t = 0;
+  for (const line of String(o.stdout).split("\n")) {
+    const pts = line.match(/pts_time:([\d.]+)/), y = line.match(/YAVG=([\d.]+)/);
+    if (pts) t = +pts[1]; else if (y) frames.push([t, +y[1]]);
+  }
+  if (!frames.length) return "0";
+  const max = Math.max(...frames.map(f => f[1])), black = 16;
+  return String(frames.find(f => f[1] >= black + (max - black) * .4)[0]);
+};
 // newest raw file that should become `target` (same folder, same stem, raw extension)
 const rawFor = (target, exts) => {
   const dir = path.dirname(abs(target)), base = stem(path.basename(target));
@@ -124,6 +141,7 @@ const projects = data.projects || [];
 const stages = [[], [], []];
 const source = (out, raw, args) => stages[0].push({ out, raw, args, source: true });
 const derive = (n, out, from, args) => stages[n].push({ out, from, args });
+const posterOf = clip => clip.replace(/\/([^/]+)\.mp4$/, "/poster/$1.jpg");
 const pictures = (n, jpg) => { derive(n, swapExt(jpg, ".avif"), jpg, ENC.avif()); derive(n, swapExt(jpg, ".webp"), jpg, ENC.webp()); };
 
 // gallery renders and clips; a number without the leading zero is the same slot: 1.png → 01.jpg, 1.mov → 01.mp4
@@ -148,7 +166,11 @@ for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir).sort() : []) {
       const raw = raws.map(f => dir + f).sort((a, b) => fs.statSync(abs(b)).mtimeMs - fs.statSync(abs(a)).mtimeMs)[0] || null;
       shown[out] = path.basename(raw || out);
       const sm = `${dir}sm/${s}${ext}`;
-      if (ext === ".mp4") { clips[id].push(out); source(out, raw, ENC.clip(1920, 23)); derive(1, sm, out, ENC.clip(960, 28, 8)); continue; }
+      if (ext === ".mp4") {
+        clips[id].push(out); source(out, raw, ENC.clip(1920, 23)); derive(1, sm, out, ENC.clip(960, 28, 8));
+        derive(1, posterOf(out), out, () => ["-ss", litFrom(out), ...ENC.jpg(fit(1280), 5)]);   // after the clip itself is encoded
+        continue;
+      }
       galleries[id].push(out);
       source(out, raw, ENC.jpg(fit(1600)));
       derive(1, sm, out, ENC.jpg("scale=-2:'min(ih,480)'"));
@@ -232,7 +254,7 @@ for (const stage of stages) {
     const what = job.source ? (job.raw ? `${job.raw} → ${job.out}` : `${job.out} (new or replaced)`) : `${job.out} ← ${job.from}`;
     if (DRY) { dirty.add(job.out); log(job.source ? "source" : "build", what); return; }
     try {
-      await ffmpeg(input, job.args, job.out);
+      await ffmpeg(input, typeof job.args === "function" ? job.args() : job.args, job.out);
       if (job.raw) fs.rmSync(abs(job.raw));
       hashCache.delete(job.out);
       record(job.out, job.source ? hash(job.out) : hash(job.from));
@@ -251,7 +273,7 @@ if (ADOPT) console.log(`  adopted ${Object.keys(M).length} files as already proc
 const owned = new Set(stages.flat().flatMap(j => j.raw ? [j.out, j.raw] : [j.out]));   // a raw still here failed to convert: keep it
 const orphans = [];
 for (const id of fs.existsSync(gdir) ? fs.readdirSync(gdir) : []) {
-  for (const dir of [`assets/gallery/${id}`, `assets/gallery/${id}/sm`]) {
+  for (const dir of [`assets/gallery/${id}`, `assets/gallery/${id}/sm`, `assets/gallery/${id}/poster`]) {
     if (!exists(dir) || !fs.statSync(abs(dir)).isDirectory()) continue;
     for (const f of fs.readdirSync(abs(dir))) {
       const r = `${dir}/${f}`;
@@ -294,13 +316,15 @@ for (const p of projects) {
   for (const m of videos) {
     const sm = m.src && m.src.replace(/\/([^/]+)$/, "/sm/$1");
     if (sm && !m.sm && m.src.startsWith("assets/gallery/") && owned.has(sm)) { m.sm = sm; changes.push(`${p.id}: sm for ${m.src}`); }
+    if (m.src && !m.poster && owned.has(posterOf(m.src)) && (exists(posterOf(m.src)) || DRY)) { m.poster = posterOf(m.src); changes.push(`${p.id}: poster for ${m.src}`); }
     const r = m.src && exists(m.src) && ratioOf(m.src);
     if (r && m.ratio !== r) { changes.push(`${p.id}: ratio ${m.src} ${m.ratio || "—"} → ${r}`); m.ratio = r; }
   }
   const knownClips = new Set(videos.map(m => m.src));
   for (const src of clips[p.id] || []) {
     if (knownClips.has(src)) continue;
-    const m = { t: "video", label: `VIDEO ${String(videos.length + 1).padStart(2, "0")}`, ratio: ratioOf(src) || undefined, src, sm: src.replace(/\/([^/]+)$/, "/sm/$1") };
+    const m = { t: "video", label: `VIDEO ${String(videos.length + 1).padStart(2, "0")}`, ratio: ratioOf(src) || undefined, src, sm: src.replace(/\/([^/]+)$/, "/sm/$1"),
+      poster: exists(posterOf(src)) ? posterOf(src) : undefined };
     (p.media = p.media || []).push(m); videos.push(m);
     changes.push(`${p.id}: added ${src}` + (p.kindKey === "IMAGE" ? "  (kindKey is still IMAGE — VIDEO if the clip is the point of the work)" : ""));
   }

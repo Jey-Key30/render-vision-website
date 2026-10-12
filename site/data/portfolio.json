@@ -163,22 +163,22 @@
           "t": "image",
           "label": "RENDER 01",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeaker/01.jpg",
-          "sm": "assets/gallery/loudspeaker/sm/01.jpg"
+          "src": "assets/gallery/loudspeaker/03.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/03.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 02",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeaker/02.jpg",
-          "sm": "assets/gallery/loudspeaker/sm/02.jpg"
+          "src": "assets/gallery/loudspeaker/01.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/01.jpg"
         },
         {
           "t": "image",
           "label": "RENDER 03",
           "ratio": "1600/900",
-          "src": "assets/gallery/loudspeaker/03.jpg",
-          "sm": "assets/gallery/loudspeaker/sm/03.jpg"
+          "src": "assets/gallery/loudspeaker/02.jpg",
+          "sm": "assets/gallery/loudspeaker/sm/02.jpg"
         },
         {
           "t": "image",
@@ -192,7 +192,8 @@
           "label": "VIDEO 01",
           "ratio": "1920/1080",
           "src": "assets/gallery/loudspeaker/01.mp4",
-          "sm": "assets/gallery/loudspeaker/sm/01.mp4"
+          "sm": "assets/gallery/loudspeaker/sm/01.mp4",
+          "poster": "assets/gallery/loudspeaker/poster/01.jpg"
         }
       ]
     },
@@ -291,7 +292,8 @@
           "label": "VIDEO 01",
           "ratio": "1920/1080",
           "src": "assets/gallery/forsa/Test_full_transitions.mp4",
-          "sm": "assets/gallery/forsa/sm/Test_full_transitions.mp4"
+          "sm": "assets/gallery/forsa/sm/Test_full_transitions.mp4",
+          "poster": "assets/gallery/forsa/poster/Test_full_transitions.jpg"
         }
       ]
     },
@@ -330,9 +332,8 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "iXjIIYl0QUU",
+          "label": "YOUTUBE SHORTS"
         }
       ],
       "summary_ru": "Простой VFX для личного портфолио."
@@ -365,16 +366,16 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "skF-0hvYPjg",
+          "label": "YOUTUBE SHORTS"
         },
         {
           "t": "video",
           "label": "VIDEO 01",
           "ratio": "1080/1920",
           "src": "assets/gallery/lightcycle-metro/Final_Composed_V2.mp4",
-          "sm": "assets/gallery/lightcycle-metro/sm/Final_Composed_V2.mp4"
+          "sm": "assets/gallery/lightcycle-metro/sm/Final_Composed_V2.mp4",
+          "poster": "assets/gallery/lightcycle-metro/poster/Final_Composed_V2.jpg"
         }
       ],
       "summary_ru": "Этот проект — техническое исследование бесшовной интеграции VFX в реальное архитектурное окружение. В сцене — детализированный 3D-мотоцикл из вселенной «Трона», вписанный в сводчатый мраморный интерьер станции метро.\n\nКлючевые технические моменты:\n- Матчмувинг и трекинг: стабильный трек камеры в окружении с длинными перспективами и повторяющимися геометрическими узорами, чтобы 3D-ассеты стояли точно на месте.\n- Свет и шейдинг: собственные эмиссионные шейдеры для мотоциклов, которые служат основными источниками света в сцене. Главный упор — на физически точные отражения на полированном мраморе пола и стен.\n- Взаимодействие с окружением: shadow catcher'ы и плоскости отражений, чтобы CG-техника естественно вписалась в пространство, а неоновое свечение правильно ложилось на архитектуру станции.\n- Композитинг: цветокоррекция, motion blur и настройка свечения (bloom) под исходную съёмку, чтобы получилась цельная кинематографичная картинка.\n\nСофт: Blender, After Effects."
@@ -451,7 +452,8 @@
           "label": "VIDEO 01",
           "ratio": "1080/1920",
           "src": "assets/gallery/tron-lightcycle/01.mp4",
-          "sm": "assets/gallery/tron-lightcycle/sm/01.mp4"
+          "sm": "assets/gallery/tron-lightcycle/sm/01.mp4",
+          "poster": "assets/gallery/tron-lightcycle/poster/01.jpg"
         }
       ],
       "summary_ru": "Вдохновился на эту работу после фильма «Трон: Арес». Основа сделана на 3D-модели и доработана с помощью Nano Banana. Работа — часть тренировки в создании быстрых VFX-роликов. Думаю, получилось хорошо. Что скажете?"
@@ -484,16 +486,16 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "vMszyDzviYc",
+          "label": "YOUTUBE SHORTS"
         },
         {
           "t": "video",
           "label": "VIDEO 01",
           "ratio": "1080/1920",
           "src": "assets/gallery/vfx-for-pr-agency-swipe/0001-0285.mp4",
-          "sm": "assets/gallery/vfx-for-pr-agency-swipe/sm/0001-0285.mp4"
+          "sm": "assets/gallery/vfx-for-pr-agency-swipe/sm/0001-0285.mp4",
+          "poster": "assets/gallery/vfx-for-pr-agency-swipe/poster/0001-0285.jpg"
         }
       ],
       "summary_ru": "Наш свежий кейс — реклама, которая захватывает Таймс-сквер! Мы разработали несколько вариантов анимации и в итоге остановились на симуляции падающего баннера в Blender. Считаем, что результат получился гармоничным и эффектным. Что скажете? Prod. by Visual-Uni Studio. Ссылка: https://visual-uni.art/"
@@ -526,16 +528,16 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "s4wnAM5MCL4",
+          "label": "YOUTUBE SHORTS"
         },
         {
           "t": "video",
           "label": "VIDEO 01",
           "ratio": "1920/800",
           "src": "assets/gallery/death-of-a-pirate/01.mp4",
-          "sm": "assets/gallery/death-of-a-pirate/sm/01.mp4"
+          "sm": "assets/gallery/death-of-a-pirate/sm/01.mp4",
+          "poster": "assets/gallery/death-of-a-pirate/poster/01.jpg"
         }
       ],
       "summary_ru": "— Что за человек меняет жизнь человека на корабль? — Пират."
@@ -568,16 +570,16 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "lK7yBl4Vuf4",
+          "label": "YOUTUBE SHORTS"
         },
         {
           "t": "video",
           "label": "VIDEO 01",
           "ratio": "1080/1920",
           "src": "assets/gallery/ummc-tennis-championship/03.mp4",
-          "sm": "assets/gallery/ummc-tennis-championship/sm/03.mp4"
+          "sm": "assets/gallery/ummc-tennis-championship/sm/03.mp4",
+          "poster": "assets/gallery/ummc-tennis-championship/poster/03.jpg"
         }
       ],
       "summary_ru": "UMMC Tennis Championship Vol.1. Синоптики предупреждают: возможны осадки в виде мячиков для пинг-понга! Ролик для теннисного турнира УГМК. Prod. by moskvin.pro, VFX by J-K."
@@ -726,7 +728,8 @@
           "label": "VIDEO 01",
           "ratio": "1920/1080",
           "src": "assets/gallery/robot-chappie/tbrender_Camera.mp4",
-          "sm": "assets/gallery/robot-chappie/sm/tbrender_Camera.mp4"
+          "sm": "assets/gallery/robot-chappie/sm/tbrender_Camera.mp4",
+          "poster": "assets/gallery/robot-chappie/poster/tbrender_Camera.jpg"
         }
       ],
       "summary_ru": "Хочу показать свою новую модель робота Чаппи по одноимённому фильму. Меня всегда привлекал футуризм, и после просмотра фильма я вдохновился на эту модель. В процессе пришлось столкнуться с множеством сложностей: таких сложных моделей я раньше не делал. Сложнее всего было сделать скелет, чтобы модель можно было анимировать дальше. Работа дала мне много полезного опыта. Надеюсь, я справился с задачей и работа вам понравится)"
@@ -925,11 +928,6 @@
           "ratio": "1600/900",
           "src": "assets/gallery/sci-fi-gun/12.jpg",
           "sm": "assets/gallery/sci-fi-gun/sm/12.jpg"
-        },
-        {
-          "t": "youtube",
-          "videoId": "iXjIIYl0QUU",
-          "label": "BREAKDOWN · YOUTUBE"
         }
       ],
       "summary_ru": "На этот раз хочу показать модель футуристического автомата. Это очень старая работа, сделанная в Autodesk Inventor. Она долго лежала на диске без текстур: я думал, что её можно оживить, и недавно понял, что у меня уже хватает навыков, чтобы довести её до конца.\n\nПоскольку модель делалась в чертёжной программе, сетка оставляет желать лучшего). По сравнению с моими недавними работами она слабовата, но это хотя бы законченная модель, которую можно будет использовать в дальнейшем."
@@ -1134,7 +1132,8 @@
           "label": "VIDEO 01",
           "ratio": "1920/1080",
           "src": "assets/gallery/spartan-helmet-metro-2033/360.mp4",
-          "sm": "assets/gallery/spartan-helmet-metro-2033/sm/360.mp4"
+          "sm": "assets/gallery/spartan-helmet-metro-2033/sm/360.mp4",
+          "poster": "assets/gallery/spartan-helmet-metro-2033/poster/360.jpg"
         }
       ],
       "summary_ru": "3D-модель шлема из игры Metro 2033. Надеюсь, работа вам понравится)"
@@ -1246,7 +1245,8 @@
           "label": "VIDEO 01",
           "ratio": "1080/1920",
           "src": "assets/gallery/robot-scout/0304.mp4",
-          "sm": "assets/gallery/robot-scout/sm/0304.mp4"
+          "sm": "assets/gallery/robot-scout/sm/0304.mp4",
+          "poster": "assets/gallery/robot-scout/poster/0304.jpg"
         }
       ],
       "summary_ru": "Просто 3D-модель робота."
@@ -1392,7 +1392,8 @@
           "label": "VIDEO 01",
           "ratio": "1920/1920",
           "src": "assets/gallery/futuristic-police-car/01.mp4",
-          "sm": "assets/gallery/futuristic-police-car/sm/01.mp4"
+          "sm": "assets/gallery/futuristic-police-car/sm/01.mp4",
+          "poster": "assets/gallery/futuristic-police-car/poster/01.jpg"
         }
       ],
       "summary_ru": "3D-визуализация полицейской машины. Идея не моя, референсы брал с Pinterest. Есть два варианта текстур: пыльный и дождливый."
