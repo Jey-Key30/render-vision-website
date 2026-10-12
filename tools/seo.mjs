@@ -148,7 +148,7 @@ function build(html, data, siteUrl) {
   const homeLd = { "@type": "WebSite", name: "Render Vision", url: SITE, author: person, inLanguage: ["en", "ru"] };
   // the bare root is a 301 to /en/ at Cloudflare; this stub only answers if that rule is off. Old hash links ride along
   const stub = (l, to, title) => `<!doctype html>\n<html lang="${l}"><head><meta charset="utf-8"><title>${esc(title)}</title>` +
-    `<meta name="robots" content="noindex"><link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}">` +
+    `<link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}">` +
     `<script>location.replace(${JSON.stringify(to).replace(/</g, "\\u003c")} + location.hash)</script></head>` +
     `<body><a href="${esc(to)}">${esc(to)}</a></body></html>\n`;
   out["index.html"] = stub("en", url("en", {}), I18N.en.title);
