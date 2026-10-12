@@ -366,7 +366,7 @@
         },
         {
           "t": "youtube",
-          "videoId": "skF-0hvYPjg",
+          "videoId": "K1eujhqbrP4",
           "label": "YOUTUBE SHORTS"
         },
         {
@@ -443,9 +443,8 @@
         },
         {
           "t": "youtube",
-          "videoId": "",
-          "url": "https://www.youtube.com/@Jey-Key_3.0/shorts",
-          "label": "VFX"
+          "videoId": "skF-0hvYPjg",
+          "label": "YOUTUBE SHORTS"
         },
         {
           "t": "video",
@@ -1394,6 +1393,11 @@
           "src": "assets/gallery/futuristic-police-car/01.mp4",
           "sm": "assets/gallery/futuristic-police-car/sm/01.mp4",
           "poster": "assets/gallery/futuristic-police-car/poster/01.jpg"
+        },
+        {
+          "t": "youtube",
+          "videoId": "cdjTsuvI7Kw",
+          "label": "YOUTUBE SHORTS"
         }
       ],
       "summary_ru": "3D-визуализация полицейской машины. Идея не моя, референсы брал с Pinterest. Есть два варианта текстур: пыльный и дождливый."
