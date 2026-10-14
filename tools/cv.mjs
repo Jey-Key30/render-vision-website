@@ -13,16 +13,24 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
 
-const SITE = "https://render-vision-cg.com/";
+// a top-level object literal from site/index.html: "const NAME = {" … "\n};"
+const html = fs.readFileSync("site/index.html", "utf8");
+function readConst(name) {
+  const head = "const " + name + " = ", s0 = html.indexOf(head), s1 = html.indexOf("\n};", s0);
+  if (s0 < 0 || s1 < 0) throw new Error("cv: " + name + " object not found in site/index.html");
+  return Function("return " + html.slice(s0 + head.length, s1 + 2))();
+}
+const I18N = readConst("I18N"), BRAND = readConst("BRAND");   // site address, email and profile links come from BRAND
+const SITE = BRAND.siteUrl.replace(/\/?$/, "/");
 const OUT = "site/assets/cv";
 // works listed under "Selected work", in this order (ids from portfolio.json)
 const SELECTED = ["robot-chappie", "space-suit-j-30", "sci-fi-gun", "the-forgotten-shrine-environment-prop-study", "lightcycle-metro", "tron-lightcycle"];
 const LINKS = [
-  ["render-vision-cg.com", SITE],
-  ["hh.ru", "https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666"],
-  ["ArtStation", "https://www.artstation.com/j-k30"],
-  ["Sketchfab", "https://sketchfab.com/J-K3.0"],
-  ["YouTube", "https://www.youtube.com/@Jey-Key_3.0"]
+  [new URL(SITE).host, SITE],
+  ["hh.ru", BRAND.links.hh],
+  ["ArtStation", BRAND.links.artstation],
+  ["Sketchfab", BRAND.links.sketchfab],
+  ["YouTube", BRAND.links.youtube]
 ];
 const T = {
   en: {
@@ -39,10 +47,6 @@ const T = {
   }
 };
 
-const html = fs.readFileSync("site/index.html", "utf8");
-const s0 = html.indexOf("const I18N = "), s1 = html.indexOf("\n};", s0);
-if (s0 < 0 || s1 < 0) throw new Error("cv: I18N object not found in site/index.html");
-const I18N = Function("return " + html.slice(s0 + 13, s1 + 2))();
 const data = JSON.parse(fs.readFileSync("site/data/portfolio.json", "utf8"));
 
 const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -52,7 +56,7 @@ const lines = s => String(s).split(/<br\s*\/?>/i).map(x => x.trim()).filter(Bool
 const font = f => pathToFileURL(path.resolve("site/assets/fonts", f)).href;
 
 function page(l) {
-  const L = k => I18N[l][k] ?? I18N.en[k] ?? "";
+  const L = k => BRAND.fill(I18N[l][k] ?? I18N.en[k] ?? "");
   const t = T[l];
   const rows = (kind, head) => (data.about.experience || []).filter(r => (r.kind || "work") === kind).map((r, i) => {
     const pts = (tx(r.points, l) || []).filter(filled);
@@ -98,7 +102,7 @@ li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;ba
 </style></head><body>
 <div class="top">
   <div><h1>${esc(t.name)}</h1><div class="role">${esc(t.title)} <span>· ${esc(t.stack)}</span></div><div class="where">${esc(t.where)}</div></div>
-  <div class="contacts"><a href="mailto:contact@render-vision-cg.com">contact@render-vision-cg.com</a><br><a href="https://t.me/J_K_3_0">Telegram @J_K_3_0</a><br><a href="${SITE}${l}/">render-vision-cg.com</a></div>
+  <div class="contacts"><a href="${esc(BRAND.link("email"))}">${esc(BRAND.email)}</a><br><a href="${esc(BRAND.links.telegram)}">Telegram ${esc(BRAND.text("tgName"))}</a><br><a href="${SITE}${l}/">${new URL(SITE).host}</a></div>
 </div>
 <h2>${t.about}</h2>
 <p>${L("about.p1")}</p><p>${L("about.p2")}</p><p>${L("about.p3")}</p>
