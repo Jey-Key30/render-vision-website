@@ -755,7 +755,7 @@
       "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/oJ022q",
       "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
-      "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized.\n\nI started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the modeling stage, then I thought that textures would be difficult to create for it. It turned out to be a kind of bust of a space suit.\n\nBut here I took on the task of texturing this piece. I wanted to use bold colors that catch the eye. I took the idea from Mirage from Transformers and from the Elite Guard costume from Doom.\n\nI think it turned out interesting. Very much want to hear your opinion on this work).",
+      "summary": "Modelled in Blender, textured in Substance 3D Painter with a colour scheme inspired by Mirage (Transformers) and the Doom Elite Guard, rendered in Marmoset Toolbag. 23,756 tris.",
       "credit": {
         "text": {
           "en": "3D model based on the design by {name}. Simplified and reworked for my own pipeline.",
@@ -828,7 +828,7 @@
           "sm": "assets/gallery/space-suit-j-30/sm/08.jpg"
         }
       ],
-      "summary_ru": "Хочу поделиться старой работой, которую довёл до конца только недавно.\n\nЯ начал эту модель около четырёх лет назад. Меня всегда притягивала футуристика, и хотелось научиться делать что-то серьёзное. После долгих поисков идея нашлась на Pinterest. Тогда я остановился на этапе моделирования: казалось, что текстуры для неё сделать будет слишком сложно. В итоге получился своего рода бюст скафандра.\n\nТеперь я взялся за текстурирование. Хотелось смелых цветов, которые цепляют взгляд. Идею взял у Миража из «Трансформеров» и у костюма Элитной гвардии из Doom.\n\nДумаю, получилось интересно. Очень хочу услышать ваше мнение об этой работе)"
+      "summary_ru": "Моделирование в Blender, текстурирование в Substance 3D Painter — цветовая схема по мотивам Миража («Трансформеры») и Элитной гвардии из Doom, рендер в Marmoset Toolbag. 23 756 треугольников."
     },
     {
       "id": "sci-fi-gun",
