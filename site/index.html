@@ -90,7 +90,9 @@ section{scroll-margin-top:var(--hh)}
 .ring{position:absolute;left:4%;top:4%;width:92%;height:92%;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
 .side{position:absolute;z-index:2;top:calc(50% - var(--wfs) * .47);width:max-content;display:flex;flex-direction:column;gap:14px}   /* both words share the square's midline */
 .side.l .dots{position:absolute;left:0;bottom:calc(100% + 14px)}
-.side.l{right:calc(100% - 64px);align-items:flex-start}
+.side.l{right:calc(100% - 64px);align-items:flex-start;width:min-content}   /* the word sets the width: it reaches the square however short it is */
+.side.l .word{margin-right:-.1em}   /* trailing letter-spacing would stop the ink .1em short of the right word's overlap */
+.side.l .lede{width:clamp(254px,100%,384px);max-width:none;margin-left:min(0px,100% - 254px)}   /* as wide as the word; below 254px it grows to the left, never under the square */
 .side.r{left:calc(100% - 64px);align-items:flex-end;text-align:right;max-width:34vw}
 .word{font-size:var(--wfs,clamp(44px,5.6vw,82px));font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
 .dots{display:flex;gap:6px}
@@ -722,8 +724,9 @@ function centerHero() {
   nav.style.transform = "";
   if (!st || !st.offsetParent) return;   // no square on screen (phones, project pages): menu stays on the page centre
   st.style.left = "0px";
-  const s = st.getBoundingClientRect(), l = st.querySelector(".side.l").getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
-  const shift = Math.round(((s.left - l.left) - (r.right - s.right)) / 2);
+  const s = st.getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
+  const left = Math.min(st.querySelector(".side.l").getBoundingClientRect().left, st.querySelector(".side.l .lede").getBoundingClientRect().left);   // a short word lets the lede stick out left
+  const shift = Math.round(((s.left - left) - (r.right - s.right)) / 2);
   st.style.left = shift + "px";
   /* menu sits right above the square, but never runs into the brand or the language switch */
   const br = $(".brand"), side = shift > 0 ? $(".hr").offsetLeft - (nav.offsetLeft + nav.offsetWidth)   // offsets ignore the running transform
