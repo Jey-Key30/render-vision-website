@@ -87,16 +87,27 @@ function build(html, data, siteUrl) {
     }).join("") + `</div>`;
   }).join("");
 
+  // case fields, same as facts() / credit() / caseText() in site/index.html; "TODO…" notes never reach the published pages
+  const shown = (v, l) => filled(tx(v, l)) && !/^\s*TODO\b/.test(tx(v, l));
+  const ext = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
   const projectBody = (p, l, T) => {
     const s = summary(p, l), imgs = (p.media || []).filter(m => m.t === "image" && m.src);
+    const pr = p.production || {}, c = p.credit || {};
     const facts = [["p.year", p.year], ["p.role", p.role], ["p.software", p.software], ["p.tris", p.tris]]
-      .filter(([, v]) => filled(v)).map(([k, v]) => `<div><u>${T(k)}</u>${esc(v)}</div>`).join("");
+      .filter(([, v]) => filled(v)).map(([k, v]) => `<div><u>${T(k)}</u>${esc(v)}</div>`).join("") +
+      (shown(pr.name, l) ? `<div><u>${T("p.production")}</u>${ext(pr.url, tx(pr.name, l))}</div>` : "") +
+      (shown(p.ai_used, l) ? `<div><u>${T("p.ai")}</u>${esc(tx(p.ai_used, l))}</div>` : "");
+    const [ca, cb = ""] = shown(c.text, l) ? tx(c.text, l).split("{name}") : [];
+    const cases = [["task", "p.task"], ["what_i_did", "p.did"], ["result", "p.result"]].filter(([k]) => shown(p[k], l))
+      .map(([k, t]) => `<div><u>${T(t)}</u>${rich(tx(p[k], l))}</div>`).join("");
+    const text = (ca != null ? `<p class="credit">${esc(ca)}${c.name ? ext(c.url, c.name) : ""}${esc(cb)}</p>` : "") +
+      (filled(s) ? rich(s) : "") + (cases ? `<div class="case">${cases}</div>` : "");
     const rework = p.status === "rework" ? `<div class="p-status"><b>REWORK</b>${T("st.reworkNote")}</div>` : "";
     return `<div class="crumbs"><a href="${l}/">${T("p.back")}</a>` +
       (p.artstationUrl ? `<a href="${esc(p.artstationUrl)}" target="_blank" rel="noopener">${T("p.as")}</a>` : "") + `</div>` +
       `<article class="info" style="display:flex;flex-direction:column;gap:20px">` +
       (filled(p.topic) ? `<div class="eyebrow">${esc(p.topic)}</div>` : "") +
-      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<div class="sub desc">${rich(s)}</div>` : "") +
+      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (text ? `<div class="sub desc">${text}</div>` : "") +
       rework + (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
       (imgs.length ? `<div class="strip" style="padding-top:24px">` +
         imgs.map((m, i) => pic(m.sm || m.src, ` alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy" decoding="async"`)).join("") + `</div>` : "");

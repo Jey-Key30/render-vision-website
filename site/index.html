@@ -274,6 +274,12 @@ footer .reach a{font-size:19px}
 .facts{display:flex;flex-wrap:wrap;gap:20px 36px;font-family:var(--mono);font-size:12px;line-height:1.7}
 .facts div{display:flex;flex-direction:column;max-width:220px}
 .facts u{text-decoration:none;color:var(--faint)}
+.desc a,.facts a{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.desc a:hover,.facts a:hover{color:var(--red)}
+.desc .case{display:flex;flex-direction:column;gap:1.1em;margin-top:1.4em}
+.case u{display:block;margin-bottom:.4em;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--faint)}
+.case p,.case ul{margin:0 0 .6em}.case>div>:last-child{margin-bottom:0}
+.todo{outline:1px dashed var(--red);outline-offset:4px;color:var(--red)}
 .vhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,5vw,56px);padding:40px var(--pad);align-items:end;border-bottom:1px solid var(--line)}
 .vplayer{position:relative;height:min(80vh,760px);aspect-ratio:9/16;background:#070707;border:1px solid var(--edge);overflow:hidden}
 .vplayer img,.vplayer>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -571,6 +577,7 @@ const I18N = {
     "f.ok": "BRIEF SENT", "f.okMsg": "Thanks — I'll reply within a day.",
     "f.err": "Couldn't send the form. Write to me directly: <a href='mailto:{email}'>{email}</a> or <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
     "p.back": "← BACK TO WORK", "p.as": "VIEW ON ARTSTATION ↗", "p.year": "YEAR", "p.role": "ROLE", "p.software": "SOFTWARE", "p.tris": "TRIS",
+    "p.production": "PRODUCTION", "p.ai": "AI", "p.task": "TASK", "p.did": "WHAT I DID", "p.result": "RESULT",
     "p.gallery": "GALLERY", "p.item": "ITEM", "p.items": "ITEMS", "p.next": "NEXT PROJECTS", "p.moreV": "MORE VERTICAL VFX",
     "p.yt": "WATCH ON YOUTUBE ↗", "p.close": "CLOSE ✕",
     "st.soon": "IN DEVELOPMENT", "st.reworkNote": "The work is being redone: renders below are the previous version.",
@@ -609,6 +616,7 @@ const I18N = {
     "f.ok": "БРИФ ОТПРАВЛЕН", "f.okMsg": "Спасибо! Отвечу в течение дня.",
     "f.err": "Не удалось отправить форму. Напишите напрямую: <a href='mailto:{email}'>{email}</a> или <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
     "p.back": "← К РАБОТАМ", "p.as": "ОТКРЫТЬ НА ARTSTATION ↗", "p.year": "ГОД", "p.role": "РОЛЬ", "p.software": "СОФТ", "p.tris": "ПОЛИГОНЫ",
+    "p.production": "ПРОДАКШН", "p.ai": "ИИ", "p.task": "ЗАДАЧА", "p.did": "ЧТО СДЕЛАЛ", "p.result": "РЕЗУЛЬТАТ",
     "p.gallery": "ГАЛЕРЕЯ", "p.item": "", "p.items": "", "p.next": "ДРУГИЕ РАБОТЫ", "p.moreV": "ЕЩЁ ВЕРТИКАЛЬНЫЕ VFX",
     "p.yt": "СМОТРЕТЬ НА YOUTUBE ↗", "p.close": "ЗАКРЫТЬ ✕",
     "st.soon": "В РАЗРАБОТКЕ", "st.reworkNote": "Работа переделывается: ниже — прошлая версия рендеров.",
@@ -1154,18 +1162,39 @@ function paintSync() {
 
 /* ---------- project page ---------- */
 function filled(v) { return v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014"; }
+const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 /* project text: a blank line starts a paragraph, lines starting with "- " form a list */
 function rich(s) {
-  const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return String(s).split(/\n\s*\n/).map(block => {
     const head = [], items = [];
     block.split("\n").forEach(l => /^\s*-\s+/.test(l) ? items.push(l.replace(/^\s*-\s+/, "")) : l.trim() && head.push(l.trim()));
     return (head.length ? "<p>" + esc(head.join(" ")) + "</p>" : "") + (items.length ? "<ul>" + items.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>" : "");
   }).join("");
 }
+/* case fields, all optional; text is a string or {en, ru}:
+   task / what_i_did / result — blocks under the description; production {name, url} and ai_used — rows in the facts;
+   credit {text, name, url} — first line of the description, "{name}" in text becomes the link.
+   A value starting with "TODO" is a note for the owner: dashed red locally, never shown on the published site */
+const isTodo = v => /^\s*TODO\b/.test(tx(v) || "");
+const shown = v => filled(tx(v)) && !(STATIC && isTodo(v));
+const todo = v => isTodo(v) ? " class='todo'" : "";
+const extLink = (url, text) => url ? "<a href='" + esc(url) + "' target='_blank' rel='noopener'>" + esc(text) + "</a>" : esc(text);
 function facts(p) {
+  const pr = p.production || {};
   return [[L("p.year"), p.year], [L("p.role"), p.role], [L("p.software"), p.software], [L("p.tris"), p.tris]]
-    .filter(([, v]) => filled(v)).map(([k, v]) => "<div><u>" + k + "</u>" + v + "</div>").join("");
+    .filter(([, v]) => filled(v)).map(([k, v]) => "<div><u>" + k + "</u>" + v + "</div>").join("") +
+    (shown(pr.name) ? "<div" + todo(pr.name) + "><u>" + L("p.production") + "</u>" + extLink(pr.url, tx(pr.name)) + "</div>" : "") +
+    (shown(p.ai_used) ? "<div" + todo(p.ai_used) + "><u>" + L("p.ai") + "</u>" + esc(tx(p.ai_used)) + "</div>" : "");
+}
+function credit(p) {
+  const c = p.credit || {};
+  if (!shown(c.text)) return "";
+  const [a, b = ""] = tx(c.text).split("{name}");
+  return "<p class='credit'>" + esc(a) + (c.name ? extLink(c.url, c.name) : "") + esc(b) + "</p>";
+}
+function caseText(p) {
+  const rows = [["task", "p.task"], ["what_i_did", "p.did"], ["result", "p.result"]].filter(([k]) => shown(p[k]));
+  return rows.length ? "<div class='case'>" + rows.map(([k, l]) => "<div" + todo(p[k]) + "><u>" + L(l) + "</u>" + rich(tx(p[k])) + "</div>").join("") + "</div>" : "";
 }
 function ytPoster(id, img) {
   img.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
@@ -1280,18 +1309,18 @@ function renderProject(p) {
   const ytOver = mode === "vertical" && pick && pick.t !== "video" ? ytAny : null;   // no local clip: the frame links out to YouTube
   const rest = mode === "render" ? all.slice() : all.filter(m => m !== pick && m !== ytOver);   // render: hero frame repeats in the gallery
   rest.sort((a, z) => (a.t === "youtube") - (z.t === "youtube"));   // YouTube links always close the strip
-  const asUrl = p.artstationUrl || (DATA.source && DATA.source.profile) || BRAND.links.artstation;
+  const asUrl = p.artstationUrl;   // cases that never went to ArtStation get no link
   const eyebrow = filled(p.topic) ? "<div class='eyebrow'>" + p.topic + "</div>" : "";
   const title = "<h1 class='p-title' style='margin:0'>" + p.title + "</h1>";
-  const sm = loc(p, "summary");
-  const summary = filled(sm) ? "<div class='sub desc'>" + rich(sm) + "</div>" : "";
+  const sm = loc(p, "summary"), text = credit(p) + (filled(sm) ? rich(sm) : "") + caseText(p);
+  const summary = text ? "<div class='sub desc'>" + text + "</div>" : "";
   const fl = facts(p), fx = (p.status === "rework" ? "<div class='p-status'><b>REWORK</b>" + L("st.reworkNote") + "</div>" : "") + (fl ? "<div class='facts'>" + fl + "</div>" : "");
   const crumbs = cls => {
     const c = el("div", cls);
     const back = el("a", "", L("p.back")); back.href = href({});
     back.addEventListener("click", backToWork);
-    const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener";
-    c.append(back, asl);
+    c.appendChild(back);
+    if (asUrl) { const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener"; c.appendChild(asl); }
     return c;
   };
 

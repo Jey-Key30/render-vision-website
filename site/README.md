@@ -43,11 +43,18 @@ On deploy the script copies `site/` to `_site/` and adds real pages for every UR
 `/en/`, `/ru/`, `/<lang>/work/<id>/`, `/<lang>/privacy/`, plus `404.html`, `sitemap.xml`,
 `robots.txt`. Each page carries its own title, description, canonical, hreflang, Open Graph,
 JSON-LD and prerendered text; the page script then takes over and navigates with clean URLs.
-Run locally to inspect: `node tools/seo.mjs https://example.com/ _site`.
+Run locally to inspect: `node tools/seo.mjs https://example.com/ _site` (without the address it uses `BRAND.siteUrl`).
 
 After the first deploy, add the site to Google Search Console and Yandex Webmaster and
 submit `sitemap.xml` there (on a github.io sub-path robots.txt is not read by crawlers,
 so the sitemap has to be submitted by hand).
+
+## Brand
+
+Name, hero words, site address, contact email, hero render and profile links are set once, in
+`const BRAND` in `index.html`. The page, `tools/seo.mjs` and `tools/cv.mjs` all read it; UI strings
+refer to it as `{brand}`, `{email}`, `{tg}`, `{tgName}`. After changing `siteUrl`, `email` or the
+links, run `node tools/cv.mjs` so the PDF CVs pick them up.
 
 ## Brief form
 
