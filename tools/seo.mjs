@@ -44,7 +44,7 @@ function build(html, data, siteUrl) {
   const tail = r => r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
   const url = (l, r) => SITE + l + "/" + tail(r);
   const LANGS = ["en", "ru"];
-  const all = data.projects || [];
+  const all = (data.projects || []).filter(p => !p.hidden);   // hidden: a draft, not published anywhere
   const projects = all.filter(p => p.status !== "soon");   // SOON: a card in the grid, no page of its own
   // ids become folder names under <lang>/work/
   for (const p of all) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");

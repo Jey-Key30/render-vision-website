@@ -1424,6 +1424,53 @@
       "tags": [],
       "slot": "",
       "media": []
+    },
+    {
+      "id": "case-template",
+      "hidden": true,
+      "title": "Client case — template",
+      "year": "2026",
+      "role": "CG Generalist",
+      "software": "Blender · After Effects",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "VIDEO",
+      "layout": "vertical",
+      "slot": "CLIENT CASE",
+      "summary": "One or two sentences: what the project is and who it was for.",
+      "summary_ru": "Одна-две фразы: что за проект и для кого.",
+      "task": {
+        "en": "What the client needed.",
+        "ru": "Что было нужно заказчику."
+      },
+      "what_i_did": {
+        "en": "My part of the work:\n- modelling\n- simulation\n- compositing",
+        "ru": "Моя часть работы:\n- моделинг\n- симуляция\n- композитинг"
+      },
+      "result": {
+        "en": "Where it was published and what came of it.",
+        "ru": "Где вышло и что получилось в итоге."
+      },
+      "production": {
+        "name": "Studio name",
+        "url": "https://example.com/"
+      },
+      "ai_used": {
+        "en": "What AI did, in one line — or delete the field.",
+        "ru": "Что делал ИИ, одной строкой — или удалите поле."
+      },
+      "credit": {
+        "text": {
+          "en": "Based on the design by {name}.",
+          "ru": "По дизайну {name}."
+        },
+        "name": "Author",
+        "url": "https://example.com/"
+      },
+      "media": []
     }
   ],
   "about": {

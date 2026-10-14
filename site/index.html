@@ -747,6 +747,7 @@ function setLang(l) {
 document.querySelectorAll("#lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 
 let DATA = { projects: [], reel: { videoId: "" } };
+let DRAFTS = [];   // "hidden": true — kept out of the grid, counters and SEO; locally a direct #/project/<id> link still opens them
 let topic = "ALL", media = [], loaded = {};
 
 /* ---------- reveal ---------- */
@@ -843,7 +844,7 @@ function openProject(id) { nav({ id }); projectView(id); }
 function openPage(page) { nav({ page }); pageView(page); }
 function homeView() { showView("home"); setMeta(L("title"), L("desc"), {}); }
 function projectView(id, keep) {
-  const p = DATA.projects.find(x => x.id === id);
+  const p = DATA.projects.find(x => x.id === id) || (!STATIC && DRAFTS.find(x => x.id === id));
   if (!p || isSoon(p)) return notFoundView(keep);
   renderProject(p); showView("project", keep);
   const d = loc(p, "summary");
@@ -1412,6 +1413,8 @@ renderReel();
 fetch("data/portfolio.json")
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(d => {
+    DRAFTS = d.projects.filter(p => p.hidden);
+    d.projects = d.projects.filter(p => !p.hidden);
     DATA = d;
     paintSync();
     $("#statTotal").textContent = d.projects.filter(p => !isSoon(p)).length;
