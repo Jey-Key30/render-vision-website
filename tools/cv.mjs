@@ -138,8 +138,15 @@ for (const l of ["en", "ru"]) {
   fs.writeFileSync(src, page(l));
   fs.rmSync(out, { force: true });   // so a failed print cannot pass for the old file
   execFileSync(exe, ["--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--print-to-pdf-no-header",
-    "--user-data-dir=" + path.join(tmp, "profile"), "--print-to-pdf=" + out, pathToFileURL(src).href], { stdio: "ignore" });
+    "--user-data-dir=" + path.join(tmp, "profile-" + l), "--print-to-pdf=" + out, pathToFileURL(src).href], { stdio: "ignore" });
+  // Edge on Windows: the launcher may exit before its child process has written the PDF, so wait until the size settles
+  for (let size = -1, until = Date.now() + 30000; Date.now() < until;) {
+    const s = fs.existsSync(out) ? fs.statSync(out).size : -1;
+    if (s > 0 && s === size) break;
+    size = s;
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 500);
+  }
   if (!fs.existsSync(out)) throw new Error("cv: browser did not write " + out);
   console.log(`cv: ${path.relative(".", out)} (${Math.round(fs.statSync(out).size / 1024)} KB)`);
 }
-fs.rmSync(tmp, { recursive: true, force: true });
+try { fs.rmSync(tmp, { recursive: true, force: true, maxRetries: 5 }); } catch {}   // a browser still closing may hold its profile
