@@ -119,6 +119,9 @@ function build(html, data, siteUrl) {
     set(/(<meta name="description" content=")[^"]*/, esc(o.desc));
     set(/(<meta property="og:title" content=")[^"]*/, esc(o.title));
     set(/(<meta property="og:description" content=")[^"]*/, esc(o.desc));
+    set(/(<meta name="twitter:title" content=")[^"]*/, esc(o.title));
+    set(/(<meta name="twitter:description" content=")[^"]*/, esc(o.desc));
+    set(/(<meta property="og:site_name" content=")[^"]*/, esc(BRAND.full));
     set(/(<meta property="og:image" content=")[^"]*/, esc(abs(o.image || "assets/og.jpg")));
     if (o.image) h = h.replace(/<meta property="og:image:(width|height)"[^>]*>\n/g, "");
     const extra = [`<meta property="og:locale" content="${lang === "ru" ? "ru_RU" : "en_US"}">`];
