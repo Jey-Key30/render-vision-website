@@ -3,15 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Render Vision — CG Generalist</title>
-<meta name="description" content="Portfolio of Kirill, CG generalist and technical artist. Hard-surface, environments, VFX and game-ready 3D.">
-<meta property="og:title" content="Render Vision — CG Generalist">
-<meta property="og:description" content="Hard-surface, environments, VFX and game-ready 3D.">
+<title>Hardframe 3D — Kirill, CG Generalist</title>
+<meta name="description" content="Hardframe 3D — Kirill, CG generalist. CG with an engineer's mind: hard-surface, real-world environments and VFX, from model to engine or final comp.">
+<meta property="og:title" content="Hardframe 3D — Kirill, CG Generalist">
+<meta property="og:description" content="Hardframe 3D — Kirill, CG generalist. CG with an engineer's mind: hard-surface, real-world environments and VFX, from model to engine or final comp.">
+<meta property="og:site_name" content="Hardframe 3D">
 <meta property="og:image" content="assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hardframe 3D — Kirill, CG Generalist">
+<meta name="twitter:description" content="Hardframe 3D — Kirill, CG generalist. CG with an engineer's mind: hard-surface, real-world environments and VFX, from model to engine or final comp.">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="120x120" href="assets/favicon-120.png">
@@ -87,7 +90,9 @@ section{scroll-margin-top:var(--hh)}
 .ring{position:absolute;left:4%;top:4%;width:92%;height:92%;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
 .side{position:absolute;z-index:2;top:calc(50% - var(--wfs) * .47);width:max-content;display:flex;flex-direction:column;gap:14px}   /* both words share the square's midline */
 .side.l .dots{position:absolute;left:0;bottom:calc(100% + 14px)}
-.side.l{right:calc(100% - 64px);align-items:flex-start}
+.side.l{right:calc(100% - 64px);align-items:flex-start;width:min-content}   /* the word sets the width: it reaches the square however short it is */
+.side.l .word{margin-right:-.1em}   /* trailing letter-spacing would stop the ink .1em short of the right word's overlap */
+.side.l .lede{width:clamp(254px,100%,384px);max-width:none;margin-left:min(0px,100% - 254px)}   /* as wide as the word; below 254px it grows to the left, never under the square */
 .side.r{left:calc(100% - 64px);align-items:flex-end;text-align:right;max-width:34vw}
 .word{font-size:var(--wfs,clamp(44px,5.6vw,82px));font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
 .dots{display:flex;gap:6px}
@@ -271,6 +276,12 @@ footer .reach a{font-size:19px}
 .facts{display:flex;flex-wrap:wrap;gap:20px 36px;font-family:var(--mono);font-size:12px;line-height:1.7}
 .facts div{display:flex;flex-direction:column;max-width:220px}
 .facts u{text-decoration:none;color:var(--faint)}
+.desc a,.facts a{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.desc a:hover,.facts a:hover{color:var(--red)}
+.desc .case{display:flex;flex-direction:column;gap:1.1em;margin-top:1.4em}
+.case u{display:block;margin-bottom:.4em;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--faint)}
+.case p,.case ul{margin:0 0 .6em}.case>div>:last-child{margin-bottom:0}
+.todo{outline:1px dashed var(--red);outline-offset:4px;color:var(--red)}
 .vhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,5vw,56px);padding:40px var(--pad);align-items:end;border-bottom:1px solid var(--line)}
 .vplayer{position:relative;height:min(80vh,760px);aspect-ratio:9/16;background:#070707;border:1px solid var(--edge);overflow:hidden}
 .vplayer img,.vplayer>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -348,7 +359,7 @@ main{animation:fade .34s ease both}
 <button class="skip" id="skip" data-i18n="a.skip">SKIP TO CONTENT</button>
 
 <header>
-  <button class="brand" data-go="top">RENDER VISION</button>
+  <button class="brand" data-go="top" data-brand="SHORT">HARDFRAME</button>
   <nav>
     <a data-go="reel" href="#reel" data-i18n="nav.reel">REEL</a>
     <a data-go="work" href="#work" data-i18n="nav.work">WORK</a>
@@ -357,43 +368,43 @@ main{animation:fade .34s ease both}
   </nav>
   <div class="hr">
     <div class="lang" id="lang"><button data-lang="en" aria-label="English">EN</button><button data-lang="ru" aria-label="Русский">RU</button></div>
-    <a class="as-link" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
+    <a class="as-link" data-link="artstation" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
   </div>
 </header>
 
 <main id="home" tabindex="-1">
-  <h1 class="vh" data-i18n="h1">Render Vision — Kirill, CG Generalist &amp; 3D Artist</h1>
+  <h1 class="vh" data-i18n="h1">Hardframe 3D — Kirill, CG Generalist &amp; 3D Artist</h1>
   <section id="top">
     <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
 
     <div class="stage">
       <div class="side l">
-        <div class="dots"><a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
-        <div class="word">RENDER</div>
+        <div class="dots"><a data-link="artstation" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a data-link="sketchfab" href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a data-link="youtube" href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a data-link="instagram" href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
+        <div class="word" data-brand="hero0">HARD</div>
         <p class="lede" data-i18n="hero.lede">5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.</p>
       </div>
       <div class="square">
-        <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
+        <div class="disc"><picture data-hero><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Hardframe 3D hero render" fetchpriority="high" decoding="async"></picture></div>
         <div class="ring"></div>
       </div>
       <div class="side r">
         
-        <div class="word">VISION</div>
+        <div class="word" data-brand="hero1">FRAME</div>
         <div class="roles">Middle CG Generalist |<br>3D Artist |<br>Technical Artist |</div>
-        <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg>@J_K_3_0</a>
+        <a class="tg" data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><span data-brand="tgName">@J_K_3_0</span></a>
       </div>
     </div>
 
     <div class="hero-mobile in">
-      <div class="dots"><a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
-      <div class="word" style="font-size:clamp(38px,13vw,62px)">RENDER<br>VISION</div>
+      <div class="dots"><a data-link="artstation" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener" aria-label="ArtStation" title="ArtStation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 17.2 3.6 21h13.9l-2.1-3.8Z"/><path d="M22.5 17.4a1.3 1.3 0 0 0-.2-.7L14.3 2.7A1.3 1.3 0 0 0 13.2 2H9.1l11.5 20 1.6-2.8c.2-.3.3-.6.3-1Z"/><path d="M13.3 14.6 8.6 6.5 3.9 14.6Z"/></svg></a><a data-link="sketchfab" href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener" aria-label="Sketchfab" title="Sketchfab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></a><a data-link="youtube" href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a><a data-link="instagram" href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a><a data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg></a></div>
+      <div class="word" style="font-size:clamp(38px,15.5vw,74px)"><span data-brand="hero0">HARD</span><br><span data-brand="hero1">FRAME</span></div>
       <div class="square">
-        <div class="disc"><picture><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Render Vision hero render" fetchpriority="high" decoding="async"></picture></div>
+        <div class="disc"><picture data-hero><source srcset="assets/hero-robot.avif" type="image/avif"><source srcset="assets/hero-robot.webp" type="image/webp"><img src="assets/hero-robot.jpg" alt="Hardframe 3D hero render" fetchpriority="high" decoding="async"></picture></div>
         <div class="ring"></div>
       </div>
       <p class="lede" style="max-width:420px;padding:0;font-size:15px" data-i18n="hero.lede">5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.</p>
       <ul class="roles stack"><li>Middle CG Generalist</li><li>3D Artist</li><li>Technical Artist</li></ul>
-      <a class="tg" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg>@J_K_3_0</a>
+      <a class="tg" data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tgi"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><span data-brand="tgName">@J_K_3_0</span></a>
     </div>
   </section>
 
@@ -405,9 +416,9 @@ main{animation:fade .34s ease both}
     <div class="head">
       <div class="reveal" style="display:flex;flex-direction:column;gap:16px">
         <div class="h1">PORTFOLIO</div>
-        <p class="sub" data-i18n="work.sub">Every project is pulled from ArtStation and enriched with video, YouTube reels and Sketchfab viewers where they exist.</p>
+        <p class="sub" data-i18n="work.sub">Personal and commercial projects, with videos and interactive Sketchfab viewers where they exist.</p>
       </div>
-      <div class="meta"><span id="syncLabel">SYNCING FROM ARTSTATION…</span><span id="shownLabel"></span></div>
+      <div class="meta"><span id="syncLabel">LOADING…</span><span id="shownLabel"></span></div>
     </div>
     <div class="filters">
       <div class="row" id="topicRow"></div>
@@ -440,7 +451,7 @@ main{animation:fade .34s ease both}
           <div class="socials">
             <a href="assets/cv/kirill-kadyrov-cv-en.pdf" download="Kirill_Kadyrov_CV_EN.pdf" data-cv="en">PDF · EN ↓</a>
             <a href="assets/cv/kirill-kadyrov-cv-ru.pdf" download="Kadyrov_Kirill_CV_RU.pdf" data-cv="ru">PDF · RU ↓</a>
-            <a href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
+            <a data-link="hh" href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
           </div>
         </div>
       </div>
@@ -460,16 +471,16 @@ main{animation:fade .34s ease both}
       <p class="sub" style="max-width:460px;font-size:17px;line-height:1.6" data-i18n="c.sub">Freelance projects, contract work and full-time roles. Send a brief or just a reference board — I reply within a day.</p>
       <div class="avail"><b data-i18n="c.avail">AVAILABLE FOR WORK</b><span data-i18n="c.price">Rates on request: every project is quoted individually.</span></div>
       <div class="reach">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:contact@render-vision-cg.com">contact@render-vision-cg.com</a></div>
-        <div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a data-link="email" href="mailto:contact@render-vision-cg.com"><span data-brand="email">contact@render-vision-cg.com</span></a></div>
+        <div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><a data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><span data-brand="tgName">@J_K_3_0</span></a></div>
       </div>
       <div class="socials">
-        <a href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
-        <a href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener">SKETCHFAB ↗</a>
-        <a href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener">YOUTUBE ↗</a>
-        <a href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-        <a href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
-        <a href="https://t.me/j_k_3d_blog" target="_blank" rel="noopener" data-i18n="c.blog">TELEGRAM BLOG ↗</a>
+        <a data-link="artstation" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
+        <a data-link="sketchfab" href="https://sketchfab.com/J-K3.0" target="_blank" rel="noopener">SKETCHFAB ↗</a>
+        <a data-link="youtube" href="https://www.youtube.com/@Jey-Key_3.0" target="_blank" rel="noopener">YOUTUBE ↗</a>
+        <a data-link="instagram" href="https://www.instagram.com/jey_key_30/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+        <a data-link="hh" href="https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666" target="_blank" rel="noopener">HH.RU ↗</a>
+        <a data-link="blog" href="https://t.me/j_k_3d_blog" target="_blank" rel="noopener" data-i18n="c.blog">TELEGRAM BLOG ↗</a>
       </div>
     </div>
     <form id="brief" action="https://formsubmit.co/ajax/8454ad22614da842f6a7f4a38544bf36" method="POST">
@@ -487,9 +498,9 @@ main{animation:fade .34s ease both}
 <main id="project" tabindex="-1"></main>
 
 <footer>
-  <div class="reach"><div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><a href="https://t.me/J_K_3_0" target="_blank" rel="noopener">@J_K_3_0</a></div></div>
-  <div class="reach"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:contact@render-vision-cg.com">contact@render-vision-cg.com</a></div></div>
-  <span class="copy">© <span id="year">2026</span> RENDER VISION · <a data-pp data-i18n="pp.link">PRIVACY POLICY</a></span>
+  <div class="reach"><div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><a data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><span data-brand="tgName">@J_K_3_0</span></a></div></div>
+  <div class="reach"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a data-link="email" href="mailto:contact@render-vision-cg.com"><span data-brand="email">contact@render-vision-cg.com</span></a></div></div>
+  <span class="copy">© <span id="year">2026</span> <span data-brand="FULL">HARDFRAME 3D</span> · <a data-pp data-i18n="pp.link">PRIVACY POLICY</a></span>
 </footer>
 
 <script>
@@ -512,13 +523,41 @@ function wrap(img) {
   return p;
 }
 
+/* ---------- brand ----------
+   Names, address and links live only here; tools/seo.mjs and tools/cv.mjs read this object from this file too.
+   Markup keeps the same values as fallback for crawlers and no-JS, and seo.mjs rewrites it from here at deploy:
+   [data-brand] text, [data-link] href, <picture data-hero>. I18N strings use {brand} {brandShort} {email} {tg} {tgName} */
+const BRAND = {
+  short: "Hardframe", full: "Hardframe 3D", heroWords: ["HARD", "FRAME"],
+  siteUrl: "https://render-vision-cg.com",   // canonical address for the CV; the deployed pages take theirs from GitHub Pages
+  email: "contact@render-vision-cg.com",
+  hero: "assets/hero-robot",                 // hero render without extension: .jpg, .avif and .webp lie next to it
+  links: {
+    artstation: "https://www.artstation.com/j-k30", sketchfab: "https://sketchfab.com/J-K3.0",
+    youtube: "https://www.youtube.com/@Jey-Key_3.0", instagram: "https://www.instagram.com/jey_key_30/",
+    telegram: "https://t.me/J_K_3_0", blog: "https://t.me/j_k_3d_blog",
+    hh: "https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666"
+  },
+  // value behind [data-brand="<key>"]
+  text(k) {
+    return { short: this.short, full: this.full, SHORT: this.short.toUpperCase(), FULL: this.full.toUpperCase(),
+      hero0: this.heroWords[0], hero1: this.heroWords[1], email: this.email, tgName: "@" + this.links.telegram.split("/").pop() }[k];
+  },
+  // href behind [data-link="<key>"]
+  link(k) { return k === "email" ? "mailto:" + this.email : this.links[k]; },
+  fill(s) {
+    const v = { brand: this.full, brandShort: this.short, email: this.email, tg: this.links.telegram, tgName: this.text("tgName") };
+    return String(s).replace(/\{(brand|brandShort|email|tg|tgName)\}/g, (m, k) => v[k]);
+  }
+};
+
 /* ---------- i18n ---------- */
 const I18N = {
   en: {
     "nav.work": "WORK", "nav.reel": "REEL", "nav.about": "ABOUT", "nav.contact": "CONTACT",
     "hero.lede": "5 years in 3D, 2 of them commercial, and an honours degree in applied informatics. Full pipeline in Blender, from model to final render or game engine.",
-    "work.sub": "Selected work from ArtStation, with interactive Sketchfab viewers and videos where they exist.",
-    "work.source": "SOURCE: ARTSTATION", "work.shown": "{n} OF {m} SHOWN", "f.all": "ALL",
+    "work.sub": "Personal and commercial projects, with videos and interactive Sketchfab viewers where they exist.",
+    "work.source": "SELECTED WORK", "work.shown": "{n} OF {m} SHOWN", "f.all": "ALL",
     "empty.h": "No projects match these filters", "empty.p": "Try a single filter, or browse the full archive on ArtStation.",
     "empty.clear": "CLEAR FILTERS", "empty.as": "OPEN ARTSTATION ↗",
     "reel.cta": "WATCH FULL SHOWREEL ON YOUTUBE ↗",
@@ -538,25 +577,26 @@ const I18N = {
     "f.name": "NAME", "f.namePh": "Your name", "f.contact": "EMAIL OR TELEGRAM", "f.type": "PROJECT TYPE",
     "f.brief": "BRIEF", "f.briefPh": "Scope, deadline, references (a board or Drive link)", "f.send": "SEND BRIEF", "f.sending": "SENDING…",
     "f.ok": "BRIEF SENT", "f.okMsg": "Thanks — I'll reply within a day.",
-    "f.err": "Couldn't send the form. Write to me directly: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a> or <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
+    "f.err": "Couldn't send the form. Write to me directly: <a href='mailto:{email}'>{email}</a> or <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
     "p.back": "← BACK TO WORK", "p.as": "VIEW ON ARTSTATION ↗", "p.year": "YEAR", "p.role": "ROLE", "p.software": "SOFTWARE", "p.tris": "TRIS",
+    "p.production": "PRODUCTION", "p.ai": "AI", "p.task": "TASK", "p.did": "WHAT I DID", "p.result": "RESULT",
     "p.gallery": "GALLERY", "p.item": "ITEM", "p.items": "ITEMS", "p.next": "NEXT PROJECTS", "p.moreV": "MORE VERTICAL VFX",
     "p.yt": "WATCH ON YOUTUBE ↗", "p.close": "CLOSE ✕",
     "st.soon": "IN DEVELOPMENT", "st.reworkNote": "The work is being redone: renders below are the previous version.",
     "nf.h": "Project not found", "nf.p": "This link points to a project that doesn't exist or has been removed.", "nf.back": "← ALL WORK",
-    "title": "Render Vision — CG Generalist", "title.nf": "Not found — Render Vision",
-    "desc": "Portfolio of Kirill, CG generalist and technical artist. Hard-surface, environments, VFX and game-ready 3D.",
-    "a.skip": "SKIP TO CONTENT", "h1": "Render Vision — Kirill, CG Generalist &amp; 3D Artist", "a.render": "render", "a.prev": "Previous image", "a.next": "Next image", "a.left": "Scroll left", "a.right": "Scroll right", "a.gallery": "Image viewer",
+    "title": "{brand} — Kirill, CG Generalist", "title.nf": "Not found — {brand}",
+    "desc": "{brand} — Kirill, CG generalist. CG with an engineer's mind: hard-surface, real-world environments and VFX, from model to engine or final comp.",
+    "a.skip": "SKIP TO CONTENT", "h1": "{brand} — Kirill, CG Generalist &amp; 3D Artist", "a.render": "render", "a.prev": "Previous image", "a.next": "Next image", "a.left": "Scroll left", "a.right": "Scroll right", "a.gallery": "Image viewer",
     "f.agree": "I agree to the processing of my personal data under the <a data-pp>privacy policy</a>.",
-    "f.activate": "The form is not activated yet: an email with an “Activate Form” link has been sent to the site owner. Meanwhile, write directly: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a> or <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
-    "pp.link": "PRIVACY POLICY", "pp.title": "Privacy policy — Render Vision", "pp.h": "Privacy policy",
-    "pp.body": "<p>Effective 5 October 2026.</p><h2>1. Who processes the data</h2><p>The data controller is Kirill, owner of the Render Vision portfolio website. Contact: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a>.</p><h2>2. What data</h2><p>Your name, email or Telegram username and the text of your brief — only what you enter in the contact form yourself.</p><h2>3. Why</h2><p>Only to reply to your request and discuss the project. No newsletters; the data is not sold or shared with third parties for their own purposes.</p><h2>4. How</h2><p>The form is delivered by FormSubmit (formsubmit.co), which forwards the message to the owner's email. The service is located outside Russia, so submitting the form involves a cross-border transfer of data. If you prefer to avoid this, write directly by email or to <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a> on Telegram.</p><h2>5. How long</h2><p>Messages are kept in the owner's mailbox while the project is discussed and carried out, and no longer than 3 years after the last message.</p><h2>6. Your rights</h2><p>You can ask what data about you is stored, request correction or deletion, or withdraw your consent by writing to <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a>. Requests are answered within 10 working days.</p><h2>7. Cookies and third-party content</h2><p>Visits are counted with two services. Cloudflare Web Analytics (Cloudflare, Inc., USA) records the page address, the referring site, browser and device type, country and page load speed — without cookies and without identifying visitors. Yandex Metrica (YANDEX LLC, Russia) sets cookies and records the pages viewed, the referring site, clicks and scrolling, browser, device, screen size, approximate location by IP address and a random visitor ID; Webvisor session recording is turned off, and what you type into the form is not recorded. The statistics are used only in aggregate, to understand which works people look at; data is processed under the <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>Yandex Metrica terms</a>. You can refuse by blocking cookies in your browser or installing the <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>Metrica opt-out add-on</a>; the site keeps working. Apart from that, only the chosen interface language is stored in your browser (localStorage). Fonts, images and the showreel are served from this site itself. A Sketchfab 3D viewer loads only after you click it, and YouTube links open on youtube.com; these services follow their own privacy policies.</p>"
+    "f.activate": "The form is not activated yet: an email with an “Activate Form” link has been sent to the site owner. Meanwhile, write directly: <a href='mailto:{email}'>{email}</a> or <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
+    "pp.link": "PRIVACY POLICY", "pp.title": "Privacy policy — {brand}", "pp.h": "Privacy policy",
+    "pp.body": "<p>Effective 5 October 2026.</p><h2>1. Who processes the data</h2><p>The data controller is Kirill, owner of the {brand} portfolio website. Contact: <a href='mailto:{email}'>{email}</a>.</p><h2>2. What data</h2><p>Your name, email or Telegram username and the text of your brief — only what you enter in the contact form yourself.</p><h2>3. Why</h2><p>Only to reply to your request and discuss the project. No newsletters; the data is not sold or shared with third parties for their own purposes.</p><h2>4. How</h2><p>The form is delivered by FormSubmit (formsubmit.co), which forwards the message to the owner's email. The service is located outside Russia, so submitting the form involves a cross-border transfer of data. If you prefer to avoid this, write directly by email or to <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a> on Telegram.</p><h2>5. How long</h2><p>Messages are kept in the owner's mailbox while the project is discussed and carried out, and no longer than 3 years after the last message.</p><h2>6. Your rights</h2><p>You can ask what data about you is stored, request correction or deletion, or withdraw your consent by writing to <a href='mailto:{email}'>{email}</a>. Requests are answered within 10 working days.</p><h2>7. Cookies and third-party content</h2><p>Visits are counted with two services. Cloudflare Web Analytics (Cloudflare, Inc., USA) records the page address, the referring site, browser and device type, country and page load speed — without cookies and without identifying visitors. Yandex Metrica (YANDEX LLC, Russia) sets cookies and records the pages viewed, the referring site, clicks and scrolling, browser, device, screen size, approximate location by IP address and a random visitor ID; Webvisor session recording is turned off, and what you type into the form is not recorded. The statistics are used only in aggregate, to understand which works people look at; data is processed under the <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>Yandex Metrica terms</a>. You can refuse by blocking cookies in your browser or installing the <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>Metrica opt-out add-on</a>; the site keeps working. Apart from that, only the chosen interface language is stored in your browser (localStorage). Fonts, images and the showreel are served from this site itself. A Sketchfab 3D viewer loads only after you click it, and YouTube links open on youtube.com; these services follow their own privacy policies.</p>"
   },
   ru: {
     "nav.work": "РАБОТЫ", "nav.reel": "ШОУРИЛ", "nav.about": "ОБО МНЕ", "nav.contact": "КОНТАКТЫ",
     "hero.lede": "5 лет в 3D, из них 2 года коммерческих, и красный диплом по прикладной информатике. Полный пайплайн в Blender — от модели до рендера или движка.",
-    "work.sub": "Избранные работы с ArtStation, с интерактивными моделями Sketchfab и видео там, где они есть.",
-    "work.source": "ИСТОЧНИК: ARTSTATION", "work.shown": "ПОКАЗАНО {n} ИЗ {m}", "f.all": "ВСЕ",
+    "work.sub": "Личные и коммерческие проекты, с видео и интерактивными моделями Sketchfab там, где они есть.",
+    "work.source": "ИЗБРАННЫЕ РАБОТЫ", "work.shown": "ПОКАЗАНО {n} ИЗ {m}", "f.all": "ВСЕ",
     "empty.h": "Нет работ под эти фильтры", "empty.p": "Оставьте один фильтр или откройте полный архив на ArtStation.",
     "empty.clear": "СБРОСИТЬ ФИЛЬТРЫ", "empty.as": "ОТКРЫТЬ ARTSTATION ↗",
     "reel.cta": "СМОТРЕТЬ ШОУРИЛ ЦЕЛИКОМ НА YOUTUBE ↗",
@@ -576,19 +616,20 @@ const I18N = {
     "f.name": "ИМЯ", "f.namePh": "Как к вам обращаться", "f.contact": "EMAIL ИЛИ TELEGRAM", "f.type": "ТИП ПРОЕКТА",
     "f.brief": "БРИФ", "f.briefPh": "Задача, сроки, референсы (ссылка на доску или Google Диск)", "f.send": "ОТПРАВИТЬ", "f.sending": "ОТПРАВКА…",
     "f.ok": "БРИФ ОТПРАВЛЕН", "f.okMsg": "Спасибо! Отвечу в течение дня.",
-    "f.err": "Не удалось отправить форму. Напишите напрямую: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a> или <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
+    "f.err": "Не удалось отправить форму. Напишите напрямую: <a href='mailto:{email}'>{email}</a> или <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
     "p.back": "← К РАБОТАМ", "p.as": "ОТКРЫТЬ НА ARTSTATION ↗", "p.year": "ГОД", "p.role": "РОЛЬ", "p.software": "СОФТ", "p.tris": "ПОЛИГОНЫ",
+    "p.production": "ПРОДАКШН", "p.ai": "ИИ", "p.task": "ЗАДАЧА", "p.did": "ЧТО СДЕЛАЛ", "p.result": "РЕЗУЛЬТАТ",
     "p.gallery": "ГАЛЕРЕЯ", "p.item": "", "p.items": "", "p.next": "ДРУГИЕ РАБОТЫ", "p.moreV": "ЕЩЁ ВЕРТИКАЛЬНЫЕ VFX",
     "p.yt": "СМОТРЕТЬ НА YOUTUBE ↗", "p.close": "ЗАКРЫТЬ ✕",
     "st.soon": "В РАЗРАБОТКЕ", "st.reworkNote": "Работа переделывается: ниже — прошлая версия рендеров.",
     "nf.h": "Работа не найдена", "nf.p": "Ссылка ведёт на работу, которой нет или которую убрали.", "nf.back": "← ВСЕ РАБОТЫ",
-    "title": "Render Vision — CG-генералист и 3D-художник", "title.nf": "Не найдено — Render Vision",
-    "desc": "Портфолио Кирилла, CG-генералиста и технического художника. Hard-surface, окружение, VFX и game-ready 3D.",
-    "a.skip": "К СОДЕРЖИМОМУ", "h1": "Render Vision — Кирилл, CG-генералист и 3D-художник", "a.render": "рендер", "a.prev": "Предыдущее изображение", "a.next": "Следующее изображение", "a.left": "Прокрутить влево", "a.right": "Прокрутить вправо", "a.gallery": "Просмотр изображений",
+    "title": "{brand} — Кирилл, CG-генералист", "title.nf": "Не найдено — {brand}",
+    "desc": "{brand} — Кирилл, CG-генералист. 3D и VFX с инженерным подходом: hard-surface, окружения по реальным данным, CGI для медиа.",
+    "a.skip": "К СОДЕРЖИМОМУ", "h1": "{brand} — Кирилл, CG-генералист и 3D-художник", "a.render": "рендер", "a.prev": "Предыдущее изображение", "a.next": "Следующее изображение", "a.left": "Прокрутить влево", "a.right": "Прокрутить вправо", "a.gallery": "Просмотр изображений",
     "f.agree": "Я согласен(на) на обработку персональных данных в соответствии с <a data-pp>политикой конфиденциальности</a>.",
-    "f.activate": "Форма ещё не активирована: владельцу сайта отправлено письмо со ссылкой «Activate Form». Пока напишите напрямую: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a> или <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.",
-    "pp.link": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ", "pp.title": "Политика конфиденциальности — Render Vision", "pp.h": "Политика обработки персональных данных",
-    "pp.body": "<p>Действует с 5 октября 2026 года.</p><h2>1. Кто обрабатывает данные</h2><p>Оператор — Кирилл, владелец сайта-портфолио Render Vision. Связь: <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a>.</p><h2>2. Какие данные</h2><p>Имя, email или ник в Telegram и текст брифа — только то, что вы сами вводите в форму на сайте.</p><h2>3. Зачем</h2><p>Только чтобы ответить на ваш запрос и обсудить проект. Рассылок нет, данные не продаются и не передаются третьим лицам для их собственных целей.</p><h2>4. Как</h2><p>Форма отправляется через сервис FormSubmit (formsubmit.co), который пересылает сообщение на почту оператора. Сервис находится за пределами России, поэтому при отправке формы данные передаются трансгранично. Если вы этого не хотите, напишите напрямую на почту или в Telegram <a href='https://t.me/J_K_3_0' target='_blank' rel='noopener'>@J_K_3_0</a>.</p><h2>5. Сколько хранятся</h2><p>Сообщения хранятся в почтовом ящике оператора, пока идёт обсуждение и работа над проектом, и не дольше 3 лет после последнего сообщения.</p><h2>6. Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие — письмом на <a href='mailto:contact@render-vision-cg.com'>contact@render-vision-cg.com</a>. Ответ — в течение 10 рабочих дней.</p><h2>7. Cookies и сторонний контент</h2><p>Посещения считаются двумя сервисами. Cloudflare Web Analytics (Cloudflare, Inc., США) учитывает адрес страницы, сайт, с которого пришёл посетитель, тип браузера и устройства, страну и скорость загрузки — без cookies и без идентификации посетителей. Яндекс Метрика (ООО «ЯНДЕКС», Россия) устанавливает cookies и учитывает просмотренные страницы, сайт, с которого пришёл посетитель, клики и прокрутку, браузер, устройство, размер экрана, примерное местоположение по IP-адресу и случайный идентификатор посетителя; запись сессий (Вебвизор) отключена, ввод в форму не записывается. Статистика используется только обезличенно — чтобы понимать, какие работы смотрят; данные обрабатываются по <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>условиям Яндекс Метрики</a>. Отказаться можно, запретив cookies в браузере или установив <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>блокировщик Метрики</a>; сайт при этом продолжит работать. Кроме того, в браузере сохраняется выбранный язык интерфейса (localStorage). Шрифты, изображения и шоурил загружаются с самого сайта. 3D-просмотрщик Sketchfab подгружается только после клика по нему, а ссылки на YouTube открываются на youtube.com; у этих сервисов свои правила обработки данных.</p>"
+    "f.activate": "Форма ещё не активирована: владельцу сайта отправлено письмо со ссылкой «Activate Form». Пока напишите напрямую: <a href='mailto:{email}'>{email}</a> или <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
+    "pp.link": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ", "pp.title": "Политика конфиденциальности — {brand}", "pp.h": "Политика обработки персональных данных",
+    "pp.body": "<p>Действует с 5 октября 2026 года.</p><h2>1. Кто обрабатывает данные</h2><p>Оператор — Кирилл, владелец сайта-портфолио {brand}. Связь: <a href='mailto:{email}'>{email}</a>.</p><h2>2. Какие данные</h2><p>Имя, email или ник в Telegram и текст брифа — только то, что вы сами вводите в форму на сайте.</p><h2>3. Зачем</h2><p>Только чтобы ответить на ваш запрос и обсудить проект. Рассылок нет, данные не продаются и не передаются третьим лицам для их собственных целей.</p><h2>4. Как</h2><p>Форма отправляется через сервис FormSubmit (formsubmit.co), который пересылает сообщение на почту оператора. Сервис находится за пределами России, поэтому при отправке формы данные передаются трансгранично. Если вы этого не хотите, напишите напрямую на почту или в Telegram <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.</p><h2>5. Сколько хранятся</h2><p>Сообщения хранятся в почтовом ящике оператора, пока идёт обсуждение и работа над проектом, и не дольше 3 лет после последнего сообщения.</p><h2>6. Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие — письмом на <a href='mailto:{email}'>{email}</a>. Ответ — в течение 10 рабочих дней.</p><h2>7. Cookies и сторонний контент</h2><p>Посещения считаются двумя сервисами. Cloudflare Web Analytics (Cloudflare, Inc., США) учитывает адрес страницы, сайт, с которого пришёл посетитель, тип браузера и устройства, страну и скорость загрузки — без cookies и без идентификации посетителей. Яндекс Метрика (ООО «ЯНДЕКС», Россия) устанавливает cookies и учитывает просмотренные страницы, сайт, с которого пришёл посетитель, клики и прокрутку, браузер, устройство, размер экрана, примерное местоположение по IP-адресу и случайный идентификатор посетителя; запись сессий (Вебвизор) отключена, ввод в форму не записывается. Статистика используется только обезличенно — чтобы понимать, какие работы смотрят; данные обрабатываются по <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>условиям Яндекс Метрики</a>. Отказаться можно, запретив cookies в браузере или установив <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>блокировщик Метрики</a>; сайт при этом продолжит работать. Кроме того, в браузере сохраняется выбранный язык интерфейса (localStorage). Шрифты, изображения и шоурил загружаются с самого сайта. 3D-просмотрщик Sketchfab подгружается только после клика по нему, а ссылки на YouTube открываются на youtube.com; у этих сервисов свои правила обработки данных.</p>"
   }
 };
 /* ---------- url ----------
@@ -633,15 +674,15 @@ let savedLang = null;
 try { savedLang = localStorage.getItem("rv-lang"); } catch (e) {}   // storage blocked (privacy mode) must not kill the page
 let LANG = [STATIC && parsePath().lang, qsLang, savedLang].find(l => l === "en" || l === "ru")
   || ((navigator.language || "").toLowerCase().startsWith("ru") ? "ru" : "en");
-const L = (k, v) => { let s = (I18N[LANG][k] ?? I18N.en[k] ?? k); if (v) for (const x in v) s = s.replace("{" + x + "}", v[x]); return s; };
+const L = (k, v) => { let s = BRAND.fill(I18N[LANG][k] ?? I18N.en[k] ?? k); if (v) for (const x in v) s = s.replace("{" + x + "}", v[x]); return s; };
 /* text fields: object {en,ru} or summary / summary_ru pairs */
 const tx = v => v && typeof v === "object" && !Array.isArray(v) ? (v[LANG] ?? v.en ?? "") : v;
 const loc = (p, k) => (LANG === "ru" && filled(p[k + "_ru"])) ? p[k + "_ru"] : tx(p[k]);
 function setMeta(title, desc, r) {
   const q = s => document.querySelector(s);
   document.title = title;
-  if (desc) { q('meta[name="description"]').content = desc; const od = q('meta[property="og:description"]'); if (od) od.content = desc; }
-  const ot = q('meta[property="og:title"]'); if (ot) ot.content = title;
+  if (desc) ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]'].forEach(s => { const m = q(s); if (m) m.content = desc; });
+  ['meta[property="og:title"]', 'meta[name="twitter:title"]'].forEach(s => { const m = q(s); if (m) m.content = title; });
   ymHit();   // every view ends here, after its URL and title are set
   if (!STATIC || !r) return;
   const tail = r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
@@ -649,6 +690,19 @@ function setMeta(title, desc, r) {
   const ou = q('meta[property="og:url"]'); if (ou) ou.content = STATIC + LANG + "/" + tail;
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(a => {
     a.href = STATIC + (a.hreflang === "x-default" ? "en" : a.hreflang) + "/" + tail;
+  });
+}
+/* BRAND into the markup; the hero picture is swapped only when the config points at another render */
+function paintBrand() {
+  document.querySelectorAll("[data-brand]").forEach(n => { n.textContent = BRAND.text(n.dataset.brand); });
+  document.querySelectorAll("a[data-link]").forEach(a => { a.href = BRAND.link(a.dataset.link); });
+  document.querySelector('meta[property="og:site_name"]').content = BRAND.full;
+  document.querySelectorAll("picture[data-hero]").forEach(p => {
+    const img = p.querySelector("img");
+    img.alt = BRAND.full + " hero render";
+    if (img.getAttribute("src") === BRAND.hero + ".jpg") return;
+    p.querySelectorAll("source").forEach(s => { s.srcset = BRAND.hero + "." + s.type.split("/")[1]; });
+    img.src = BRAND.hero + ".jpg";
   });
 }
 function applyLang() {
@@ -664,14 +718,15 @@ function applyLang() {
   document.querySelectorAll("a[data-cv]").forEach(a => { a.classList.toggle("on", a.dataset.cv === LANG); a.style.order = a.dataset.cv === LANG ? -1 : 0; });
   centerHero();
 }
-/* RENDER is wider than VISION: shift the square so the whole composition sits on the page centre */
+/* the two hero words differ in width: shift the square so the whole composition sits on the page centre */
 function centerHero() {
   const st = document.querySelector("#top .stage"), nav = document.querySelector("header nav");
   nav.style.transform = "";
   if (!st || !st.offsetParent) return;   // no square on screen (phones, project pages): menu stays on the page centre
   st.style.left = "0px";
-  const s = st.getBoundingClientRect(), l = st.querySelector(".side.l").getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
-  const shift = Math.round(((s.left - l.left) - (r.right - s.right)) / 2);
+  const s = st.getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
+  const left = Math.min(st.querySelector(".side.l").getBoundingClientRect().left, st.querySelector(".side.l .lede").getBoundingClientRect().left);   // a short word lets the lede stick out left
+  const shift = Math.round(((s.left - left) - (r.right - s.right)) / 2);
   st.style.left = shift + "px";
   /* menu sits right above the square, but never runs into the brand or the language switch */
   const br = $(".brand"), side = shift > 0 ? $(".hr").offsetLeft - (nav.offsetLeft + nav.offsetWidth)   // offsets ignore the running transform
@@ -695,6 +750,7 @@ function setLang(l) {
 document.querySelectorAll("#lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 
 let DATA = { projects: [], reel: { videoId: "" } };
+let DRAFTS = [];   // "hidden": true — kept out of the grid, counters and SEO; locally a direct #/project/<id> link still opens them
 let topic = "ALL", media = [], loaded = {};
 
 /* ---------- reveal ---------- */
@@ -791,12 +847,12 @@ function openProject(id) { nav({ id }); projectView(id); }
 function openPage(page) { nav({ page }); pageView(page); }
 function homeView() { showView("home"); setMeta(L("title"), L("desc"), {}); }
 function projectView(id, keep) {
-  const p = DATA.projects.find(x => x.id === id);
+  const p = DATA.projects.find(x => x.id === id) || (!STATIC && DRAFTS.find(x => x.id === id));
   if (!p || isSoon(p)) return notFoundView(keep);
   renderProject(p); showView("project", keep);
   const d = loc(p, "summary");
   $("#project").querySelectorAll(".strip").forEach(s => { s.scrollLeft = 0; });   // every gallery starts at its first slide
-  setMeta(p.title + " — Render Vision", filled(d) ? d.split(/\n\s*\n/)[0].replace(/\s+/g, " ").slice(0, 160) : L("desc"), { id });
+  setMeta(p.title + " — " + BRAND.full, filled(d) ? d.split(/\n\s*\n/)[0].replace(/\s+/g, " ").slice(0, 160) : L("desc"), { id });
 }
 function pageView(page, keep) { renderPrivacy(); showView("page", keep); setMeta(L("pp.title"), L("desc"), { page }); }
 function notFoundView(keep) { renderNotFound(); showView("page", keep); setMeta(L("title.nf"), L("desc"), null); }
@@ -810,7 +866,7 @@ function backBar() {
 function renderPrivacy() {
   const root = $("#project");
   root.innerHTML = "";
-  root.append(backBar(), el("article", "legal", "<div class='eyebrow'>RENDER VISION</div><h1>" + L("pp.h") + "</h1>" + L("pp.body")));
+  root.append(backBar(), el("article", "legal", "<div class='eyebrow'>" + BRAND.text("FULL") + "</div><h1>" + L("pp.h") + "</h1>" + L("pp.body")));
 }
 function renderNotFound() {
   const root = $("#project");
@@ -1051,7 +1107,7 @@ function renderGrid() {
     const clear = el("a", "", L("empty.clear"));
     clear.href = href({}); clear.style.cssText = "background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px";
     clear.addEventListener("click", e => { e.preventDefault(); topic = "ALL"; media = []; renderFilters(); renderGrid(); });
-    const as = el("a", "", L("empty.as")); as.href = (DATA.source && DATA.source.profile) || "https://www.artstation.com/j-k30"; as.target = "_blank"; as.style.padding = "12px 20px";
+    const as = el("a", "", L("empty.as")); as.href = (DATA.source && DATA.source.profile) || BRAND.links.artstation; as.target = "_blank"; as.style.padding = "12px 20px";
     btns.append(clear, as); e.appendChild(btns); g.appendChild(e);
   } else {
     g.style.display = "grid";
@@ -1110,18 +1166,39 @@ function paintSync() {
 
 /* ---------- project page ---------- */
 function filled(v) { return v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014"; }
+const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 /* project text: a blank line starts a paragraph, lines starting with "- " form a list */
 function rich(s) {
-  const esc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return String(s).split(/\n\s*\n/).map(block => {
     const head = [], items = [];
     block.split("\n").forEach(l => /^\s*-\s+/.test(l) ? items.push(l.replace(/^\s*-\s+/, "")) : l.trim() && head.push(l.trim()));
     return (head.length ? "<p>" + esc(head.join(" ")) + "</p>" : "") + (items.length ? "<ul>" + items.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>" : "");
   }).join("");
 }
+/* case fields, all optional; text is a string or {en, ru}:
+   task / what_i_did / result — blocks under the description; production {name, url} and ai_used — rows in the facts;
+   credit {text, name, url} — first line of the description, "{name}" in text becomes the link.
+   A value starting with "TODO" is a note for the owner: dashed red locally, never shown on the published site */
+const isTodo = v => /^\s*TODO\b/.test(tx(v) || "");
+const shown = v => filled(tx(v)) && !(STATIC && isTodo(v));
+const todo = v => isTodo(v) ? " class='todo'" : "";
+const extLink = (url, text) => url ? "<a href='" + esc(url) + "' target='_blank' rel='noopener'>" + esc(text) + "</a>" : esc(text);
 function facts(p) {
+  const pr = p.production || {};
   return [[L("p.year"), p.year], [L("p.role"), p.role], [L("p.software"), p.software], [L("p.tris"), p.tris]]
-    .filter(([, v]) => filled(v)).map(([k, v]) => "<div><u>" + k + "</u>" + v + "</div>").join("");
+    .filter(([, v]) => filled(v)).map(([k, v]) => "<div><u>" + k + "</u>" + v + "</div>").join("") +
+    (shown(pr.name) ? "<div" + todo(pr.name) + "><u>" + L("p.production") + "</u>" + extLink(pr.url, tx(pr.name)) + "</div>" : "") +
+    (shown(p.ai_used) ? "<div" + todo(p.ai_used) + "><u>" + L("p.ai") + "</u>" + esc(tx(p.ai_used)) + "</div>" : "");
+}
+function credit(p) {
+  const c = p.credit || {};
+  if (!shown(c.text)) return "";
+  const [a, b = ""] = tx(c.text).split("{name}");
+  return "<p class='credit'>" + esc(a) + (c.name ? extLink(c.url, c.name) : "") + esc(b) + "</p>";
+}
+function caseText(p) {
+  const rows = [["task", "p.task"], ["what_i_did", "p.did"], ["result", "p.result"]].filter(([k]) => shown(p[k]));
+  return rows.length ? "<div class='case'>" + rows.map(([k, l]) => "<div" + todo(p[k]) + "><u>" + L(l) + "</u>" + rich(tx(p[k])) + "</div>").join("") + "</div>" : "";
 }
 function ytPoster(id, img) {
   img.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
@@ -1236,18 +1313,18 @@ function renderProject(p) {
   const ytOver = mode === "vertical" && pick && pick.t !== "video" ? ytAny : null;   // no local clip: the frame links out to YouTube
   const rest = mode === "render" ? all.slice() : all.filter(m => m !== pick && m !== ytOver);   // render: hero frame repeats in the gallery
   rest.sort((a, z) => (a.t === "youtube") - (z.t === "youtube"));   // YouTube links always close the strip
-  const asUrl = p.artstationUrl || (DATA.source && DATA.source.profile) || "https://www.artstation.com/j-k30";
+  const asUrl = p.artstationUrl;   // cases that never went to ArtStation get no link
   const eyebrow = filled(p.topic) ? "<div class='eyebrow'>" + p.topic + "</div>" : "";
   const title = "<h1 class='p-title' style='margin:0'>" + p.title + "</h1>";
-  const sm = loc(p, "summary");
-  const summary = filled(sm) ? "<div class='sub desc'>" + rich(sm) + "</div>" : "";
+  const sm = loc(p, "summary"), text = credit(p) + (filled(sm) ? rich(sm) : "") + caseText(p);
+  const summary = text ? "<div class='sub desc'>" + text + "</div>" : "";
   const fl = facts(p), fx = (p.status === "rework" ? "<div class='p-status'><b>REWORK</b>" + L("st.reworkNote") + "</div>" : "") + (fl ? "<div class='facts'>" + fl + "</div>" : "");
   const crumbs = cls => {
     const c = el("div", cls);
     const back = el("a", "", L("p.back")); back.href = href({});
     back.addEventListener("click", backToWork);
-    const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener";
-    c.append(back, asl);
+    c.appendChild(back);
+    if (asUrl) { const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener"; c.appendChild(asl); }
     return c;
   };
 
@@ -1312,7 +1389,7 @@ function renderProject(p) {
     send.disabled = true; send.textContent = L("f.sending");
     const body = {
       name: f.name.value.trim(), contact: f.contact.value.trim(), type: $("#typeValue").value, brief: f.brief.value.trim(),
-      consent: "yes", _subject: "Render Vision · бриф от " + f.name.value.trim(), _template: "table", _captcha: "false", lang: LANG
+      consent: "yes", _subject: BRAND.full + " · бриф от " + f.name.value.trim(), _template: "table", _captcha: "false", lang: LANG
     };
     fetch(f.action, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(body) })
       .then(r => r.json().catch(() => ({})).then(j => ({ ok: r.ok, j, status: r.status })))
@@ -1332,12 +1409,15 @@ function renderProject(p) {
 
 /* ---------- boot ---------- */
 $("#year").textContent = new Date().getFullYear();   // the 2026 in the markup is only what crawlers and no-JS visitors see
+paintBrand();
 applyLang();
 renderFilters();
 renderReel();
 fetch("data/portfolio.json")
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(d => {
+    DRAFTS = d.projects.filter(p => p.hidden);
+    d.projects = d.projects.filter(p => !p.hidden);
     DATA = d;
     paintSync();
     $("#statTotal").textContent = d.projects.filter(p => !isSoon(p)).length;

@@ -1,6 +1,6 @@
 // Static entry pages for search engines and clean URLs. Zero dependencies.
 //
-//   node tools/seo.mjs https://jey-key30.github.io/render-vision-website/ [_site]
+//   node tools/seo.mjs [site-url] [_site]      site-url defaults to BRAND.siteUrl in site/index.html
 //
 // Copies site/ to the output folder (default _site/) and adds:
 //   en/, ru/                                   home in each language
@@ -18,11 +18,17 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// a top-level object literal from site/index.html: "const NAME = {" … "\n};"
+function readConst(html, name) {
+  const head = "const " + name + " = ", s0 = html.indexOf(head), s1 = html.indexOf("\n};", s0);
+  if (s0 < 0 || s1 < 0) throw new Error("seo: " + name + " object not found in site/index.html");
+  return Function("return " + html.slice(s0 + head.length, s1 + 2))();
+}
+
 function build(html, data, siteUrl) {
   const SITE = siteUrl.replace(/\/?$/, "/");
-  const s0 = html.indexOf("const I18N = "), s1 = html.indexOf("\n};", s0);
-  if (s0 < 0 || s1 < 0) throw new Error("seo: I18N object not found in site/index.html");
-  const I18N = Function("return " + html.slice(s0 + 13, s1 + 2))();
+  const I18N = readConst(html, "I18N"), BRAND = readConst(html, "BRAND");
+  const tr = l => k => BRAND.fill(I18N[l][k] ?? I18N.en[k] ?? k);   // same as L() in site/index.html
   const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const filled = v => v != null && String(v).trim() !== "" && String(v).trim() !== "\u2014";
   const tx = (v, l) => v && typeof v === "object" && !Array.isArray(v) ? (v[l] ?? v.en ?? "") : v;
@@ -38,18 +44,16 @@ function build(html, data, siteUrl) {
   const tail = r => r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
   const url = (l, r) => SITE + l + "/" + tail(r);
   const LANGS = ["en", "ru"];
-  const all = data.projects || [];
+  const all = (data.projects || []).filter(p => !p.hidden);   // hidden: a draft, not published anywhere
   const projects = all.filter(p => p.status !== "soon");   // SOON: a card in the grid, no page of its own
   // ids become folder names under <lang>/work/
   for (const p of all) if (!/^[a-z0-9][a-z0-9-]*$/.test(p.id || "")) throw new Error("seo: bad project id " + JSON.stringify(p.id) + " (a-z, 0-9, dashes)");
   const person = {
     "@type": "Person", name: "Kirill", alternateName: "J-K3.0", jobTitle: "CG Generalist, 3D Artist", url: SITE,
-    image: abs("assets/portrait.jpg"), email: "mailto:contact@render-vision-cg.com",
+    image: abs("assets/portrait.jpg"), email: BRAND.link("email"),
     address: { "@type": "PostalAddress", addressLocality: "Yekaterinburg", addressCountry: "RU" },
     knowsAbout: ["3D modeling", "Hard-surface modeling", "Blender", "Geometry Nodes", "VFX", "Lookdev", "Game-ready assets", "Unreal Engine", "Environment art", "Point clouds"],
-    sameAs: ["https://www.artstation.com/j-k30", "https://sketchfab.com/J-K3.0", "https://www.youtube.com/@Jey-Key_3.0",
-      "https://www.instagram.com/jey_key_30/", "https://t.me/J_K_3_0", "https://t.me/j_k_3d_blog",
-      "https://hh.ru/resume/443dc4c7ff0c671dc00039ed1f505336556666"]
+    sameAs: Object.values(BRAND.links)
   };
   // same as wrap() in site/index.html: .avif and .webp next to every .jpg. A bare <img> here would start the JPEG
   // download before the script swaps in its <picture>, and the browser would fetch the same image twice
@@ -83,23 +87,34 @@ function build(html, data, siteUrl) {
     }).join("") + `</div>`;
   }).join("");
 
+  // case fields, same as facts() / credit() / caseText() in site/index.html; "TODO…" notes never reach the published pages
+  const shown = (v, l) => filled(tx(v, l)) && !/^\s*TODO\b/.test(tx(v, l));
+  const ext = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
   const projectBody = (p, l, T) => {
     const s = summary(p, l), imgs = (p.media || []).filter(m => m.t === "image" && m.src);
+    const pr = p.production || {}, c = p.credit || {};
     const facts = [["p.year", p.year], ["p.role", p.role], ["p.software", p.software], ["p.tris", p.tris]]
-      .filter(([, v]) => filled(v)).map(([k, v]) => `<div><u>${T(k)}</u>${esc(v)}</div>`).join("");
+      .filter(([, v]) => filled(v)).map(([k, v]) => `<div><u>${T(k)}</u>${esc(v)}</div>`).join("") +
+      (shown(pr.name, l) ? `<div><u>${T("p.production")}</u>${ext(pr.url, tx(pr.name, l))}</div>` : "") +
+      (shown(p.ai_used, l) ? `<div><u>${T("p.ai")}</u>${esc(tx(p.ai_used, l))}</div>` : "");
+    const [ca, cb = ""] = shown(c.text, l) ? tx(c.text, l).split("{name}") : [];
+    const cases = [["task", "p.task"], ["what_i_did", "p.did"], ["result", "p.result"]].filter(([k]) => shown(p[k], l))
+      .map(([k, t]) => `<div><u>${T(t)}</u>${rich(tx(p[k], l))}</div>`).join("");
+    const text = (ca != null ? `<p class="credit">${esc(ca)}${c.name ? ext(c.url, c.name) : ""}${esc(cb)}</p>` : "") +
+      (filled(s) ? rich(s) : "") + (cases ? `<div class="case">${cases}</div>` : "");
     const rework = p.status === "rework" ? `<div class="p-status"><b>REWORK</b>${T("st.reworkNote")}</div>` : "";
     return `<div class="crumbs"><a href="${l}/">${T("p.back")}</a>` +
       (p.artstationUrl ? `<a href="${esc(p.artstationUrl)}" target="_blank" rel="noopener">${T("p.as")}</a>` : "") + `</div>` +
       `<article class="info" style="display:flex;flex-direction:column;gap:20px">` +
       (filled(p.topic) ? `<div class="eyebrow">${esc(p.topic)}</div>` : "") +
-      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (filled(s) ? `<div class="sub desc">${rich(s)}</div>` : "") +
+      `<h1 class="p-title" style="margin:0">${esc(p.title)}</h1>` + (text ? `<div class="sub desc">${text}</div>` : "") +
       rework + (facts ? `<div class="facts">${facts}</div>` : "") + `</article>` +
       (imgs.length ? `<div class="strip" style="padding-top:24px">` +
         imgs.map((m, i) => pic(m.sm || m.src, ` alt="${esc(p.title)} — ${T("a.render")} ${i + 1}" loading="lazy" decoding="async"`)).join("") + `</div>` : "");
   };
 
   function page(file, lang, o) {
-    const T = k => I18N[lang][k] ?? I18N.en[k] ?? k;
+    const T = tr(lang);
     const cut = html.lastIndexOf("<script>");
     let h = html.slice(0, cut);
     const js = html.slice(cut);
@@ -115,6 +130,9 @@ function build(html, data, siteUrl) {
     set(/(<meta name="description" content=")[^"]*/, esc(o.desc));
     set(/(<meta property="og:title" content=")[^"]*/, esc(o.title));
     set(/(<meta property="og:description" content=")[^"]*/, esc(o.desc));
+    set(/(<meta name="twitter:title" content=")[^"]*/, esc(o.title));
+    set(/(<meta name="twitter:description" content=")[^"]*/, esc(o.desc));
+    set(/(<meta property="og:site_name" content=")[^"]*/, esc(BRAND.full));
     set(/(<meta property="og:image" content=")[^"]*/, esc(abs(o.image || "assets/og.jpg")));
     if (o.image) h = h.replace(/<meta property="og:image:(width|height)"[^>]*>\n/g, "");
     const extra = [`<meta property="og:locale" content="${lang === "ru" ? "ru_RU" : "en_US"}">`];
@@ -133,6 +151,13 @@ function build(html, data, siteUrl) {
     h = h.replace(/<a data-pp/g, `<a data-pp href="${lang}/privacy/"`);
     h = h.replace(/(<a data-go="(\w+)") href="#\w+"/g, (m, a, id) => `${a} href="${lang}/#${id}"`);   // <base> would send "#work" to the site root
     h = h.replace(/(<button data-lang="(en|ru)")/g, (m, a, l) => a + ` aria-pressed="${l === lang}"` + (l === lang ? ' class="on"' : ""));
+    // BRAND into the markup, same as paintBrand() in site/index.html
+    h = h.replace(/(<([a-z0-9]+)\b[^>]*?\sdata-brand="(\w+)"[^>]*>)[^<]*(<\/\2>)/g, (m, open, tag, k, close) => open + esc(BRAND.text(k)) + close);
+    h = h.replace(/(\sdata-link="(\w+)") href="[^"]*"/g, (m, a, k) => `${a} href="${esc(BRAND.link(k))}"`);
+    const hero = esc(BRAND.hero);
+    h = h.replace(/<picture data-hero>[\s\S]*?<\/picture>/g, () => `<picture data-hero><source srcset="${hero}.avif" type="image/avif"><source srcset="${hero}.webp" type="image/webp">` +
+      `<img src="${hero}.jpg" alt="${esc(BRAND.full)} hero render" fetchpriority="high" decoding="async"></picture>`);
+    set(/(<link rel="preload" href=")[^"]*(?=" as="image" type="image\/avif")/, hero + ".avif");
     h = h.replace(/(<span id="syncLabel">)[^<]*/, (m, a) => a + T("work.source"));
     h = h.replace(/(<b id="statTotal">)[^<]*/, (m, a) => a + projects.length);
     h = h.replace('<div class="gridwrap" id="grid"></div>', () => `<div class="gridwrap" id="grid">${all.map(p => card(p, lang, T)).join("")}</div>`);
@@ -145,21 +170,21 @@ function build(html, data, siteUrl) {
   }
 
   const out = {};
-  const homeLd = { "@type": "WebSite", name: "Render Vision", url: SITE, author: person, inLanguage: ["en", "ru"] };
+  const homeLd = { "@type": "WebSite", name: BRAND.full, url: SITE, author: person, inLanguage: ["en", "ru"] };
   // the bare root is a 301 to /en/ at Cloudflare; this stub only answers if that rule is off. Old hash links ride along
   const stub = (l, to, title) => `<!doctype html>\n<html lang="${l}"><head><meta charset="utf-8"><title>${esc(title)}</title>` +
     `<link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}">` +
     `<script>location.replace(${JSON.stringify(to).replace(/</g, "\\u003c")} + location.hash)</script></head>` +
     `<body><a href="${esc(to)}">${esc(to)}</a></body></html>\n`;
-  out["index.html"] = stub("en", url("en", {}), I18N.en.title);
+  out["index.html"] = stub("en", url("en", {}), tr("en")("title"));
   for (const l of LANGS) {
-    const T = k => I18N[l][k] ?? I18N.en[k];
+    const T = tr(l);
     out[l + "/index.html"] = page(l + "/index.html", l, { r: {}, title: T("title"), desc: T("desc"), ld: { ...homeLd, inLanguage: l } });
     for (const p of projects) {
       const s = summary(p, l), img = ((p.media || []).find(m => m.t === "image" && m.src) || {}).src || p.thumb;
       const imgs = (p.media || []).filter(m => m.t === "image" && m.src).slice(0, 6).map(m => abs(m.src));
       out[`${l}/work/${p.id}/index.html`] = page(`${l}/work/${p.id}/index.html`, l, {
-        r: { id: p.id }, title: p.title + " — Render Vision", desc: filled(s) ? clip(s) : T("desc"), image: img,
+        r: { id: p.id }, title: p.title + " — " + BRAND.full, desc: filled(s) ? clip(s) : T("desc"), image: img,
         body: T => projectBody(p, l, T),
         ld: {
           "@type": "VisualArtwork", name: p.title, url: url(l, { id: p.id }), inLanguage: l,
@@ -172,11 +197,11 @@ function build(html, data, siteUrl) {
     }
     out[`${l}/privacy/index.html`] = page(`${l}/privacy/index.html`, l, {
       r: { page: "privacy" }, title: T("pp.title"), desc: T("desc"),
-      body: T => `<div class="crumbs"><a href="${l}/">${T("p.back")}</a></div><article class="legal"><div class="eyebrow">RENDER VISION</div><h1>${T("pp.h")}</h1>${T("pp.body")}</article>`
+      body: T => `<div class="crumbs"><a href="${l}/">${T("p.back")}</a></div><article class="legal"><div class="eyebrow">${esc(BRAND.text("FULL"))}</div><h1>${T("pp.h")}</h1>${T("pp.body")}</article>`
     });
   }
   out["404.html"] = page("404.html", "en", {
-    base: new URL(SITE).pathname, robots: "noindex", title: I18N.en["title.nf"], desc: I18N.en.desc,
+    base: new URL(SITE).pathname, robots: "noindex", title: tr("en")("title.nf"), desc: tr("en")("desc"),
     body: T => `<div class="nf"><div class="code">404</div><h1 class="h1" style="margin:0">${T("nf.h")}</h1><p class="sub">${T("nf.p")}</p><div class="socials"><a href="en/" style="background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px">${T("nf.back")}</a></div></div>`
   });
 
@@ -199,15 +224,11 @@ function build(html, data, siteUrl) {
 }
 
 /* MAIN */
-const [, , siteUrl, outDir = "_site"] = process.argv;
-if (!siteUrl) { console.error("usage: node tools/seo.mjs <site-url> [out-dir]"); process.exit(1); }
+const html = fs.readFileSync("site/index.html", "utf8");
+const [, , siteUrl = readConst(html, "BRAND").siteUrl, outDir = "_site"] = process.argv;   // deploy passes the GitHub Pages address
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.cpSync("site", outDir, { recursive: true, filter: src => path.basename(src) !== "README.md" });   // notes stay out of the published site
-const { out: files, moved } = build(
-  fs.readFileSync("site/index.html", "utf8"),
-  JSON.parse(fs.readFileSync("site/data/portfolio.json", "utf8")),
-  siteUrl
-);
+const { out: files, moved } = build(html, JSON.parse(fs.readFileSync("site/data/portfolio.json", "utf8")), siteUrl);
 for (const [f, c] of Object.entries(files)) {
   const p = path.join(outDir, f);
   fs.mkdirSync(path.dirname(p), { recursive: true });

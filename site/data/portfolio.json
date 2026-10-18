@@ -34,6 +34,7 @@
       "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/DLZY9G",
       "summary": "A deep dive into creating atmospheric ruins with a focus on modularity and environmental storytelling. This piece represents my current workflow as a CG specialist, combining technical precision with artistic mood.\n\nKey Features of the Scene:\n- Lighting: A mix of natural \"god rays\" and local warm light sources to create high contrast and focus.\n- Storytelling: Integrated custom murals, cobwebs, and procedural ivy to give the asset a \"lived-in\" feel.\n- Materials: Deeply weathered stone textures created using a high-to-low poly pipeline in Blender.\n\nTechnical Specs:\n- Modeled and UV-mapped in Blender.\n- Textures: 4K PBR sets.\n- Rendered to showcase real-time engine capabilities.",
+      "ai_used": "TODO(Кирилл): что делал Nano Banana",
       "media": [
         {
           "t": "image",
@@ -147,6 +148,8 @@
       "thumbRatio": "640/360",
       "artstationUrl": "https://www.artstation.com/artwork/bg11mg",
       "summary": "",
+      "task": "TODO(Кирилл): задача",
+      "what_i_did": "TODO(Кирилл): что сделано и полный стек (сейчас в софте указан только Blender)",
       "media": [
         {
           "t": "image",
@@ -205,6 +208,7 @@
       "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/vbGGEa",
       "summary": "",
+      "ai_used": "TODO(Кирилл): что делал Nano Banana",
       "media": [
         {
           "t": "image",
@@ -303,7 +307,8 @@
       "thumb": "assets/thumbs/sci-fi-russian-railway-station.jpg",
       "thumbRatio": "502/900",
       "artstationUrl": "https://www.artstation.com/artwork/98qdvq",
-      "summary": "A simple VFX for a personal portfolio",
+      "summary": "Personal VFX piece: a sci-fi take on a Russian railway station.",
+      "ai_used": "TODO(Кирилл): что делал Nano Banana",
       "media": [
         {
           "t": "image",
@@ -325,7 +330,7 @@
           "label": "YOUTUBE SHORTS"
         }
       ],
-      "summary_ru": "Простой VFX для личного портфолио."
+      "summary_ru": "Личная VFX-работа: научно-фантастический взгляд на российский вокзал."
     },
     {
       "id": "lightcycle-metro",
@@ -463,7 +468,11 @@
       "thumb": "assets/thumbs/vfx-for-pr-agency-swipe.jpg",
       "thumbRatio": "506/900",
       "artstationUrl": "https://www.artstation.com/artwork/3EWQkE",
-      "summary": "Our latest case — an ad that takes over Times Square! We developed several different animation options and ultimately decided to create a banner drop simulation using Blender. We think the result is harmonious and impactful. What do you think? Prod. by Visual-Uni Studio Link: https://visual-uni.art/",
+      "summary": "Banner-drop simulation for a PR agency's Times Square ad. I developed several animation options; the final one is a banner-drop simulation in Blender, finished in DaVinci Resolve.",
+      "production": {
+        "name": "Visual-Uni Studio",
+        "url": "https://visual-uni.art/"
+      },
       "media": [
         {
           "t": "image",
@@ -486,14 +495,14 @@
           "poster": "assets/gallery/vfx-for-pr-agency-swipe/poster/0001-0285.jpg"
         }
       ],
-      "summary_ru": "Наш свежий кейс — реклама, которая захватывает Таймс-сквер! Мы разработали несколько вариантов анимации и в итоге остановились на симуляции падающего баннера в Blender. Считаем, что результат получился гармоничным и эффектным. Что скажете? Prod. by Visual-Uni Studio. Ссылка: https://visual-uni.art/"
+      "summary_ru": "Симуляция падающего баннера для рекламы PR-агентства на Таймс-сквер. Я разработал несколько вариантов анимации; финальный — симуляция падения баннера в Blender, доводка в DaVinci Resolve."
     },
     {
       "id": "death-of-a-pirate",
       "title": "Death of a pirate",
       "year": "2025",
       "role": "3D Artist",
-      "software": "Blender · Sketchfab",
+      "software": "Blender",
       "tris": "—",
       "topic": "ENVIRONMENT",
       "tags": [
@@ -506,6 +515,7 @@
       "thumbRatio": "640/323",
       "artstationUrl": "https://www.artstation.com/artwork/3Egk2D",
       "summary": "- What sort of a man trades a man's life for a ship? - Pirate.",
+      "what_i_did": "TODO(Кирилл): описание работы — что сделано и как",
       "media": [
         {
           "t": "image",
@@ -547,7 +557,12 @@
       "thumb": "assets/thumbs/ummc-tennis-championship.jpg",
       "thumbRatio": "507/900",
       "artstationUrl": "https://www.artstation.com/artwork/K35keW",
-      "summary": "UMMC Tennis Championship Vol.1 Forecasters warn: precipitation in the form of ping-pong balls is possible! Video for UMMC Tennis Championship Prod. by moskvin.pro VFX by J-K",
+      "summary": "UMMC Tennis Championship Vol.1. Forecasters warn: precipitation in the form of ping-pong balls is possible! Video for UMMC Tennis Championship.",
+      "production": {
+        "name": "moskvin.pro"
+      },
+      "task": "TODO(Кирилл): задача от продакшна",
+      "result": "TODO(Кирилл): результат",
       "media": [
         {
           "t": "image",
@@ -570,7 +585,7 @@
           "poster": "assets/gallery/ummc-tennis-championship/poster/03.jpg"
         }
       ],
-      "summary_ru": "UMMC Tennis Championship Vol.1. Синоптики предупреждают: возможны осадки в виде мячиков для пинг-понга! Ролик для теннисного турнира УГМК. Prod. by moskvin.pro, VFX by J-K."
+      "summary_ru": "UMMC Tennis Championship Vol.1. Синоптики предупреждают: возможны осадки в виде мячиков для пинг-понга! Ролик для теннисного турнира УГМК."
     },
     {
       "id": "robot-chappie",
@@ -591,7 +606,7 @@
       "thumbRatio": "640/357",
       "artstationUrl": "https://www.artstation.com/artwork/qJ901N",
       "sketchfabUrl": "https://sketchfab.com/3d-models/robot-chappie-cbfa9eb1398946eba433681f56d52eae",
-      "summary": "Hi, I want to show you my new Chappy robot model and the movie of the same name. I have always been attracted to futurism, and therefore, after watching this film, I was inspired to create this model. During the creation process, I had to face many difficulties, since I had never created such complex models before. The most difficult thing was to create a skeleton for the possibility of further animation of the model. During the creation, I have gained a lot of useful experience. I hope that I coped with the task and you will appreciate this work)",
+      "summary": "Fan-art model of Chappie from Neill Blomkamp's film. Hard-surface modelling in Blender, texturing in Substance 3D Painter, rendering in Marmoset Toolbag, 101,801 tris. Rigged for animation — the most complex part of the build.",
       "media": [
         {
           "t": "sketchfab",
@@ -720,7 +735,7 @@
           "poster": "assets/gallery/robot-chappie/poster/tbrender_Camera.jpg"
         }
       ],
-      "summary_ru": "Хочу показать свою новую модель робота Чаппи по одноимённому фильму. Меня всегда привлекал футуризм, и после просмотра фильма я вдохновился на эту модель. В процессе пришлось столкнуться с множеством сложностей: таких сложных моделей я раньше не делал. Сложнее всего было сделать скелет, чтобы модель можно было анимировать дальше. Работа дала мне много полезного опыта. Надеюсь, я справился с задачей и работа вам понравится)"
+      "summary_ru": "Фан-арт модель Чаппи из фильма Нила Бломкампа. Hard-surface моделирование в Blender, текстурирование в Substance 3D Painter, рендер в Marmoset Toolbag, 101 801 треугольник. Модель зариггована для анимации — это самая сложная часть работы."
     },
     {
       "id": "space-suit-j-30",
@@ -740,7 +755,15 @@
       "thumbRatio": "640/640",
       "artstationUrl": "https://www.artstation.com/artwork/oJ022q",
       "sketchfabUrl": "https://sketchfab.com/3d-models/space-suit-j-30-2ebdb94250694ad9b99bb39b96a78ef5",
-      "summary": "Hi everyone, I'd like to share an old job of mine that I've only recently finalized.\n\nI started building this model about 4 years ago. I was always attracted to futuristic themes and wanted to learn how to create something serious. After a lot of searching, I got the idea from Pinterest. At that time I stopped at the modeling stage, then I thought that textures would be difficult to create for it. It turned out to be a kind of bust of a space suit.\n\nBut here I took on the task of texturing this piece. I wanted to use bold colors that catch the eye. I took the idea from Mirage from Transformers and from the Elite Guard costume from Doom.\n\nI think it turned out interesting. Very much want to hear your opinion on this work).",
+      "summary": "Modelled in Blender, textured in Substance 3D Painter with a colour scheme inspired by Mirage (Transformers) and the Doom Elite Guard, rendered in Marmoset Toolbag. 23,756 tris.",
+      "credit": {
+        "text": {
+          "en": "3D model based on the design by {name}. Simplified and reworked for my own pipeline.",
+          "ru": "3D-модель по дизайну {name}. Упрощена и переработана под мой пайплайн."
+        },
+        "name": "Rafael Amarante",
+        "url": "https://www.artstation.com/rafaelamarante"
+      },
       "media": [
         {
           "t": "sketchfab",
@@ -805,7 +828,7 @@
           "sm": "assets/gallery/space-suit-j-30/sm/08.jpg"
         }
       ],
-      "summary_ru": "Хочу поделиться старой работой, которую довёл до конца только недавно.\n\nЯ начал эту модель около четырёх лет назад. Меня всегда притягивала футуристика, и хотелось научиться делать что-то серьёзное. После долгих поисков идея нашлась на Pinterest. Тогда я остановился на этапе моделирования: казалось, что текстуры для неё сделать будет слишком сложно. В итоге получился своего рода бюст скафандра.\n\nТеперь я взялся за текстурирование. Хотелось смелых цветов, которые цепляют взгляд. Идею взял у Миража из «Трансформеров» и у костюма Элитной гвардии из Doom.\n\nДумаю, получилось интересно. Очень хочу услышать ваше мнение об этой работе)"
+      "summary_ru": "Моделирование в Blender, текстурирование в Substance 3D Painter — цветовая схема по мотивам Миража («Трансформеры») и Элитной гвардии из Doom, рендер в Marmoset Toolbag. 23 756 треугольников."
     },
     {
       "id": "sci-fi-gun",
@@ -1400,6 +1423,53 @@
       "topic": "",
       "tags": [],
       "slot": "",
+      "media": []
+    },
+    {
+      "id": "case-template",
+      "hidden": true,
+      "title": "Client case — template",
+      "year": "2026",
+      "role": "CG Generalist",
+      "software": "Blender · After Effects",
+      "tris": "—",
+      "topic": "VFX / SIM",
+      "tags": [
+        "VFX / SIM"
+      ],
+      "kindKey": "VIDEO",
+      "layout": "vertical",
+      "slot": "CLIENT CASE",
+      "summary": "One or two sentences: what the project is and who it was for.",
+      "summary_ru": "Одна-две фразы: что за проект и для кого.",
+      "task": {
+        "en": "What the client needed.",
+        "ru": "Что было нужно заказчику."
+      },
+      "what_i_did": {
+        "en": "My part of the work:\n- modelling\n- simulation\n- compositing",
+        "ru": "Моя часть работы:\n- моделинг\n- симуляция\n- композитинг"
+      },
+      "result": {
+        "en": "Where it was published and what came of it.",
+        "ru": "Где вышло и что получилось в итоге."
+      },
+      "production": {
+        "name": "Studio name",
+        "url": "https://example.com/"
+      },
+      "ai_used": {
+        "en": "What AI did, in one line — or delete the field.",
+        "ru": "Что делал ИИ, одной строкой — или удалите поле."
+      },
+      "credit": {
+        "text": {
+          "en": "Based on the design by {name}.",
+          "ru": "По дизайну {name}."
+        },
+        "name": "Author",
+        "url": "https://example.com/"
+      },
       "media": []
     }
   ],
