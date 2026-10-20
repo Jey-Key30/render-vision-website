@@ -53,7 +53,7 @@ header{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr a
   padding:14px var(--pad);background:#0a0a0a;border-bottom:1px solid var(--line);   /* opaque: iOS 26 Safari tints its toolbar only from a solid sticky bar, a translucent one lets the page show above it */
   font-family:var(--mono);font-size:clamp(10px,2.4vw,12px);letter-spacing:.14em}
 header::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:100vh;background:#0a0a0a;pointer-events:none}   /* iOS 26 Safari: the page scrolls under its see-through address bar, above the stuck header; paint that strip too */
-header nav{display:flex;gap:clamp(12px,3vw,28px);transition:transform .3s ease}
+header nav{display:flex;gap:clamp(12px,3vw,28px)}
 header nav a{color:var(--mute);padding:8px 0;transition:color .18s ease}
 header nav a:hover,header nav a.on{color:var(--ink)}
 .brand{justify-self:start;cursor:pointer;white-space:nowrap;letter-spacing:inherit}
@@ -82,31 +82,36 @@ section{scroll-margin-top:var(--hh)}
 .c2{top:24px;right:var(--pad);border-top-width:1px;border-right-width:1px}
 .c3{bottom:24px;left:var(--pad);border-bottom-width:1px;border-left-width:1px}
 .c4{bottom:24px;right:var(--pad);border-bottom-width:1px;border-right-width:1px}
-.stage{--wfs:clamp(44px,5.6vw,82px);position:relative;width:min(420px,34vw);aspect-ratio:1}
+.stage{--wfs:clamp(44px,5.6vw,82px);--sq:min(420px,34vw);position:relative;width:var(--sq);aspect-ratio:1;
+  --gap:clamp(24px,2.6vw,40px);   /* air between the lede and the square */
+  --off:var(--gap)}   /* HARD and FRAME stand this far off the square; negative lets them reach onto it */
 .square{position:relative;z-index:1;width:100%;height:100%;background:var(--red);overflow:hidden}
 .disc{position:absolute;left:6%;top:6%;width:88%;height:88%;border-radius:50%;overflow:hidden;
   background:radial-gradient(circle at 50% 45%,#2c100c 0%,#1a0605 68%,#140302 100%)}
 .disc img{position:absolute;left:-6%;top:-4%;width:112%;height:108%;object-fit:cover;object-position:60% 18%}
 .ring{position:absolute;left:4%;top:4%;width:92%;height:92%;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
 .side{position:absolute;z-index:2;top:calc(50% - var(--wfs) * .47);width:max-content;display:flex;flex-direction:column;gap:14px}   /* both words share the square's midline */
-.side.l .dots{position:absolute;left:0;bottom:calc(100% + 14px)}
-.side.l{right:calc(100% - 64px);align-items:flex-start;width:min-content}   /* the word sets the width: it reaches the square however short it is */
+.side.l .dots{position:absolute;left:min(0px,100% - var(--lw));bottom:calc(100% + 14px)}
+.side.l{right:calc(100% + var(--off));align-items:flex-start;width:min-content;   /* the word sets the width: it ends at the square however short it is */
+  --lw:max(100%,180px + var(--gap) - var(--off))}   /* lede width: as wide as the word, a short word lets it and the dots stick out left */
 .side.l .word{margin-right:-.1em}   /* trailing letter-spacing would stop the ink .1em short of the right word's overlap */
-.side.l .lede{width:clamp(254px,100%,384px);max-width:none;margin-left:min(0px,100% - 254px)}   /* as wide as the word; below 254px it grows to the left, never under the square */
-.side.r{left:calc(100% - 64px);align-items:flex-end;text-align:right;max-width:34vw}
+.side.l .lede{width:var(--lw);max-width:none;margin:0 0 0 min(0px,100% - var(--lw));padding-right:calc(var(--gap) - var(--off));font-size:13px}   /* the padding keeps the text off the square */
+.side.r{left:calc(100% + var(--off));align-items:flex-end;text-align:right;width:min-content}
+.side.r .word{margin-right:-.1em}   /* same trailing letter-spacing: roles and tg end at the ink of the E */
+.side.r .roles,.side.r .tg{white-space:nowrap}
 .word{font-size:var(--wfs,clamp(44px,5.6vw,82px));font-weight:700;letter-spacing:.1em;line-height:.94;text-shadow:0 2px 24px rgba(10,10,10,.6)}
 .dots{display:flex;gap:6px}
 .dots a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--mute);border:1px solid var(--chip);transition:color .18s,border-color .18s}
 .dots a:hover{color:var(--ink);border-color:var(--red)}
 .dots svg{width:17px;height:17px}
-.lede{max-width:min(300px,28vw);padding-right:84px;font-size:14px;line-height:1.6;color:#c8c4c0;text-wrap:pretty}
-.roles{padding-left:84px;font-family:var(--mono);font-size:13px;line-height:1.9;color:#c8c4c0}
+.lede{max-width:min(300px,28vw);font-size:14px;line-height:1.6;color:#c8c4c0;text-wrap:pretty}
+.roles{font-family:var(--mono);font-size:13px;line-height:1.9;color:#c8c4c0}
 .roles.stack{margin:0;padding:0;list-style:none}
 .tg{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px}
 .tg .tgi{width:18px;height:18px;flex:0 0 auto;color:var(--red)}
-.side.r .tg{margin-left:84px}
 .hero-mobile{display:none;width:100%;flex-direction:column;gap:22px;align-items:center;text-align:center}
 .hero-mobile .square{width:min(340px,82vw);aspect-ratio:1;height:auto}
+.hero-mobile .word{padding-left:.1em}   /* matches the trailing letter-spacing, so the centred word sits on the page centre */
 @media(max-width:860px){.stage{display:none}.hero-mobile{display:flex}}
 
 /* reel */
@@ -718,24 +723,8 @@ function applyLang() {
   document.querySelectorAll("a[data-cv]").forEach(a => { a.classList.toggle("on", a.dataset.cv === LANG); a.style.order = a.dataset.cv === LANG ? -1 : 0; });
   centerHero();
 }
-/* the two hero words differ in width: shift the square so the whole composition sits on the page centre */
-function centerHero() {
-  const st = document.querySelector("#top .stage"), nav = document.querySelector("header nav");
-  nav.style.transform = "";
-  if (!st || !st.offsetParent) return;   // no square on screen (phones, project pages): menu stays on the page centre
-  st.style.left = "0px";
-  const s = st.getBoundingClientRect(), r = st.querySelector(".side.r").getBoundingClientRect();
-  const left = Math.min(st.querySelector(".side.l").getBoundingClientRect().left, st.querySelector(".side.l .lede").getBoundingClientRect().left);   // a short word lets the lede stick out left
-  const shift = Math.round(((s.left - left) - (r.right - s.right)) / 2);
-  st.style.left = shift + "px";
-  /* menu sits right above the square, but never runs into the brand or the language switch */
-  const br = $(".brand"), side = shift > 0 ? $(".hr").offsetLeft - (nav.offsetLeft + nav.offsetWidth)   // offsets ignore the running transform
-    : nav.offsetLeft - (br.offsetLeft + br.offsetWidth);
-  const move = Math.sign(shift) * Math.min(Math.abs(shift), Math.max(0, side - 16));
-  if (move) nav.style.transform = "translateX(" + move + "px)";
-}
-addEventListener("resize", centerHero, { passive: true });
-if (document.fonts) document.fonts.ready.then(centerHero);
+/* the hero and the menu are centred by CSS */
+function centerHero() {}
 function relang() {
   applyLang(); renderFilters(); renderReel(); renderAbout(); paintSync();
   if (DATA.projects.length) renderGrid();
