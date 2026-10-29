@@ -56,21 +56,21 @@ header::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:10
 header nav{display:flex;gap:clamp(12px,3vw,28px)}
 header nav a{color:var(--mute);padding:8px 0;transition:color .18s ease}
 header nav a:hover,header nav a.on{color:var(--ink)}
-.brand{justify-self:start;cursor:pointer;white-space:nowrap;letter-spacing:inherit}
+.brand{justify-self:start;cursor:pointer;white-space:nowrap;letter-spacing:inherit;color:inherit}
 .brand:hover{color:var(--red)}
 .as-link{white-space:nowrap}
 .hr{justify-self:end;display:flex;align-items:center;gap:clamp(12px,3vw,24px)}
 .lang{display:flex;border:1px solid var(--chip)}
-.lang button{padding:6px 9px;color:var(--mute);letter-spacing:.1em;transition:color .18s,background .18s}
-.lang button:hover{color:var(--ink)}
-.lang button.on{background:var(--red);color:var(--ink)}
+.lang a{padding:6px 9px;color:var(--mute);letter-spacing:.1em;transition:color .18s,background .18s}
+.lang a:hover{color:var(--ink)}
+.lang a.on{background:var(--red);color:var(--ink)}
 @media(max-width:860px){.as-link{display:none}}   /* the link is also in the hero and contacts; below 860px it would push the menu off centre */
 @media(max-width:600px){
   header{display:flex;justify-content:space-between;flex-wrap:wrap;row-gap:0;padding-top:8px;padding-bottom:0;font-size:12px}
   .brand{padding:10px 0}
   header nav{order:3;width:calc(100% + 16px);margin:0 -8px;justify-content:space-between;gap:0}
   header nav a{padding:13px 8px;line-height:18px}
-  .lang button{padding:10px 12px}
+  .lang a{padding:10px 12px}
 }
 
 section{scroll-margin-top:var(--hh)}
@@ -364,7 +364,7 @@ main{animation:fade .34s ease both}
 <button class="skip" id="skip" data-i18n="a.skip">SKIP TO CONTENT</button>
 
 <header>
-  <button class="brand" data-go="top" data-brand="SHORT">HARDFRAME</button>
+  <a class="brand" data-go="top" href="#top" data-brand="SHORT">HARDFRAME</a>
   <nav>
     <a data-go="reel" href="#reel" data-i18n="nav.reel">REEL</a>
     <a data-go="work" href="#work" data-i18n="nav.work">WORK</a>
@@ -372,7 +372,7 @@ main{animation:fade .34s ease both}
     <a data-go="contact" href="#contact" data-i18n="nav.contact">CONTACT</a>
   </nav>
   <div class="hr">
-    <div class="lang" id="lang"><button data-lang="en" aria-label="English">EN</button><button data-lang="ru" aria-label="Русский">RU</button></div>
+    <div class="lang" id="lang"><a data-lang="en" hreflang="en" lang="en" href="?lang=en" aria-label="English">EN</a><a data-lang="ru" hreflang="ru" lang="ru" href="?lang=ru" aria-label="Русский">RU</a></div>
     <a class="as-link" data-link="artstation" href="https://www.artstation.com/j-k30" target="_blank" rel="noopener">ARTSTATION ↗</a>
   </div>
 </header>
@@ -500,7 +500,7 @@ main{animation:fade .34s ease both}
   </section>
 </main>
 
-<main id="project" tabindex="-1"></main>
+<main id="project" tabindex="-1" hidden></main>
 
 <footer>
   <div class="reach"><div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3a1 1 0 0 0-1.35-1.12L2.7 10.12a.9.9 0 0 0 .06 1.7l4.45 1.43 1.72 5.46a.9.9 0 0 0 1.5.38l2.5-2.4 4.47 3.3a1 1 0 0 0 1.57-.6Zm-4.3 3.02-7.9 7.14-.3 3.02-1.2-4.02 9.1-6.3a.2.2 0 0 1 .3.16Z"/></svg><a data-link="telegram" href="https://t.me/J_K_3_0" target="_blank" rel="noopener"><span data-brand="tgName">@J_K_3_0</span></a></div></div>
@@ -536,7 +536,7 @@ const BRAND = {
   short: "Hardframe", full: "Hardframe 3D", heroWords: ["HARD", "FRAME"],
   siteUrl: "https://hardframe3d.com",        // canonical address for the CV; the deployed pages take theirs from GitHub Pages
   email: "contact@hardframe3d.com",
-  hero: "assets/hero-robot",                 // hero render without extension: .jpg, .avif and .webp lie next to it
+  hero: "assets/hero-robot.jpg",             // hero render; .avif and .webp lie next to it
   links: {
     artstation: "https://www.artstation.com/j-k30", sketchfab: "https://sketchfab.com/J-K3.0",
     youtube: "https://www.youtube.com/@hardframe3d", instagram: "https://www.instagram.com/jey_key_30/",
@@ -589,12 +589,13 @@ const I18N = {
     "p.yt": "WATCH ON YOUTUBE ↗", "p.close": "CLOSE ✕",
     "st.soon": "IN DEVELOPMENT", "st.reworkNote": "The work is being redone: renders below are the previous version.",
     "nf.h": "Project not found", "nf.p": "This link points to a project that doesn't exist or has been removed.", "nf.back": "← ALL WORK",
-    "title": "{brand} — Kirill, CG Generalist", "title.nf": "Not found — {brand}",
+    "title": "{brand} — Kirill, CG Generalist", "title.nf": "Not found | {brand}",
     "desc": "{brand} — Kirill, CG generalist. CG with an engineer's mind: hard-surface, real-world environments and VFX, from model to engine or final comp.",
     "a.skip": "SKIP TO CONTENT", "h1": "{brand} — Kirill, CG Generalist &amp; 3D Artist", "a.render": "render", "a.prev": "Previous image", "a.next": "Next image", "a.left": "Scroll left", "a.right": "Scroll right", "a.gallery": "Image viewer",
     "f.agree": "I agree to the processing of my personal data under the <a data-pp>privacy policy</a>.",
     "f.activate": "The form is not activated yet: an email with an “Activate Form” link has been sent to the site owner. Meanwhile, write directly: <a href='mailto:{email}'>{email}</a> or <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
-    "pp.link": "PRIVACY POLICY", "pp.title": "Privacy policy — {brand}", "pp.h": "Privacy policy",
+    "pp.link": "PRIVACY POLICY", "pp.title": "Privacy policy | {brand}", "pp.h": "Privacy policy",
+    "pp.desc": "How the {brand} portfolio handles personal data: what the brief form collects and why, how long it is kept, analytics cookies and your rights.",
     "pp.body": "<p>Effective 5 October 2026.</p><h2>1. Who processes the data</h2><p>The data controller is Kirill, owner of the {brand} portfolio website. Contact: <a href='mailto:{email}'>{email}</a>.</p><h2>2. What data</h2><p>Your name, email or Telegram username and the text of your brief — only what you enter in the contact form yourself.</p><h2>3. Why</h2><p>Only to reply to your request and discuss the project. No newsletters; the data is not sold or shared with third parties for their own purposes.</p><h2>4. How</h2><p>The form is delivered by FormSubmit (formsubmit.co), which forwards the message to the owner's email. The service is located outside Russia, so submitting the form involves a cross-border transfer of data. If you prefer to avoid this, write directly by email or to <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a> on Telegram.</p><h2>5. How long</h2><p>Messages are kept in the owner's mailbox while the project is discussed and carried out, and no longer than 3 years after the last message.</p><h2>6. Your rights</h2><p>You can ask what data about you is stored, request correction or deletion, or withdraw your consent by writing to <a href='mailto:{email}'>{email}</a>. Requests are answered within 10 working days.</p><h2>7. Cookies and third-party content</h2><p>Visits are counted with two services. Cloudflare Web Analytics (Cloudflare, Inc., USA) records the page address, the referring site, browser and device type, country and page load speed — without cookies and without identifying visitors. Yandex Metrica (YANDEX LLC, Russia) sets cookies and records the pages viewed, the referring site, clicks and scrolling, browser, device, screen size, approximate location by IP address and a random visitor ID; Webvisor session recording is turned off, and what you type into the form is not recorded. The statistics are used only in aggregate, to understand which works people look at; data is processed under the <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>Yandex Metrica terms</a>. You can refuse by blocking cookies in your browser or installing the <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>Metrica opt-out add-on</a>; the site keeps working. Apart from that, only the chosen interface language is stored in your browser (localStorage). Fonts, images and the showreel are served from this site itself. A Sketchfab 3D viewer loads only after you click it, and YouTube links open on youtube.com; these services follow their own privacy policies.</p>"
   },
   ru: {
@@ -628,12 +629,13 @@ const I18N = {
     "p.yt": "СМОТРЕТЬ НА YOUTUBE ↗", "p.close": "ЗАКРЫТЬ ✕",
     "st.soon": "В РАЗРАБОТКЕ", "st.reworkNote": "Работа переделывается: ниже — прошлая версия рендеров.",
     "nf.h": "Работа не найдена", "nf.p": "Ссылка ведёт на работу, которой нет или которую убрали.", "nf.back": "← ВСЕ РАБОТЫ",
-    "title": "{brand} — Кирилл, CG-генералист", "title.nf": "Не найдено — {brand}",
+    "title": "{brand} — Кирилл, CG-генералист", "title.nf": "Не найдено | {brand}",
     "desc": "{brand} — Кирилл, CG-генералист. 3D и VFX с инженерным подходом: hard-surface, окружения по реальным данным, CGI для медиа.",
     "a.skip": "К СОДЕРЖИМОМУ", "h1": "{brand} — Кирилл, CG-генералист и 3D-художник", "a.render": "рендер", "a.prev": "Предыдущее изображение", "a.next": "Следующее изображение", "a.left": "Прокрутить влево", "a.right": "Прокрутить вправо", "a.gallery": "Просмотр изображений",
     "f.agree": "Я согласен(на) на обработку персональных данных в соответствии с <a data-pp>политикой конфиденциальности</a>.",
     "f.activate": "Форма ещё не активирована: владельцу сайта отправлено письмо со ссылкой «Activate Form». Пока напишите напрямую: <a href='mailto:{email}'>{email}</a> или <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.",
-    "pp.link": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ", "pp.title": "Политика конфиденциальности — {brand}", "pp.h": "Политика обработки персональных данных",
+    "pp.link": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ", "pp.title": "Политика конфиденциальности | {brand}", "pp.h": "Политика обработки персональных данных",
+    "pp.desc": "Как сайт-портфолио {brand} обрабатывает персональные данные: что собирает форма брифа и зачем, сколько их хранят, cookies аналитики и ваши права.",
     "pp.body": "<p>Действует с 5 октября 2026 года.</p><h2>1. Кто обрабатывает данные</h2><p>Оператор — Кирилл, владелец сайта-портфолио {brand}. Связь: <a href='mailto:{email}'>{email}</a>.</p><h2>2. Какие данные</h2><p>Имя, email или ник в Telegram и текст брифа — только то, что вы сами вводите в форму на сайте.</p><h2>3. Зачем</h2><p>Только чтобы ответить на ваш запрос и обсудить проект. Рассылок нет, данные не продаются и не передаются третьим лицам для их собственных целей.</p><h2>4. Как</h2><p>Форма отправляется через сервис FormSubmit (formsubmit.co), который пересылает сообщение на почту оператора. Сервис находится за пределами России, поэтому при отправке формы данные передаются трансгранично. Если вы этого не хотите, напишите напрямую на почту или в Telegram <a href='{tg}' target='_blank' rel='noopener'>{tgName}</a>.</p><h2>5. Сколько хранятся</h2><p>Сообщения хранятся в почтовом ящике оператора, пока идёт обсуждение и работа над проектом, и не дольше 3 лет после последнего сообщения.</p><h2>6. Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие — письмом на <a href='mailto:{email}'>{email}</a>. Ответ — в течение 10 рабочих дней.</p><h2>7. Cookies и сторонний контент</h2><p>Посещения считаются двумя сервисами. Cloudflare Web Analytics (Cloudflare, Inc., США) учитывает адрес страницы, сайт, с которого пришёл посетитель, тип браузера и устройства, страну и скорость загрузки — без cookies и без идентификации посетителей. Яндекс Метрика (ООО «ЯНДЕКС», Россия) устанавливает cookies и учитывает просмотренные страницы, сайт, с которого пришёл посетитель, клики и прокрутку, браузер, устройство, размер экрана, примерное местоположение по IP-адресу и случайный идентификатор посетителя; запись сессий (Вебвизор) отключена, ввод в форму не записывается. Статистика используется только обезличенно — чтобы понимать, какие работы смотрят; данные обрабатываются по <a href='https://yandex.ru/legal/metrica_termsofuse/' target='_blank' rel='noopener'>условиям Яндекс Метрики</a>. Отказаться можно, запретив cookies в браузере или установив <a href='https://yandex.ru/support/metrica/general/opt-out.html' target='_blank' rel='noopener'>блокировщик Метрики</a>; сайт при этом продолжит работать. Кроме того, в браузере сохраняется выбранный язык интерфейса (localStorage). Шрифты, изображения и шоурил загружаются с самого сайта. 3D-просмотрщик Sketchfab подгружается только после клика по нему, а ссылки на YouTube открываются на youtube.com; у этих сервисов свои правила обработки данных.</p>"
   }
 };
@@ -641,7 +643,9 @@ const I18N = {
    STATIC is set only on the published site (tools/seo.mjs writes <meta name="rv-static" content="<site url>">):
    clean paths /en/work/<id>/ backed by generated files. Locally and in previews: hash routes #/project/<id>. */
 const STATIC = (document.querySelector('meta[name="rv-static"]') || {}).content || "";
-const ROOT = new URL(".", document.baseURI).pathname;
+const ROOT = STATIC ? new URL(STATIC).pathname : new URL(".", document.baseURI).pathname;   // published pages have no <base>: paths count from the site root
+/* the part of a URL after /<lang>/; joined from pieces, because crawlers take a quoted piece of a path in the script for a link */
+const pathOf = r => r && r.id ? ["work", encodeURIComponent(r.id), ""].join("/") : r && r.page ? r.page + "/" : "";
 /* Cloudflare Web Analytics and Yandex Metrika: published site only so local views are not counted.
    Injected after window load: a pending script holds back the load event, and where the beacon host is blocked
    (connection hangs, then ERR_CONNECTION_CLOSED) the showreel, which waits for load, would wait with it.
@@ -689,8 +693,12 @@ function setMeta(title, desc, r) {
   if (desc) ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]'].forEach(s => { const m = q(s); if (m) m.content = desc; });
   ['meta[property="og:title"]', 'meta[name="twitter:title"]'].forEach(s => { const m = q(s); if (m) m.content = title; });
   ymHit();   // every view ends here, after its URL and title are set
+  /* EN / RU lead to this same page in the other language */
+  document.querySelectorAll("#lang a").forEach(a => {
+    a.href = STATIC ? ROOT + a.dataset.lang + "/" + pathOf(r) : "?" + new URLSearchParams({ lang: a.dataset.lang }) + location.hash;
+  });
   if (!STATIC || !r) return;
-  const tail = r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "";
+  const tail = pathOf(r);
   const c = q('link[rel="canonical"]'); if (c) c.href = STATIC + LANG + "/" + tail;
   const ou = q('meta[property="og:url"]'); if (ou) ou.content = STATIC + LANG + "/" + tail;
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(a => {
@@ -705,39 +713,51 @@ function paintBrand() {
   document.querySelectorAll("picture[data-hero]").forEach(p => {
     const img = p.querySelector("img");
     img.alt = BRAND.full + " hero render";
-    if (img.getAttribute("src") === BRAND.hero + ".jpg") return;
-    p.querySelectorAll("source").forEach(s => { s.srcset = BRAND.hero + "." + s.type.split("/")[1]; });
-    img.src = BRAND.hero + ".jpg";
+    if (img.getAttribute("src") === BRAND.hero) return;
+    const base = BRAND.hero.replace(/\.jpe?g$/i, "");
+    p.querySelectorAll("source").forEach(s => { s.srcset = base + "." + s.type.split("/")[1]; });
+    img.src = BRAND.hero;
   });
 }
 function applyLang() {
   document.documentElement.lang = LANG;
   document.querySelectorAll("[data-i18n]").forEach(n => n.innerHTML = L(n.dataset.i18n));
   document.querySelectorAll("[data-i18n-ph]").forEach(n => n.placeholder = L(n.dataset.i18nPh));
-  document.querySelectorAll("#lang button").forEach(b => { b.classList.toggle("on", b.dataset.lang === LANG); b.setAttribute("aria-pressed", b.dataset.lang === LANG); });
+  document.querySelectorAll("#lang a").forEach(a => {
+    a.classList.toggle("on", a.dataset.lang === LANG);
+    if (a.dataset.lang === LANG) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  });
   document.querySelectorAll("a[data-pp]").forEach(a => {
     a.href = href({ page: "privacy" });
     a.onclick = e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openPage("privacy"); };
   });
-  document.querySelectorAll("header nav a[data-go]").forEach(a => { a.href = href({}) + "#" + a.dataset.go; });
+  document.querySelectorAll("a[data-go]").forEach(a => { a.href = href({}) + "#" + a.dataset.go; });
   document.querySelectorAll("a[data-cv]").forEach(a => { a.classList.toggle("on", a.dataset.cv === LANG); a.style.order = a.dataset.cv === LANG ? -1 : 0; });
   centerHero();
 }
 /* the hero and the menu are centred by CSS */
 function centerHero() {}
 function relang() {
-  applyLang(); renderFilters(); renderReel(); renderAbout(); paintSync();
+  applyLang();
+  if (!HOME) return;
+  renderFilters(); renderReel(); renderAbout(); paintSync();
   if (DATA.projects.length) renderGrid();
 }
 function setLang(l) {
   if (l === LANG) return;
   LANG = l; try { localStorage.setItem("rv-lang", l); } catch (e) {}
   relang();
-  if (STATIC) nav(current(), true);
   route(true);
 }
-document.querySelectorAll("#lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+/* the published site has a page per language, so the link just goes there; locally the language switches in place */
+document.querySelectorAll("#lang a").forEach(a => a.addEventListener("click", e => {
+  if (STATIC || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault(); setLang(a.dataset.lang);
+}));
 
+/* null on the published project, privacy and 404 pages: tools/seo.mjs leaves the home markup out of them,
+   and links to the home sections load /<lang>/ instead */
+const HOME = $("#home");
 let DATA = { projects: [], reel: { videoId: "" } };
 let DRAFTS = [];   // "hidden": true — kept out of the grid, counters and SEO; locally a direct #/project/<id> link still opens them
 let topic = "ALL", media = [], loaded = {};
@@ -778,7 +798,7 @@ addEventListener("resize", () => { syncHeader(); paintNav(); }, { passive: true 
 syncHeader();
 
 document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", e => {
-  if (e.metaKey || e.ctrlKey || e.shiftKey) return;   // links in the menu can still open in a new tab
+  if (!HOME || e.metaKey || e.ctrlKey || e.shiftKey) return;   // no home on this page: the link loads it; menu links can still open in a new tab
   e.preventDefault();
   const id = b.dataset.go;
   showHome();
@@ -790,7 +810,7 @@ document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", 
 
 /* ---------- routing ---------- */
 function href(r) {
-  if (STATIC) return ROOT + LANG + "/" + (r.id ? "work/" + encodeURIComponent(r.id) + "/" : r.page ? r.page + "/" : "");
+  if (STATIC) return ROOT + LANG + "/" + pathOf(r);
   return r.id ? "#/project/" + r.id : r.page ? "#/" + r.page : location.pathname + location.search;
 }
 function current() {
@@ -812,10 +832,11 @@ function closeLightbox() {
 let homeY = null;   // where the visitor left the home page, restored on the way back
 function showView(which, keep) {
   closeLightbox();
-  const wasHome = $("#home").style.display !== "none";
+  const wasHome = !!HOME && HOME.style.display !== "none";
   if (wasHome && which !== "home") homeY = scrollY;
-  $("#home").style.display = which === "home" ? "" : "none";
+  if (HOME) { HOME.style.display = which === "home" ? "" : "none"; HOME.hidden = which !== "home"; }
   $("#project").style.display = which === "home" ? "none" : "block";
+  $("#project").hidden = which === "home";   // one <main> on screen, the other hidden for assistive tech too
   if (which !== "home") { masonry($("#project .gridwrap")); if (!keep) jump(0); }
   else if (!wasHome) {
     centerHero();
@@ -826,6 +847,7 @@ function showView(which, keep) {
   if (which !== "home") { document.querySelectorAll("nav .on").forEach(b => b.classList.remove("on")); centerHero(); }
 }
 function backToWork(e) {
+  if (!HOME) return;   // the link loads /<lang>/#work
   if (e) e.preventDefault();
   const known = homeY != null;
   showHome();
@@ -834,20 +856,22 @@ function backToWork(e) {
 function showHome() { const r = current(); if (r.id || r.page || r.bad) nav({}); homeView(); }
 function openProject(id) { nav({ id }); projectView(id); }
 function openPage(page) { nav({ page }); pageView(page); }
-function homeView() { showView("home"); setMeta(L("title"), L("desc"), {}); }
+function homeView() {
+  if (!HOME) return location.replace(href({}) + location.hash);
+  showView("home"); setMeta(L("title"), L("desc"), {});
+}
 function projectView(id, keep) {
   const p = DATA.projects.find(x => x.id === id) || (!STATIC && DRAFTS.find(x => x.id === id));
   if (!p || isSoon(p)) return notFoundView(keep);
   renderProject(p); showView("project", keep);
-  const d = loc(p, "summary");
   $("#project").querySelectorAll(".strip").forEach(s => { s.scrollLeft = 0; });   // every gallery starts at its first slide
-  setMeta(p.title + " — " + BRAND.full, filled(d) ? d.split(/\n\s*\n/)[0].replace(/\s+/g, " ").slice(0, 160) : L("desc"), { id });
+  setMeta(metaTitle(p), metaDesc(p), { id });
 }
-function pageView(page, keep) { renderPrivacy(); showView("page", keep); setMeta(L("pp.title"), L("desc"), { page }); }
+function pageView(page, keep) { renderPrivacy(); showView("page", keep); setMeta(L("pp.title"), L("pp.desc"), { page }); }
 function notFoundView(keep) { renderNotFound(); showView("page", keep); setMeta(L("title.nf"), L("desc"), null); }
 function backBar() {
   const c = el("div", "crumbs"), back = el("a", "", L("p.back"));
-  back.href = href({});
+  back.href = href({}) + "#work";
   back.addEventListener("click", backToWork);
   c.appendChild(back);
   return c;
@@ -862,7 +886,7 @@ function renderNotFound() {
   root.innerHTML = "";
   const n = el("div", "nf", "<div class='code'>404</div><h1 class='h1' style='margin:0'>" + L("nf.h") + "</h1><p class='sub'>" + L("nf.p") + "</p>");
   const b = el("div", "socials"), a = el("a", "", L("nf.back"));
-  a.href = href({}); a.style.cssText = "background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px";
+  a.href = href({}) + "#work"; a.style.cssText = "background:var(--red);color:var(--ink);border-color:var(--red);padding:12px 20px";
   a.addEventListener("click", backToWork);
   b.appendChild(a); n.appendChild(b); root.appendChild(n);
 }
@@ -885,7 +909,7 @@ function route(keep) {
   else homeView();
 }
 $("#skip").addEventListener("click", () => {
-  const m = $("#home").style.display === "none" ? $("#project") : $("#work");
+  const m = HOME && HOME.style.display !== "none" ? $("#work") : $("#project");
   if (!m.hasAttribute("tabindex")) m.setAttribute("tabindex", "-1");
   m.focus({ preventScroll: true });
   jump(topOf(m));
@@ -904,8 +928,9 @@ function frame(m, key, ratio) {
     else box.appendChild(el("div", "slot", m.label || ""));
     return box;
   }
-  const src = m.t === "youtube" && m.videoId ? "https://www.youtube.com/embed/" + m.videoId + "?autoplay=1&rel=0"
-    : isSf && m.modelId ? "https://sketchfab.com/models/" + m.modelId + "/embed?autospin=0.2&ui_theme=dark" : "";
+  /* whole addresses in one template: a string piece that starts with a slash reads to crawlers as a link on this site */
+  const src = m.t === "youtube" && m.videoId ? `https://www.youtube.com/embed/${m.videoId}?autoplay=1&rel=0`
+    : isSf && m.modelId ? `https://sketchfab.com/models/${m.modelId}/embed?autospin=0.2&ui_theme=dark` : "";
   if (loaded[key] && src) {
     const f = el("iframe");
     f.src = src; f.title = m.label || ""; f.allow = "autoplay; fullscreen; xr-spatial-tracking; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
@@ -961,9 +986,8 @@ function renderReel() {
   } else if (id) {
     /* poster underneath: if the embed is blocked or autoplay refused, the frame is never empty */
     const poster = el("img");
-    poster.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
     poster.alt = "";
-    poster.onerror = () => { poster.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; poster.onerror = null; };
+    ytPoster(id, poster);
     Object.assign(poster.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", zIndex: "0" });
     f.appendChild(poster);
 
@@ -1058,7 +1082,7 @@ function card(p) {
   if (src) {
     if (p.thumbRatio) t.style.aspectRatio = p.thumbRatio;
     const i = new Image();
-    i.src = src; i.alt = p.title; i.loading = "lazy"; i.decoding = "async";
+    i.src = src; i.alt = titleOf(p); i.loading = "lazy"; i.decoding = "async";
     i.addEventListener("load", () => {
       if (p.thumbRatio) return;
       t.style.aspectRatio = i.naturalWidth + "/" + i.naturalHeight;
@@ -1071,7 +1095,7 @@ function card(p) {
   statusLayer(t, p);
   if (!soon) hoverClip(b, t, (p.media || []).find(m => m.t === "video" && m.sm));
   b.appendChild(t);
-  b.appendChild(el("div", "cap", "<span>" + p.title + "</span><span class='year'>" + (p.year || "") + "</span>"));
+  b.appendChild(el("div", "cap", "<span>" + titleOf(p) + "</span><span class='year'>" + (p.year || "") + "</span>"));
   if (filled(p.role)) b.appendChild(el("div", "role", p.role));
   if (soon) return b;
   b.addEventListener("click", e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openProject(p.id); });
@@ -1171,6 +1195,14 @@ function rich(s) {
 const isTodo = v => /^\s*TODO\b/.test(tx(v) || "");
 const shown = v => filled(tx(v)) && !(STATIC && isTodo(v));
 const todo = v => isTodo(v) ? " class='todo'" : "";
+/* names and meta in the page language: title / title_ru, meta_title(_ru), meta_description(_ru), media alt.
+   tools/seo.mjs builds the same values, so the static page and the script never disagree */
+const own = (p, k) => { const v = loc(p, k); return shown(v) ? v : ""; };
+const titleOf = p => own(p, "title") || p.title;
+const metaTitle = p => (own(p, "meta_title") || titleOf(p)) + " | " + BRAND.full;
+const clip = s => { s = String(s).split(/\n\s*\n/)[0].replace(/\s+/g, " ").trim(); return s.length > 160 ? s.slice(0, 157).replace(/\s+\S*$/, "") + "…" : s; };
+const metaDesc = p => { const s = loc(p, "summary"); return own(p, "meta_description") || (filled(s) ? clip(s) : L("desc")); };
+const altOf = (p, m, k) => shown(m.alt) ? tx(m.alt) : titleOf(p) + " — " + L("a.render") + " " + (k + 1);
 const extLink = (url, text) => url ? "<a href='" + esc(url) + "' target='_blank' rel='noopener'>" + esc(text) + "</a>" : esc(text);
 function facts(p) {
   const pr = p.production || {};
@@ -1190,8 +1222,8 @@ function caseText(p) {
   return rows.length ? "<div class='case'>" + rows.map(([k, l]) => "<div" + todo(p[k]) + "><u>" + L(l) + "</u>" + rich(tx(p[k])) + "</div>").join("") + "</div>" : "";
 }
 function ytPoster(id, img) {
-  img.src = "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
-  img.onerror = () => { img.onerror = null; img.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"; };
+  img.src = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+  img.onerror = () => { img.onerror = null; img.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`; };
 }
 /* YouTube is never embedded (bot check blocks it) — poster + link out */
 function ytLink(m) {
@@ -1216,7 +1248,7 @@ function heroMedia(box, m, mode, title) {
     if (mode === "render") { i.style.cursor = "zoom-in"; i.addEventListener("click", () => lightbox([m.src], 0, title)); }
   }
 }
-function lightbox(list, i, title) {
+function lightbox(list, i, title, alts) {
   closeLightbox();
   lbReturn = document.activeElement;
   const o = el("div", "lb"), im = el("img"), n = el("div", "n");
@@ -1231,7 +1263,7 @@ function lightbox(list, i, title) {
   const show = () => {
     const base = list[i].replace(/\.jpe?g$/i, "");
     lbSrc.forEach(so => { so.srcset = base + "." + so.dataset.ext; });
-    im.src = list[i]; im.alt = (title || "") + " — " + L("a.render") + " " + (i + 1); n.textContent = pad(i + 1) + " / " + pad(list.length); };
+    im.src = list[i]; im.alt = (alts && alts[i]) || (title || "") + " — " + L("a.render") + " " + (i + 1); n.textContent = pad(i + 1) + " / " + pad(list.length); };
   const go = d => { i = (i + d + list.length) % list.length; show(); };
   const key = e => {
     if (!o.isConnected) return removeEventListener("keydown", key);
@@ -1256,23 +1288,24 @@ function gallery(p, items, label, asProjects) {
   l.addEventListener("click", () => s.scrollBy({ left: -s.clientWidth * .8, behavior: "smooth" }));
   r.addEventListener("click", () => s.scrollBy({ left: s.clientWidth * .8, behavior: "smooth" }));
   nav.append(l, r); bar.appendChild(nav);
-  const imgs = asProjects ? [] : items.filter(m => m.t === "image" && m.src).map(m => m.src);
+  const pics = asProjects ? [] : items.filter(m => m.t === "image" && m.src);
+  const imgs = pics.map(m => m.src), alts = pics.map((m, k) => altOf(p, m, k));
   items.forEach((m, i) => {
     if (asProjects) {
       const c = el("a", "vcard"), t = el("div", "t");
       c.href = href({ id: m.id });
       const src = m.thumb || ((m.media || []).find(x => x.t === "image" && x.src) || {}).src;
       if (src) { const im = el("img"); im.src = src; im.alt = ""; im.loading = "lazy"; t.appendChild(wrap(im)); }
-      c.append(t, el("div", "role", m.title));
+      c.append(t, el("div", "role", titleOf(m)));
       c.addEventListener("click", e => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); openProject(m.id); });
       s.appendChild(c);
     } else if (m.t === "image" && m.src) {
       const k = imgs.indexOf(m.src), im = el("img");
-      im.src = m.sm && useSm() ? m.sm : m.src; im.alt = p.title + " — " + L("a.render") + " " + (k + 1);
+      im.src = m.sm && useSm() ? m.sm : m.src; im.alt = alts[k];
       if (m.ratio) im.style.aspectRatio = m.ratio;   // width is known before the file arrives, so the strip never reflows
       im.loading = "lazy"; im.decoding = "async"; im.tabIndex = 0;
-      im.addEventListener("click", () => lightbox(imgs, k, p.title));
-      im.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lightbox(imgs, k, p.title); } });
+      im.addEventListener("click", () => lightbox(imgs, k, titleOf(p), alts));
+      im.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lightbox(imgs, k, titleOf(p), alts); } });
       s.appendChild(wrap(im));
     } else if (m.t === "youtube" && (m.videoId || m.url)) {
       const b = el("div", "block"); b.style.aspectRatio = "16/9";
@@ -1304,13 +1337,13 @@ function renderProject(p) {
   rest.sort((a, z) => (a.t === "youtube") - (z.t === "youtube"));   // YouTube links always close the strip
   const asUrl = p.artstationUrl;   // cases that never went to ArtStation get no link
   const eyebrow = filled(p.topic) ? "<div class='eyebrow'>" + p.topic + "</div>" : "";
-  const title = "<h1 class='p-title' style='margin:0'>" + p.title + "</h1>";
+  const name = titleOf(p), title = "<h1 class='p-title' style='margin:0'>" + name + "</h1>";
   const sm = loc(p, "summary"), text = credit(p) + (filled(sm) ? rich(sm) : "") + caseText(p);
   const summary = text ? "<div class='sub desc'>" + text + "</div>" : "";
   const fl = facts(p), fx = (p.status === "rework" ? "<div class='p-status'><b>REWORK</b>" + L("st.reworkNote") + "</div>" : "") + (fl ? "<div class='facts'>" + fl + "</div>" : "");
   const crumbs = cls => {
     const c = el("div", cls);
-    const back = el("a", "", L("p.back")); back.href = href({});
+    const back = el("a", "", L("p.back")); back.href = href({}) + "#work";
     back.addEventListener("click", backToWork);
     c.appendChild(back);
     if (asUrl) { const asl = el("a", "", L("p.as")); asl.href = asUrl; asl.target = "_blank"; asl.rel = "noopener"; c.appendChild(asl); }
@@ -1320,20 +1353,20 @@ function renderProject(p) {
   if (mode === "vertical") {
     root.appendChild(crumbs("crumbs"));
     const h = el("div", "vhead"), pl = el("div", "vplayer");
-    heroMedia(pl, pick, mode, p.title);
+    heroMedia(pl, pick, mode, name);
     if (ytOver) { const im = pl.querySelector("img"); if (im) im.style.filter = "brightness(.6)"; pl.appendChild(ytLink(ytOver)); }
     h.append(pl, el("div", "vinfo", eyebrow + title + summary + fx));
     root.appendChild(h);
   } else if (mode === "video") {
     root.appendChild(crumbs("crumbs"));
     const w = el("div", "hvideo"), b = el("div", "box");
-    heroMedia(b, pick, mode, p.title); w.appendChild(b); root.appendChild(w);
+    heroMedia(b, pick, mode, name); w.appendChild(b); root.appendChild(w);
     root.appendChild(el("div", "info split",
       "<div style='display:flex;flex-direction:column;gap:14px'>" + eyebrow + title + "</div>" +
       "<div style='display:flex;flex-direction:column;gap:22px'>" + summary + fx + "</div>"));
   } else {
     const h = el("div", "hero");
-    heroMedia(h, pick, mode, p.title);
+    heroMedia(h, pick, mode, name);
     h.append(el("div", "hero-veil"), crumbs("hero-top"), el("div", "hero-title", eyebrow + title));
     root.appendChild(h);
     root.appendChild(el("div", "info", summary + fx));
@@ -1358,6 +1391,7 @@ function renderProject(p) {
 /* ---------- brief form ---------- */
 (function form() {
   const row = $("#typeRow");
+  if (!row) return;   // the form lives on the home page only
   TYPES.forEach(t => {
     const b = el("button", "chip" + (t === "HARD-SURFACE" ? " on" : ""), t);
     b.type = "button"; b.setAttribute("aria-pressed", t === "HARD-SURFACE");
@@ -1400,26 +1434,29 @@ function renderProject(p) {
 $("#year").textContent = new Date().getFullYear();   // the 2026 in the markup is only what crawlers and no-JS visitors see
 paintBrand();
 applyLang();
-renderFilters();
-renderReel();
+if (HOME) { renderFilters(); renderReel(); }
 fetch("data/portfolio.json")
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(d => {
     DRAFTS = d.projects.filter(p => p.hidden);
     d.projects = d.projects.filter(p => !p.hidden);
     DATA = d;
-    paintSync();
-    $("#statTotal").textContent = d.projects.filter(p => !isSoon(p)).length;
-    renderFilters(); renderReel(); renderGrid(); renderAbout(); route();
+    if (HOME) {
+      paintSync();
+      $("#statTotal").textContent = d.projects.filter(p => !isSoon(p)).length;
+      renderFilters(); renderReel(); renderGrid(); renderAbout();
+    }
+    route();
     /* #work etc. in the address: the browser tried to scroll before the grid existed */
     const sec = /^#(top|reel|work|about|contact)$/.test(location.hash) && document.getElementById(location.hash.slice(1));
-    if (sec && $("#home").style.display !== "none") {
+    if (sec && HOME.style.display !== "none") {
       const go = () => jump(topOf(sec));
       requestAnimationFrame(go);
       if (document.fonts) document.fonts.ready.then(() => requestAnimationFrame(go));
     }
   })
   .catch(() => {
+    if (!HOME) return;   // a published project page keeps its prerendered text
     const s = $("#syncLabel");
     s.textContent = "SYNC FAILED · NO DATA"; s.style.color = "var(--red)"; s.dataset.failed = "1";
     renderGrid();

@@ -43,7 +43,11 @@ On deploy the script copies `site/` to `_site/` and adds real pages for every UR
 `/en/`, `/ru/`, `/<lang>/work/<id>/`, `/<lang>/privacy/`, plus `404.html`, `sitemap.xml`,
 `robots.txt`. Each page carries its own title, description, canonical, hreflang, Open Graph,
 JSON-LD and prerendered text; the page script then takes over and navigates with clean URLs.
+Project, privacy and 404 pages carry only their own `<main>` (no hidden home page), and every path
+is absolute from the site root, without `<base>`. Details: `PROJECT.md`, «Адреса и SEO».
 Run locally to inspect: `node tools/seo.mjs https://example.com/ _site` (without the address it uses `BRAND.siteUrl`).
+`node tools/seo.mjs --check` builds and checks every page (deploy runs it: errors stop the deploy,
+text warnings do not); `node tools/seo.mjs --live https://hardframe3d.com` checks the published site.
 
 After the first deploy, add the site to Google Search Console and Yandex Webmaster and
 submit `sitemap.xml` there (on a github.io sub-path robots.txt is not read by crawlers,
